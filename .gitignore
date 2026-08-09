@@ -1,0 +1,17 @@
+# Datos crudos: pesan 45 MB y son publicos. El pipeline los baja solo,
+# asi que no tiene sentido versionarlos.
+data/raw/*.csv
+data/raw/*.zip
+data/raw/*.xlsx
+data/raw/documentacion/*.pdf
+
+# Intermedios: reproducibles corriendo el pipeline.
+data/interim/
+
+# Lo que SI se versiona aunque viva dentro de data/
+!data/raw/documentacion/aglomerados_indec.csv
+!data/raw/documentacion/aglomerado_provincia.csv
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
