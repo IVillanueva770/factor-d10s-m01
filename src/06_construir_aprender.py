@@ -137,6 +137,19 @@ def main():
     assert lengua[CLAVES].equals(matematica[CLAVES]), \
         "Las claves de Lengua y Matematica no coinciden fila a fila"
 
+    # Filas sin ningun dato: el Ministerio publica la clave territorial con
+    # las 1.031 columnas vacias. Medido: 1 fila (Chaco / GENERAL DONOVAN /
+    # Estatal / Rural), 0 estudiantes. No es no respuesta, es una fila que no
+    # tiene nada atras, y arrastrarla ensucia cualquier promedio.
+    datos = lengua.drop(columns=CLAVES)
+    vacias = datos.isna().all(axis=1)
+    if vacias.any():
+        print(f"  descartadas {vacias.sum()} fila(s) sin ningun dato:")
+        for _, f in lengua.loc[vacias, CLAVES].iterrows():
+            print(f"    {' / '.join(f.astype(str))}")
+        lengua = lengua[~vacias].reset_index(drop=True)
+        matematica = matematica[~vacias.values].reset_index(drop=True)
+
     salida = lengua[CLAVES].copy()
     salida["estudiantes"] = lengua[
         [c for c in lengua.columns if c.startswith(BLOQUE_TOTAL)]
@@ -195,12 +208,19 @@ def main():
     todos = dict(BLOQUES)
     todos[BLOQUE_DESEMPENO_LENGUA] = "desemp_lengua"
     todos[BLOQUE_DESEMPENO_MATEMATICA] = "desemp_matematica"
+    # Ojo con la version anterior de este chequeo: aceptaba como validas las
+    # filas que sumaban 1 Y TAMBIEN las que sumaban 0 o quedaban vacias, o sea
+    # que se perdonaba a si mismo los casos que no cumplian. Ahora se separan:
+    # suman 1 (correcto), sin dato (informativo) y raras (defecto real).
     for nombre in todos.values():
         cols = [c for c in salida.columns if c.startswith(f"{nombre}__")]
         suma = salida[cols].sum(axis=1)
-        ok = suma.between(0.999, 1.001) | suma.isna() | (suma == 0)
-        print(f"    {nombre:20s} {len(cols):>2} cols | filas que suman 1: "
-              f"{ok.sum():>5,}/{len(salida):,}")
+        sin_dato = salida[cols].isna().all(axis=1)
+        uno = suma.between(0.999, 1.001)
+        raras = ~(uno | sin_dato)
+        print(f"    {nombre:20s} {len(cols):>2} cols | suman 1: {uno.sum():>5,} "
+              f"| sin dato: {sin_dato.sum():>3,} | RARAS: {raras.sum()}")
+        assert raras.sum() == 0, f"{nombre}: {raras.sum()} filas mal formadas"
 
     print()
     print("  Distribucion de la cobertura (peor bloque de cada fila):")
