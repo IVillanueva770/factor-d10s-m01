@@ -10,23 +10,15 @@ pide ("incorporando al dataset de Aprender indicadores socioeconomicos
 agregados obtenidos a partir de la EPH") y es tambien su principal limitacion.
 """
 
-import unicodedata
 from pathlib import Path
 
 import pandas as pd
 
+from comun import clave_provincia
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 INTERIM = BASE_DIR / "data" / "interim"
 PROCESADO = BASE_DIR / "data" / "processed"
-
-
-def clave_provincia(texto):
-    """Normaliza el nombre para que la union no dependa de tildes ni mayusculas."""
-    sin_tildes = "".join(
-        c for c in unicodedata.normalize("NFD", str(texto))
-        if unicodedata.category(c) != "Mn"
-    )
-    return " ".join(sin_tildes.lower().replace(",", " ").split())
 
 
 def main():
