@@ -15,7 +15,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 DOCS = BASE_DIR / "data" / "raw" / "documentacion"
 INTERIM = BASE_DIR / "data" / "interim"
 

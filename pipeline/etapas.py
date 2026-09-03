@@ -21,7 +21,7 @@ ETAPAS = [
     Etapa(
         numero=1,
         nombre="aprender",
-        archivo="01_aprender.py",
+        archivo="01_fuentes/01_aprender.py",
         que_hace=(
             "Convierte las bases censales de Aprender 2024 en proporciones por "
             "fila, con la cobertura de cada bloque al lado como indicador de "
@@ -36,7 +36,7 @@ ETAPAS = [
     Etapa(
         numero=2,
         nombre="eph_unir",
-        archivo="02_eph_unir.py",
+        archivo="01_fuentes/02_eph_unir.py",
         que_hace=(
             "Une las bases de Hogar e Individual de la EPH 3T-2025 por "
             "CODUSU + NRO_HOGAR. CODUSU solo no alcanza: hay viviendas con mas "
@@ -48,7 +48,7 @@ ETAPAS = [
     Etapa(
         numero=3,
         nombre="eph_indicadores",
-        archivo="03_eph_indicadores.py",
+        archivo="01_fuentes/03_eph_indicadores.py",
         que_hace=(
             "Calcula los indicadores socioeconomicos por provincia, todos "
             "ponderados. El ingreso va con PONDIH y no con PONDERA."
@@ -65,7 +65,7 @@ ETAPAS = [
     Etapa(
         numero=4,
         nombre="integrar",
-        archivo="04_integrar.py",
+        archivo="02_integracion/04_integrar.py",
         que_hace=(
             "Cruza Aprender con el contexto de la EPH. Es un join de muchos a "
             "uno: cada departamento hereda los indicadores de su provincia, y "
@@ -80,7 +80,7 @@ ETAPAS = [
     Etapa(
         numero=5,
         nombre="armonizar",
-        archivo="05_armonizar.py",
+        archivo="02_integracion/05_armonizar.py",
         que_hace=(
             "Lleva a una escala comparable las variables que las dos fuentes "
             "miden distinto, y deja el dataset maestro final."
@@ -95,7 +95,7 @@ ETAPAS = [
     Etapa(
         numero=6,
         nombre="diccionario",
-        archivo="06_diccionario.py",
+        archivo="02_integracion/06_diccionario.py",
         que_hace=(
             "Genera una fila por columna del dataset, con su definicion y su "
             "fuente, mas la tabla de correspondencia entre Aprender y la EPH."
@@ -107,6 +107,21 @@ ETAPAS = [
         salidas=(
             f"{PROC}/diccionario_variables.csv",
             f"{PROC}/armonizacion_fuentes.csv",
+        ),
+    ),
+Etapa(
+        numero=7,
+        nombre="perfilado",
+        archivo="03_curacion/07_perfilado.py",
+        que_hace=(
+            "Mide el dataset maestro columna por columna: tipos, faltantes, "
+            "rangos, duplicados, variabilidad y valores imposibles. No corrige "
+            "nada: produce la evidencia con la que se deciden las curaciones."
+        ),
+        entradas=(f"{PROC}/dataset_maestro_inicial.csv",),
+        salidas=(
+            f"{INTERIM}/perfil_columnas.csv",
+            "docs/07_perfil_calidad.md",
         ),
     ),
 ]
