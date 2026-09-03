@@ -17,3 +17,5 @@ __pycache__/
 .ipynb_checkpoints/
 entrega/
 data/processed/dataset_maestro_base.csv
+data/processed/dataset_maestro_curado.csv
+data/processed/diccionario_curado.csv

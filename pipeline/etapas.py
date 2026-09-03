@@ -124,6 +124,25 @@ Etapa(
             "docs/07_perfil_calidad.md",
         ),
     ),
+    Etapa(
+        numero=8,
+        nombre="curar",
+        archivo="03_curacion/08_curar.py",
+        que_hace=(
+            "Aplica las decisiones de curacion que salieron del perfil. No "
+            "borra filas ni modifica valores: agrega columnas que hacen visible "
+            "cada problema, para poder excluirlo con una condicion explicita."
+        ),
+        entradas=(
+            f"{PROC}/dataset_maestro_inicial.csv",
+            f"{PROC}/diccionario_variables.csv",
+        ),
+        salidas=(
+            f"{PROC}/dataset_maestro_curado.csv",
+            f"{PROC}/diccionario_curado.csv",
+            "docs/08_decisiones_curacion.md",
+        ),
+    ),
 ]
 
 

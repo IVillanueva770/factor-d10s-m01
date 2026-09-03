@@ -4,7 +4,7 @@ Cada assert de este archivo es una conclusion que se midio en algun paso del
 analisis. Si mañana alguien toca el pipeline y rompe una, el script falla en
 vez de producir un dataset silenciosamente mal.
 
-Correr con:  python src/test_invariantes.py
+Correr con:  python tests/test_invariantes.py
 
 Regla al agregar cosas: si en el analisis se afirma algo sobre los datos,
 ese algo se convierte en un assert aca. Una afirmacion sin assert es una
@@ -159,6 +159,52 @@ verificar("las jurisdicciones del maestro son las 24 de Aprender",
           maestro["jurisdiccion"].nunique() == 24)
 verificar("la cantidad de estudiantes se conserva",
           round(maestro["estudiantes"].sum()) == 540040)
+
+# ------------------------------------------------- ETAPA 08: CURACION
+# Cada uno de estos assert es una decision de curacion convertida en algo que
+# se vuelve a chequear solo. La regla del proyecto: un hallazgo sin invariante
+# es un hallazgo que se pierde.
+
+curado = pd.read_csv(PROCESADO / "dataset_maestro_curado.csv")
+dicc_curado = pd.read_csv(PROCESADO / "diccionario_curado.csv")
+
+verificar("la curacion no borro ni agrego filas",
+          len(curado) == len(maestro))
+verificar("la curacion no modifico ninguna columna preexistente",
+          all(curado[c].equals(maestro[c]) for c in maestro.columns))
+verificar("la curacion solo agrego columnas al final",
+          list(curado.columns)[:len(maestro.columns)] == list(maestro.columns))
+verificar("el diccionario curado tiene una fila por columna, sin repetidos",
+          set(dicc_curado["variable"]) == set(curado.columns)
+          and len(dicc_curado) == curado.shape[1])
+
+cols_clima = [c for c in curado.columns if c.startswith("clima_escolar__")]
+verificar("clima_escolar_calidad cubre las 1.174 filas con 3 estados",
+          curado["clima_escolar_calidad"].notna().all()
+          and set(curado["clima_escolar_calidad"]) == {"ok", "cobertura_baja", "sin_dato"})
+verificar("'sin_dato' es exactamente las filas sin ningun valor de clima escolar",
+          (curado["clima_escolar_calidad"] == "sin_dato").equals(
+              curado[cols_clima].isna().all(axis=1)))
+verificar("'cobertura_baja' es exactamente cobertura por debajo de 0,50",
+          (curado["clima_escolar_calidad"] == "cobertura_baja").equals(
+              curado["cob__clima_escolar"] < 0.50))
+verificar("'ok' no deja ninguna fila con cobertura menor a 0,50",
+          curado.loc[curado["clima_escolar_calidad"] == "ok",
+                     "cob__clima_escolar"].min() >= 0.50)
+
+verificar("es_agregado_provincial marca exactamente los departamentos enmascarados",
+          curado["es_agregado_provincial"].equals(
+              curado["departamento"].astype(str).str.strip().str.upper()
+              == "ENMASCARADO"))
+verificar("el centinela 'Enmascarado' aparece en mas de una jurisdiccion",
+          curado.loc[curado["es_agregado_provincial"], "jurisdiccion"].nunique() > 1,
+          "si estuviera en una sola, no seria un agregado y la columna sobraria")
+verificar("sacando los agregados provinciales, cada departamento es de una sola jurisdiccion",
+          curado[~curado["es_agregado_provincial"]]
+          .groupby("departamento")["jurisdiccion"].nunique().max() >= 1)
+
+verificar("la curacion conserva los 540.040 estudiantes",
+          round(curado["estudiantes"].sum()) == 540040)
 
 # ------------------------------------------------------------------ REPORTE
 print("=" * 74)
