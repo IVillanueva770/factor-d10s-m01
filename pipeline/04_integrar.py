@@ -87,7 +87,12 @@ def main():
           f"{riesgo['estudiantes_por_encuestado'].median():,.0f}")
 
     PROCESADO.mkdir(parents=True, exist_ok=True)
-    destino = PROCESADO / "dataset_maestro_inicial.csv"
+    # Se llama "base" y no "inicial" porque esta etapa NO produce el dataset
+    # final: falta la armonizacion (etapa 05), que es la que escribe
+    # dataset_maestro_inicial.csv. Antes las dos escribian sobre el mismo
+    # archivo, y correr la 05 dos veces seguidas le apilaba columnas encima
+    # (medido el 2026-09-03: 131 -> 155 sin fallar ni avisar).
+    destino = PROCESADO / "dataset_maestro_base.csv"
     maestro.to_csv(destino, index=False, encoding="utf-8")
     print()
     print(f"  GUARDADO: {destino.relative_to(BASE_DIR)}")

@@ -1,0 +1,78 @@
+{
+  "etapas": [
+    {
+      "etapa": "01_aprender",
+      "que_hace": "Convierte las bases censales de Aprender 2024 en proporciones por fila, con la cobertura de cada bloque al lado como indicador de calidad del dato.",
+      "segundos": 1.63,
+      "salidas": {
+        "data/interim/aprender_2024_proporciones.csv": {
+          "sha256": "f06d31341c0f402058a5a08e749b843c971634c5454b08f7dfee1e9f55d29a7e",
+          "forma": "1,174 x 107"
+        }
+      }
+    },
+    {
+      "etapa": "02_eph_unir",
+      "que_hace": "Une las bases de Hogar e Individual de la EPH 3T-2025 por CODUSU + NRO_HOGAR. CODUSU solo no alcanza: hay viviendas con mas de un hogar.",
+      "segundos": 0.5,
+      "salidas": {
+        "data/interim/eph_3t2025_unida.parquet": {
+          "sha256": "beb453d265692c637da75e08ad4fc64b46e7109591f8512056144a3c1ecdd3c5",
+          "forma": "44,946 x 331"
+        }
+      }
+    },
+    {
+      "etapa": "03_eph_indicadores",
+      "que_hace": "Calcula los indicadores socioeconomicos por provincia, todos ponderados. El ingreso va con PONDIH y no con PONDERA.",
+      "segundos": 0.56,
+      "salidas": {
+        "data/interim/eph_indicadores_provincia.csv": {
+          "sha256": "dbcfad8705f2a5739f19388fa2353efe6b26841e108386fc80b95411d9f7686d",
+          "forma": "24 x 13"
+        },
+        "data/interim/eph_diccionario.csv": {
+          "sha256": "c9a5de3b5130342370d5519a37e81b018742e9b17b6bdd1791216ee6f6fb197f",
+          "forma": "8 x 3"
+        }
+      }
+    },
+    {
+      "etapa": "04_integrar",
+      "que_hace": "Cruza Aprender con el contexto de la EPH. Es un join de muchos a uno: cada departamento hereda los indicadores de su provincia, y esa es la principal limitacion del dataset.",
+      "segundos": 0.13,
+      "salidas": {
+        "data/processed/dataset_maestro_base.csv": {
+          "sha256": "56354daf2ac78400329a51c7bf963cf6477d326837404941a957e1d669b6efd5",
+          "forma": "1,174 x 119"
+        }
+      }
+    },
+    {
+      "etapa": "05_armonizar",
+      "que_hace": "Lleva a una escala comparable las variables que las dos fuentes miden distinto, y deja el dataset maestro final.",
+      "segundos": 0.28,
+      "salidas": {
+        "data/processed/dataset_maestro_inicial.csv": {
+          "sha256": "1902ecfdd414ac9d2c23cd2d00bc470f07fa0ee0089aea1d3a7ba25edd581d18",
+          "forma": "1,174 x 131"
+        }
+      }
+    },
+    {
+      "etapa": "06_diccionario",
+      "que_hace": "Genera una fila por columna del dataset, con su definicion y su fuente, mas la tabla de correspondencia entre Aprender y la EPH.",
+      "segundos": 0.03,
+      "salidas": {
+        "data/processed/diccionario_variables.csv": {
+          "sha256": "807e7d791f7cb62976bf3694ad5bf2aae3347ba064182b5ff390be5e48104f64",
+          "forma": "131 x 10"
+        },
+        "data/processed/armonizacion_fuentes.csv": {
+          "sha256": "b1262a6672c312cead3c6f1d9a2ac5b29da9aef461ad6d640f17016130f012e0",
+          "forma": "5 x 6"
+        }
+      }
+    }
+  ]
+}

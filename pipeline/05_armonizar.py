@@ -92,7 +92,12 @@ def armonizar_eph():
 
 
 def main():
-    maestro = pd.read_csv(PROCESADO / "dataset_maestro_inicial.csv")
+    # Lee la salida de la etapa 04 y escribe a un archivo DISTINTO. Antes leia
+    # y escribia sobre dataset_maestro_inicial.csv, o sea que mutaba su propia
+    # entrada: correrla dos veces sin rehacer la 04 apilaba las columnas
+    # armonizadas encima de las que ya estaban (131 -> 155 columnas), sin error
+    # y sin aviso. Ver pipeline/contrato.py, regla 1.
+    maestro = pd.read_csv(PROCESADO / "dataset_maestro_base.csv")
 
     print("=" * 74)
     print("ARMONIZACION DEL NIVEL EDUCATIVO A UNA ESCALA COMUN")
