@@ -248,6 +248,33 @@ def buscar_problemas(maestro: pd.DataFrame, perfil: pd.DataFrame) -> list[dict]:
            "que un join o un group by parta el mismo grupo en dos",
            inconsistentes)
 
+    # --- 7 bis. Valores centinela en las claves ------------------------------
+    # Un centinela es un texto que ocupa el lugar de un valor real pero NO lo
+    # es. El chequeo 7 mira el FORMATO (espacios, mayusculas) y por eso no los
+    # ve: "Enmascarado" esta perfectamente escrito. La primera version de este
+    # perfil no lo cazo, y aparecio recien mirando a mano las filas extremas.
+    # Importa porque rompe el significado de la clave territorial: si el mismo
+    # texto aparece en 23 jurisdicciones, esa fila no es un departamento, es
+    # "el resto de los departamentos chicos de esa provincia".
+    CENTINELAS = ("ENMASCARADO", "SIN DATO", "NO APLICA", "S/D", "NC", "9999")
+    encontrados = []
+    for col in CLAVES:
+        valores = maestro[col].astype(str).str.strip().str.upper()
+        for centinela in CENTINELAS:
+            n = int((valores == centinela).sum())
+            if n:
+                jur = maestro.loc[valores == centinela, "jurisdiccion"].nunique()
+                est = maestro.loc[valores == centinela, "estudiantes"].sum()
+                encontrados.append(
+                    f"{col} = '{centinela}': {n} filas en {jur} jurisdicciones, "
+                    f"{est:,.0f} estudiantes "
+                    f"({100 * est / maestro['estudiantes'].sum():.1f}%)")
+    anotar("valor centinela en una clave",
+           "alta" if encontrados else "ok", len(encontrados), len(CLAVES),
+           "un texto que ocupa el lugar de un valor real sin serlo. Si el mismo "
+           "centinela aparece en varias jurisdicciones, esas filas no son un "
+           "departamento: son un agregado de varios", encontrados)
+
     # --- 8. Cobertura baja: el dato existe pero representa poco --------------
     cobs = [c for c in maestro.columns if c.startswith("cob__")]
     bajas = []
@@ -285,15 +312,34 @@ def buscar_problemas(maestro: pd.DataFrame, perfil: pd.DataFrame) -> list[dict]:
         iqr = q3 - q1
         if iqr <= TOLERANCIA:
             continue
-        n = int(((s < q1 - 3 * iqr) | (s > q3 + 3 * iqr)).sum())
-        if n:
-            con_extremos.append((col, n))
+        marcadas = (s < q1 - 3 * iqr) | (s > q3 + 3 * iqr)
+        n = int(marcadas.sum())
+        if not n:
+            continue
+        # Traducir la proporcion a PERSONAS. Es lo que decide si el extremo es
+        # un error o una senal: en una columna donde el 70% de las filas vale
+        # 0, el umbral de "extremo" puede quedar por debajo de lo que aporta
+        # UN SOLO estudiante. Sin este numero, el chequeo marca "aca hay un
+        # pibe de 21 anos" y lo hace pasar por anomalia.
+        if familia_de(col) in ("proporcion", "armonizada"):
+            personas = (maestro.loc[marcadas.reindex(maestro.index, fill_value=False),
+                                    col]
+                        * maestro.loc[marcadas.reindex(maestro.index, fill_value=False),
+                                      "estudiantes"])
+            mediana_personas = float(personas.median()) if len(personas) else float("nan")
+        else:
+            mediana_personas = float("nan")
+        con_extremos.append((col, n, mediana_personas))
     con_extremos.sort(key=lambda x: -x[1])
     anotar("columna con valores extremos (3x IQR)",
            "baja" if con_extremos else "ok", len(con_extremos), len(numericas),
-           "valores muy lejos del cuerpo de la distribucion. NO son "
-           "necesariamente errores: pueden ser departamentos chicos",
-           [f"{c} ({n})" for c, n in con_extremos[:12]])
+           "valores lejos del cuerpo de la distribucion. La columna 'personas' "
+           "dice cuanta gente hay detras de la proporcion marcada: si la "
+           "mediana es 1 o 2, el chequeo no esta encontrando un error, esta "
+           "encontrando un caso raro real",
+           [f"{c}: {n} filas, mediana {p:.1f} personas detras"
+            if p == p else f"{c}: {n} filas"
+            for c, n, p in con_extremos[:12]])
 
     return hallazgos
 

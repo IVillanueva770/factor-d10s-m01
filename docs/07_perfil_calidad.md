@@ -31,6 +31,12 @@ Cada chequeo con su denominador. `ok` = el chequeo corrio y no encontro nada.
 
 - `cob__sexo`
 
+### [ALTA] valor centinela en una clave
+
+**1 de 4**. un texto que ocupa el lugar de un valor real sin serlo. Si el mismo centinela aparece en varias jurisdicciones, esas filas no son un departamento: son un agregado de varios.
+
+- `departamento = 'ENMASCARADO': 63 filas en 23 jurisdicciones, 10,444 estudiantes (1.9%)`
+
 ### [MEDIA] bloque con cobertura menor al 50%
 
 **2 de 16**. la proporcion es real pero se calculo sobre menos de la mitad de los estudiantes de esa fila: el numero existe y significa poco.
@@ -40,20 +46,20 @@ Cada chequeo con su denominador. `ok` = el chequeo corrio y no encontro nada.
 
 ### [BAJA] columna con valores extremos (3x IQR)
 
-**75 de 94**. valores muy lejos del cuerpo de la distribucion. NO son necesariamente errores: pueden ser departamentos chicos.
+**75 de 94**. valores lejos del cuerpo de la distribucion. La columna 'personas' dice cuanta gente hay detras de la proporcion marcada: si la mediana es 1 o 2, el chequeo no esta encontrando un error, esta encontrando un caso raro real.
 
-- `edad__21_anos (138)`
-- `estudiantes (101)`
-- `edad__mas_de_22_anos (72)`
-- `edad__16_anos (63)`
-- `sobreedad__menores_de_17_anos (63)`
-- `edad__20_anos (51)`
-- `educ_madre__no_fue_a_la_escuela (50)`
-- `asistio_jardin__no_no_fui_al_jardin (45)`
-- `inasistencias__ninguna_falta (32)`
-- `sobreedad__3_anos_o_mas_de_sobreedad_20_anos_o_mas_30jun (32)`
-- `tamano_hogar__vivo_solo (27)`
-- `tamano_hogar__10_o_mas (27)`
+- `edad__21_anos: 138 filas, mediana 2.3 personas detras`
+- `estudiantes: 101 filas`
+- `edad__mas_de_22_anos: 72 filas, mediana 3.4 personas detras`
+- `edad__16_anos: 63 filas, mediana 5.4 personas detras`
+- `sobreedad__menores_de_17_anos: 63 filas, mediana 5.3 personas detras`
+- `edad__20_anos: 51 filas, mediana 4.2 personas detras`
+- `educ_madre__no_fue_a_la_escuela: 50 filas, mediana 2.9 personas detras`
+- `asistio_jardin__no_no_fui_al_jardin: 45 filas, mediana 6.5 personas detras`
+- `inasistencias__ninguna_falta: 32 filas, mediana 7.4 personas detras`
+- `sobreedad__3_anos_o_mas_de_sobreedad_20_anos_o_mas_30jun: 32 filas, mediana 7.3 personas detras`
+- `tamano_hogar__vivo_solo: 27 filas, mediana 3.0 personas detras`
+- `tamano_hogar__10_o_mas: 27 filas, mediana 6.6 personas detras`
 
 ### [ok] clave territorial duplicada
 
