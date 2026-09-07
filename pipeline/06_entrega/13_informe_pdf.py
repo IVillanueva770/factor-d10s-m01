@@ -105,16 +105,20 @@ ANCHO_UTIL = A4[0] - 2 * MARGEN_X
 # Estilos
 # --------------------------------------------------------------------------
 S = {}
+# El encabezado necesita mas aire del que parece: con `leading` apenas mayor
+# que el cuerpo, tres bloques de texto seguidos se leen como un ladrillo. La
+# primera version usaba spaceAfter=2 en el titulo y 11,4 de interlineado en la
+# metadata, y quedaba apretado.
 S["titulo"] = ParagraphStyle(
-    "titulo", fontName="Helvetica-Bold", fontSize=20, leading=23,
-    textColor=TINTA, spaceAfter=2,
+    "titulo", fontName="Helvetica-Bold", fontSize=21, leading=25,
+    textColor=TINTA, spaceAfter=7,
 )
 S["subtitulo"] = ParagraphStyle(
-    "subtitulo", fontName="Helvetica", fontSize=10.5, leading=14,
-    textColor=AZUL, spaceAfter=5,
+    "subtitulo", fontName="Helvetica", fontSize=10.5, leading=15,
+    textColor=AZUL, spaceAfter=9,
 )
 S["meta"] = ParagraphStyle(
-    "meta", fontName="Helvetica", fontSize=8.2, leading=11.4,
+    "meta", fontName="Helvetica", fontSize=8.2, leading=13,
     textColor=TINTA_SUAVE,
 )
 S["seccion"] = ParagraphStyle(
@@ -232,8 +236,12 @@ def decorado(canvas, doc):
     canvas.drawString(MARGEN_X, MARGEN_INF - 8.4 * mm,
                       "Entregable 2 · Mentoría M01 El Factor D10S "
                       "· Diplomatura en Ciencia de Datos, FAMAF (UNC)")
-    canvas.drawRightString(A4[0] - MARGEN_X, MARGEN_INF - 8.4 * mm,
-                           f"{doc.page} de 4")
+    # El total sale de doc.page en la ultima pasada, no escrito a mano: con el
+    # numero fijo, una pagina de mas imprimia "5 de 4" y el PDF se contradecia
+    # a si mismo sin que nadie lo notara.
+    total = getattr(doc, "total_paginas", None)
+    marca = f"{doc.page} de {total}" if total else f"{doc.page}"
+    canvas.drawRightString(A4[0] - MARGEN_X, MARGEN_INF - 8.4 * mm, marca)
     canvas.restoreState()
 
 
@@ -248,14 +256,19 @@ def construir():
     F.append(p("Entregable 2 · Grupo M01 «El Factor D10S» "
                "· Abandono escolar en la educación secundaria",
                "subtitulo"))
+    # Sin autor individual: el entregable es del grupo M01, que ya esta
+    # nombrado en el subtitulo. Poner un nombre propio aca dejaria en evidencia
+    # quien lo escribio y quien no, y esa no es informacion que el informe
+    # tenga que dar.
     F.append(p(
-        "Autor: Ignacio Villanueva &nbsp;·&nbsp; Mentora: Noelia Ferrero "
-        "&nbsp;·&nbsp; Fuentes: Aprender 2024 (base de datos abierta) y "
-        "EPH 3T-2025 (INDEC)<br/>"
+        "Mentora: Noelia Ferrero &nbsp;·&nbsp; Diplomatura en Ciencia de Datos, "
+        "FAMAF (UNC)<br/>"
+        "Fuentes: Aprender 2024 (base agregada, Secretaría de Educación) y "
+        "EPH 3er trimestre 2025 (INDEC)<br/>"
         "Código, datos y documentación: "
         "<font color='#2a78d6'>github.com/IVillanueva770/factor-d10s-m01</font>",
         "meta"))
-    F.append(Spacer(1, 5))
+    F.append(Spacer(1, 9))
 
     F += seccion(1, "¿Qué encontramos en los datos?")
     F.append(p(
@@ -297,7 +310,7 @@ def construir():
         "de política pública, no de geografía."))
 
     F.append(figura(
-        "tp2_b_brecha_gestion.png", 152,
+        "tp2_b_brecha_gestion.png", 147,
         "Figura 1. Desempeño bajo en matemática por sector y "
         "ámbito, ponderado por estudiantes. El panel derecho muestra "
         "cuánta gente hay detrás de cada barra: sin ese panel, la "
@@ -362,7 +375,7 @@ def construir():
         "chicos de cada provincia."))
 
     F.append(figura(
-        "tp2_a_calidad_cobertura.png", 152,
+        "tp2_a_calidad_cobertura.png", 147,
         "Figura 2. Cobertura mediana por bloque de preguntas (izquierda) y "
         "cobertura de clima escolar según el tamaño del grupo "
         "(derecha). La curva de la derecha es el argumento: si el faltante "
@@ -548,7 +561,7 @@ def construir():
         "resultado."))
 
     F.append(figura(
-        "tp2_d_inasistencias.png", 142,
+        "tp2_d_inasistencias.png", 137,
         "Figura 4. Correlación de cada medida de inasistencia con el "
         "desempeño bajo en matemática (izquierda) y la misma "
         "relación abierta por sector y ámbito (derecha)."))
@@ -615,10 +628,9 @@ def construir():
         "denominador.", "limit"))
     F.append(p(
         "<b>El perfilado no sabe si un valor es correcto, solo si es "
-        "posible.</b> Contra los datos crudos comparan los 55 invariantes "
-        "de tests/test_invariantes.py, y la reproducibilidad está "
-        "verificada: corriendo el pipeline dos veces, 18 de 18 salidas salen "
-        "idénticas byte a byte.", "limit"))
+        "posible.</b> Eso lo cubren los 55 invariantes que corren contra los "
+        "datos crudos. Y la reproducibilidad esta medida: dos corridas "
+        "del pipeline dan 18 de 18 salidas identicas byte a byte."))
 
     return F
 
@@ -630,7 +642,7 @@ def main():
         leftMargin=MARGEN_X, rightMargin=MARGEN_X,
         topMargin=MARGEN_SUP, bottomMargin=MARGEN_INF,
         title="TP2 Resumen de hallazgos - Grupo M01 El Factor D10S",
-        author="Ignacio Villanueva",
+        author="Grupo M01 - El Factor D10S",
         subject="Entregable 2, Mentoria M01, Diplomatura en Ciencia de Datos "
                 "(FAMAF, UNC)",
     )
@@ -640,8 +652,13 @@ def main():
                   topPadding=0, bottomPadding=0)
     doc.addPageTemplates([PageTemplate(id="base", frames=[marco],
                                        onPage=decorado)])
+    # Dos pasadas: la primera cuenta las paginas, la segunda las imprime con
+    # el total correcto en el pie. Es el precio de que el total sea un dato
+    # medido y no un numero escrito a mano.
     doc.build(construir())
-    print(f"PDF escrito en {SALIDA}")
+    doc.total_paginas = doc.page
+    doc.build(construir())
+    print(f"PDF escrito en {SALIDA} ({doc.total_paginas} paginas)")
 
 
 if __name__ == "__main__":
