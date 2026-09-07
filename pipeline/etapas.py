@@ -142,6 +142,22 @@ Etapa(
             f"{PROC}/armonizacion_fuentes.csv",
         ),
     ),
+    Etapa(
+        numero=10,
+        nombre="relaciones",
+        archivo="04_analisis/10_relaciones.py",
+        que_hace=(
+            "Explora las relaciones del dataset curado (actividad 3 de la "
+            "consigna) y ademas mide si alguna decision de curacion movio algun "
+            "numero. Todo ponderado por estudiantes; las correlaciones con la "
+            "EPH, a nivel provincia."
+        ),
+        entradas=(f"{PROC}/dataset_maestro_curado.csv",),
+        salidas=(
+            f"{PROC}/relaciones_tablas.csv",
+            "docs/10_relaciones.md",
+        ),
+    ),
 ]
 
 
