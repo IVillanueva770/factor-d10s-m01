@@ -158,6 +158,23 @@ Etapa(
             "docs/10_relaciones.md",
         ),
     ),
+    Etapa(
+        numero=11,
+        nombre="figuras",
+        archivo="04_analisis/11_figuras.py",
+        que_hace=(
+            "Las cuatro figuras del TP2, una por hallazgo. Heredan la paleta y "
+            "los criterios del TP1 sin agregar colores: paleta validada para "
+            "daltonismo, marcas finas, grilla recesiva y etiquetas directas."
+        ),
+        entradas=(f"{PROC}/dataset_maestro_curado.csv",),
+        salidas=(
+            "figuras/tp2_a_calidad_cobertura.png",
+            "figuras/tp2_b_brecha_gestion.png",
+            "figuras/tp2_c_contexto_rendimiento.png",
+            "figuras/tp2_d_inasistencias.png",
+        ),
+    ),
 ]
 
 
