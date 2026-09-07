@@ -27,7 +27,11 @@ relaciones. Reconstruir el maestro adentro seria duplicar 600 lineas del TP1.
 import hashlib
 import json
 import subprocess
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from contenido_tp2 import secciones_2_a_7  # noqa: E402
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 PROC = BASE_DIR / "data" / "processed"
@@ -237,6 +241,11 @@ CLAVES = ["jurisdiccion", "departamento", "sector", "ambito"]
 print(f"{media_ponderada(maestro, MATE_BAJO):.1%} de los estudiantes esta por "
       "debajo del nivel basico en matematica")
 ''')
+
+    # Las secciones 2 a 7 viven en `contenido_tp2.py`: ahi va el texto y el
+    # codigo que se ve en el notebook, y aca la mecanica de armarlo. Juntos
+    # darian un archivo de 900 lineas donde no se encuentra nada.
+    secciones_2_a_7(md, code)
 
     return celdas
 
