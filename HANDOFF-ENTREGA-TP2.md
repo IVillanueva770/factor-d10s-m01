@@ -10,13 +10,19 @@ Proyecto local: `C:\Users\Ignacio Villanueva\Desktop\Karpathy\personal-infra\Dip
 
 ## Lo que hay que hacer (esto es todo)
 
-El trabajo está terminado y verificado. **Lo que falta son tres acciones de
-Ignacio, ninguna de código.**
+El trabajo está terminado y verificado. **De las tres acciones que faltaban, la
+primera ya está hecha; las dos que quedan son de Ignacio y ninguna es de código.**
 
-1. **Subir el notebook a Google Colab** y compartirlo **con permiso de
-   comentarios**. La consigna lo pide explícitamente para la devolución de la
-   mentoría. Alternativa que la consigna también acepta: pasar el link del
-   repo, que ya existe.
+1. ~~**Subir el notebook a Google Colab** y compartirlo con permiso de
+   comentarios.~~ **HECHO el 2026-09-07.** Está en el Drive de
+   `ignavillanueva96@gmail.com`, con acceso "cualquiera con el enlace puede
+   comentar", y se corrió entero ahí mismo:
+
+   **https://colab.research.google.com/drive/11hX554RMcFFvFp_47krwLrA9qGLjcP-I**
+
+   Ojo con una cosa: eso es una **copia** en Drive. Si se regenera el notebook
+   desde el pipeline, la copia de Colab queda vieja y hay que volver a subirla
+   (o abrir de nuevo el del repo desde Colab y copiarlo).
 2. **Chequear si abrieron el buzón de entrega** en el aula virtual. Al 2026-09-02
    el curso 764 (`famaf.aulavirtual.unc.edu.ar/mod/assign/index.php?id=764`)
    tenía un solo assign, el Práctico 1. Si sigue cerrado, avisarle a Noelia por
@@ -52,10 +58,11 @@ No son promesas: cada uno se midió corriendo algo.
   largos, sin nombres propios.
 - Todo commiteado y pusheado. Último commit: `2ceb33d`.
 
-**Veredicto sobre Colab**: arrastrarlo y darle "Ejecutar todas las celdas"
-funciona. El notebook no necesita ningún `pip install` porque pandas, numpy,
-matplotlib y scipy vienen preinstalados. Igual conviene que Ignacio lo abra una
-vez: Colab cambia versiones sin avisar y ningún entorno simulado es el real.
+**Colab, ya no simulado (2026-09-07)**: se corrió el notebook en Colab de
+verdad, con Python 3 y las versiones que Colab sirve hoy. **25 de 25 celdas con
+salida, cero errores**, cero `pip install` necesarios, y la última celda escribió
+el dataset curado: **1.174 filas x 133 columnas**. El notebook quedó guardado con
+esas salidas dentro.
 
 ---
 
@@ -147,8 +154,6 @@ script que lo mide está en `exploracion/20_cruce_con_repo_referencia.py`.
 
 Honesto, para que nadie lo dé por hecho:
 
-- **Nadie corrió el notebook en Google Colab de verdad.** Se simuló con las
-  versiones que Colab trae hoy.
 - **No se validó la corrección estadística** de los análisis, solo que corren y
   producen las salidas que declaran.
 - **La hipótesis sobre inasistencias sigue sin verificar** y así está escrita en
