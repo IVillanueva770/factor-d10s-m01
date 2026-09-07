@@ -106,15 +106,40 @@ def brecha_por_gestion(d):
         er = v("Estatal", "Rural", SOBREEDAD_ALTA)
         razon = er / pu if pu and pu == pu and pu > 0 else np.nan
 
+    # El titular sale de la comparacion entre las dos celdas URBANAS, no de la
+    # mas llamativa. Motivo: privado rural son 36 filas y 3.679 estudiantes
+    # (0,7% del total) y es ademas la celda de mayor dispersion, asi que un
+    # argumento apoyado ahi se cae ante la primera pregunta por el denominador.
+    # Las dos urbanas juntas cubren 504.759 estudiantes, el 93,5%.
+    eu, pu_ = v("Estatal", "Urbano", MATE_BAJO), v("Privado", "Urbano", MATE_BAJO)
+    er_, pr_ = v("Estatal", "Rural", MATE_BAJO), v("Privado", "Rural", MATE_BAJO)
+    est_urb = tabla.loc[tabla["ambito"] == "Urbano", "estudiantes"].sum()
+    total = tabla["estudiantes"].sum()
+    _pr = (tabla["sector"] == "Privado") & (tabla["ambito"] == "Rural")
+    est_pr = tabla.loc[_pr, "estudiantes"].sum()
+    filas_pr = tabla.loc[_pr, "filas"].sum()
+
     lectura = (
-        "La sobreedad alta (3 anios o mas, o sea 20 anios cumplidos o mas) es "
-        f"**{razon:.1f} veces mayor en estatal rural que en privado urbano**. "
-        "La brecha mas grande no esta entre urbano y rural sino entre sectores "
-        "de gestion: dentro de un mismo ambito, la diferencia por sector es "
-        "mayor que la diferencia por ambito dentro de un mismo sector. Eso "
-        "importa para el proyecto porque sugiere que la variable a mirar no es "
-        "donde queda la escuela sino quien la gestiona, que es una pregunta de "
-        "politica publica y no de geografia."
+        f"**Dentro del mismo ambito urbano, cambiar de sector mueve el "
+        f"desempenio {abs(eu - pu_):.2f} puntos** (estatal {eu:.2f} contra "
+        f"privado {pu_:.2f}). Cambiar de ambito dentro de privado lo mueve "
+        f"{abs(pr_ - pu_):.2f}. **El sector pesa mas que el lugar.**\n\n"
+        f"Este titular se apoya en las dos celdas urbanas a proposito, porque "
+        f"entre las dos suman {est_urb:,.0f} estudiantes, el "
+        f"{100 * est_urb / total:.1f}% del total.\n\n"
+        f"*Dato de color, con su denominador:* un estudiante de estatal urbana "
+        f"({eu:.2f}) esta peor que uno de privada RURAL ({pr_:.2f}), o sea que "
+        f"el campo no es lo que lo hunde. Es la comparacion mas ilustrativa y "
+        f"la mas fragil: privada rural son {filas_pr:.0f} filas y "
+        f"{est_pr:,.0f} estudiantes, el "
+        f"{100 * est_pr / total:.1f}% del total, y es ademas la celda con mayor "
+        f"dispersion (ver el analisis de tamanio de grupo). Sirve para ilustrar, "
+        f"no para sostener el argumento sola.\n\n"
+        f"En sobreedad alta la brecha va en el mismo sentido: es {razon:.1f} "
+        f"veces mayor en estatal rural que en privado urbano.\n\n"
+        "**Por que importa para el proyecto:** sugiere que la variable a mirar "
+        "no es donde queda la escuela sino quien la gestiona, y eso es una "
+        "pregunta de politica publica, no de geografia."
     ) if razon == razon else "No se pudo calcular la razon entre sectores."
     return "Brecha por sector de gestion y ambito", tabla, lectura
 
@@ -283,8 +308,210 @@ def ranking_provincias(d):
     return "Provincias: los dos extremos", tabla, lectura
 
 
-ANALISIS = [brecha_por_gestion, contexto_vs_rendimiento, sobreedad_y_desempenio,
-            efecto_de_la_curacion, ranking_provincias]
+
+def robustez_del_contexto(d):
+    """Estresa la correlacion mas fuerte del trabajo en vez de solo reportarla.
+
+    El proceso decisorio, que vale mas que el numero: una correlacion de
+    Pearson tiene dos debilidades conocidas, y cada prueba de aca ataca una.
+
+    Miedo 1, que la sostenga un solo caso raro. CABA es el sospechoso natural:
+    es la jurisdiccion mas rica del pais y la de mejor desempenio, y esta sola
+    en ese rincon del grafico. Si toda la relacion fuera "CABA arriba a la
+    izquierda y el resto amontonado", sacarla la haria desaparecer.
+
+    Miedo 2, que la relacion sea fuerte pero curva. Pearson solo ve lineas
+    rectas. Spearman ignora la forma y mira unicamente el ORDEN: si la
+    provincia mas rica es la de mejor desempenio, la segunda mas rica la
+    segunda, y asi. Si Spearman da mas fuerte que Pearson, la relacion existe
+    y no es del todo lineal.
+
+    La regla que queda para todo el proyecto: antes de creerle a una
+    correlacion, preguntate QUIEN LA SOSTIENE y QUE FORMA TIENE.
+    """
+    prov = d.groupby("jurisdiccion").apply(
+        lambda g: pd.Series({
+            "ipcf": g[INGRESO].iloc[0],
+            "mate_bajo": media_ponderada(g, MATE_BAJO),
+        }), include_groups=False)
+    sin_caba = prov.drop(index=[i for i in prov.index if "Aut" in i])
+    tabla = pd.DataFrame([
+        {"prueba": "Pearson, las 24 jurisdicciones", "n": len(prov),
+         "r": prov["ipcf"].corr(prov["mate_bajo"])},
+        {"prueba": "Pearson, sin CABA", "n": len(sin_caba),
+         "r": sin_caba["ipcf"].corr(sin_caba["mate_bajo"])},
+        {"prueba": "Spearman, las 24", "n": len(prov),
+         "r": prov["ipcf"].corr(prov["mate_bajo"], method="spearman")},
+        {"prueba": "Spearman, sin CABA", "n": len(sin_caba),
+         "r": sin_caba["ipcf"].corr(sin_caba["mate_bajo"], method="spearman")},
+    ])
+    lectura = (
+        "**Por que estas tres pruebas y no otras.** Una correlacion de Pearson "
+        "falla de dos maneras conocidas, y cada prueba ataca una.\n\n"
+        "*Que la sostenga un solo caso raro.* CABA es el sospechoso natural: es "
+        "la jurisdiccion mas rica y la de mejor desempenio, y esta sola en ese "
+        "rincon. Si la relacion fuera solo ella, sacarla la derrumbaria. Se "
+        "saco y la relacion se mantiene.\n\n"
+        "*Que la relacion sea fuerte pero curva.* Pearson solo ve lineas "
+        "rectas; Spearman ignora la forma y mira solo el orden. Spearman da mas "
+        "fuerte que Pearson, lo que sugiere que la relacion es algo curva: el "
+        "salto entre las provincias mas pobres pesa mas que entre las mas "
+        "ricas.\n\n"
+        "**La relacion sobrevive las tres pruebas**, asi que no depende de un "
+        "outlier ni es un artefacto de suponer linealidad.\n\n"
+        "**Y el n es parte del dato.** Son 24 puntos, uno por jurisdiccion, no "
+        "1.174. Con 24 observaciones, mover dos o tres cambia bastante el "
+        "resultado. Por eso el numero se cita siempre como *r = -0,82 sobre 24 "
+        "jurisdicciones* y nunca como *r = -0,82* a secas."
+    )
+    return "Robustez de la correlacion mas fuerte del trabajo", tabla, lectura
+
+
+def inasistencias_acumuladas(d):
+    """El hallazgo contraintuitivo, y como aparecio.
+
+    La primera version probo UNA sola categoria, la cola extrema (30 faltas o
+    mas), y dio r = +0,000. La conclusion habria sido "las inasistencias no se
+    relacionan con el desempenio", que es falso. El error fue medir el extremo
+    de una distribucion en vez del acumulado: casi nadie cae en la categoria
+    mas extrema, asi que esa columna casi no varia y no puede correlacionar con
+    nada.
+    """
+    acum = {
+        "ninguna falta": ["inasistencias__ninguna_falta"],
+        "5 o mas faltas": ["inasistencias__de_5_a_14_faltas",
+                           "inasistencias__de_15_a_19_faltas",
+                           "inasistencias__de_20_a_29_faltas",
+                           "inasistencias__30_o_mas_faltas"],
+        "15 o mas faltas": ["inasistencias__de_15_a_19_faltas",
+                            "inasistencias__de_20_a_29_faltas",
+                            "inasistencias__30_o_mas_faltas"],
+        "30 o mas faltas (solo la cola)": ["inasistencias__30_o_mas_faltas"],
+    }
+    filas = []
+    for nombre, cols in acum.items():
+        cols = [c for c in cols if c in d.columns]
+        if not cols:
+            continue
+        serie = d[cols].sum(axis=1)
+        filas.append({
+            "medida": nombre,
+            "r_con_matematica_bajo": serie.corr(d[MATE_BAJO]),
+            "valor_medio_ponderado": np.average(serie, weights=d["estudiantes"]),
+        })
+    tabla = pd.DataFrame(filas)
+
+    # Chequeo de Simpson: se mantiene DENTRO de cada celda de sector x ambito?
+    cols5 = [c for c in acum["5 o mas faltas"] if c in d.columns]
+    dd = d.copy()
+    dd["_faltas5"] = dd[cols5].sum(axis=1)
+    dentro = [{"medida": f"5+ faltas, solo {sec} {amb}",
+               "r_con_matematica_bajo": g["_faltas5"].corr(g[MATE_BAJO]),
+               "valor_medio_ponderado": np.average(
+                   g["_faltas5"], weights=g["estudiantes"])}
+              for (sec, amb), g in dd.groupby(["sector", "ambito"])]
+    tabla = pd.concat([tabla, pd.DataFrame(dentro)], ignore_index=True)
+
+    lectura = (
+        "**El hallazgo mas raro del trabajo, y queda como pregunta abierta, no "
+        "como conclusion.** Cuantos mas chicos de un grupo reportan faltas, "
+        "MENOS chicos de ese grupo estan por debajo del basico. Y los grupos "
+        "donde mas chicos dicen no faltar nunca son los de peor desempenio.\n\n"
+        "**Como aparecio, porque el metodo importa.** La primera medicion uso "
+        "solo la categoria mas extrema (30 faltas o mas) y dio r = +0,000: la "
+        "conclusion habria sido que las inasistencias no se relacionan con "
+        "nada. El error fue mirar la cola de la distribucion en vez del "
+        "acumulado. Casi nadie cae en la categoria extrema, asi que esa columna "
+        "casi no varia y no puede correlacionar con nada.\n\n"
+        "**No es la paradoja de Simpson.** Se calculo el mismo r dentro de cada "
+        "combinacion de sector y ambito (las cuatro ultimas filas de la tabla): "
+        "la relacion negativa se mantiene en las cuatro, asi que no la produce "
+        "mezclar poblaciones distintas.\n\n"
+        "**Quien contesta esto, VERIFICADO en la fuente.** El Manual del "
+        "Aplicador de Aprender 2024 dice que *al finalizar ambas pruebas, los "
+        "estudiantes contestaran un cuestionario complementario*, y que cada "
+        "alumno recibe un Cuadernillo del Estudiante con las hojas para "
+        "registrar sus respuestas. Hay un cuestionario aparte para directores, "
+        "que no es este. O sea que el dato es **lo que el estudiante dice que "
+        "falto**, no un registro administrativo de asistencia.\n\n"
+        "**Hipotesis, explicitamente NO VERIFICADA.** Aprender evalua a quien "
+        "esta presente el dia de la prueba, asi que en una escuela con "
+        "ausentismo real alto los mas ausentes no entran a la muestra. Entre "
+        "los que si rindieron, reportar faltas seria marcador de un alumno "
+        "presente y conectado con la escuela, no de riesgo. Se suma que el dato "
+        "es autorreporte: son dos capas de ruido en la misma variable. "
+        "Verificarlo requiere datos de asistencia administrativa, que este "
+        "dataset no tiene."
+    )
+    return "Inasistencias: el acumulado, no la cola", tabla, lectura
+
+
+def dispersion_por_tamanio(d):
+    """Por que un grupo chico produce valores extremos sin que nada este mal.
+
+    Sale de una pregunta del equipo: si hay pocas escuelas rurales privadas,
+    hay mas chance de ver valores raros ahi? Si. Conviene tenerlo medido antes
+    de citar cualquier numero de una celda chica.
+    """
+    dd = d.copy()
+    dd["_q"] = pd.qcut(dd["estudiantes"], 5,
+                       labels=["1 mas chico", "2", "3", "4", "5 mas grande"])
+    tabla = dd.groupby("_q", observed=True).agg(
+        filas=(MATE_BAJO, "size"),
+        estudiantes_mediana=("estudiantes", "median"),
+        desvio=(MATE_BAJO, "std"),
+        minimo=(MATE_BAJO, "min"),
+        maximo=(MATE_BAJO, "max"),
+    ).reset_index()
+    razon = tabla["desvio"].iloc[0] / tabla["desvio"].iloc[-1]
+    lectura = (
+        f"**El quintil de grupos mas chicos tiene {razon:.1f} veces la "
+        "dispersion del mas grande**, y sus valores llegan a 0,000 y a 1,000, "
+        "o sea los extremos posibles, mientras el quintil grande queda entre "
+        "0,18 y 0,84. No es que los grupos chicos sean mejores ni peores: con "
+        "pocos casos, un estudiante mas o menos mueve mucho el porcentaje.\n\n"
+        "**Consecuencia practica para leer todo este informe:** cualquier "
+        "numero de una celda chica se cita con su denominador al lado. La celda "
+        "privada rural son 36 filas y 3.679 estudiantes, el 0,7% del total, y "
+        "es ademas la de mayor dispersion de las cuatro."
+    )
+    return "Por que los grupos chicos dan valores extremos", tabla, lectura
+
+
+def diferencias_por_sexo(d):
+    """La pregunta de la consigna que este dataset NO permite responder.
+
+    Se documenta el limite en vez de forzar un numero: forzarlo seria peor que
+    no tenerlo, porque daria una respuesta a una pregunta distinta.
+    """
+    cols = [c for c in d.columns if c.startswith("sexo__")]
+    tabla = pd.DataFrame([{
+        "columna": c,
+        "que_mide": "proporcion de esa categoria DENTRO del grupo",
+        "r_con_matematica_bajo": d[c].corr(d[MATE_BAJO]),
+    } for c in cols])
+    lectura = (
+        "**La consigna pregunta si hay diferencias segun sexo, y con esta base "
+        "no se puede responder.** Las columnas `sexo__*` dicen que porcentaje "
+        "del grupo son varones o mujeres; **no** dicen como le fue a cada sexo. "
+        "Para eso haria falta el desempenio desagregado por sexo, que la base "
+        "agregada de Aprender no publica.\n\n"
+        "Lo unico calculable es si los grupos con mas mujeres rinden distinto, "
+        "y da practicamente cero. Ese numero responde una pregunta diferente de "
+        "la que se hizo, asi que se reporta el limite y no el numero.\n\n"
+        "**Es la misma pared que el TP1 ya habia declarado:** la unidad de "
+        "analisis es el grupo territorial y no el estudiante, asi que toda "
+        "pregunta que necesite abrir por atributo individual queda fuera de "
+        "alcance con las bases publicadas."
+    )
+    return "Diferencias por sexo: por que no se puede responder", tabla, lectura
+
+
+ANALISIS = [brecha_por_gestion, dispersion_por_tamanio,
+            contexto_vs_rendimiento, robustez_del_contexto,
+            sobreedad_y_desempenio, inasistencias_acumuladas,
+            diferencias_por_sexo, efecto_de_la_curacion,
+            ranking_provincias]
 
 
 def escribir_informe(resultados, d, destino: Path):
