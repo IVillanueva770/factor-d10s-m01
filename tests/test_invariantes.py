@@ -166,7 +166,7 @@ verificar("la cantidad de estudiantes se conserva",
 # es un hallazgo que se pierde.
 
 curado = pd.read_csv(PROCESADO / "dataset_maestro_curado.csv")
-dicc_curado = pd.read_csv(PROCESADO / "diccionario_curado.csv")
+diccionario = pd.read_csv(PROCESADO / "diccionario_variables.csv")
 
 verificar("la curacion no borro ni agrego filas",
           len(curado) == len(maestro))
@@ -174,9 +174,17 @@ verificar("la curacion no modifico ninguna columna preexistente",
           all(curado[c].equals(maestro[c]) for c in maestro.columns))
 verificar("la curacion solo agrego columnas al final",
           list(curado.columns)[:len(maestro.columns)] == list(maestro.columns))
-verificar("el diccionario curado tiene una fila por columna, sin repetidos",
-          set(dicc_curado["variable"]) == set(curado.columns)
-          and len(dicc_curado) == curado.shape[1])
+verificar("hay UN solo diccionario y describe el dataset curado",
+          set(diccionario["variable"]) == set(curado.columns)
+          and len(diccionario) == curado.shape[1],
+          "una fila por columna, sin repetidos ni faltantes")
+verificar("no quedo un segundo diccionario dando vueltas",
+          not (PROCESADO / "diccionario_curado.csv").exists(),
+          "dos diccionarios se desincronizan y despues nadie sabe cual manda")
+verificar("las columnas de curacion estan documentadas con su justificacion",
+          diccionario[diccionario["bloque"] == "calidad"]["justificacion"].notna().all()
+          and len(diccionario[diccionario["fuente"].astype(str)
+                              .str.contains("curacion")]) == 2)
 
 cols_clima = [c for c in curado.columns if c.startswith("clima_escolar__")]
 verificar("clima_escolar_calidad cubre las 1.174 filas con 3 estados",

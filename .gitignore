@@ -18,4 +18,4 @@ __pycache__/
 entrega/
 data/processed/dataset_maestro_base.csv
 data/processed/dataset_maestro_curado.csv
-data/processed/diccionario_curado.csv
+

@@ -1,4 +1,4 @@
-"""Paso 7: diccionario de variables y armonizacion entre fuentes.
+"""Etapa 09: diccionario de variables y armonizacion entre fuentes.
 
 Son dos de los tres productos que pide la consigna:
   - "Un diccionario de variables con la descripcion y correspondencia entre
@@ -15,6 +15,13 @@ lugar (BLOQUES) y fallan ruidosamente si aparece un bloque sin documentar.
 from pathlib import Path
 
 import pandas as pd
+
+from decisiones import DECISIONES
+
+# Las columnas que agrega la curacion, indexadas por nombre. Se derivan de la
+# fuente unica: si manana se agrega una decision con columna nueva, aparece
+# aca sola y el assert de "una fila por columna" no hay que tocarlo.
+COLUMNAS_DE_CURACION = {d["columna"]: d for d in DECISIONES if d["columna"]}
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 INTERIM = BASE_DIR / "data" / "interim"
@@ -197,7 +204,11 @@ ARMONIZACION = [
 
 
 def main():
-    maestro = pd.read_csv(PROCESADO / "dataset_maestro_inicial.csv")
+    # Lee el dataset CURADO, no el inicial: el diccionario documenta lo que el
+    # proyecto entrega hoy, y hay UNO SOLO. Antes vivia antes de la curacion y
+    # eso obligaba a un segundo archivo para las columnas nuevas; dos
+    # diccionarios se desincronizan y despues nadie sabe cual manda.
+    maestro = pd.read_csv(PROCESADO / "dataset_maestro_curado.csv")
     eph_dicc = pd.read_csv(INTERIM / "eph_diccionario.csv")
 
     filas = []
@@ -300,6 +311,21 @@ def main():
                              "conteo: los conteos originales no son "
                              "comparables entre bases porque cada una trae su "
                              "propio factor de expansion."))
+        elif col in COLUMNAS_DE_CURACION:
+            # La definicion NO se escribe aca: sale de pipeline/decisiones.py,
+            # que es la misma estructura que aplica la curacion en la etapa 08.
+            d = COLUMNAS_DE_CURACION[col]
+            filas.append(dict(
+                variable=col,
+                fuente="derivada (etapa 08, curacion)",
+                variable_origen=None,
+                bloque="calidad",
+                dimension=d["dimension"],
+                descripcion=d["decision"],
+                unidad=d["unidad"],
+                denominador=None,
+                justificacion=d["por_que_importa"],
+                limitaciones=d["hallazgo"]))
         else:
             raise SystemExit(f"Columna sin clasificar: '{col}'")
 

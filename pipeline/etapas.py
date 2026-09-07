@@ -92,23 +92,6 @@ ETAPAS = [
         ),
         salidas=(f"{PROC}/dataset_maestro_inicial.csv",),
     ),
-    Etapa(
-        numero=6,
-        nombre="diccionario",
-        archivo="02_integracion/06_diccionario.py",
-        que_hace=(
-            "Genera una fila por columna del dataset, con su definicion y su "
-            "fuente, mas la tabla de correspondencia entre Aprender y la EPH."
-        ),
-        entradas=(
-            f"{PROC}/dataset_maestro_inicial.csv",
-            f"{INTERIM}/eph_diccionario.csv",
-        ),
-        salidas=(
-            f"{PROC}/diccionario_variables.csv",
-            f"{PROC}/armonizacion_fuentes.csv",
-        ),
-    ),
 Etapa(
         numero=7,
         nombre="perfilado",
@@ -133,14 +116,30 @@ Etapa(
             "borra filas ni modifica valores: agrega columnas que hacen visible "
             "cada problema, para poder excluirlo con una condicion explicita."
         ),
-        entradas=(
-            f"{PROC}/dataset_maestro_inicial.csv",
-            f"{PROC}/diccionario_variables.csv",
-        ),
+        entradas=(f"{PROC}/dataset_maestro_inicial.csv",),
         salidas=(
             f"{PROC}/dataset_maestro_curado.csv",
-            f"{PROC}/diccionario_curado.csv",
             "docs/08_decisiones_curacion.md",
+        ),
+    ),
+    Etapa(
+        numero=9,
+        nombre="diccionario",
+        archivo="03_curacion/09_diccionario.py",
+        que_hace=(
+            "Genera UNA fila por cada columna del dataset curado, con su "
+            "definicion, su fuente y su denominador, mas la tabla de "
+            "correspondencia entre Aprender y la EPH. Va al final del pipeline "
+            "para que documente lo que el proyecto entrega y para que haya un "
+            "solo diccionario, no uno por version del dataset."
+        ),
+        entradas=(
+            f"{PROC}/dataset_maestro_curado.csv",
+            f"{INTERIM}/eph_diccionario.csv",
+        ),
+        salidas=(
+            f"{PROC}/diccionario_variables.csv",
+            f"{PROC}/armonizacion_fuentes.csv",
         ),
     ),
 ]
