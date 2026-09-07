@@ -14,19 +14,21 @@ POR QUE ASI (decisiones de diseno, no de implementacion)
    pagina en el codigo, que es justo lo que hace falta para garantizar
    cuatro paginas exactas.
 
-2. Cuatro paginas planificadas, no cuatro paginas emergentes.
-   El contenido se corta con PageBreak explicito en los tres puntos
-   elegidos. El flujo libre daria tres o cinco paginas segun cuanto crezca
-   un parrafo, y una figura partida al medio. Con el corte explicito, si un
-   bloque se pasa de largo el PDF sale con cinco paginas y la verificacion
-   lo detecta: el error se vuelve visible en vez de silencioso.
+2. Flujo continuo con anclas, no cuatro paginas cortadas a mano.
+   La primera version cortaba con PageBreak en tres puntos elegidos, y el
+   resultado fue peor: una pagina quedaba con un cuarto en blanco y otra
+   se pasaba de largo. Ahora el texto fluye y lo que se fija son las tres
+   costuras que si importan: los titulos llevan keepWithNext para que
+   ninguno quede huerfano al pie, cada figura viaja pegada a su epigrafe
+   en un KeepTogether, y el par "lo MEDIDO / lo INFERIDO" no se puede
+   partir porque media distincion no sirve de nada. Las cuatro paginas se
+   consiguen ajustando cuanto se escribe, que es lo honesto, y se
+   verifican con pypdf despues de cada corrida.
 
-3. Una figura por pagina, siempre al pie del bloque que la explica.
-   Las cuatro figuras del TP2 son 2:1 o mas anchas salvo la del cruce con
-   la EPH, que es 1,7:1. Cada una se escala por ancho y se la deja respirar
-   con su epigrafe debajo; la del cruce va mas angosta y centrada para que
-   no coma media pagina. Nunca una figura sin texto que la introduzca
-   arriba, para que no quede un titulo huerfano al final de una pagina.
+3. Las figuras se escalan por ancho y nunca aparecen sin texto que las
+   introduzca arriba. Las del TP2 son 2:1 o mas anchas salvo la del cruce
+   con la EPH, que es 1,7:1 y por eso va mas angosta y centrada: a ancho
+   completo se comeria media pagina.
 
 4. La identidad visual se hereda del TP1 y no se amplia.
    Paleta categorica de cuatro colores validada para daltonismo, en orden
@@ -71,7 +73,6 @@ from reportlab.platypus import (
     Frame,
     Image,
     KeepTogether,
-    PageBreak,
     PageTemplate,
     Paragraph,
     Spacer,
@@ -96,8 +97,8 @@ FIGURAS = RAIZ / "figuras"
 SALIDA = RAIZ / "entrega" / "TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf"
 
 MARGEN_X = 16 * mm
-MARGEN_SUP = 14 * mm
-MARGEN_INF = 15 * mm
+MARGEN_SUP = 13 * mm
+MARGEN_INF = 14 * mm
 ANCHO_UTIL = A4[0] - 2 * MARGEN_X
 
 # --------------------------------------------------------------------------
@@ -134,6 +135,9 @@ S["cuerpo"] = ParagraphStyle(
 )
 S["cuerpo_ap"] = ParagraphStyle(
     "cuerpo_ap", parent=S["cuerpo"], leftIndent=9, spaceAfter=3.2,
+)
+S["limit"] = ParagraphStyle(
+    "limit", parent=S["cuerpo"], spaceAfter=2.6,
 )
 S["epigrafe"] = ParagraphStyle(
     "epigrafe", fontName="Helvetica-Oblique", fontSize=7.8, leading=10.4,
@@ -312,16 +316,16 @@ def construir():
     F.append(tabla(
         [["Chequeo con hallazgo", "Resultado", "Sev."],
          ["columna constante o vacía",
-          "<b>1 de 110</b>: cob__sexo vale 1,0 en las 1.174 filas", "ALTA"],
+          "<b>1 de 110</b>: cob__sexo vale 1,0 en las 1.174 filas", "<font color='#eb6834'><b>ALTA</b></font>"],
          ["valor centinela en una clave",
           "<b>1 de 4</b>: departamento = 'Enmascarado' en 63 filas de 23 "
-          "jurisdicciones, 10.444 estudiantes (1,9%)", "ALTA"],
+          "jurisdicciones, 10.444 estudiantes (1,9%)", "<font color='#eb6834'><b>ALTA</b></font>"],
          ["bloque con cobertura menor al 50%",
           "<b>2 de 16</b>: clima escolar (91 filas) y educación del "
-          "padre (1 fila)", "MEDIA"],
+          "padre (1 fila)", "<font color='#eb6834'><b>MEDIA</b></font>"],
          ["valores extremos a 3 rangos intercuartílicos",
           "<b>75 de 94</b> columnas numéricas; la peor, edad de 21 "
-          "años, marca 138 filas", "BAJA"]],
+          "años, marca 138 filas", "<font color='#eb6834'><b>BAJA</b></font>"]],
         [58 * mm, ANCHO_UTIL - 58 * mm - 15 * mm, 15 * mm]))
 
     F.append(Spacer(1, 5))
@@ -335,8 +339,10 @@ def construir():
         "analítica 0 de 1.174."))
     F.append(p("El faltante no es al azar, y por eso importa", "sub_naranja"))
     F.append(p(
-        "Quince de los dieciséis bloques tienen cobertura mediana entre "
-        "0,98 y 1,00. El que falla es clima escolar: 96 filas sin ningún "
+        "Catorce de los dieciséis bloques tienen cobertura mediana por "
+        "encima de 0,95; los dos que quedan abajo son educación del padre "
+        "(0,904) y clima escolar (0,873). El que falla de verdad es clima "
+        "escolar: 96 filas sin ningún "
         "dato y 91 con el dato calculado sobre menos de la mitad de los "
         "estudiantes de la fila. Los dos conjuntos son disjuntos, así que "
         "son <b>187 filas (15,9%) y 9.808 estudiantes (1,8%)</b>. La "
@@ -350,10 +356,10 @@ def construir():
         "avisaba: duplicados da 0 porque cada combinación de "
         "jurisdicción, 'Enmascarado', sector y ámbito es "
         "única, y el chequeo de formato tampoco lo veía porque la "
-        "palabra está bien escrita. El Ministerio enmascara el nombre "
-        "cuando el grupo es tan chico que identificaría a la escuela, "
-        "así que esas 63 filas no son un departamento: son el agregado "
-        "de los departamentos chicos de cada provincia."))
+        "palabra está bien escrita. El Ministerio lo enmascara cuando el "
+        "grupo es tan chico que identificaría a la escuela: esas 63 filas "
+        "no son un departamento, son el agregado de los departamentos "
+        "chicos de cada provincia."))
 
     F.append(figura(
         "tp2_a_calidad_cobertura.png", 152,
@@ -497,7 +503,7 @@ def construir():
         "-0,59). Repitencia da +0,35 y sobreedad alta +0,21."))
 
     F.append(figura(
-        "tp2_c_contexto_rendimiento.png", 110,
+        "tp2_c_contexto_rendimiento.png", 126,
         "Figura 3. Ingreso per cápita familiar mediano provincial (EPH "
         "3T-2025) contra desempeño bajo en matemática, una "
         "jurisdicción por punto y la matrícula como tamaño."))
@@ -520,12 +526,15 @@ def construir():
         "celda de sector y ámbito y la relación negativa se "
         "mantiene en las cuatro (estatal rural -0,34, estatal urbano -0,36, "
         "privado rural -0,59, privado urbano -0,49)."))
-    F.append(p(
+    # Este parrafo y el siguiente son el par medido / inferido: si el salto
+    # de pagina los parte, el lector se queda con media distincion, asi que
+    # el bloque viaja entero.
+    F.append(KeepTogether(p(
         "<b>Lo MEDIDO, verificado en la fuente.</b> El Manual del Aplicador "
         "de Aprender 2024 dice que al finalizar ambas pruebas los estudiantes "
         "contestan un cuestionario complementario en un cuadernillo propio. "
         "O sea que el dato es <b>lo que el estudiante dice que "
-        "faltó</b>, no un registro administrativo de asistencia."))
+        "faltó</b>, no un registro administrativo de asistencia.")))
     F.append(p(
         "<b>Lo INFERIDO, explícitamente NO verificado.</b> La "
         "hipótesis es que Aprender evalúa a quien está "
@@ -539,7 +548,7 @@ def construir():
         "resultado."))
 
     F.append(figura(
-        "tp2_d_inasistencias.png", 150,
+        "tp2_d_inasistencias.png", 142,
         "Figura 4. Correlación de cada medida de inasistencia con el "
         "desempeño bajo en matemática (izquierda) y la misma "
         "relación abierta por sector y ámbito (derecha)."))
@@ -572,13 +581,16 @@ def construir():
         "haber una columna que lo explique en vez de un misterio.",
         "cuerpo_ap"))
 
+    # Cada limitacion es un parrafo propio y no un bloque unico con saltos:
+    # asi el flujo puede repartirlas y ninguna queda huerfana de su titulo.
     F += seccion(6, "Limitaciones")
     F.append(p(
         "<b>No hay variable de abandono.</b> El trabajo describe "
-        "desempeño y sobreedad, no abandono.<br/>"
-        "<b>Son correlaciones ecológicas.</b> Valen entre agregados "
+        "desempeño y sobreedad, no abandono. "
+        "<b>Son correlaciones ecológicas:</b> valen entre agregados "
         "territoriales y no autorizan a concluir nada sobre un estudiante "
-        "concreto.<br/>"
+        "concreto.", "limit"))
+    F.append(p(
         "<b>La unidad de análisis es el grupo, no el estudiante.</b> "
         "Toda pregunta que necesite abrir por atributo individual queda fuera "
         "de alcance con las bases publicadas. En particular la pregunta por "
@@ -587,23 +599,26 @@ def construir():
         "calculable es si los grupos con más mujeres rinden distinto, y "
         "da prácticamente cero (-0,05 y +0,03 sobre 1.174 filas): ese "
         "número responde una pregunta diferente de la que se hizo, "
-        "así que se reporta el límite y no el número.<br/>"
+        "así que se reporta el límite y no el número.", "limit"))
+    F.append(p(
         "<b>Todo lo que cruza con la EPH descansa en 24 puntos.</b> Mover dos "
-        "o tres cambia bastante el resultado.<br/>"
-        "<b>El clima escolar está peor medido donde más "
-        "importa.</b> 155 de las 187 filas afectadas son rurales, así "
-        "que un modelo que use esa variable va a tener menos "
-        "información precisamente donde más la necesita.<br/>"
+        "o tres cambia bastante el resultado. <b>Y el clima escolar "
+        "está peor medido donde más importa:</b> 155 de las 187 "
+        "filas afectadas son rurales, así que un modelo que use esa "
+        "variable va a tener menos información precisamente donde "
+        "más la necesita.", "limit"))
+    F.append(p(
         "<b>Los grupos chicos dan valores extremos por construcción.</b> "
-        "El quintil de grupos más chicos (mediana 29 estudiantes) tiene "
-        "1,4 veces la dispersión del más grande (mediana 1.225) y "
-        "llega a 0,000 y 1,000, así que todo número de una celda "
-        "chica se cita con su denominador al lado.<br/>"
+        "El quintil más chico (mediana 29 estudiantes) tiene 1,4 veces la "
+        "dispersión del más grande (mediana 1.225) y llega a 0,000 y "
+        "1,000: todo número de una celda chica se cita con su "
+        "denominador.", "limit"))
+    F.append(p(
         "<b>El perfilado no sabe si un valor es correcto, solo si es "
-        "posible.</b> La comparación contra los datos crudos la hacen "
-        "los 41 invariantes de tests/test_invariantes.py, y la "
-        "reproducibilidad está verificada: corriendo el pipeline dos "
-        "veces, 8 de 8 salidas salen idénticas byte a byte."))
+        "posible.</b> Contra los datos crudos comparan los 55 invariantes "
+        "de tests/test_invariantes.py, y la reproducibilidad está "
+        "verificada: corriendo el pipeline dos veces, 18 de 18 salidas salen "
+        "idénticas byte a byte.", "limit"))
 
     return F
 

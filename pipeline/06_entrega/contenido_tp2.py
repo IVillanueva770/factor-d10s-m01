@@ -363,8 +363,9 @@ La segunda actividad pide buscar los problemas que puedan afectar el análisis
 posterior: faltantes, categorías inconsistentes, valores imposibles,
 duplicados, extremos y variables sin variabilidad.
 
-Se corrieron once chequeos. Cada uno reporta **su denominador**, porque un
-"0 problemas" sin decir sobre cuántos casos se miró no significa nada.
+Se corren doce chequeos, los mismos que el pipeline del proyecto. Cada uno
+reporta **su denominador**, porque un "0 problemas" sin decir sobre cuántos
+casos se miró no significa nada.
 """)
 
     code('''
@@ -452,8 +453,46 @@ chequeo("fila sin ninguna variable analitica",
         int(maestro[analiticas].isna().all(axis=1).sum()), len(maestro),
         "una fila sin ninguna proporcion no aporta al analisis")
 
+# Casi constante: un mismo valor en mas del 99% de las filas. Se excluyen las
+# familias cuya baja variabilidad es estructural (contexto provincial, claves
+# y banderas de control), porque marcarlas seria un falso positivo.
+casi = 0
+for c in candidatas["columna"]:
+    v = maestro[c].dropna()
+    if len(v) and v.nunique() > 1 and v.value_counts(normalize=True).iloc[0] > 0.99:
+        casi += 1
+chequeo("columna casi constante", casi, len(candidatas),
+        "un mismo valor en mas del 99% de las filas")
+
+# Extremos por rango intercuartil. En la seccion 5 se ve por que estos NO son
+# errores: al traducir la proporcion a personas, la mediana detras de cada
+# valor marcado es de 2,3 estudiantes.
+numericas = perfil[perfil["familia"].isin(
+    ["proporcion", "armonizada"])]["columna"]
+con_extremos = 0
+for c in numericas:
+    v = maestro[c].dropna()
+    if len(v) < 20:
+        continue
+    q1, q3 = v.quantile(0.25), v.quantile(0.75)
+    if q3 - q1 <= TOLERANCIA:
+        continue
+    if int(((v < q1 - 3 * (q3 - q1)) | (v > q3 + 3 * (q3 - q1))).sum()):
+        con_extremos += 1
+chequeo("columna con valores extremos (3x IQR)", con_extremos, len(numericas),
+        "lejos del cuerpo de la distribucion, pero NO necesariamente errores")
+
 tabla = pd.DataFrame(hallazgos)
 tabla["estado"] = np.where(tabla["afectados"] > 0, "REVISAR", "ok")
+
+# El resumen se CUENTA, no se escribe a mano. Una version anterior de este
+# notebook decia "once chequeos" mientras el codigo corria diez: el mismo tipo
+# de error que se corrigio en el titulo de la primera figura.
+limpios = int((tabla["afectados"] == 0).sum())
+print(f"{limpios} de los {len(tabla)} chequeos dan cero.")
+print(f"Los {len(tabla) - limpios} restantes se detallan abajo.")
+print()
+
 tabla.sort_values("afectados", ascending=False)[
     ["estado", "chequeo", "afectados", "de", "detalle"]]
 ''')
@@ -461,7 +500,7 @@ tabla.sort_values("afectados", ascending=False)[
     md("""
 ### El dataset está sano, y eso no era obvio
 
-Nueve de los once chequeos dan cero. No hay duplicados, ni proporciones
+Ocho de los doce chequeos dan cero. No hay duplicados, ni proporciones
 imposibles, ni bloques que no cierren, ni categorías mal escritas, ni filas
 vacías. Tiene sentido: el TP1 se construyó con 41 verificaciones automáticas
 encima, así que estos problemas se habrían detectado al armarlo.
@@ -1040,7 +1079,8 @@ trayectoria escolar (repitencia, sobreedad).
 
 ### ¿Qué problemas de calidad detectamos?
 
-El dataset está sano: 9 de 11 chequeos dan cero. Los dos que no: el valor
+El dataset está sano: 8 de 12 chequeos dan cero, y de los cuatro restantes
+dos son informativos. Los dos que no: el valor
 centinela `"Enmascarado"` en `departamento`, que rompe el significado de la
 clave territorial en 23 de 24 jurisdicciones; y la **cobertura sesgada del
 bloque de clima escolar**, que cae de 0,92 en los grupos grandes a 0,72 en los

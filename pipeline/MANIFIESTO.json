@@ -3,7 +3,7 @@
     {
       "etapa": "01_aprender",
       "que_hace": "Convierte las bases censales de Aprender 2024 en proporciones por fila, con la cobertura de cada bloque al lado como indicador de calidad del dato.",
-      "segundos": 3.7,
+      "segundos": 3.66,
       "salidas": {
         "data/interim/aprender_2024_proporciones.csv": {
           "sha256": "f06d31341c0f402058a5a08e749b843c971634c5454b08f7dfee1e9f55d29a7e",
@@ -14,7 +14,7 @@
     {
       "etapa": "02_eph_unir",
       "que_hace": "Une las bases de Hogar e Individual de la EPH 3T-2025 por CODUSU + NRO_HOGAR. CODUSU solo no alcanza: hay viviendas con mas de un hogar.",
-      "segundos": 1.03,
+      "segundos": 1.19,
       "salidas": {
         "data/interim/eph_3t2025_unida.parquet": {
           "sha256": "beb453d265692c637da75e08ad4fc64b46e7109591f8512056144a3c1ecdd3c5",
@@ -25,7 +25,7 @@
     {
       "etapa": "03_eph_indicadores",
       "que_hace": "Calcula los indicadores socioeconomicos por provincia, todos ponderados. El ingreso va con PONDIH y no con PONDERA.",
-      "segundos": 1.17,
+      "segundos": 1.11,
       "salidas": {
         "data/interim/eph_indicadores_provincia.csv": {
           "sha256": "dbcfad8705f2a5739f19388fa2353efe6b26841e108386fc80b95411d9f7686d",
@@ -51,7 +51,7 @@
     {
       "etapa": "05_armonizar",
       "que_hace": "Lleva a una escala comparable las variables que las dos fuentes miden distinto, y deja el dataset maestro final.",
-      "segundos": 0.55,
+      "segundos": 0.52,
       "salidas": {
         "data/processed/dataset_maestro_inicial.csv": {
           "sha256": "1902ecfdd414ac9d2c23cd2d00bc470f07fa0ee0089aea1d3a7ba25edd581d18",
@@ -62,7 +62,7 @@
     {
       "etapa": "07_perfilado",
       "que_hace": "Mide el dataset maestro columna por columna: tipos, faltantes, rangos, duplicados, variabilidad y valores imposibles. No corrige nada: produce la evidencia con la que se deciden las curaciones.",
-      "segundos": 0.58,
+      "segundos": 0.51,
       "salidas": {
         "data/interim/perfil_columnas.csv": {
           "sha256": "4111edbd031e18683a4b99a12b737c3db5c493f48a78fae6e2fba8800ff29677",
@@ -77,14 +77,14 @@
     {
       "etapa": "08_curar",
       "que_hace": "Aplica las decisiones de curacion que salieron del perfil. No borra filas ni modifica valores: agrega columnas que hacen visible cada problema, para poder excluirlo con una condicion explicita.",
-      "segundos": 0.27,
+      "segundos": 0.29,
       "salidas": {
         "data/processed/dataset_maestro_curado.csv": {
           "sha256": "82eaa3793865feac7ec3c0e7ace3132253a199ca946bdd8193f9d6dccbb38685",
           "forma": "1,174 x 133"
         },
         "docs/08_decisiones_curacion.md": {
-          "sha256": "b936c2bafddd02afa6e5212ca681a2b0a6c3df055c51238b58268ecf19df0fa8",
+          "sha256": "3b69d887535146ed37a94394231348bb3d2ef8461827047921405bb6db194723",
           "forma": "6 KB"
         }
       }
@@ -92,10 +92,10 @@
     {
       "etapa": "09_diccionario",
       "que_hace": "Genera UNA fila por cada columna del dataset curado, con su definicion, su fuente y su denominador, mas la tabla de correspondencia entre Aprender y la EPH. Va al final del pipeline para que documente lo que el proyecto entrega y para que haya un solo diccionario, no uno por version del dataset.",
-      "segundos": 0.06,
+      "segundos": 0.05,
       "salidas": {
         "data/processed/diccionario_variables.csv": {
-          "sha256": "823e371329366908069518b2a75ed791459323195ccb47ec45e8e6c289e5805f",
+          "sha256": "dd27d5c7ec0afe770e6b8564474093a472287c1e4a27683a1a718ea33442541a",
           "forma": "133 x 10"
         },
         "data/processed/armonizacion_fuentes.csv": {
@@ -107,7 +107,7 @@
     {
       "etapa": "10_relaciones",
       "que_hace": "Explora las relaciones del dataset curado (actividad 3 de la consigna) y ademas mide si alguna decision de curacion movio algun numero. Todo ponderado por estudiantes; las correlaciones con la EPH, a nivel provincia.",
-      "segundos": 0.48,
+      "segundos": 0.38,
       "salidas": {
         "data/processed/relaciones_tablas.csv": {
           "sha256": "99cbda034bbb4c45cee5cc4f14801dbb51ccdb73dd97d7e957f6c2dd4fa9a1a9",
@@ -122,7 +122,7 @@
     {
       "etapa": "11_figuras",
       "que_hace": "Las cuatro figuras del TP2, una por hallazgo. Heredan la paleta y los criterios del TP1 sin agregar colores: paleta validada para daltonismo, marcas finas, grilla recesiva y etiquetas directas.",
-      "segundos": 1.72,
+      "segundos": 1.47,
       "salidas": {
         "figuras/tp2_a_calidad_cobertura.png": {
           "sha256": "a36583a5fb77088f9b625f12e20b0f68b4129fbdb9b37466998eb5dc90dd8f98",

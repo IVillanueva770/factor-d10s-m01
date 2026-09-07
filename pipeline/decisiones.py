@@ -73,8 +73,9 @@ DECISIONES = [
         "columna": "clima_escolar_calidad",
         "calcular": _clima_escolar_calidad,
         "hallazgo": (
-            "Es el unico bloque con problemas de cobertura: los otros 15 estan "
-            "entre 0,98 y 1,00. Tiene 96 filas sin ningun dato y 91 con el dato "
+            "Es el bloque peor cubierto de los 16: su cobertura mediana es 0,873. "
+            "Catorce bloques estan por encima de 0,98 y el otro que queda "
+            "abajo es educacion del padre, con 0,904. Tiene 96 filas sin ningun dato y 91 con el dato "
             "calculado sobre menos de la mitad de los estudiantes de la fila. "
             "Los dos conjuntos son disjuntos, asi que son 187 filas (15,9%) y "
             "9.808 estudiantes (1,8%)."

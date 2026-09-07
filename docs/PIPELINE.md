@@ -20,10 +20,23 @@ data/raw/                        los crudos, no se tocan nunca
    ├─ 04 integrar          (01 + 03) ─────────────→ dataset_maestro_base.csv
    │
    ├─ 05 armonizar         (04 + 02) ─────────────→ dataset_maestro_inicial.csv
+   │                                                  ↑ el entregable del TP1
+   ├─ 07 perfilado         (05) ──────────────────→ perfil_columnas.csv
+   │                                                 docs/07_perfil_calidad.md
+   ├─ 08 curar             (05) ──────────────────→ dataset_maestro_curado.csv
+   │                                                 docs/08_decisiones_curacion.md
+   ├─ 09 diccionario       (08) ──────────────────→ diccionario_variables.csv
+   │                                                 armonizacion_fuentes.csv
+   ├─ 10 relaciones        (08) ──────────────────→ docs/10_relaciones.md
    │
-   └─ 06 diccionario       (05) ──────────────────→ diccionario_variables.csv
-                                                    armonizacion_fuentes.csv
+   └─ 11 figuras           (08) ──────────────────→ figuras/tp2_*.png
 ```
+
+**Falta el 06 a propósito.** Era el diccionario, que pasó a ser el 09 cuando se
+movió al final del pipeline para que documentara el dataset curado. Los números
+son identidad estable y no posición: renumerar invalidaría cada referencia a
+"la etapa 08" en commits, documentos y conversaciones, igual que renumerar
+commits de git.
 
 Para ver esto mismo con las rutas completas y qué hace cada etapa:
 
@@ -38,7 +51,7 @@ python pipeline/correr.py                 # todas las etapas, en orden
 python pipeline/correr.py 4               # solo la etapa 4 (o 'integrar')
 python pipeline/correr.py --desde 4       # de la 4 en adelante
 python pipeline/correr.py --verificar     # corre dos veces y compara hashes
-python tests/test_invariantes.py          # las 41 propiedades que tienen que valer
+python tests/test_invariantes.py          # las propiedades que tienen que valer
 ```
 
 Correr una sola etapa muestra su diagnóstico completo. Correrlas todas muestra un resumen de una línea por etapa.
@@ -59,9 +72,11 @@ Es el mismo tipo de problema que el pipeline ya tenía resuelto en otro lado: un
 python pipeline/correr.py --verificar
 ```
 
-Corre el pipeline entero dos veces y compara los SHA-256 de las 8 salidas. Si alguna difiere, hay una fecha, un orden no determinista o un random sin semilla adentro, y **ningún número que salga de ahí es confiable** hasta arreglarlo.
+Corre el pipeline entero dos veces y compara los SHA-256 de todas las salidas. Si alguna difiere, hay una fecha, un orden no determinista o un random sin semilla adentro, y **ningún número que salga de ahí es confiable** hasta arreglarlo.
 
-Estado al 2026-09-03: **8 de 8 salidas idénticas byte a byte**, y las 5 que ya existían coinciden con las que se entregaron y aprobaron en el TP1.
+Estado al 2026-09-07: **18 de 18 salidas idénticas byte a byte** y **55 de 55 invariantes** en verde. Las 5 salidas que ya existían al cerrar el TP1 siguen coincidiendo con las entregadas y aprobadas.
+
+> Estos dos números crecen con el proyecto, así que **se leen corriendo el pipeline, no de acá**. Este párrafo quedó desactualizado una vez (decía 8 y 41 cuando ya eran 18 y 55) y de ahí lo copió el informe del TP2.
 
 ### 3. Lo que se afirma, se mide
 
@@ -80,7 +95,7 @@ Sirve para lo que más cuesta cuando un proyecto crece: tocar una etapa de arrib
 |---|---|
 | `pipeline/` | Las etapas que construyen el dataset. Es lo que hay que correr. |
 | `exploracion/` | Los scripts que **justifican** las decisiones del pipeline: por qué se eligieron esos bloques de Aprender, por qué el ingreso se pondera con PONDIH, por qué el cruce es a nivel provincia. No hace falta correrlos, pero son la evidencia detrás de cada elección. |
-| `tests/` | `test_invariantes.py`: 41 propiedades que tienen que valer sobre los datos. Es la red: si tocás una etapa y rompés algo que antes valía, falla acá en vez de producir un dataset malo en silencio. |
+| `tests/` | `test_invariantes.py`: las propiedades que tienen que valer sobre los datos. Es la red: si tocás una etapa y rompés algo que antes valía, falla acá en vez de producir un dataset malo en silencio. |
 | `data/raw/` | Los crudos. No se modifican nunca. |
 | `data/interim/` | Resultados intermedios. Se regeneran corriendo el pipeline. |
 | `data/processed/` | El dataset maestro, el diccionario y la armonización. |

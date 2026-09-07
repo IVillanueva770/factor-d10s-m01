@@ -14,7 +14,7 @@ La razon es que los tres problemas encontrados (clima escolar mal cubierto, depa
 
 *columna nueva* · `clima_escolar_calidad`
 
-**Que se encontro.** Es el unico bloque con problemas de cobertura: los otros 15 estan entre 0,98 y 1,00. Tiene 96 filas sin ningun dato y 91 con el dato calculado sobre menos de la mitad de los estudiantes de la fila. Los dos conjuntos son disjuntos, asi que son 187 filas (15,9%) y 9.808 estudiantes (1,8%).
+**Que se encontro.** Es el bloque peor cubierto de los 16: su cobertura mediana es 0,873. Catorce bloques estan por encima de 0,98 y el otro que queda abajo es educacion del padre, con 0,904. Tiene 96 filas sin ningun dato y 91 con el dato calculado sobre menos de la mitad de los estudiantes de la fila. Los dos conjuntos son disjuntos, asi que son 187 filas (15,9%) y 9.808 estudiantes (1,8%).
 
 **Por que importa.** El problema NO es aleatorio. La cobertura mediana cae de 0,921 en el quintil de grupos mas grandes a 0,722 en el mas chico, y por ambito va de 0,921 urbano a 0,744 rural: 155 de las 187 filas afectadas son rurales. Es decir que el clima escolar esta peor medido justo en las escuelas rurales chicas, que son las de mayor riesgo de abandono. Un modelo que use esta variable va a tener menos informacion precisamente donde mas la necesita, y eso hay que poder decirlo, no descubrirlo despues.
 
