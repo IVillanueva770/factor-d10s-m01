@@ -1,0 +1,12 @@
+# Los datos y las figuras se tratan como binarios: sin conversion de finales
+# de linea. Sin esto, git guarda los CSV con LF y los deja en el disco con
+# CRLF, asi que el archivo que sirve GitHub NO es byte a byte el mismo que el
+# local. Eso rompe la verificacion por SHA-256 del notebook, que baja los
+# datos de GitHub y compara contra el hash calculado al generarlo.
+#
+# Medido el 2026-09-07: la diferencia era de 1.175 bytes en
+# dataset_maestro_inicial.csv, o sea exactamente un byte por linea.
+*.csv -text
+*.png binary
+*.ipynb -text
+*.parquet binary

@@ -1,0 +1,60 @@
+sector,ambito,filas,estudiantes,desemp_matematica__por_debajo_del_nivel_basico,desemp_lengua__por_debajo_del_nivel_basico,sobreedad__3_anos_o_mas_de_sobreedad_20_anos_o_mas_30jun,repitencia__repitio_1_vez,edad__mas_de_22_anos,_analisis,_q,estudiantes_mediana,desvio,minimo,maximo,indicador_eph,r_con_matematica_bajo_basico,r_con_sobreedad_alta,provincias,prueba,n,r,variable,contra,r_pearson,r_spearman,filas_con_dato,medida,r_con_matematica_bajo,valor_medio_ponderado,columna,que_mide,escenario,matematica_bajo_basico,sobreedad_alta,clima_escolar_bajo,jurisdiccion,eph_ipcf_mediano
+Estatal,Urbano,444.0,327878.4413207,0.6170406386216094,0.266002239117722,0.021170471733510245,0.17013659532014017,0.004747653630262642,Brecha por sector de gestion y ambito,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Privado,Urbano,268.0,176881.0031671,0.3840621868009248,0.1263943593537007,0.006168678690685646,0.053709839858640064,0.004075109435815796,Brecha por sector de gestion y ambito,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Estatal,Rural,426.0,31601.1011163,0.6754330211192138,0.33725869939711317,0.02848681585451666,0.16479880726098428,0.0054238022962937735,Brecha por sector de gestion y ambito,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Privado,Rural,36.0,3679.4547654000007,0.5107957220221035,0.2198328491237931,0.013262132900469296,0.09356591034557084,0.004089070245266166,Brecha por sector de gestion y ambito,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,235.0,,,,,,,Por que los grupos chicos dan valores extremos,1 mas chico,28.8299282,0.20449986351675034,0.0,1.0,,,,,,,,,,,,,,,,,,,,,,,
+,,235.0,,,,,,,Por que los grupos chicos dan valores extremos,2,74.6653154,0.17344944990839087,0.1168234074168013,0.9199999988111184,,,,,,,,,,,,,,,,,,,,,,,
+,,234.0,,,,,,,Por que los grupos chicos dan valores extremos,3,138.91154035,0.16823153632744917,0.1410716639662476,0.9039730791232146,,,,,,,,,,,,,,,,,,,,,,,
+,,235.0,,,,,,,Por que los grupos chicos dan valores extremos,4,289.4871873,0.1479702752389041,0.2060480659109214,0.8970340065627196,,,,,,,,,,,,,,,,,,,,,,,
+,,235.0,,,,,,,Por que los grupos chicos dan valores extremos,5 mas grande,1225.1631168,0.1498483944080013,0.1789807960879566,0.837171848129753,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_ipcf_mediano,-0.8171250144055445,-0.336217504789685,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_educ_adultos__superior,-0.7178722301400986,-0.15064112831905632,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_adultos_sin_secundaria,0.5226866826193863,0.16932338499050711,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_agua_fuera_vivienda,0.5224890417698511,0.2964788062042363,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_educ_adultos__primaria,0.48478397661479855,0.115662029254537,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_educ_adultos__sin_primaria,0.4510727252299454,0.26743295772687997,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_hacinamiento_critico,0.3292578671731166,0.15858077696403644,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_casos_hogares,-0.21771049376564908,-0.11365271720118968,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_aglomerados,-0.2164629759692211,-0.09259774061693066,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_no_asiste_12_18,0.15971522261653393,0.17505406409611088,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_casos_personas,-0.15444555217485953,-0.07675451395573323,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_sin_dato_ingreso,-0.13242721103653343,-0.20549519293008195,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_educ_adultos__secundaria,0.0678021989376473,-0.05977075446409123,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_adolescentes_ocupados,-0.061460515253906195,-0.12422314963605598,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Contexto socioeconomico y rendimiento (nivel provincia),,,,,,eph_desocupacion,0.01679979355777882,-0.19735637374644074,24.0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,Robustez de la correlacion mas fuerte del trabajo,,,,,,,,,,"Pearson, las 24 jurisdicciones",24.0,-0.8171250144055445,,,,,,,,,,,,,,,,
+,,,,,,,,,Robustez de la correlacion mas fuerte del trabajo,,,,,,,,,,"Pearson, sin CABA",23.0,-0.729008229804785,,,,,,,,,,,,,,,,
+,,,,,,,,,Robustez de la correlacion mas fuerte del trabajo,,,,,,,,,,"Spearman, las 24",24.0,-0.8497499657282478,,,,,,,,,,,,,,,,
+,,,,,,,,,Robustez de la correlacion mas fuerte del trabajo,,,,,,,,,,"Spearman, sin CABA",23.0,-0.8292562645053644,,,,,,,,,,,,,,,,
+,,,540040.0003695,,,,,,"Sobreedad, repitencia y desempenio (nivel fila)",,,,,,,,,,,,,libros_hogar__no_hay_libros_en_formato_papel,desemp_matematica__por_debajo_del_nivel_basico,0.621927199901088,0.6440322353983525,1174.0,,,,,,,,,,,
+,,,540040.0003695,,,,,,"Sobreedad, repitencia y desempenio (nivel fila)",,,,,,,,,,,,,educ_madre__terciariouniversitarioposgrado_completo,desemp_matematica__por_debajo_del_nivel_basico,-0.6190147958347548,-0.5936442771169823,1174.0,,,,,,,,,,,
+,,,540040.0003695,,,,,,"Sobreedad, repitencia y desempenio (nivel fila)",,,,,,,,,,,,,repitencia__repitio_1_vez,desemp_matematica__por_debajo_del_nivel_basico,0.34935126487864504,0.3884653561316397,1174.0,,,,,,,,,,,
+,,,540040.0003695,,,,,,"Sobreedad, repitencia y desempenio (nivel fila)",,,,,,,,,,,,,sobreedad__3_anos_o_mas_de_sobreedad_20_anos_o_mas_30jun,desemp_lengua__por_debajo_del_nivel_basico,0.22806492332106584,0.25279693896520855,1174.0,,,,,,,,,,,
+,,,540040.0003695,,,,,,"Sobreedad, repitencia y desempenio (nivel fila)",,,,,,,,,,,,,sobreedad__3_anos_o_mas_de_sobreedad_20_anos_o_mas_30jun,desemp_matematica__por_debajo_del_nivel_basico,0.21229815818827596,0.20372732432116236,1174.0,,,,,,,,,,,
+,,,540040.0003695,,,,,,"Sobreedad, repitencia y desempenio (nivel fila)",,,,,,,,,,,,,inasistencias__30_o_mas_faltas,desemp_matematica__por_debajo_del_nivel_basico,0.0002886176330789903,-0.033933415957742366,1174.0,,,,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,ninguna falta,0.3108537727380396,0.02547104368560754,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,5 o mas faltas,-0.4859141018816623,0.8484317513103201,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,15 o mas faltas,-0.365795995787561,0.5103644600032129,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,30 o mas faltas (solo la cola),0.0002886176330789903,0.10019898347095972,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,"5+ faltas, solo Estatal Rural",-0.3369741210264631,0.6869916180259616,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,"5+ faltas, solo Estatal Urbano",-0.3649790309396205,0.8306512597303403,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,"5+ faltas, solo Privado Rural",-0.5929647627589395,0.7057864624683493,,,,,,,,
+,,,,,,,,,"Inasistencias: el acumulado, no la cola",,,,,,,,,,,,,,,,,,"5+ faltas, solo Privado Urbano",-0.49368049591237617,0.9132006214770969,,,,,,,,
+,,,,,,,,,Diferencias por sexo: por que no se puede responder,,,,,,,,,,,,,,,,,,,-0.049363929143039144,,sexo__masculino,proporcion de esa categoria DENTRO del grupo,,,,,,
+,,,,,,,,,Diferencias por sexo: por que no se puede responder,,,,,,,,,,,,,,,,,,,0.03065416422926297,,sexo__femenino,proporcion de esa categoria DENTRO del grupo,,,,,,
+,,,,,,,,,Diferencias por sexo: por que no se puede responder,,,,,,,,,,,,,,,,,,,0.09876912284152527,,sexo__x,proporcion de esa categoria DENTRO del grupo,,,,,,
+,,1174.0,540040.0003695,,,,,,Efecto de cada decision de curacion,,,,,,,,,,,,,,,,,,,,,,,todo el dataset,0.5434254952468354,0.016631130118669103,0.20388300475025128,,
+,,1111.0,529595.928466,,,,,,Efecto de cada decision de curacion,,,,,,,,,,,,,,,,,,,,,,,sin agregados provinciales,0.543176771497814,0.016752804647554725,0.20303850764665338,,
+,,987.0,530231.5821045,,,,,,Efecto de cada decision de curacion,,,,,,,,,,,,,,,,,,,,,,,solo clima escolar 'ok',0.5417859680509083,0.01641805762979916,0.2035519673981206,,
+,,1169.0,539253.9245847,,,,,,Efecto de cada decision de curacion,,,,,,,,,,,,,,,,,,,,,,,sin discrepancia entre bases,0.5433693649243881,0.016611922054030847,0.2038381435523312,,
+,,,33711.999852700006,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.3468864597502973,0.019716801041609944,,Ciudad Autónoma de Buenos Aires,825000.0
+,,,42254.9985391,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.44119376601106475,0.008262227305425451,,Córdoba,527084.0
+,,,13578.999969,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.4994313649811721,0.02740252524717094,,Entre Ríos,405000.0
+,,,36087.0013051,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.5100832036078008,0.014091792081430101,,Santa Fe,500000.0
+,,,9024.9998086,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.5110413875792392,0.01890382226174565,,Neuquén,666666.67
+,,,5311.0000877,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.6513405404600533,0.006955878345148501,,La Rioja,304500.0
+,,,6868.0001483,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.6529222839113685,0.03247688380608524,,Formosa,325000.0
+,,,5466.0001723999985,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.6710419603458543,0.013055738702742486,,Catamarca,322500.0
+,,,11125.000307100003,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.6803318289264905,0.022168320314971054,,Santiago del Estero,350000.0
+,,,13487.000408300002,,,,,,Provincias: los dos extremos,,,,,,,,,,,,,,,,,,,,,,,,0.7026411898423048,0.031794550182366994,,Chaco,310000.0
