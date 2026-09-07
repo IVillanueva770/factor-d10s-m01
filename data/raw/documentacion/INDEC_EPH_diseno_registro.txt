@@ -1,0 +1,1653 @@
+Encuesta Permanente de Hogares
+
+Diseño de Registro y
+Estructura para las bases
+preliminares Hogar y Personas
+INDEC - Dirección Encuesta Permanente de Hogares  2
+                                  INTRODUCCIÓN
+
+         En el presente documento se detalla el diseño de registro y la composición de la estructura
+de las bases preliminares correspondientes al relevamiento de la Encuesta Permanente de
+Hogares (EPH).
+
+         Se trata de las primeras bases usuarias de la EPH que se difunden en la presente etapa.
+La revisión efectuada sobre los distintos procesos de trabajo y datos publicados con anterioridad
+(2007-2015), ha encontrado problemas en lo referido a la omisión en la cobertura geográfica, la
+discrepancia en las proyecciones de población, la falta de capacitación conceptual y operativa del
+personal responsable del proceso de recolección de datos, la utilización de prácticas sesgadas
+para la realización del trabajo de campo, la no explicitación de criterios conceptuales para la
+reclasificación de grupos poblacionales específicos, la clasificación errónea de algunos
+agrupamientos tomando en cuenta las recomendaciones internacionales de la Organización
+Internacional del Trabajo (OIT) y la eliminación de circuitos de trabajo integrados, entre los
+principales inconvenientes.1
+
+         Las bases contienen una significativa cantidad de variables de hogar y personas para
+posibilitar el análisis de las principales características demográficas y socioeconómicas de la
+población.
+
+         En ellas cada registro tiene un número de identificación (CODUSU), que permite relacionar
+una vivienda con los hogares y personas que la componen a lo largo de los cuatro trimestres en
+que participa.
+
+         En la base hogar (archivo usu_hogar.txt) todos los hogares que pertenecen a una misma
+vivienda poseen el mismo CODUSU. Para identificar los hogares se debe utilizar CODUSU y
+NRO_HOGAR.
+
+         En la de personas (archivo usu_individual.txt) todos los miembros del hogar tienen el
+mismo CODUSU y NRO_HOGAR pero se diferencian por el número de COMPONENTE.
+
+         Se recomienda utilizar las bases y este diseño de registro junto con los cuestionarios de la
+EPH. Dichos cuestionarios, así como los documentos que presentan las características
+metodológicas de la encuesta, "La nueva Encuesta Permanente de Hogares de Argentina.
+2003" y "Encuesta Permanente de Hogares (EPH), cambios metodológicos", se encuentran
+en la página web del INDEC: http://www.indec.gob.ar
+
+1 Para mayor detalle consultar el anexo del informe de prensa disponible en: http:
+//www.indec.gob.ar/ftp/cuadros/sociedad/anexo_informe_eph_23_08_16.pdf
+
+INDEC - Dirección Encuesta Permanente de Hogares                                    3
+                DISEÑO DE REGISTROS DE LA BASE HOGAR
+
+Tipo de campo:
+
+                N = numérico
+                C = character
+
+ CAMPO          TIPO(Longitu                      DESCRIPCIÓN
+ ------         d)                                ------------
+Identificación
+                ---------------
+
+CODUSU          C(29)            Código para distinguir VIVIENDAS, permite
+NRO_HOGAR       N (1)            aparearlas con Hogares y Personas. Además permite
+REALIZADA       N(1)             hacer el seguimiento a través de los trimestres.
+ANO4            N(4)
+Trimestre       N(1)             Código para distinguir HOGARES, permite aparearlos
+REGION          N(2)             con Personas.
+
+MAS_500         C(1)             Entrevista Realizada
+                                    = Si
+                                    = No (hogar no respuesta)
+
+                                 Año de relevamiento (4 dígitos)
+
+                                 Ventana de observación.
+                                    = 1er. Trimestre
+                                    = 2do. Trimestre
+                                    = 3er. Trimestre
+                                    = 4to. Trimestre
+
+                                 Código de Región
+                                 01 = Gran Buenos Aires
+                                 40 = NOA
+                                 41 = NEA
+                                 42 = Cuyo
+                                 43 = Pampeana
+                                 44 = Patagonia
+
+                                 Aglomerados según tamaño
+                                      = Conjunto de Aglomerados de menos de
+
+                                 500.000hab.
+                                 S = Conjunto de Aglomerados de 500.000 y más hab.
+
+INDEC - Dirección Encuesta Permanente de Hogares                4
+AGLOMERADO  N(2)  Código de Aglomerado
+PONDERA     N(6)  02 = Gran La Plata
+                  03 = Bahía Blanca - Cerri
+                  04 = Gran Rosario
+                  05 = Gran Santa Fé
+                  06 = Gran Paraná
+                  07 = Posadas
+                  08 = Gran Resistencia
+                  09 = Cdro. Rivadavia - R.Tilly
+                  10 = Gran Mendoza
+                  12 = Corrientes
+                  13 = Gran Córdoba
+                  14 = Concordia
+                  15 = Formosa
+                  17 = Neuquén ­ Plottier
+                  18 = S.del Estero - La Banda
+                  19 = Jujuy - Palpalá
+                  20 = Río Gallegos
+                  22 = Gran Catamarca
+                  23 = Salta
+                  25 = La Rioja
+                  26 = San Luis - El Chorrillo
+                  27 = Gran San Juan
+                  29 = Gran Tucumán - T. Viejo
+                  30 = Santa Rosa - Toay
+                  31 = Ushuaia - Río Grande
+                  32 = Ciudad de Bs As
+                  33 = Partidos del GBA
+                  34 = Mar del Plata - Batán
+                  36 = Río Cuarto
+                  38 = San Nicolás ­ Villa Constitución
+                  91 = Rawson ­ Trelew
+
+                  93 = Viedma ­ Carmen de Patagones
+
+                  Ponderación.
+
+INDEC - Dirección Encuesta Permanente de Hogares         5
+Características de la vivienda
+
+IV1      N(1)                   Tipo de vivienda ( por observación)
+                                1. Casa
+IV1_Esp  C(45)                  2. Departamento
+IV2      N(2)                   3. Pieza de inquilinato
+IV3      N(1)                   4. Pieza en hotel/pensión
+                                5. Local no construido para habitación
+IV3_Esp  C(45)
+IV4      N(2)                   6. Otros Especificar:
+
+IV5      N(1)                   Cuántos ambientes/ habitaciones tiene la vivienda
+IV6      N(1)                   en total? (sin contar baño/s, cocina, pasillo/s,
+                                lavadero, garage)
+IV7      N(1)                   Los pisos interiores son principalmente de.....
+                                1. Mosaico/baldosa/madera/cerámica/alfombra
+IV7_Esp  C(45)                  2. Cemento/ladrillo fijo
+IV8      N(1)                   3. Ladrillo suelto/tierra
+IV9      N(1)
+                                4. Otros Especificar:
+
+                                La cubierta exterior del techo es de....
+                                1. Membrana/cubierta asfáltica
+                                2. Baldosa/losa sin cubierta
+                                3. Pizarra/teja
+                                4. Chapa de metal sin cubierta
+                                5. Chapa de fibrocemento/plástico
+                                6. Chapa de cartón
+                                7. Caña/tabla/paja con barro/paja sola
+                                9. N/S. Depto en propiedad horizontal
+                                El techo tiene cielorraso/revestimiento interior?
+                                1 = Si
+                                2 = No
+
+                                Tiene agua.....
+                                1. Por cañería dentro de la vivienda
+                                2. Fuera de la vivienda pero dentro del terreno
+                                3. Fuera del terreno
+
+                                El agua es de.....
+                                1. Red pública (agua corriente)
+                                2. Perforación con bomba a motor
+                                3. Perforación con bomba manual
+
+                                4. Otra fuente Especificar:
+
+                                ¿Tiene baño/letrina?
+                                1 = Si
+                                2 = No
+                                El baño o letrina está....
+                                1. Dentro de la vivienda
+                                2. Fuera de la vivienda pero dentro del terreno
+
+INDEC - Dirección Encuesta Permanente de Hogares  6
+IV10    N(1)  3. Fuera del terreno
+              El baño tiene....
+IV11    N(1)  1. Inodoro con botón/ mochila/ cadena y arrastre
+IV12_1  N(1)  de agua
+IV12_2  N(1)  2. Inodoro sin botón/cadena y con arrastre de agua
+IV12_3  N(1)
+              (a balde)
+
+              3. Letrina (sin arrastre de agua)
+              El desague del baño es....
+              1. A red pública (cloaca)
+              2. A cámara séptica y pozo ciego
+
+              3. Sólo a pozo ciego
+
+              4. A hoyo/excavación en al tierra
+              La vivienda está ubicada cerca de basural/es(3
+              cuadras O menos)
+
+              1 = Si
+
+              2 = No
+              La vivienda está ubicada en zona inundable
+              (en los últimos 12 meses)
+
+              1 = Si
+
+              2 = No
+              La vivienda está ubicada en villa de emergencia
+              (por observación)
+
+              1 = Si
+
+              2 = No
+
+Características habitacionales del hogar
+
+II1     N(2)  Cuántos ambientes/ habitaciones tiene este hogar
+II2     N(2)  para su uso exclusivo?
+II3     N(1)
+              De esos, cuántos usan habitualmente para dormir?
+II3_1   N(1)  Utiliza alguno exclusivamente como lugar de
+II4     N(1)  Trabajo (para consultorio, estudio, taller,
+II4_1   N(1)  negocio, etc.)
+              1 = Si
+II4_2         2 = No
+              Si utiliza alguno exclusivamente como lugar de
+
+              Trabajo ¿Cuántos?
+
+              Tiene además...
+              Cuarto de cocina
+              1 = Si
+              2 = No
+              Lavadero
+              1 = Si
+              2 = No
+
+INDEC - Dirección Encuesta Permanente de Hogares  7
+II4_3                  N(1)   Garage
+II5                    N(1)
+                              1 = Si
+II5_1                  N(2)   2 = No
+II6                    N(1)   De esos ...(los si de preg.4) usan alguno para
+                              dormir
+II6_1                  N(2)   1 = Si
+                              2 = No
+
+                              Si Utiliza alguno para dormir ¿Cuántos?
+                              De esos ...(los si de preg.4) utiliza alguno de
+                              Éstos exclusivamente como lugar de trabajo(
+                              consultorio, estudio, taller, negocio, etc.)
+                              1 = Si
+                              2 = No
+                              Si utiliza alguno exclusivamente como lugar de
+
+                              Trabajo ¿Cuántos?
+
+II7                    N(2)   Régimen de tenencia
+
+                              01 = Propietario de la vivienda y el terreno
+
+                              02 = Propietario de la vivienda solamente
+
+                              03 = Inquilino/arrendatario de la vivienda
+
+                              04 = Ocupante por pago de impuestos/expensas
+
+                              05 = Ocupante en relación de dependencia
+
+                              06 = Ocupante gratuito (con permiso)
+
+                              07 = Ocupante de hecho (sin permiso)
+
+                              08 = Está en sucesión?
+
+II7_Esp                C(45)  09 = Otra situación (especificar)
+
+II8                    N(1)   Combustible utilizado para cocinar
+
+                              01 = Gas de red
+
+                              02 = Gas de tubo/garrafa
+
+                              03 = Kerosene/ leña/ carbón
+
+II8_Esp                C(45)  04 = Otro (especificar)
+
+II9                    N(1)   Baño (tenencia y uso)
+                              01 = Uso exclusivo del hogar
+                              02 = Compartido con otro/s hogar/es de la misma
+
+                                        vivienda
+
+                              03 = Compartido con otra/s vivienda/s
+
+                              04 = No tiene baño
+
+Estrategias del hogar
+
+¿En los últimos tres meses, las personas de este hogar han vivido...
+
+V1                     N(1)   ...de lo que ganan en el trabajo?
+
+                              1 = Si
+
+                              2 = No
+
+V2                     N(1)   ...de alguna jubilación o pensión?
+
+INDEC - Dirección Encuesta Permanente de Hogares                            8
+                 1 = Si
+
+                 2 = No
+
+V21        N(1)  ...Aguinaldo de alguna           jubilación  o pensión
+V22        N(1)  cobrada el mes anterior.
+V3         N(2)
+V4         N(1)  1 = Si
+V5         N(1)
+           N(1)  2 = No
+V6
+gobierno,        ...Retroactivo de alguna jubilación o pensión que
+                 cobró el mes anterior.
+
+                 1 = Si
+
+                 2 = No
+
+                 ...de indemnización por despido?
+                 1 = Si
+                 2 = No
+
+                 ...de seguro de desempleo?
+                 1 = Si
+                 2 = No
+
+                 ...de subsidio o ayuda           social(en   dinero)del
+                 gobierno, iglesias, etc.?
+
+                 1 = Si
+
+                 2 = No
+
+                 ...con mercaderías, ropa, alimentos          del
+
+                 iglesias, escuelas,
+                 etc.? 1 = Si
+                 2 = No
+
+INDEC - Dirección Encuesta Permanente de Hogares                   9
+V7   N(1)  ...con mercaderías, ropa, alimentos de familiares,
+
+           vecinos u otras personas que no viven en este
+
+           hogar?
+
+           1 = Si
+
+           2 = No
+
+V8   N(1)  ...algún alquiler (por una vivienda, terreno,
+
+           oficina, etc.)de su propiedad?
+
+           1 = Si
+
+           2 = No
+
+V9   N(1)  ...ganancias de algún negocio en el que no
+
+           trabajan?
+
+           1 = Si
+
+           2 = No
+
+V10  N(1)  ...intereses o rentas por plazos fijos/
+
+           inversiones?
+
+           1 = Si
+
+           2 = No
+
+V11  N(1)  ...una beca de estudio?
+
+           1 = Si
+
+           2 = No
+
+V12  N(1)  ...cuotas de alimentos o ayuda en dinero de
+
+           personas que no viven en el hogar?
+
+           1 = Si
+
+           2 = No
+
+INDEC - Dirección Encuesta Permanente de Hogares  10
+V13                     N(1)    ...gastar lo que tenían ahorrado?
+V14                     N(1)    1 = Si
+V15                     N(1)    2 = No
+V16                     N(1)    ...pedir préstamos a familiares/amigos
+V17                     N(1)    1 = Si
+V18                     N(1)    2 = No
+V19_A                   N(1)    ...pedir préstamos a bancos, financieras, etc.?
+V19_B                   N(1)    1 = Si
+                                2 = No
+Resumen del hogar               Compran en cuotas o al fiado con tarjeta de
+                                crédito o libreta?
+IX_Tot                  N (2)   1 = Si
+IX_Men10                N (2)   2 = No
+IX_Mayeq10              N (2)   Han tenido que vender alguna de sus pertenencias?
+                                1 = Si
+                                2 = No
+                                Tuvieron otros ingresos en efectivo (limosnas,
+                                juegos de azar, etc.)
+                                1 = Si
+                                2 = No
+                                menores de 10 años ayudan con algún dinero
+                                trabajando?
+                                1 = Si
+                                2 = No
+                                menores de 10 años ayudan con algún dinero
+                                pidiendo?
+                                1 = Si
+                                2 = No
+
+                                Cantidad de miembros del Hogar
+
+                                Cantidad de miembros del Hogar menores de 10 años
+
+                                Cantidad de miembros del Hogar de 10 y más años
+
+Ingreso total familiar
+
+ITF                     N (12)  MONTO DE INGRESO TOTAL FAMILIAR(ver Anexo I)
+DECIFR                  C (2)   Nº de decil del ingreso total del hogar del TOTAL
+                                EPH (ver Anexo I).
+IDECIFR                 C (2)
+                                Nº de decil del ingreso total del hogar del
+                                INTERIOR (ver Anexo I).
+
+INDEC - Dirección Encuesta Permanente de Hogares  11
+RDECIFR  C (2)                Nº de decil de ingreso total del hogar de la
+GDECIFR  C (2)                REGION (ver Anexo I).
+PDECIFR  C (2)
+                              Nº de decil de ingreso total del hogar del
+                              Conjunto de AGLOMERADOS DE 500 MIL Y MAS
+                              HABITANTES (ver Anexo I).
+
+                              Nº de decil de ingreso total del hogar   del
+                              Conjunto de AGLOMERADOS DE MENOS DE 500  MIL
+                              HABITANTES (ver Anexo I).
+
+ADECIFR  C (2)                Nº de decil de ingreso total del hogar del
+                              AGLOMERADO (ver Anexo I).
+
+Ingreso per cápita familiar
+
+IPCF     N (12)               Monto de ingreso per cápita familiar(ver AnexoI)
+DECCFR   C (2)                Nº de decil del ingreso per cápita familiar del
+                              TOTAL EPH (ver Anexo I).
+IDECCFR  C (2)
+                              Nº de decil del ingreso per cápita familiar del
+RDECCFR  C (2)                INTERIOR (ver Anexo I).
+
+GDECCFR  C (2)                Nº de decil de ingreso per cápita familiar de la
+                              REGION (ver Anexo I).
+PDECCFR  C (2)
+                              Nº de decil de ingreso per cápita familiar del
+ADECCFR  C (2)                Conjunto de AGLOMERADOS DE 500 MIL Y MAS
+                              HABITANTES (ver Anexo I).
+PONDIH   C(6)                 Nº de decil de ingreso per cápita familiar del
+                              Conjunto de AGLOMERADOS DE MENOS DE 500 MIL
+Organización del hogar        HABITANTES (ver Anexo I).
+
+VII 1_1                 N(2)  Nº de decil de ingreso per cápita familiar del
+                              AGLOMERADO (ver Anexo I).
+
+                              Ponderador del ingreso total familiar y del
+                                ingreso per cápita familiar (ver Anexo I)
+
+                              Realización de las tareas de la casa
+                               Número de componente del hogar
+                               96: Servicio doméstico
+                               97: Otra persona que no vive en el hogar
+
+INDEC - Dirección Encuesta Permanente de Hogares                       12
+VII 1_2       N(2)  Realización de las tareas de la casa
+VII 2_1  N(2)         Número de componente del hogar
+VII 2_2              96: Servicio doméstico
+VII 2_3     N(2)     97: Otra persona que no vive en el hogar
+VII 2_4     N(2)
+            N(2)    Otras personas que ayudan en las tareas de la casa
+                     Número de componente del hogar
+                    96: Servicio doméstico
+                    97: Otra persona que no vive en el hogar
+                    98: Ninguna
+
+                    Otras personas que ayudan en las tareas de la casa
+                    Número de componente del hogar
+                    96: Servicio doméstico
+                    97: Otra persona que no vive en el hogar
+                    98: Ninguna
+
+                    Otras personas que ayudan en las tareas de la casa
+                    Número de componente del hogar
+                    96: Servicio doméstico
+                    97: Otra persona que no vive en el hogar
+                    98: Ninguna
+
+                    Otras personas que ayudan en las tareas de la casa
+                    Número de componente del hogar
+                    96: Servicio doméstico
+                    97: Otra persona que no vive en
+
+                    el hogar 98: Ninguna
+
+INDEC - Dirección Encuesta Permanente de Hogares  13
+                DISEÑO DE REGISTROS DE LA BASE PERSONAS
+
+Tipo de campo:       N= numérico                  DESCRIPCIÓN
+                     C= character                 ------------
+ CAMPO
+------          TIPO (Longitud)
+                ---------------
+
+Identificación
+
+CODUSU          C(29)  Código para distinguir VIVIENDAS, permite
+NRO_HOGAR       N (2)
+COMPONENTE      N (2)  aparearlas con Hogares y Personas. Además permite
+
+H15             N(1)   hacer el seguimiento a través de los trimestres.
+ANO4            N(4)   Código para distinguir HOGARES
+TRIMESTRE       N (1)
+                                                      51 Serv. doméstico en hogares
+REGION          N (2)
+                                                      71 Pensionistas en hogares
+                       Número de componente: Nº de orden que se asigna a
+                       las personas que conforman cada hogar de la
+                       vivienda.
+                       Casos especiales:
+                       51 = Servicio doméstico en hogares.
+
+                       71 = Pensionistas en hogares.
+                       Entrevista individual realizada
+
+                       1 = Si
+
+                       2 = No
+
+                       Año de relevamiento (4 dígitos)
+
+                       Ventana de observación
+                       1 = 1er. Trimestre
+                       2 = 2do. Trimestre
+
+                       3 = 3er. Trimestre
+
+                       4 = 4to. Trimestre
+
+                       Código de Región
+                       01 = Gran Buenos Aires
+                       40 = Noroeste
+                       41 = Nordeste
+                       42 = Cuyo
+
+                       43 = Pampeana
+
+                       44 = Patagónica
+
+MAS_500         C(1)   Aglomerados según tamaño
+                       N = Conjunto de Aglomerados de menos de 500.00hab.
+                       S = Conjunto de Aglomerados de 500.000 y más hab.
+
+INDEC - Dirección Encuesta Permanente de Hogares                14
+AGLOMERADO  N(2)   Código de Aglomerado
+Pondera     N (6)  02 = Gran La Plata
+                   03 = Bahía Blanca - Cerri
+                   04 = Gran Rosario
+                   05 = Gran Santa Fé
+                   06 = Gran Paraná
+                   07 = Posadas
+                   08 = Gran Resistencia
+                   09 = Cdro. Rivadavia - R.Tilly
+                   10 = Gran Mendoza
+                   12 = Corrientes
+                   13 = Gran Córdoba
+                   14 = Concordia
+                   15 = Formosa
+                   17 = Neuquén ­ Plottier
+                   18 = S.del Estero - La Banda
+                   19 = Jujuy - Palpalá
+                   20 = Río Gallegos
+                   22 = Gran Catamarca
+                   23 = Salta
+                   25 = La Rioja
+                   26 = San Luis - El Chorrillo
+                   27 = Gran San Juan
+                   29 = Gran Tucumán - T. Viejo
+                   30 = Santa Rosa - Toay
+                   31 = Ushuaia - Río Grande
+                   32 = Ciudad de Bs As
+                   33 = Partidos del GBA
+                   34 = Mar del Plata - Batán
+                   36 = Río Cuarto
+                   38 = San Nicolás ­ Villa Constitución
+                   91 = Rawson ­ Trelew
+
+                   93 = Viedma ­ Carmen de Patagones
+
+                   Ponderación
+
+INDEC - Dirección Encuesta Permanente de Hogares          15
+Características de los miembros del hogar (cuestionario del hogar)
+
+CH03      N(2)  Relación de Parentesco
+                01 = Jefe/a
+CH04      N(1)  02 = Cónyuge/Pareja
+CH 05  date     03 = Hijo/Hijastro/a
+                04 = Yerno/Nuera
+                05 = Nieto/a
+                06 = Madre/Padre
+                07 = Suegro/a
+                08 = Hermano/a
+
+                09 = Otros Familiares
+
+                10 = No Familiares
+                Sexo
+
+                1 = varón
+
+                2 = mujer
+
+                Fecha de nacimiento
+
+                (día, mes y año)
+
+CH06   N(2)     ¿Cuántos años cumplidos tiene?
+CH07   N(1)     ¿Actualmente está...
+                1 = unido?
+CH08   N(3)     2 = casado?
+                3 = separado/a ó divorciado/a?
+
+                4 = viudo/a?
+
+                5 = soltero/a?
+                ¿Tiene algún tipo de cobertura médica por la que
+                paga o le descuentan?
+                1 = Obra social (incluye PAMI)
+                2 = Mutual / Prepaga / Servicio de emergencia
+                3 = Planes y seguros públicos
+                4 = No paga ni le descuentan
+                9 = Ns./Nr.
+                12= Obra social y mutual/prepaga/servicio de
+                emergencia.
+                13= Obra social y Planes y Seguros Públicos
+                23= Mutual/prepaga/servicio de emergencia/ Planes
+                y Seguros Públicos
+
+                123:obra social, mutual/prepaga/servicio de
+
+                emergencia y Planes y Seguros Públicos
+
+CH09   N(1) ¿Sabe leer y escribir?
+                            1 = Si
+
+                            2 = No
+
+                            3 = Menor de 2 años
+
+CH10   N(1)     ¿Asiste o asistió a algún establecimiento
+                educativo?(colegio, escuela, universidad)
+                1 = Si, asiste
+
+                2 = No asiste, pero asistió
+
+                3 = Nunca asistió
+
+INDEC - Dirección Encuesta Permanente de Hogares                    16
+CH11      N(1)   Ese establecimiento es...
+CH12             1 = Público
+                 2 = Privado
+CH13
+CH14             9 = Ns./Nr.
+
+CH15      N(2)   ¿Cuál es el nivel más alto que cursa o cursó?
+CH15_Cod                   1 = Jardín/ Preescolar
+CH16                       2 = Primario
+                           3 = EGB
+
+                           4 = Secundario
+                           5 = Polimodal
+                           6 = Terciario
+                           7 = Universitario
+
+                 8 = Posgrado Univ.
+
+                               9 = Educación especial (discapacitado)
+
+          N(1) ¿Finalizó ese nivel?
+                               1 = Si
+
+                 2 = No
+
+                 9 = Ns./Nr.
+
+           C(2)  ¿Cuál fue el último año que aprobó?
+                         00 = Ninguno
+           N(1)          01 = Primero
+          C(3)           02 = Segundo
+                         03 = Tercero
+           N(1)          04 = Cuarto
+                         05 = Quinto
+                         06 = Sexto
+                         07 = Séptimo
+                         08 = Octavo
+                         09 = Noveno
+
+                         98 = Educación especial
+
+                         99 = Ns./ Nr.
+                         ¿Dónde nació?
+
+                           1. En esta localidad
+                           2. En otra localidad de esta provincia
+                           3. En otra provincia (especificar)
+                           4. En un país limítrofe (especificar Brasil,
+
+                                Bolivia, Chile, Paraguay, Uruguay)
+
+                           5. En otro país (especificar)
+
+                           9. N/S.N/R.
+
+                         Especificar: contiene el código que corresponde a:
+                         3. En otra provincia
+
+                         4. En un país limítrofe
+
+                         5. En otro país
+                         ¿Dónde vivía hace 5 años?
+
+                           1. En esta localidad
+                           2. En otra localidad de esta provincia
+                           3. En otra provincia (especificar)
+                           4. En un país limítrofe (especificar Brasil,
+
+                                Bolivia, Chile, Paraguay, Uruguay)
+                           5. En otro país (especificar)
+
+                           6. No había nacido
+
+                           9. N/S.N/R.
+
+INDEC - Dirección Encuesta Permanente de Hogares                       17
+CH16_Cod  C(3)    Especificar: contiene el código que corresponde a:
+NIVEL_ED   N(1)   3. En otra provincia
+
+ESTADO     N(1)   4. En un país limítrofe
+
+CAT_OCUP   N(1)   5. En otro país
+
+CAT_INAC   N (1)  NIVEL EDUCATIVO
+                  1 = Primaria Incompleta(incluye educación
+IMPUTA     N(1)
+PP02C1     N(1)         especial)
+PP02C2     N(1)   2 = Primaria Completa
+PP02C3     N(1)   3 = Secundaria Incompleta
+PP02C4     N(1)   4 = Secundaria Completa
+PP02C5     N(1)   5 = Superior Universitaria Incompleta
+                  6 = Superior Universitaria Completa
+                  7 = Sin instrucción
+
+                  9 = Ns./ Nr.
+
+                  CONDICIÓN DE ACTIVIDAD
+                  0 = Entrevista individual no realizada ( no
+                  respuesta al Cuestionario Individual)
+                  1 = Ocupado
+                  2 = Desocupado
+                  3 = Inactivo
+
+                  4 = Menor de 10 años
+                  CATEGORÍA OCUPACIONAL
+                  (Para ocupados y desocupados con ocupación
+
+                      anterior)
+                  1 = Patrón
+                  2 = Cuenta propia
+                  3 = Obrero o empleado,
+                  4 = Trabajador familiar sin remuneración
+
+                  9 = Ns./Nr.
+
+                  CATEGORÍA DE INACTIVIDAD
+                  1 = Jubilado/ Pensionado
+                  2 = Rentista
+                  3 = Estudiante
+                  4 = Ama de casa
+                  5 = Menor de 6 años
+                  6 = Discapacitado
+
+                  7 = Otros
+
+                  Indica los casos que han sido imputados
+
+                  ¿De qué manera estuvo buscando trabajo?
+
+                  Hizo contactos, entrevistas
+
+                  Mandó currículum, puso, contestó avisos(diarios,
+
+                  internet)
+
+                  Se presentó en establecimientos
+
+                  Hizo algo para ponerse por su cuenta
+
+                  Puso carteles en negocios, preguntó en el barrio
+
+INDEC - Dirección Encuesta Permanente de Hogares  18
+PP02C6    N(1)    Consultó a parientes, amigos
+PP02C7    N(1)    Se anotó en bolsas, listas, planes de empelo,
+PP02C8    N(1)    agencias, contratistas, o alguien le está buscando
+PP02E     N(1)    trabajo
+
+PP02H     N(1)    De otra forma activa
+                  Durante esos 30 días, no buscó trabajo porque...
+PP02I     N(1)    1= está suspendido
+                  2= ya tiene trabajo asegurado
+                  3= se cansó de buscar trabajo
+                  4= hay poco trabajo en esta época del año
+                  5= por otras razones
+
+                  En los últimos 12 meses ¿buscó trabajo en algún
+                  momento?
+                  1 = Si
+                  2 = No
+
+                  En los últimos 12 meses ¿trabajó en algún momento?
+                  1 = Si
+                  2 = No
+
+Ocupados que trabajaron en la semana de referencia
+
+PP03C     N(1)    La semana pasada, ¿tenía...
+                  1 = ...un sólo empleo/ocupación/ actividad?
+PP03D     N(1)    2 = ...más de un empleo/ocupación/ actividad?
+PP3E_TOT  N(5,1)
+PP3F_TOT  N(5,1)  Cantidad de ocupaciones.
+PP03G     N(1)    Total de horas que trabajó en la semana en la
+                  ocupación principal.
+PP03H     N(1)    Total de horas que trabajó en la semana en otras
+                  Ocupaciones.
+                  La semana pasada, ¿quería trabajar más horas?
+                  1 =Si
+                  2 =No
+                  ¿Si hubiera conseguido más horas...
+                  1 =...podía trabajarlas esa semana?
+                  2 =...podía empezar a trabajarlas en dos semanas a
+                  más tardar?
+                  3 =...no podía trabajar más horas?
+                  9 =...Ns./Nr.
+
+INDEC - Dirección Encuesta Permanente de Hogares    19
+Para todos los ocupados
+
+PP03I                N(1)   En los últimos treinta días, ¿buscó trabajar más
+                            horas?
+PP03J                N(1)   1 = Si
+
+                            2 = No
+
+                            9 = Ns./Nr.
+                            Aparte de este/os trabajo/s,¿estuvo buscando algún
+                            empleo/ocupación/ actividad?
+                            1 = Si
+
+                            2 = No
+
+                            9 = Ns./Nr.
+
+INTENSI              N (1)  1 = Subocupado por insuficiencia horaria
+                            2 = Ocupado pleno
+Ocupación principal         3 = Sobreocupado
+                            4 = Ocupado que no trabajó en la semana
+PP04A                N(1)   9 = Ns./Nr.
+
+PP04B_COD            N(5)   El negocio/empresa/institución/actividad en la
+                            que trabaja es...(se refiere al que trabaja más
+PP04B1               N(1)   horas semanales)
+PP04B2               N(1)   1 =... estatal?
+                            2 =... privada?
+                            3 =... de otro tipo? (especificar)
+                            ¿A qué se dedica o produce el negocio/ empresa/
+
+                              institución?
+                            (Ver Clasificador de Actividades Económicas para
+                            Encuestas Sociodemográficas del Mercosur ­ CAES-
+                            MERCOSUR)
+                            Si presta servicio doméstico en hogares
+                            Particulares
+                            1 = casa de familia
+
+                            En cuántas casas trabaja? (cantidad)
+
+¿Cuánto tiempo hace que trabaja allí? (en la casa que tiene más horas)
+
+PP04B3_MES           N(2)   mes
+
+PP04B3_ANO           N(2)   año
+
+PP04B3_DIA           N(2)           día
+PP04C                N(2)   ¿Cuántas personas, incluido...trabajan allí en total?
+
+                                      1 = 1 persona
+                                      2 = 2 personas
+                                      3 = 3 personas
+                                      4 = 4 personas
+
+                                      5 = 5 personas
+
+                                      6 = de 6 a 10 personas
+
+INDEC - Dirección Encuesta Permanente de Hogares                        20
+PP04C99     N(1)     7 = de 11 a 25 personas
+PP04D_COD   C(5)     8 = de 26 a 40 personas
+                     9 = de 41 a 100 personas
+                   10 = de 101 a 200 personas
+                   11 = de 201 a 500 personas
+
+                   12 = más de 500 personas
+
+                   99 = Ns/Nr
+                    1 = hasta 5;
+                     2 = de 6 a 40;
+
+                     3 = más de 40;
+
+                     9 = Ns./Nr.
+
+                  Código de Ocupación
+
+                  (Ver Clasificador Nacional de Ocupaciones ­ CNO -
+
+                  versión 2001)
+
+PP04G       N(2)  Dónde realiza principalmente sus tareas?
+                       1. = En un local/oficina/establecimiento
+                          negocio/taller/chacra/finca.
+
+                       2. = En puesto ó kiosco fijo callejero.
+                       3. = En vehículos: bicicleta / moto / autos
+
+                            / barcos / botes (no incluye servicio de
+                            transporte).
+                       4. = En vehículo para transporte de personas
+                            y mercaderías-aéreos, marítimo, terrestre-
+
+                            incluye taxis, colectivos, camiones,
+                            furgones, transporte de combustible,
+                            mudanzas, etc.)
+                       5. = En obras en construcción, de
+                             infraestructura, minería ó similares.
+                       6. = En esta vivienda. (sin lugar exclusivo)
+                       7. = En la vivienda del socio ó del patrón.
+                       8. = En el domicilio/local de los clientes.
+                       9. = En la calle/espacios públicos/ambulante/
+                             de casa en casa/puesto móvil callejero.
+                       10=En otro lugar (especificar).
+
+Ocupación principal de los trabajadores independientes
+
+¿Cuánto tiempo hace que trabaja en ese empleo en forma continua...?
+
+PP05B2_MES  N(2)  meses
+PP05B2_ANO  N(2)  años
+PP05B2_DIA  N(2)  días
+
+¿En ese negocio/empresa/actividad, tiene...?
+
+PP05C_1     N(1)  ...maquinarias/equipos?
+                         1 = propio (del negocio)
+
+                  2 = prestado/alquilado
+
+                  3 = no tiene
+
+INDEC - Dirección Encuesta Permanente de Hogares                     21
+PP05C_2  N(1)   ...local(incluye kiosco/puesto fijo)
+PP05C_3  N(1)          1 = propio (del negocio)
+PP05E    N(1)
+PP05F    N(1)          2 = prestado/alquilado
+PP05H    N(1)
+                       3 = no tiene
+
+                ...vehículo?
+                       1 = propio (del negocio)
+
+                       2 = prestado/alquilado
+
+                       3 = no tiene
+                   ¿ Para la actividad del negocio, en los últimos 3
+
+                meses, tuvo que gastar en la compra de materias
+
+                primas, productos, pagar servicios u otros gastos?
+
+                      1= Si
+
+                      2= No
+                ¿Ese negocio/empresas/actividad, trabaja habitualmente
+
+                  para...
+                      6 = un sólo cliente? (persona, empresa)
+
+                      7 = Distintos clientes? (incluye público en
+
+                              general)
+                ¿Durante cuánto tiempo ha estado trabajando en ese
+
+                  empleo en forma continua? (con interrupciones
+                  laborales no mayores de 15 días)
+
+                      1 = menos de 1 mes
+                      2 = de 1 a 3 meses
+                      3 = más de 3 a 6 meses
+                      4 = más de 6 meses a 1 año
+                      5 = más de 1 a 5 años
+
+                      6 = más de 5 años
+
+                      9 = Ns./Nr.
+
+Ingresos de la ocupación principal de los trabajadores independientes
+
+PP06A    N(1)   En ese negocio/empresa/actividad ¿tiene socios ó
+                  familiares asociados?
+PP06C                  1 = Si
+PP06D
+PP06E                  2 = No
+
+PP06H    N(10) Monto de ingreso de patrones y cta.propia sin socios
+
+         N(10) Monto de ingreso de patrones y cta.propia con socios
+
+         N(1)   Ese negocio/empresa/actividad...
+         N(10)         1 = ...es una sociedad jurídicamente constituida?
+                                   (SA, SRL, Comandita por acciones, etc.)
+
+                       2 = ...es una sociedad de otra forma legal?
+
+                       3 = ...o es una sociedad convenida de palabra?
+                ¿Es una actividad familiar? (solo para 2 y 3 de PP06E)
+
+                       1 = Si
+
+                       2 = No
+
+INDEC - Dirección Encuesta Permanente de Hogares                       22
+Ocupación principal de los asalariados (excepto servicio doméstico)
+
+PP07A   N(1)  ¿Cuánto tiempo hace que está trabajando en ese empleo
+                en forma continua? (sin interrupciones de la
+                relación laboral en la misma
+                empresa/negocio/institución)
+                     1 = menos de 1 mes
+                     2 = 1 a 3 meses
+                     3 = más de 3 a 6 meses
+                     4 = más de 6 a 12 meses
+                     5 = más de 1 a 5 años
+
+                     6 = más de 5 años
+
+                     9 = Ns./Nr.
+
+PP07C   N(1)  ¿Ese empleo tiene tiempo de finalización?
+                     1 = Sí (incluye changa, trabajo transitorio, por
+                            tarea u obra, suplencia, etc;
+                     2 = No (incluye permanente, fijo, estable, de
+
+                            planta);
+
+                     9 = Ns./Nr.
+
+PP07D   N(1)  ¿Por cuánto tiempo es ese trabajo? (Para los que
+PP07E   N(1)    tienen en PP07C= 1)
+                     1 = sólo fue esa vez/sólo cuando lo llaman
+                     2 = hasta 3 meses
+                     3 = más de 3 a 6 meses
+                     4 = más de 6 a 12 meses
+
+                     5 = más de 1 año
+
+                     9 = Ns./Nr.
+              ¿Ese trabajo es...
+
+                     1 = ...un plan de empleo?
+                     2 = ...un período de prueba?
+
+                     3 = ...una beca/pasantía/aprendizaje?
+
+                     4 =ninguno de éstos
+
+Ocupación principal de los asalariados (incluido servicio doméstico)
+
+PP07F1  N(1)  ¿En este trabajo le dan... (no excluyentes)
+PP07F2  N(1)    ...de comer gratis en el lugar de trabajo?
+PP07F3  N(1)            1 = Si
+PP07F4                  2 = No
+        N(1)    ...vivienda?
+PP07F5                  1 = Si
+PP07G1                  2 = No
+                ...algún producto o mercadería?
+
+                        1 = Si
+
+                        2 = No
+                ...algún otro beneficio? (automóvil,
+
+                     teléfono celular, pasajes, etc.)
+
+                        1 = Si
+
+                        2 = No
+
+        N(1)  no recibe ninguno?
+        N(1)
+                   1 = si
+              ¿En este trabajo tiene... (no excluyentes)
+
+              ...vacaciones pagas?
+
+INDEC - Dirección Encuesta Permanente de Hogares                      23
+PP07G2    N(1)       1 = Si
+PP07G3    N(1)       2 = No
+PP07G4    N(1)   ...aguinaldo?
+PP07G_59  N(1)       1 = Si
+PP07H                2 = No
+PP07I            ...días pagos por enfermedad?
+PP07J                1 = Si
+                      2 =No
+PP07K            ...obra social?
+                     1 =Si
+                     2 =No
+                 no tiene ninguno
+                     5 =si
+
+           N(1)  ¿Por ese trabajo tiene descuento jubilatorio?
+           N(1)
+           N(1)          1 = Si
+
+          N(1)           2 = No
+                 ¿Aporta por sí mismo a algún sistema jubilatorio?
+
+                         1 = Si
+
+                         2 = No
+                    ¿El turno habitual de trabajo es..
+
+                         1
+                         ­
+                         ­
+                         ­ = ...de día? (mañana/tarde)
+                         2 = ...de noche?
+
+                         3 = ...de otro tipo? (rotativo, día y noche,
+
+                         guardias con franco)
+                    ¿Cuando cobra..
+
+                         1 = ...le dan recibo con sello/membrete/firma del
+                                         empleador?
+
+                         2 = ...le dan un papel/recibo sin nada?
+                         3 = ...entrega una factura?
+
+                         4 = ...no le dan ni entrega nada?
+
+                         5 = no cobra, es trabajador sin pago/ad-honorem
+
+Ingresos de la ocupación principal de los asalariados
+
+PP08D1    N(10)  ¿Cuánto cobró por ese mes por esos conceptos?
+PP08D4    N(10)  Monto total de sueldos/jornales, salario familiar,
+                 horas extras, otras bonificaciones habituales y
+                 tickets, vales o similares
+                 Por el mes de...(mes)....¿cobró...
+
+                 Monto percibido en tickets
+
+PP08F1    N(10)  ¿Cuánto cobró por ese mes de ..(mes)...
+
+INDEC - Dirección Encuesta Permanente de Hogares          24
+PP08F2       N(10)    Monto en pesos cobrado por Comisión por
+PP08J1       N(6)     venta/producción
+PP08J2       N(6)    ¿Cuánto cobró por ese mes de ..(mes)...
+PP08J3       N(6)     Monto en pesos cobrado por Propinas
+                    ¿Cuánto cobró por ese mes de ..(mes)...
+                      Monto aguinaldo
+                    ¿Cuánto cobró por ese mes de ..(mes)...
+                      Monto otras bonificaciones no habituales
+                    ¿Cuánto cobró por ese mes de ..(mes)...
+                      Monto retroactivos
+
+Movimientos interurbanos (sólo para ocupados)
+
+PP09A        N(1)   SOLO OCUPADOS DE: CIUDAD DE BUENOS AIRES ­ Partidos
+
+                      del GBA En su ocupación (o en la de más
+
+                      horas)¿trabaja....en ....
+                      1 = Ciudad de Buenos Aires
+                      2 = Partidos del GBA
+
+                      3 = Ambos
+
+                      4 = En otro lugar
+
+PP09A_ESP    C(90)  Especificar: contiene la descripción de otro lugar
+PP09B
+             N(1)   SOLO OCUPADOS DE: POSADAS, FORMOSA, CORRIENTES,
+PP09C               RESISTENCIA, SANTA FE, Y PARANA Y NEUQUEN.
+
+PP09C_ESP           En su ocupación (o en la de más horas) trabaja en
+Desocupados
+PP10A               esta ciudad?
+
+                    1 = Si
+
+                                  2 = No
+             N(1) ¿Dónde trabaja................................
+
+                                  1 = en otro lugar de esta provincia
+
+                    2 = en otra provincia
+
+                    3 = en otro país
+
+             C(90) Descripción de otro lugar (según pregunta PP09C).
+
+             N(1)   ¿Cuánto hace que está buscando trabajo?
+                          1 = ...menos de 1 mes?
+                          2 = ...de 1 a 3 meses?
+                          3 = ...más de 3 a 6 meses?
+
+                          4 = ...más de 6 a 12 meses?
+
+                          5 = ...más de 1 año?
+
+INDEC - Dirección Encuesta Permanente de Hogares                       25
+PP10C       N(1)              ¿Durante ese tiempo hizo algún trabajo/ changa?
+PP10D       N(1)
+PP10E       N(1)                       1= Si
+
+                                       2= No
+                              ¿Ha trabajado alguna vez?
+
+                                       1= Si
+
+                                       2= No
+                              ¿Cuánto tiempo hace que terminó su último
+
+                                 trabajo/changa...?
+                                       1= ...menos de 1 mes?
+                                       2= ...de 1 a 3 meses?
+                                       3= ...más de 3 a 6 meses?
+                                       4= ...más de 6 a 12 meses?
+
+                                       5= ...más de 1 a 3 años?
+
+                                       6= ...más de 3 años?
+
+Desocupados con empleo anterior: Última ocupación/changa (finalizada hace 3 años o menos)
+
+PP11A       N(1)              El negocio/empresa/institución/ actividad en la que
+                                trabajaba era
+
+                              1 = ...estatal?
+
+                              2 = ...privada?
+
+                              3 = ...de otro tipo?
+
+PP11B_COD   N(5)              A qué se dedicaba ó que producía ese
+                                 negocio/empresa/institución?
+PP11B1      N(1)                      (Ver Clasificador de Rama de Actividad ­ CAES-
+                                      MERCOSUR)
+¿Cuánto tiempo trabajó allí?     Si prestaba servicios doméstico en
+                                 hogares particulares
+PP11B2_MES  N(2)                           1 =casa de familia
+
+PP11B2_ANO  N(2)                      meses
+                                      años
+PP11B2_DIA  N(2)                      días
+
+PP11C       N(2)              ¿Cuántas personas, incluido...trabajaban allí en total?
+                                      1 = 1 persona
+                                      2 = 2 personas
+                                      3 = 3 personas
+                                      4 = 4 personas
+                                      5 = 5 personas
+                                      6 = 6 a 10 personas
+                                      7 = 11 a 25 personas
+                                      8 = 26 a 40 personas
+                                      9 = 41 a 100 personas
+                                      10 = 101 a 200 personas
+                                      11 = 201 a 500 personas
+                                      12 = más de 500 personas
+
+                                      99 = Ns./Nr.
+
+INDEC - Dirección Encuesta Permanente de Hogares                                           26
+PP11C99     N(1)    Para los que responden PP11c=99
+PP11D_COD  (5)              1 = hasta 5
+                            2 =de 6 a 40
+
+                            3 =más de 40
+
+                            9 =Ns./Nr.
+                  Cómo se llamaba la ocupación que tenía?
+
+                      (Ver Clasificador Nacional de Ocupaciones ­
+
+                  CNO, versión 2001)
+
+¿Cuánto tiempo seguido estuvo trabajando en ese lugar...?
+
+PP11G_ANO  N(2) años
+PP11G_MES
+PP11G_DIA  N(2)   meses
+PP11L
+           N(2)   días
+PP11L1
+           N(1)   ¿Cuál fue la razón principal por la que dejó esa
+PP11M             actividad?
+PP11N
+                        1 = falta de clientes/clientes que no pagan
+                        2 = falta de capital/equipamiento
+                        3 = trabajo estacional
+
+                        4 = tenía gastos demasiado altos
+                        5 = otras causas laborales (especificar)
+                        6 = jubilación/retiro
+                        7 = causas personales (matrimonio, embarazo
+
+                                                  cuidado de hijos o familiar, estudio,
+
+           N(1)                       enfermedad)
+
+                  ¿Ese trabajo era...
+                             1 = ...una changa, trabajo transitorio, por tarea
+                             u obra, suplencia, etc?
+
+                             2 = ...un trabajo permanente, fijo, estable, de
+
+                      planta, etc.?
+
+                      3 = Ns./Nr.
+
+           N(1)   Ese trabajo era...
+                        1 = ...un plan de empleo?
+
+                      2 = ...un período de prueba?
+
+                               3 = ...otro tipo de trabajo?
+           N(1) ¿En ese trabajo le hacían descuento jubilatorio?
+
+                               1 = Si
+
+                      2 = No
+
+                      9 = Ns./Nr.
+
+PP11O      N(2) ¿Cuál fue la razón principal por la que dejó ese trabajo?
+
+INDEC - Dirección Encuesta Permanente de Hogares                                         27
+                                    1 = despido/cierre (quiebra/venta/traslado de la
+                                            empresa reestructuración o recorte de
+                                            personal/falta de ventas o clientes)
+
+                                    2 = por retiro voluntario del sector público
+                                    3 = por jubilación
+                                    4 = fin de trabajo temporario/ estacional
+                                    5 = le pagaban poco/no le pagaban
+                                    6 = malas relaciones laborales/malas condiciones
+
+                                            de trabajo (insalubre, cambios de horarios,
+                                            etc.)
+                                    7 = renuncia obligada/pactada
+                                    8 = otras causas laborales (especificar)
+                                    9 = por razones personales (matrimonio, embarazo,
+
+                                            cuidado de hijos o familia, estudio,
+
+                                            enfermedad)
+
+PP11P     N(1)      ¿Cerró la empresa? (Para quienes responden en pp11o=1)
+PP11Q     N(1)               1 = Si
+PP11R     N(1)
+PP11S     N(1)               2 = No
+PP11T     N(1)
+                             9 = Ns./Nr.
+                   ¿Fue la única persona que quedó sin trabajo?
+
+                             1 = Si
+
+                             2 = No
+
+                             9 = Ns./Nr.
+                   ¿Le enviaron telegrama?
+
+                             1 = Si
+
+                             2 = No
+                   ¿Le pagaron indemnización?
+
+                             1 = Si
+
+                             2 = No
+                   ¿Está cobrando seguro de desempleo?
+
+                             1 = Si
+
+                             2 = No
+
+                             9 = Ns./Nr.
+
+Ingresos de la ocupación principal
+
+P21        N (10)                   MONTO DE INGRESO DE LA OCUPACIÓN PRINCIPAL.
+DECOCUR   C (2)                     Nº de decil de ingreso de la ocupación principal
+                                    del TOTAL EPH (ver Anexo I).
+IDECOCUR  C (2)
+                                    Nº de decil de ingreso de la ocupación principal
+RDECOCUR  C (2)                     del INTERIOR EPH (ver Anexo I).
+
+                                    Nº de decil de ingreso de la ocupación principal
+                                    de la REGION (ver Anexo I).
+
+INDEC - Dirección Encuesta Permanente de Hogares  28
+GDECOCUR  C (2)               Nº de decil de ingreso de la ocupación principal
+PDECOCUR  C (2)               del CONJUNTO DE AGLOMERADOS DE 500 MIL Y MAS
+ADECOCUR  C (2)               HABITANTES (ver Anexo I).
+PONDIIO   N (6)
+                              Nº de decil de ingreso de la ocupación principal
+                              del CONJUNTO DE AGLOMERADOS DE MENOS DE 500 MIL
+                              HABITANTES (ver Anexo I).
+                              Nº de decil de ingreso de la ocupación principal
+                              del AGLOMERADO (ver Anexo I).
+
+                              Ponderador del ingreso de la ocupación principal
+                              (Ver Anexo I)
+
+Ingreso de otras ocupaciones
+
+Tot_p12   N (12)              MONTO DE INGRESO DE OTRAS OCUPACIONES.
+                              (Incluye: ocupación secundaria, ocupación previa a
+Ingreso total individual      la semana de referencia, deudas/retroactivos por
+                              ocupaciones anteriores al mes de referencia, etc)
+p47T      N (10)
+                              MONTO DE INGRESO TOTAL INDIVIDUAL
+DECINDR   C (2)               (sumatoria ingresos laborales y no laborales - ver
+
+IDECINDR  C (2)                 Anexo I)
+RDECINDR  C (2)               Nº de decil de ingreso total individual del TOTAL
+GDECINDR  C (2)               EPH (ver Anexo I).
+PDECINDR  C (2)
+                              Nº de decil de ingreso total individual del
+ADECINDR  C (2)               INTERIOR EPH (ver Anexo I).
+PONDII    N (6)
+                              Nº de decil de ingreso total individual de la
+                              REGION (ver Anexo I).
+
+                              Nº de decil de ingreso total individual del
+                              CONJUNTO DE AGLOMERADOS DE 500 MIL Y MAS
+                              HABITANTES (ver Anexo I).
+                              Nº de decil de ingreso total individual del
+                              CONJUNTO DE AGLOMERADOS DE MENOS DE 500 MIL
+                              HABITANTES (ver Anexo I).
+                              Nº de decil de ingreso total individual del
+                              AGLOMERADO (ver Anexo I).
+                              Ponderador para ingreso total individual (ver
+                              Anexo I)
+
+INDEC - Dirección Encuesta Permanente de Hogares  29
+Ingresos no laborales
+
+V2_M                    N (6)     Monto del ingreso por JUBILACION O PENSION
+V3_M                    N (6)
+V4_M                    N (6)     Monto del ingreso por INDEMNIZACION POR DESPIDO
+V5_M                    N (6)
+                                  Monto del ingreso por SEGURO DE DESEMPLEO
+V8_M                    N (6)     Monto del ingreso por SUBSIDIO O AYUDA SOCIAL (EN
+                                  DINERO) DEL GOBIERNO, IGLESIAS, ETC.
+V9_M                    N (6)     Monto del ingreso por ALQUILER (VIVIENDA ,
+                                  TERRENO, OFICINA, ETC.) DE SU PROPIEDAD.
+V10_M                   N (6)     Monto del ingreso por GANANCIAS DE ALGUN NEGOCIO
+                                  EN EL QUE NO TRABAJÓ.
+V11_M                   N (6)     Monto del ingreso por INTERESES O RENTAS POR
+V12_M                   N (6)     PLAZOS FIJOS/INVERSIONES.
+
+V18_M                   N (6)     Monto del ingreso por BECA DE ESTUDIO.
+                                  Monto del ingreso por CUOTAS DE ALIMENTOS O AYUDA
+V19_AM                  N (6)     EN DINERO DE PERSONAS QUE NO VIVEN EN EL HOGAR.
+                                  Monto del ingreso por OTROS INGRESOS EN EFECTIVO
+V21_M                   N (6)     (LIMOSNAS, JUEGOS DE AZAR, ETC.)
+T_Vi                    N(12,4)   Monto del ingreso por TRABAJO DE MENORES DE 10
+                                  AÑOS.
+
+                                  Monto del ingreso por aguinaldo.
+
+                                  MONTO TOTAL DE INGRESOS NO LABORALES
+
+Ingreso total familiar
+
+ITF                     N (12,2)  MONTO DEL INGRESO TOTAL FAMILIAR
+DECIFR                  C (2)     Nº de decil de ingreso total familiar del TOTAL
+IDECIFR                 C (2)     EPH (ver Anexo I).
+RDECIFR                 C (2)     Nº de decil de ingreso total familiar del INTERIOR
+GDECIFR                 C (2)     EPH (ver Anexo I).
+                                  Nº de decil de ingreso total familiar de la REGION
+PDECIFR                 C (2)     (ver Anexo I).
+                                  Nº de decil de ingreso total familiar del CONJUNTO
+ADECIFR                 C (2)     DE AGLOMERADOS DE 500 MIL Y MAS HABITANTES (ver
+                                  Anexo I).
+                                  Nº de decil de ingreso total familiar del CONJUNTO
+                                  DE AGLOMERADOS DE MENOS DE 500 MIL HABITANTES (ver
+                                  Anexo I).
+                                  Nº de decil de ingreso total familiar del
+                                  AGLOMERADO (ver Anexo I).
+
+INDEC - Dirección Encuesta Permanente de Hogares  30
+Ingreso per cápita familiar
+
+IPCF     N (12,2)            MONTO DEL INGRESO PER CÁPITA FAMILIAR.
+DECCFR   C (2)               Nº de decil de ingreso per cápita familiar del
+IDECCFR  C (2)               TOTAL EPH (ver Anexo I).
+RDECCFR  C (2)               Nº de decil de ingreso per cápita familiar del
+GDECCFR  C (2)               INTERIOR EPH (ver Anexo I).
+                             Nº de decil de ingreso per cápita familiar de la
+PDECCFR  C (2)               REGION (ver Anexo I).
+                             Nº de decil de ingreso per cápita familiar del
+ADECCFR  C (2)               CONJUNTO DE AGLOMERADOS DE 500 MIL Y MAS
+PONDIH   N (6)               HABITANTES (ver Anexo I).
+                             Nº de decil de ingreso per cápita familiar del
+                             CONJUNTO DE AGLOMERADOS DE MENOS DE 500 MIL
+                             HABITANTES (ver Anexo I).
+                             Nº de decil de ingreso per cápita familiar del
+                             AGLOMERADO (ver Anexo I).
+
+                             Ponderador del ingreso total familiar y del
+                             ingreso per capita familiar, para hogares (ver
+                             Anexo I).
+
+INDEC - Dirección Encuesta Permanente de Hogares  31
+Anexo I
+
+             Recomendaciones técnicas para el uso de la
+                               información de ingresos
+
+Montos de ingreso
+
+Se incluyen montos de ingreso captados en los cuestionarios y variables construidas por sumatoria de
+distintas fuentes (campos P21, p47t, ITF e IPCF)
+
+          El campo P21 agrega el total de ingresos habituales de la ocupación principal del individuo. El
+          campo P47t es la sumatoria de los ingresos laborales y los no laborales del individuo.
+          El campo ITF es la sumatoria de los ingresos individuales totales de todos los componentes del
+          hogar.
+          El campo IPCF es el ingreso per cápita del hogar, es decir, el ITF dividido la cantidad de miembros
+          del hogar.
+
+Escalas decílicas
+
+Se incluyen las siguientes escalas decílicas:
+    · para el Ingreso total individual: DECINDR (total aglomerados), ADECINDR (AGLOMERADO),
+          RDECINDR (región), PDECINDR (aglomerados de menos de 500mil habitantes), GDECINDR
+          (aglomerados de 500mil habitantes y más), IDECINDR (aglomerados del interior).
+
+    · para el Ingreso de la ocupación principal: DECOCUR (total aglomerados), ADECOCUR
+          (AGLOMERADO), RDECOCUR (región), PDECOCUR (aglomerados de menos de 500mil
+          habitantes), GDECOCUR (aglomerados de 500mil habitantes y más), IDECOCUR (aglomerados del
+          interior).
+
+    · para el Ingreso total familiar: DECIFR (total aglomerados), ADECIFR (AGLOMERADO), RDECIFR
+          (región), PDECIFR (aglomerados de menos de 500mil habitantes), GDECIFR (aglomerados de
+          500mil habitantes y más), IDECIFR (aglomerados del interior).
+
+    · para el Ingreso per cápita familiar: DECCFR (total aglomerados), ADECCFR (AGLOMERADO),
+          RDECCFR (región), PDECCFR (aglomerados de menos de 500mil habitantes), GDECCFR
+          (aglomerados de 500mil habitantes y más), IDECCFR (aglomerados del interior).
+
+Las categorías que presenta cada variable son las siguientes:
+
+                                              00 = Sin ingresos
+                                              1 = decil 1
+                                              2 = decil 2
+                                              3 = decil 3
+                                              4 = decil 4
+                                              5 = decil 5
+                                              6 = decil 6
+                                              7 = decil 7
+                                              8 = decil 8
+                                              9 = decil 9
+                                              10 = decil 10
+                                              12 = No respuesta de ingresos
+                                              13 = Entrevista individual no realizada
+
+INDEC - Dirección Encuesta Permanente de Hogares                                       32
+Factores de expansión
+Para minimizar el efecto de la no respuesta de ingresos, se asignó a los no respondentes el
+comportamiento de los respondentes por estrato de la muestra, por lo cual, para el tratamiento de los
+ingresos y la pobreza se presentan dos tipos de ponderadores:
+1. El campo PONDERA, sin corrección, que se utiliza además para el resto de las variables.
+2. Los campos PONDII, PONDIIO, PONDIH con corrección por no respuesta:
+
+· PONDII para el tratamiento del ingreso total individual(p47t, decindr, adecindr, rdecindr, pdecindr,
+     gdecindr, idecindr).
+
+· PONDIIO para el ingreso de la ocupación principal (p21, pp06c, pp06d, pp08d1, pp08d4, pp08f1,
+     pp08f2, pp08j1, pp08j2,pp08j3, decocur, adecocur, rdecocur, pdecocur, gdecocur, idecocur).
+
+· PONDIH para el ingreso total familiar (ITF, decifr, adecifr, rdecifr, pdecifr, gdecifr, idecifr), el ingreso per
+     cápita familiar (IPCF, deccfr, adecifr, rdecifr, pdecifr, gdecifr, idecifr).
+
+Los campos de deciles se presentan calculados con estos ponderadores con corrección por no respuesta. El
+usuario puede también elaborar los deciles sin la corrección utilizando PONDERA y los campos de
+ingreso que correspondan.
+
+                                         Comentarios Generales
+
+Los códigos 9, 99, 999, 9999 corresponden, salvo indicación en contrario, a la categoría No sabe/No
+responde.
+Una excepción la constituyen los montos de ingreso, en cuyo caso la no respuesta se identifica con
+el código -9.
+Además los montos captados en pp06c y pp06d presentan también los códigos -7 "No tenía esa ocupación
+en el mes de referencia" y -8 "No tuvo ingresos por el mes de referencia".
+El código 0 identifica los casos a los cuales no les corresponde la secuencia analizada.
+
+INDEC - Dirección Encuesta Permanente de Hogares  33
+
