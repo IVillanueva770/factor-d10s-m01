@@ -1,6 +1,24 @@
-pandas
+# El piso de pandas NO es decorativo: el pipeline y el notebook usan
+# groupby(...).apply(..., include_groups=False), que existe recien desde
+# 2.2. Con 2.1 falla con 'unexpected keyword argument'.
+pandas>=2.2
 numpy
 matplotlib
+
+# scipy no se importa en ningun archivo, pero hace falta: pandas lo usa
+# por dentro para Series.corr(method='spearman'), que el analisis de
+# relaciones corre tres veces. Sin el, falla a mitad y el error no dice
+# que la causa es una dependencia que falta.
+scipy
+
+# Lectura de los crudos: la EPH viene en xlsx dentro de un zip, y los
+# intermedios se guardan en parquet.
 openpyxl
-requests
 pyarrow
+requests
+
+# Solo para generar el informe en PDF (etapa 13).
+reportlab
+
+# Solo para armar las tablas en markdown de los informes (etapa 10).
+tabulate

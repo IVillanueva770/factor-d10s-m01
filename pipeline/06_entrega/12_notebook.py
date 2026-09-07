@@ -166,6 +166,70 @@ archivo. Si el archivo cambió, la celda falla en vez de seguir con datos
 distintos de los que este análisis describe.
 """)
 
+    # Chequeo de dependencias ANTES de bajar nada. Las dos que verifica son
+    # requisitos REALES del notebook que no se ven leyendolo:
+    #
+    #   pandas >= 2.2  por `groupby(...).apply(..., include_groups=False)`.
+    #                  Con 2.1 tira "unexpected keyword argument", que no
+    #                  explica nada a quien lo recibe.
+    #   scipy          por `corr(method="spearman")`, que pandas delega en
+    #                  scipy.stats. El notebook nunca lo importa, asi que la
+    #                  dependencia es invisible hasta que revienta a mitad.
+    #
+    # En Colab las dos estan y esta celda no dice nada. En un entorno pelado
+    # corta ACA con instrucciones, y no doce celdas mas abajo con un error
+    # que no se entiende. Medido el 2026-09-07 armando un entorno limpio:
+    # sin scipy fallaban 3 de 24 celdas, y con pandas 2.1.4 fallaban 2.
+    md("""
+Antes de bajar nada, el notebook chequea que el entorno tenga lo que necesita.
+En Google Colab esta celda no dice nada porque ya está todo; en un entorno
+propio, corta acá con instrucciones en vez de fallar a mitad del análisis con
+un error que no se entiende.
+""")
+
+    code('''
+import sys
+
+FALTA = []
+
+try:
+    import pandas as pd
+    if tuple(int(x) for x in pd.__version__.split(".")[:2]) < (2, 2):
+        FALTA.append(f"pandas >= 2.2 (tenes {pd.__version__}): lo necesita "
+                     "groupby(...).apply(..., include_groups=False)")
+except ImportError:
+    FALTA.append("pandas >= 2.2")
+
+try:
+    import scipy  # noqa: F401  (no se usa directo: lo usa pandas por dentro)
+except ImportError:
+    FALTA.append("scipy: lo necesita Series.corr(method='spearman'), que "
+                 "pandas delega en scipy.stats")
+
+for modulo in ("numpy", "matplotlib"):
+    try:
+        __import__(modulo)
+    except ImportError:
+        FALTA.append(modulo)
+
+if FALTA:
+    # chr(10) y no la secuencia de escape: este texto pasa por el generador
+    # del notebook, donde un escape se expande a un salto REAL y parte el
+    # string literal de la celda en dos. Se rompio asi una vez, con un
+    # SyntaxError en la celda 3 que no decia nada del origen.
+    salto = chr(10)
+    raise SystemExit(
+        "Faltan dependencias:" + salto + "  - " +
+        (salto + "  - ").join(FALTA) + salto + salto +
+        "Instalalas con:" + salto +
+        "  pip install 'pandas>=2.2' numpy matplotlib scipy")
+
+print("Entorno OK.")
+print(f"  pandas {pd.__version__} . numpy {__import__('numpy').__version__} "
+      f". matplotlib {__import__('matplotlib').__version__} "
+      f". scipy {scipy.__version__}")
+''')
+
     code(f'''
 import hashlib
 import urllib.request
