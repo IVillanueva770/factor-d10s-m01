@@ -259,13 +259,13 @@ def secciones_2_a_7(md, code):
     md("""
 ## 2. Conocer el dataset
 
-Antes de buscar problemas hay que saber qué hay. Esta sección responde la
-primera actividad de la consigna: cuántos registros y variables, de qué tipo,
+Antes de buscar problemas necesitamos saber qué hay. En esta sección respondemos
+la primera actividad de la consigna: cuántos registros y variables, de qué tipo,
 cuáles son categóricas y cuáles numéricas, y qué valores faltan.
 
-Pero un listado de 131 columnas no se entiende. Lo que sí se entiende es
-**agruparlas por el rol que cumplen**, porque cada familia se lee distinto y,
-sobre todo, se juzga distinto. Un chequeo genérico de calidad aplicado a ciegas
+Pero un listado de 131 columnas no se entiende. Por eso las **agrupamos por el
+rol que cumplen**, porque cada familia se lee distinto y, sobre todo, la
+juzgamos distinto. Un chequeo genérico de calidad aplicado a ciegas
 produce falsos positivos: marcaría como sospechosas las columnas de contexto
 socioeconómico por tener poca variación, cuando esa poca variación es
 exactamente cómo fueron construidas.
@@ -319,11 +319,11 @@ resumen
     md("""
 ### Cómo leer las columnas
 
-Tres convenciones del dataset que conviene tener a mano:
+Tres convenciones del dataset que usamos en todo el notebook:
 
 - Las columnas con `__` son **proporciones dentro de la fila**. `sexo__femenino`
   es qué fracción de ese grupo son mujeres, no una cantidad. Cada bloque suma 1.
-- Las que empiezan con `cob__` dicen **sobre qué fracción de la fila se calculó
+- Las que empiezan con `cob__` dicen **sobre qué fracción de la fila calculamos
   ese bloque**. Es el indicador de calidad viajando pegado al dato en vez de en
   un comentario aparte, y va a ser central en la sección 3.
 - Las que empiezan con `eph_` son indicadores socioeconómicos **de la
@@ -363,9 +363,9 @@ La segunda actividad pide buscar los problemas que puedan afectar el análisis
 posterior: faltantes, categorías inconsistentes, valores imposibles,
 duplicados, extremos y variables sin variabilidad.
 
-Se corren doce chequeos, los mismos que el pipeline del proyecto. Cada uno
+Corremos doce chequeos, los mismos que el pipeline del proyecto. Cada uno
 reporta **su denominador**, porque un "0 problemas" sin decir sobre cuántos
-casos se miró no significa nada.
+casos miramos no significa nada.
 """)
 
     code('''
@@ -502,8 +502,8 @@ tabla.sort_values("afectados", ascending=False)[
 
 Ocho de los doce chequeos dan cero. No hay duplicados, ni proporciones
 imposibles, ni bloques que no cierren, ni categorías mal escritas, ni filas
-vacías. Tiene sentido: el TP1 se construyó con 41 verificaciones automáticas
-encima, así que estos problemas se habrían detectado al armarlo.
+vacías. Tiene sentido: construimos el TP1 con 41 verificaciones automáticas
+encima, así que habríamos detectado estos problemas al armarlo.
 
 Los dos que no dan cero son los interesantes.
 
@@ -539,8 +539,8 @@ print("jurisdiccion + Enmascarado + sector + ambito ES unica.")
 Vale la pena decir cómo apareció, porque dice algo sobre el método: **el chequeo
 automático de categorías no lo encontró.** Ese chequeo busca problemas de
 formato (espacios al borde, mayúsculas inconsistentes) y `"Enmascarado"` está
-perfectamente escrito. Salió mirando a mano las filas con valores extremos, y
-recién después se agregó el chequeo de valores centinela que ahora sí lo caza.
+perfectamente escrito. Salió de mirar a mano las filas con valores extremos, y
+recién después agregamos el chequeo de valores centinela que ahora sí lo caza.
 
 ### El segundo: un bloque mal cubierto, y no al azar
 
@@ -586,14 +586,14 @@ quintil más grande a 0,72 en el más chico, y por ámbito va de 0,92 urbano a
 O sea que **el clima escolar está peor medido justo en las escuelas rurales
 chicas**, que son probablemente las de mayor riesgo de abandono. Un modelo que
 use esa variable va a tener menos información precisamente donde más la
-necesita, y eso hay que poder decirlo de antemano, no descubrirlo después.
+necesita, y eso lo tenemos que poder decir de antemano, no descubrirlo después.
 
-Un faltante al azar se puede ignorar. Uno que se concentra en la población que
-el proyecto quiere estudiar, no.
+Un faltante al azar lo podemos ignorar. Uno que se concentra en la población que
+queremos estudiar, no.
 
 ### Figura 1: la calidad del dataset
 
-Las figuras de este notebook **se generan al correr**, no se muestran como
+Las figuras de este notebook **las generamos al correr**, no las mostramos como
 imágenes bajadas. Un análisis exploratorio donde los gráficos no salen del
 mismo código que produce los números no es reproducible.
 """)
@@ -613,7 +613,7 @@ sección, porque sin ellas los resultados serían falsos.
 puede representar 29 chicos o 1.225. Un promedio simple hablaría de
 departamentos, no de estudiantes.
 
-**Regla 2: las correlaciones con indicadores de la EPH se calculan a nivel
+**Regla 2: las correlaciones con indicadores de la EPH las calculamos a nivel
 provincia, no a nivel fila.** Esta es la trampa más fácil del dataset y merece
 explicación.
 
@@ -621,8 +621,8 @@ Los valores de la EPH son provinciales: los 136 departamentos de Buenos Aires
 tienen todos exactamente el mismo ingreso mediano. Si calculamos una
 correlación sobre las 1.174 filas, estamos contando ese único valor 136 veces y
 fingiendo tener 136 mediciones independientes. El resultado se vería más
-confiable sin que haya más información atrás. Por eso esas correlaciones se
-calculan sobre **24 puntos, uno por jurisdicción**.
+confiable sin que haya más información atrás. Por eso calculamos esas
+correlaciones sobre **24 puntos, uno por jurisdicción**.
 """)
 
     code('''
@@ -665,11 +665,11 @@ Leído por movimientos dentro de la tabla:
 - Cambiar de **urbano a rural**, quedándose en privado: de 0,38 a 0,51, sube
   **0,13**
 
-**El sector pesa casi el doble que el lugar.** Este titular se apoya en las dos
+**El sector pesa casi el doble que el lugar.** Apoyamos este titular en las dos
 celdas urbanas a propósito, porque entre las dos suman 504.759 estudiantes, el
 93,5% del total.
 
-Hay una comparación más llamativa y hay que usarla con cuidado: un estudiante de
+Hay una comparación más llamativa y la usamos con cuidado: un estudiante de
 estatal urbana (0,62) está peor que uno de privada **rural** (0,51), o sea que
 el campo no es lo que lo hunde. Ilustra muy bien, pero privada rural son 36
 filas y 3.679 estudiantes, el **0,7% del total**, y es además la celda con mayor
@@ -700,8 +700,8 @@ dispersion.round(3)
 
     md("""
 No es que los grupos chicos sean peores ni mejores: **con pocos casos, un
-estudiante más o menos mueve mucho el porcentaje.** De ahí la regla que se
-aplica en todo el informe: cualquier número de una celda chica se cita con su
+estudiante más o menos mueve mucho el porcentaje.** De ahí la regla que
+aplicamos en todo el informe: citamos cualquier número de una celda chica con su
 denominador al lado.
 """)
 
@@ -743,7 +743,7 @@ corr.reindex(corr["r_con_matematica_bajo"].abs()
     md("""
 #### Antes de creerle a ese -0,82
 
-Una correlación de Pearson falla de dos maneras conocidas, y conviene atacar las
+Una correlación de Pearson falla de dos maneras conocidas, y las atacamos a las
 dos antes de reportar nada.
 
 **Miedo 1: que la sostenga un solo caso raro.** CABA es el sospechoso natural.
@@ -756,8 +756,8 @@ rectas. Spearman ignora la forma y mira únicamente el **orden**: si la provinci
 más rica es la de mejor desempeño, la segunda más rica la segunda, y así. Si
 Spearman da más fuerte que Pearson, la relación existe y no es del todo lineal.
 
-La regla que queda para todo el proyecto: **antes de creerle a una correlación,
-preguntate quién la sostiene y qué forma tiene.**
+La regla que nos queda para todo el proyecto: **antes de creerle a una
+correlación, nos preguntamos quién la sostiene y qué forma tiene.**
 """)
 
     code('''
@@ -785,8 +785,8 @@ que la relación es algo curva: el salto entre las provincias más pobres pesa m
 que entre las más ricas.
 
 **Y el n es parte del dato.** Son 24 puntos, uno por jurisdicción. Con 24
-observaciones, mover dos o tres cambia bastante el resultado. Por eso el número
-se cita siempre como *"r = -0,82 sobre 24 jurisdicciones"* y nunca como
+observaciones, mover dos o tres cambia bastante el resultado. Por eso citamos
+siempre el número como *"r = -0,82 sobre 24 jurisdicciones"* y nunca como
 *"r = -0,82"* a secas.
 """)
 
@@ -795,10 +795,10 @@ se cita siempre como *"r = -0,82 sobre 24 jurisdicciones"* y nunca como
     md("""
 ### 4.3 Qué predice mejor: ¿la escuela o el hogar?
 
-Estas correlaciones sí se calculan a nivel fila, porque las dos variables de
+Estas correlaciones sí las calculamos a nivel fila, porque las dos variables de
 cada par vienen de Aprender y varían entre departamentos.
 
-Se reportan Pearson y Spearman juntos a propósito: si difieren mucho, la
+Reportamos Pearson y Spearman juntos a propósito: si difieren mucho, la
 relación no es lineal y el Pearson solo estaría engañando.
 """)
 
@@ -837,13 +837,13 @@ relaciones es fuertemente no lineal.
 
 ### 4.4 Las inasistencias: el hallazgo que no esperábamos
 
-Acá pasó algo que vale contar completo, porque el método importa tanto como el
-resultado.
+Acá nos pasó algo que vale contar completo, porque el método importa tanto como
+el resultado.
 
-**La primera medición usó una sola categoría, la más extrema (30 faltas o más),
-y dio r = +0,000.** La conclusión habría sido que las inasistencias no se
-relacionan con el desempeño. Es falso, y el error fue mirar la cola de la
-distribución en vez del acumulado: casi nadie cae en la categoría extrema, así
+**En la primera medición usamos una sola categoría, la más extrema (30 faltas o
+más), y nos dio r = +0,000.** Habríamos concluido que las inasistencias no se
+relacionan con el desempeño. Es falso, y el error fue nuestro: miramos la cola
+de la distribución en vez del acumulado: casi nadie cae en la categoría extrema, así
 que esa columna casi no varía y no puede correlacionar con nada.
 """)
 
@@ -874,10 +874,10 @@ chicos de un grupo reportan faltar, **menos** chicos de ese grupo están por
 debajo del básico. Y los grupos donde más chicos dicen no faltar nunca son los
 de peor desempeño.
 
-La primera sospecha ante algo así es que sea efecto de mezclar poblaciones
-distintas (la paradoja de Simpson): si las escuelas privadas rinden mejor y
+Lo primero que sospechamos ante algo así es que sea efecto de mezclar
+poblaciones distintas (la paradoja de Simpson): si las escuelas privadas rinden mejor y
 además reportan más faltas, la correlación podría aparecer sin existir dentro de
-ningún grupo. Se descarta calculando la misma correlación **dentro** de cada
+ningún grupo. Lo descartamos calculando la misma correlación **dentro** de cada
 celda.
 """)
 
@@ -900,7 +900,7 @@ pd.DataFrame([{
 
 #### Quién contesta esta pregunta, y por qué importa
 
-Antes de interpretar hay que saber de dónde sale el dato. Lo verificamos en la
+Antes de interpretar necesitamos saber de dónde sale el dato. Lo verificamos en la
 fuente oficial: el **Manual del Aplicador de Aprender 2024** dice que *"al
 finalizar ambas pruebas, los estudiantes contestarán un cuestionario
 complementario"*, y que cada alumno recibe un Cuadernillo del Estudiante con las
@@ -932,14 +932,13 @@ interesante que deja este trabajo.
 La cuarta actividad pide hacer las transformaciones necesarias para obtener una
 base adecuada para las etapas siguientes, **justificando cada decisión**.
 
-Se tomaron cuatro decisiones y las cuatro son de la misma familia: **hacer
-visible un problema en vez de taparlo.** Ninguna borra filas ni modifica
-valores.
+Tomamos cuatro decisiones y las cuatro son de la misma familia: **hacer visible
+un problema en vez de taparlo.** Ninguna borra filas ni modifica valores.
 
-El criterio que las une: los tres problemas encontrados (clima escolar mal
+El criterio que las une: los tres problemas que encontramos (clima escolar mal
 cubierto, departamentos enmascarados, valores extremos) golpean sobre todo a los
 grupos **chicos y rurales**, que son exactamente la población con mayor riesgo
-de abandono. Limpiar por el camino fácil habría sesgado el dataset **contra su
+de abandono. Limpiar por el camino fácil nos habría sesgado el dataset **contra su
 propio objeto de estudio**.
 """)
 
@@ -982,42 +981,41 @@ for col in ["clima_escolar_calidad", "es_agregado_provincial"]:
 ''')
 
     md("""
-### Las cuatro decisiones, con lo que se descartó
+### Las cuatro decisiones, con lo que descartamos
 
-**1. Clima escolar: se marca la calidad del dato, no se toca el dato.** Se
-agregó `clima_escolar_calidad` con tres estados. *Se descartó imputar*, porque
-inventaría valores justo en el segmento donde vive el sesgo, que es el peor
-lugar posible. *Se descartó poner en NaN* las 91 filas de baja cobertura, porque
-perdería dato real sin dejar rastro visible de la pérdida. *Se descartó sacar el
-bloque*, porque tira una variable central del marco teórico por un problema que
+**1. Clima escolar: marcamos la calidad del dato, no tocamos el dato.**
+Agregamos `clima_escolar_calidad` con tres estados. *Descartamos imputar*, porque
+inventaríamos valores justo en el segmento donde vive el sesgo, que es el peor
+lugar posible. *Descartamos poner en NaN* las 91 filas de baja cobertura, porque
+perderíamos dato real sin dejar rastro visible de la pérdida. *Descartamos sacar
+el bloque*, porque tira una variable central del marco teórico por un problema que
 toca al 1,8% de los estudiantes.
 
-**2. Departamentos enmascarados: se identifican, no se borran.** *Se descartó
-borrarlos*: se irían 10.444 estudiantes de los departamentos más chicos del
-país, que es el perfil de mayor riesgo, y los totales por provincia dejarían de
-cerrar contra Aprender. *Se descartó solo documentarlo*, porque deja la trampa
-disponible para quien no lea el documento.
+**2. Departamentos enmascarados: los identificamos, no los borramos.**
+*Descartamos borrarlos*: se irían 10.444 estudiantes de los departamentos más
+chicos del país, que es el perfil de mayor riesgo, y los totales por provincia
+dejarían de cerrar contra Aprender. *Descartamos solo documentarlo*, porque deja
+la trampa disponible para quien no lea el documento.
 
-**3. Valores extremos: no se tocan.** 75 de 94 columnas numéricas tienen valores
-a más de 3 rangos intercuartiles del cuerpo de la distribución. Al traducir la
-proporción a personas se ve que no son errores: en `edad__21_anos` el 70% de las
+**3. Valores extremos: no los tocamos.** 75 de 94 columnas numéricas tienen
+valores a más de 3 rangos intercuartiles del cuerpo de la distribución. Al
+traducir la proporción a personas vemos que no son errores: en `edad__21_anos` el 70% de las
 filas vale exactamente 0, lo que aplasta el rango intercuartil hasta que el
 umbral de "extremo" queda por debajo de lo que aporta **un solo estudiante** en
 un grupo de 118. La mediana de estudiantes detrás de las filas marcadas es 2,3
-personas. *Se descartó winsorizar*: modificaría datos correctos y borraría
-justamente los casos de sobreedad extrema, que son los que el proyecto viene a
-estudiar.
+personas. *Descartamos winsorizar*: modificaría datos correctos y borraría
+justamente los casos de sobreedad extrema, que son los que venimos a estudiar.
 
-**4. `cob__sexo` se conserva pese a tener varianza cero.** Vale exactamente 1,0
-en las 1.174 filas: todos respondieron sexo. Una columna constante no aporta a
-un modelo, pero esta no es una variable predictiva: es metadato de cobertura, de
-la misma familia que las otras 15 `cob__`, y nunca iba a entrar a un modelo.
-Mantiene simétrica la familia y su valor constante es en sí mismo una
+**4. `cob__sexo` la conservamos pese a que tiene varianza cero.** Vale
+exactamente 1,0 en las 1.174 filas: todos respondieron sexo. Una columna
+constante no aporta a un modelo, pero esta no es una variable predictiva: es
+metadato de cobertura, de la misma familia que las otras 15 `cob__`, y nunca iba
+a entrar a un modelo. Mantiene simétrica la familia y su valor constante es en sí mismo una
 verificación: si alguna vez deja de ser 1,0, algo cambió.
 
 ### ¿Alguna de estas decisiones cambia una conclusión?
 
-La pregunta correcta para cerrar la curación, y se puede medir.
+Es la pregunta correcta para cerrar la curación, y la podemos medir.
 """)
 
     code('''
@@ -1046,14 +1044,39 @@ efecto[["escenario", "filas", "matematica_bajo", "delta_matematica_bajo_pct",
 ''')
 
     md("""
+### Sobre encoding: por qué todavía no
+
+Una pregunta razonable a esta altura es por qué no aplicamos ninguna técnica de
+encoding. La respuesta corta es que **el encoding es una decisión de modelado y
+todavía no modelamos nada**, y la larga es que este dataset casi no lo necesita:
+
+- **127 de las 133 columnas ya son numéricas** y están en la misma escala, entre
+  0 y 1. Son proporciones dentro de la fila, coberturas o indicadores de la EPH.
+  No hay nada que codificar ahí.
+- **Las categóricas son cuatro**, y son las claves: `jurisdiccion`,
+  `departamento`, `sector` y `ambito`. Cada una pide un encoding distinto y por
+  un motivo distinto, así que las tratamos en el TP3 cuando sepamos qué modelo
+  usamos: `sector` y `ambito` son binarias y salen con un one-hot de una sola
+  columna; `jurisdiccion` tiene 24 categorías y conviene *target encoding* o
+  efectos aleatorios, porque un one-hot de 24 columnas sobre 1.174 filas mete
+  mucha varianza; y `departamento` tiene 530 valores y **no es una variable
+  predictiva**, es un identificador, así que no entra a ningún modelo.
+- **Las dos columnas que agregamos en esta sección** ya nacieron listas:
+  `es_agregado_provincial` es booleana y `clima_escolar_calidad` es ordinal de
+  tres estados.
+
+Lo dejamos escrito acá para que la decisión del TP3 no arranque de cero.
+""")
+
+    md("""
 **Ninguna decisión de curación mueve ningún número más de 1%.**
 
 Eso no significa que las decisiones sobraran: significa que los problemas
-estaban acotados, y que ahora están acotados **y medidos**. La diferencia entre
-las dos situaciones es que antes nadie podía afirmarlo.
+estaban acotados, y que ahora los tenemos acotados **y medidos**. La diferencia
+entre las dos situaciones es que antes no lo podíamos afirmar.
 
-Y para el TP3 el valor es otro: cuando un modelo dé un resultado distinto al
-excluir estas filas, va a haber una columna que lo explique en vez de un
+Y para el TP3 el valor es otro: cuando un modelo nos dé un resultado distinto al
+excluir estas filas, vamos a tener una columna que lo explique en vez de un
 misterio.
 """)
 
@@ -1127,44 +1150,108 @@ verificada contra los archivos.
 Van juntas y explícitas, porque son el estado real del proyecto y no
 advertencias de trámite.
 
-**No hay variable de abandono.** Es la limitación principal: el objetivo del
-proyecto todavía no tiene con qué medirse.
+**No tenemos una variable de abandono.** Es la limitación principal: nuestro
+objetivo todavía no tiene con qué medirse.
 
 **Todas las correlaciones son ecológicas.** Valen entre agregados territoriales
 y no autorizan a concluir nada sobre un estudiante concreto. Sabemos que *los
 departamentos* con más hogares sin libros tienen peor desempeño; **no** sabemos
 que un chico sin libros rinda peor. Podría ser que en esos departamentos el
-problema sea otro y lo de los libros solo lo acompañe. Importa especialmente acá
-porque el proyecto quiere identificar estudiantes en riesgo, y con datos
-agregados no se llega al estudiante.
+problema sea otro y lo de los libros solo lo acompañe. Nos importa especialmente acá
+porque queremos identificar estudiantes en riesgo, y con datos agregados no
+llegamos al estudiante.
 
 **El contexto socioeconómico es provincial.** Dos departamentos muy distintos de
 la misma provincia reciben el mismo valor. Es la limitación central heredada del
 TP1.
 
-**Los períodos no coinciden.** Aprender se tomó en octubre de 2024 y la EPH que
-usamos es del tercer trimestre de **2025**. La consigna del TP1 pedía 3T-2024;
-se usó 2025 porque es el archivo disponible en el repositorio del proyecto. En
-un país con nuestra inflación, un año de diferencia en una variable de ingresos
-no es menor.
+**Los períodos no coinciden, y lo vamos a corregir.** Aprender se tomó en
+octubre de 2024 y la EPH que usamos es del tercer trimestre de **2025**. La
+consigna del TP1 pedía 3T-2024; usamos 2025 porque es el archivo disponible en
+el repositorio del proyecto. En un país con nuestra inflación, un año de
+diferencia en una variable de ingresos no es menor. **Es la primera corrección
+que hacemos antes de modelar**, y está en el plan de la sección 8.
 
 **La pregunta por diferencias según sexo no se puede responder** con esta base.
 Las columnas `sexo__*` dicen qué porcentaje del grupo son varones o mujeres; no
-dicen cómo le fue a cada sexo. Para eso haría falta el desempeño desagregado por
-sexo, que la base agregada de Aprender no publica. Es la misma pared que el TP1
-declaró: la unidad de análisis es el grupo territorial y no el estudiante.
+dicen cómo le fue a cada sexo. Para eso necesitaríamos el desempeño desagregado por
+sexo, que la base agregada de Aprender no publica. Es la misma pared que
+declaramos en el TP1: la unidad de análisis es el grupo territorial y no el estudiante.
 
-**El bloque de clima escolar tiene cobertura sesgada**, ya descrito, y por eso
-viaja con su columna de calidad al lado.
+**El bloque de clima escolar tiene cobertura sesgada**, ya lo describimos, y por
+eso viaja con su columna de calidad al lado.
+
+---
+
+## 8. Qué sigue: tres tareas que dejamos abiertas y ya medidas
+
+No las dejamos como intención. Las tres están medidas o tienen la fuente
+identificada, y en ese orden las vamos a atacar antes del TP3.
+
+### 1. Unificar el marco temporal
+
+Es la primera y viene de la devolución del entregable 1. Vamos a rehacer la
+integración con la **EPH del 3er trimestre de 2024**, para que el contexto
+socioeconómico sea del mismo año que Aprender. Cambia el bloque `eph_` entero,
+así que tenemos que volver a correr las correlaciones de la sección 4 y ver
+cuánto se mueve el -0,82. La estructura del pipeline hace que sea cambiar la fuente de
+una etapa y correr las siguientes.
+
+### 2. Ir a buscar el target real, que existe
+
+La limitación principal de este trabajo es que no tenemos una variable de
+abandono. **Fuimos a buscarla y la encontramos**: el repositorio de referencia
+que nos recomendó la mentora
+([radar-trayectorias-educativas-argentinas](https://github.com/agus476/radar-trayectorias-educativas-argentinas))
+publica las trayectorias oficiales por grado, y entre sus columnas está
+**salidos sin pase**, que es la definición administrativa del abandono
+intra-anual.
+
+Medimos el cruce contra nuestro dataset y estos son los números, con lo bueno y
+lo malo:
+
+| Lo que medimos | Resultado |
+|---|---|
+| Claves nuestras que pegan en 2024 | **1.174 de 1.174 (100%)** |
+| Claves con la serie completa de 14 años | 1.070 de 1.174 (91,1%) |
+| Claves sin ninguna fila del otro lado | 0 de 1.174 |
+| Filas de 2024 con salidos sin pase mayor a cero | 960 de 1.209 (79,4%) |
+| Abandono nacional en secundaria, 2024 | 46.720 sobre 3.449.801 (**1,35%**) |
+
+Normalizando dos nombres de jurisdicción alcanza para que pegue todo: las dos
+fuentes escriben distinto CABA y Tierra del Fuego, y nada más.
+
+Tres advertencias que nos hacemos antes de festejar, porque el cruce recién
+empieza:
+
+1. **Que las claves peguen no prueba que midan la misma población.** Aprender
+   evalúa 5º y 6º año; estas trayectorias cubren todos los grados. Hay que
+   recortar los grados comparables antes de unir nada.
+2. **El target está muy desbalanceado**: 1,35% de eventos. Cualquier modelo va a
+   necesitar tratamiento de clases desbalanceadas, y la métrica no puede ser
+   accuracy.
+3. **En 249 de las 1.209 filas el valor es cero**, y no podemos distinguir un
+   cero real (un grupo chico donde nadie abandonó) de un dato que falta. Es lo
+   primero a resolver.
+
+El script que mide todo esto es `exploracion/20_cruce_con_repo_referencia.py`,
+y cualquiera lo puede volver a correr.
+
+### 3. Preparar las variables para modelar
+
+Encoding de las cuatro categóricas, con el criterio que dejamos escrito en la
+sección 5, y construcción de indicadores derivados. El más obvio: pasar de las
+proporciones sueltas a un índice de contexto del hogar, porque libros y
+educación de la madre miden lo mismo por dos caminos y hoy compiten entre sí.
 
 ---
 
 ## Cierre
 
-Este entregable no responde la pregunta del proyecto: la deja mejor planteada.
-Sabemos qué tiene la base, dónde falla, qué decidimos sobre cada falla y por
-qué, y sobre todo **qué nos falta para poder modelar**, que es una variable de
-abandono real.
+Con este entregable no respondemos la pregunta del proyecto: la dejamos mejor
+planteada. Sabemos qué tiene la base, dónde falla, qué decidimos sobre cada
+falla y por qué, y sobre todo **qué nos falta para poder modelar**, que es una
+variable de abandono real.
 
 Todo lo de este notebook se reproduce desde el repositorio del proyecto, donde
 el pipeline está organizado en etapas con contrato explícito de entradas y

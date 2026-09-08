@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Genera el PDF del Entregable 2: "Resumen de hallazgos" del grupo M01.
 
-Salida: entrega/TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf (4 paginas A4).
+Salida: entrega/TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf (A4).
 
 POR QUE ASI (decisiones de diseno, no de implementacion)
 --------------------------------------------------------
@@ -276,10 +276,20 @@ def construir():
         "fila es un grupo (jurisdicción x departamento x sector x "
         "ámbito), no un estudiante. Detrás de esas filas hay "
         "<b>540.040 estudiantes</b> de Aprender 2024, y cada fila lleva una "
-        "columna de peso que dice cuántos representa. Por eso todo "
-        "promedio de este informe está ponderado por cantidad de "
-        "estudiantes: un promedio simple hablaría de departamentos y no "
-        "de chicos."))
+        "columna de peso que dice cuántos representa. Por eso ponderamos "
+        "todo promedio de este informe por cantidad de estudiantes: un "
+        "promedio simple hablaría de departamentos y no de chicos."))
+    F.append(p(
+        "Seguimos <b>CRISP-DM</b>: el entregable 1 cubrió el entendimiento del "
+        "negocio y de los datos, y este completa la preparación de los datos. "
+        "El reencuadre que trajo la devolución del entregable 1, pasar de un "
+        "modelo individual a uno ecológico sobre agregados territoriales, es "
+        "una vuelta atrás de las que el método prevé, y la tomamos: todo lo "
+        "que sigue habla de grupos y nunca de estudiantes. En lo operativo "
+        "trabajamos con un pipeline por etapas con contrato explícito de "
+        "entradas y salidas, 55 verificaciones automáticas sobre los datos y "
+        "dos corridas seguidas que dan 18 de 18 salidas idénticas byte a "
+        "byte."))
     F.append(p(
         "De las 131 columnas, 85 son proporciones, 16 son coberturas que "
         "dicen qué fracción de la fila quedó representada en cada "
@@ -294,8 +304,8 @@ def construir():
         "estudiantes de estatal urbana quedan por debajo del nivel básico "
         "en matemática contra 0,38 en privada urbana. Cambiar de "
         "ámbito dentro del sector privado lo mueve 0,13 (0,38 urbano "
-        "contra 0,51 rural). <b>El sector pesa más que el lugar.</b> El "
-        "titular se apoya a propósito en las dos celdas urbanas, porque "
+        "contra 0,51 rural). <b>El sector pesa más que el lugar.</b> "
+        "Apoyamos el titular a propósito en las dos celdas urbanas, porque "
         "entre las dos suman 504.759 estudiantes, el 93,5% del total."))
     F.append(p(
         "En sobreedad alta la brecha va en el mismo sentido: 0,0285 en "
@@ -320,11 +330,10 @@ def construir():
     # ---------------- Bloque 2 ----------------
     F += seccion(2, "¿Qué problemas de calidad detectamos?")
     F.append(p(
-        "El perfilado corre <b>doce chequeos</b> sobre el dataset y cada uno "
-        "se reporta con su denominador. <b>Ocho dieron limpio y cuatro "
-        "encontraron algo.</b> La etapa mide y no corrige: la corrección "
-        "se decide después, por separado y por escrito, que es la "
-        "sección 3."))
+        "Corrimos <b>doce chequeos</b> sobre el dataset y reportamos cada uno "
+        "con su denominador. <b>Ocho dieron limpio y cuatro encontraron "
+        "algo.</b> Esta etapa mide y no corrige: la corrección la decidimos "
+        "después, por separado y por escrito, que es la sección 3."))
 
     F.append(tabla(
         [["Chequeo con hallazgo", "Resultado", "Sev."],
@@ -392,66 +401,67 @@ def construir():
         "visible un problema en vez de taparlo, para que cualquier "
         "análisis posterior lo pueda excluir con una condición "
         "explícita y medir si excluirlo cambia el resultado. La "
-        "razón es que los tres problemas encontrados (clima escolar mal "
+        "razón es que los tres problemas que encontramos (clima escolar mal "
         "cubierto, departamentos enmascarados, valores extremos) golpean "
         "sobre todo a los grupos chicos y rurales, que son exactamente la "
         "población con mayor riesgo de abandono: limpiar por el camino "
-        "fácil habría sesgado el dataset contra su propio objeto de "
+        "fácil nos habría sesgado el dataset contra su propio objeto de "
         "estudio. Resultado: 1.174 x 131 pasa a <b>1.174 x 133</b>, mismas "
         "filas, dos columnas nuevas, ninguna modificada (verificado por "
         "assert)."))
 
-    F.append(p("1. Clima escolar: se marca la calidad del dato, no se toca "
+    F.append(p("1. Clima escolar: marcamos la calidad del dato, no tocamos "
                "el dato", "sub"))
     F.append(p(
-        "Se conservan las tres columnas de clima escolar sin modificar y se "
-        "agrega <b>clima_escolar_calidad</b> con tres estados: 'ok', "
-        "'cobertura_baja' y 'sin_dato'. Permite repetir cualquier "
+        "Conservamos las tres columnas de clima escolar sin modificar y "
+        "agregamos <b>clima_escolar_calidad</b> con tres estados: 'ok', "
+        "'cobertura_baja' y 'sin_dato'. Nos permite repetir cualquier "
         "análisis excluyendo las filas flojas y comprobar si el "
-        "resultado cambia. <i>Se descartó imputar</i>, porque "
-        "inventaría valores justo en el segmento donde el sesgo vive; "
+        "resultado cambia. <i>Descartamos imputar</i>, porque "
+        "inventaríamos valores justo en el segmento donde el sesgo vive; "
         "<i>poner en NaN las 91 filas de baja cobertura</i>, porque "
-        "perdería dato real sin dejar rastro visible de la pérdida; "
+        "perderíamos dato real sin dejar rastro visible de la pérdida; "
         "y <i>sacar el bloque</i>, porque tira una variable central del marco "
         "teórico por un problema que toca al 1,8% de los estudiantes.",
         "cuerpo_ap"))
 
-    F.append(p("2. Departamentos enmascarados: se identifican, no se "
-               "borran", "sub"))
+    F.append(p("2. Departamentos enmascarados: los identificamos, no los "
+               "borramos", "sub"))
     F.append(p(
-        "Se conservan las 63 filas y se agrega la columna booleana "
+        "Conservamos las 63 filas y agregamos la columna booleana "
         "<b>es_agregado_provincial</b>. Un análisis por departamento "
         "filtra es_agregado_provincial == False; uno por provincia usa todas, "
-        "que es donde estas filas sí suman bien. <i>Se descartó "
+        "que es donde estas filas sí suman bien. <i>Descartamos "
         "borrarlas</i>, porque se irían 10.444 estudiantes de los "
         "departamentos más chicos del país, que es el perfil de "
         "mayor riesgo, y los totales por provincia dejarían de cerrar "
         "contra Aprender; y <i>solo documentarlo</i>, porque deja la trampa "
         "disponible para el que no lea el documento.", "cuerpo_ap"))
 
-    F.append(p("3. Valores extremos: no se tocan, y el chequeo se "
-               "corrigió", "sub"))
+    F.append(p("3. Valores extremos: no los tocamos, y corregimos el "
+               "chequeo", "sub"))
     F.append(p(
-        "Al traducir la proporción a personas se ve que no son errores. "
+        "Al traducir la proporción a personas vemos que no son errores. "
         "En edad de 21 años, el 70% de las filas vale exactamente 0, lo "
         "que aplasta el rango intercuartílico a 0,0020 y deja el umbral "
         "de extremo en 0,0078: un solo estudiante de 21 años en un grupo "
         "de 118 da 0,0085 y ya lo supera. La mediana de estudiantes "
         "detrás de las 138 filas marcadas es <b>2,3 personas</b>, y 84 "
         "de 138 tienen menos de 3; el chequeo estaba marcando 'acá hay "
-        "un estudiante de 21 años'. Así que no se recorta ni se "
-        "winsoriza nada: se corrigió el instrumento, y el perfil ahora "
+        "un estudiante de 21 años'. Así que no recortamos ni "
+        "winsorizamos nada: corregimos el instrumento, y el perfil ahora "
         "reporta cuántas personas hay detrás de cada extremo, "
         "porque sin ese número el chequeo mentía por omisión. "
-        "<i>Se descartó winsorizar a los percentiles 1 y 99</i>, porque "
+        "<i>Descartamos winsorizar a los percentiles 1 y 99</i>, porque "
         "borraría justamente los casos de sobreedad extrema, que son "
-        "los que el proyecto viene a estudiar.", "cuerpo_ap"))
+        "los que venimos a estudiar.", "cuerpo_ap"))
 
-    F.append(p("4. cob__sexo se conserva pese a tener varianza cero", "sub"))
+    F.append(p("4. cob__sexo la conservamos pese a que tiene varianza cero",
+               "sub"))
     F.append(p(
         "Una columna constante no aporta a un modelo, pero esta no es una "
         "variable predictiva: es metadato de cobertura y nunca iba a entrar a "
-        "un modelo. Se conserva porque mantiene simétrica la familia (un "
+        "un modelo. La conservamos porque mantiene simétrica la familia (un "
         "bloque, una cobertura) y porque su valor constante es en sí "
         "mismo una verificación: si alguna vez deja de ser 1,0, algo "
         "cambió en la fuente o en el pipeline.", "cuerpo_ap"))
@@ -460,9 +470,9 @@ def construir():
     F.append(p(
         "Ningún escenario mueve los indicadores más de un 1,3%. Eso "
         "no significa que las decisiones sobraran: significa que los "
-        "problemas estaban acotados y que ahora están acotados <b>y "
+        "problemas estaban acotados y que ahora los tenemos acotados <b>y "
         "medidos</b>. La diferencia entre las dos situaciones es que antes "
-        "nadie podía afirmarlo."))
+        "no lo podíamos afirmar."))
     F.append(tabla(
         [["Escenario", "Filas", "Estudiantes", "Mat. bajo básico",
           "Sobreedad alta", "Clima escolar bajo"],
@@ -488,8 +498,8 @@ def construir():
         "matemática: <b>r = -0,82 sobre 24 jurisdicciones</b>. La siguen "
         "la proporción de adultos con nivel superior (-0,72), los "
         "adultos sin secundaria completa (+0,52) y el agua fuera de la "
-        "vivienda (+0,52). Se calcula a nivel provincia y no sobre las 1.174 "
-        "filas porque los valores de la EPH se repiten idénticos en "
+        "vivienda (+0,52). La calculamos a nivel provincia y no sobre las "
+        "1.174 filas porque los valores de la EPH se repiten idénticos en "
         "todos los departamentos de una misma provincia: las filas no son "
         "observaciones independientes y calcular sobre ellas inflaría el "
         "n sin agregar información."))
@@ -497,14 +507,14 @@ def construir():
         "Pearson falla de dos maneras conocidas y cada prueba ataca una. Que "
         "la sostenga un solo caso raro: CABA es la jurisdicción más "
         "rica y la de mejor desempeño, está sola en ese "
-        "rincón, se sacó y la relación se mantiene. Que la "
+        "rincón, la sacamos y la relación se mantiene. Que la "
         "relación sea fuerte pero curva: Spearman "
         "ignora la forma y mira solo el orden, y da más fuerte que "
         "Pearson, lo que sugiere que el salto entre las provincias más "
         "pobres pesa más que entre las más ricas. Sobrevive las "
         "tres pruebas: Pearson -0,82 (n = 24), Pearson sin CABA -0,73 "
         "(n = 23), Spearman -0,85 (n = 24) y Spearman sin CABA -0,83 "
-        "(n = 23). Y el n es parte del dato, así que se cita siempre "
+        "(n = 23). Y el n es parte del dato, así que lo citamos siempre "
         "como <i>r = -0,82 sobre 24 jurisdicciones</i> y nunca como "
         "<i>r = -0,82</i> a secas."))
     F.append(p(
@@ -529,13 +539,13 @@ def construir():
         "proporción con 5 o más faltas correlaciona -0,49 con el "
         "desempeño bajo en matemática, la de 15 o más faltas "
         "-0,37, y la de los que dicen no faltar nunca da +0,31. La primera "
-        "medición usó solo la categoría más extrema (30 "
-        "faltas o más) y dio r = +0,000: la conclusión habría "
-        "sido que las inasistencias no se relacionan con nada. El error fue "
-        "mirar la cola en vez del acumulado, porque casi nadie cae en la "
+        "medición usamos solo la categoría más extrema (30 "
+        "faltas o más) y nos dio r = +0,000: habríamos concluido "
+        "que las inasistencias no se relacionan con nada. El error fue "
+        "nuestro, miramos la cola en vez del acumulado, porque casi nadie cae en la "
         "categoría extrema (valor medio ponderado 0,10) y una columna "
         "que casi no varía no puede correlacionar con nada. Tampoco es "
-        "la paradoja de Simpson: el mismo r se calculó dentro de cada "
+        "la paradoja de Simpson: calculamos el mismo r dentro de cada "
         "celda de sector y ámbito y la relación negativa se "
         "mantiene en las cuatro (estatal rural -0,34, estatal urbano -0,36, "
         "privado rural -0,59, privado urbano -0,49)."))
@@ -573,14 +583,13 @@ def construir():
         "construido en el TP1 desde la EPH correlaciona +0,16 con el "
         "desempeño, o sea que no mide lo que dice medir. Todo lo de "
         "arriba describe desempeño y sobreedad, antecedentes plausibles "
-        "del abandono, no el abandono. Conseguir el target real es el "
-        "problema abierto que este entregable deja para el TP3.",
-        "cuerpo_ap"))
+        "del abandono, no el abandono. Fuimos a buscar el target real y lo "
+        "encontramos: está en la sección 7.", "cuerpo_ap"))
     F.append(p(
         "<b>2. ¿Qué mide realmente la variable de "
         "inasistencias?</b> Contestarlo requiere cruzar el autorreporte con "
-        "asistencia administrativa. Mientras tanto, la variable no entra a un "
-        "modelo sin una advertencia al lado.", "cuerpo_ap"))
+        "asistencia administrativa. Mientras tanto, no metemos la variable en "
+        "un modelo sin una advertencia al lado.", "cuerpo_ap"))
     F.append(p(
         "<b>3. ¿Por qué el sector pesa más que el "
         "ámbito?</b> Si la gestión explica más que la "
@@ -588,17 +597,17 @@ def construir():
         "gestión: composición social de la matrícula, "
         "recursos, o algo que estas bases no observan.", "cuerpo_ap"))
     F.append(p(
-        "<b>4. ¿Cambia el resultado si se excluyen las filas "
-        "marcadas?</b> Ahora se puede probar con una condición de una "
-        "línea, y si un modelo del TP3 da distinto al excluirlas, va a "
-        "haber una columna que lo explique en vez de un misterio.",
+        "<b>4. ¿Cambia el resultado si excluimos las filas "
+        "marcadas?</b> Ahora lo podemos probar con una condición de una "
+        "línea, y si un modelo del TP3 nos da distinto al excluirlas, vamos "
+        "a tener una columna que lo explique en vez de un misterio.",
         "cuerpo_ap"))
 
     # Cada limitacion es un parrafo propio y no un bloque unico con saltos:
     # asi el flujo puede repartirlas y ninguna queda huerfana de su titulo.
     F += seccion(6, "Limitaciones")
     F.append(p(
-        "<b>No hay variable de abandono.</b> El trabajo describe "
+        "<b>No tenemos una variable de abandono.</b> Describimos "
         "desempeño y sobreedad, no abandono. "
         "<b>Son correlaciones ecológicas:</b> valen entre agregados "
         "territoriales y no autorizan a concluir nada sobre un estudiante "
@@ -612,7 +621,7 @@ def construir():
         "calculable es si los grupos con más mujeres rinden distinto, y "
         "da prácticamente cero (-0,05 y +0,03 sobre 1.174 filas): ese "
         "número responde una pregunta diferente de la que se hizo, "
-        "así que se reporta el límite y no el número.", "limit"))
+        "así que reportamos el límite y no el número.", "limit"))
     F.append(p(
         "<b>Todo lo que cruza con la EPH descansa en 24 puntos.</b> Mover dos "
         "o tres cambia bastante el resultado. <b>Y el clima escolar "
@@ -627,10 +636,51 @@ def construir():
         "1,000: todo número de una celda chica se cita con su "
         "denominador.", "limit"))
     F.append(p(
+        "<b>Los períodos no coinciden, y lo vamos a corregir.</b> Aprender "
+        "se tomó en octubre de 2024 y la EPH que usamos es del tercer "
+        "trimestre de 2025, porque es el archivo disponible en el "
+        "repositorio del proyecto. En un país con nuestra inflación, un año "
+        "de diferencia en una variable de ingresos no es menor. Unificar el "
+        "marco temporal es la primera tarea de la sección 7.", "limit"))
+    F.append(p(
         "<b>El perfilado no sabe si un valor es correcto, solo si es "
         "posible.</b> Eso lo cubren los 55 invariantes que corren contra los "
         "datos crudos. Y la reproducibilidad esta medida: dos corridas "
         "del pipeline dan 18 de 18 salidas identicas byte a byte."))
+
+    F += seccion(7, "Qué sigue")
+    F.append(p(
+        "Tres tareas, en este orden, antes del TP3. No son intenciones: las "
+        "tres están medidas o tienen la fuente identificada."))
+    F.append(p(
+        "<b>1. Unificar el marco temporal.</b> Rehacer la integración con la "
+        "EPH del 3er trimestre de 2024, para que el contexto socioeconómico "
+        "sea del mismo año que Aprender. Cambia el bloque de la EPH entero, "
+        "así que tenemos que volver a correr las correlaciones de la sección "
+        "4 y ver cuánto se mueve el -0,82.", "cuerpo_ap"))
+    F.append(p(
+        "<b>2. Traer el target real, que existe.</b> El repositorio de "
+        "referencia que nos recomendó la mentora publica las trayectorias "
+        "oficiales por grado, y entre sus columnas está <b>salidos sin "
+        "pase</b>, la definición administrativa del abandono intra-anual. "
+        "Medimos el cruce contra nuestro dataset: pegan <b>1.174 de 1.174 "
+        "claves en 2024</b> normalizando solo dos nombres de jurisdicción, y "
+        "1.070 de 1.174 tienen la serie completa de 14 años. Con tres "
+        "advertencias que nos hacemos antes de festejar: que las claves "
+        "peguen no prueba que midan la misma población (Aprender evalúa 5º y "
+        "6º año, las trayectorias cubren todos los grados); el target está "
+        "muy desbalanceado, 46.720 salidos sin pase sobre 3.449.801 de "
+        "matrícula, el <b>1,35%</b>; y en 249 de 1.209 filas el valor es "
+        "cero sin que podamos distinguir un cero real de un dato faltante.",
+        "cuerpo_ap"))
+    F.append(p(
+        "<b>3. Preparar las variables para modelar.</b> Encoding de las "
+        "cuatro categóricas (sector y ámbito son binarias; jurisdicción son "
+        "24 categorías y pide target encoding antes que un one-hot que "
+        "metería 24 columnas sobre 1.174 filas; departamento es un "
+        "identificador y no entra), y un índice de contexto del hogar que "
+        "junte libros y educación de la madre, que hoy miden lo mismo por "
+        "dos caminos y compiten entre sí.", "cuerpo_ap"))
 
     return F
 

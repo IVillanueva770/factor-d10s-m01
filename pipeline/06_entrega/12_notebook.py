@@ -108,31 +108,33 @@ def construir(base_url: str, commit: str, slug: str):
 **Entregable 2 de la mentoría** · Grupo M01 · Mentora: Noelia Ferrero
 Diplomatura en Ciencia de Datos · FAMAF, UNC
 
-El proyecto pregunta si se pueden detectar señales tempranas de abandono
+Nos preguntamos si se pueden detectar señales tempranas de abandono
 escolar cruzando dos fuentes públicas argentinas: las **Pruebas Aprender**
 (la evaluación censal del Ministerio de Educación) y la **EPH** (la encuesta
 de hogares del INDEC).
 
-El **entregable 1** construyó el dataset maestro. Este **entregable 2** no
-agrega fuentes: se dedica a entender qué tiene esa base, qué problemas de
-calidad esconde, y a dejarla curada para las etapas que siguen.
+En el **entregable 1** construimos el dataset maestro. En este **entregable 2**
+no agregamos fuentes: nos dedicamos a entender qué tiene esa base, qué problemas
+de calidad esconde, y a dejarla curada para las etapas que siguen.
 
-La frase que ordenó todo el trabajo está en la consigna: *"No queremos una
+La frase que nos ordenó todo el trabajo está en la consigna: *"No queremos una
 base perfectamente limpia. Queremos una base cuyas decisiones de limpieza
-podamos explicar."* Por eso cada decisión de este notebook viene con lo que se
-midió para tomarla y con lo que se descartó.
+podamos explicar."* Por eso cada decisión de este notebook viene con lo que
+medimos para tomarla y con lo que descartamos.
 
 ---
 
 ## Índice
 
-1. **De dónde partimos**: el dataset del TP1, descargado y verificado
+1. **De dónde partimos**: el dataset del TP1, descargado y verificado, y cómo
+   trabajamos
 2. **Conocer el dataset**: qué hay adentro y cómo leerlo
-3. **Explorar la calidad**: once chequeos, cada uno con su denominador
+3. **Explorar la calidad**: doce chequeos, cada uno con su denominador
 4. **Explorar relaciones**: qué se relaciona con qué, y cuánto confiar
-5. **Curar**: cuatro decisiones, con lo que se midió para tomarlas
+5. **Curar**: cuatro decisiones, con lo que medimos para tomarlas
 6. **Hallazgos y preguntas nuevas**
 7. **Limitaciones**: lo que esta base no puede responder
+8. **Qué sigue**: las tres tareas que abrimos para el TP3, ya medidas
 
 ---
 
@@ -147,7 +149,7 @@ cada archivo. El código del proyecto está en
     md("""
 ## 1. De dónde partimos
 
-El TP1 dejó un dataset maestro de **1.174 filas por 131 columnas**, que
+En el TP1 dejamos un dataset maestro de **1.174 filas por 131 columnas**, que
 representa a **540.040 estudiantes** de 5º y 6º año de secundaria.
 
 Lo primero y más importante para leer todo lo que sigue:
@@ -161,9 +163,30 @@ va ponderado por la cantidad de estudiantes**. Un promedio simple le daría el
 mismo peso a un departamento rural de 29 chicos que a uno urbano de mil, y
 entonces hablaría de departamentos en vez de hablar de chicos.
 
-Los datos se bajan fijados a un commit exacto y se verifica el hash de cada
+Bajamos los datos fijados a un commit exacto y verificamos el hash de cada
 archivo. Si el archivo cambió, la celda falla en vez de seguir con datos
 distintos de los que este análisis describe.
+
+### Cómo trabajamos
+
+Seguimos **CRISP-DM**, que es el estándar de la industria para proyectos de
+datos. El TP1 cubrió sus dos primeras fases (*Business Understanding* y
+*Data Understanding* inicial) y este TP2 completa la tercera, *Data
+Preparation*: perfilar, decidir qué hacer con cada problema y consolidar el
+dataset analítico. El TP3 entra en *Modeling* y *Evaluation*.
+
+De CRISP-DM nos importa sobre todo que **es iterativo y no lineal**: el
+reencuadre que trajo la devolución del TP1, pasar de un modelo individual a uno
+ecológico sobre agregados territoriales, es exactamente una vuelta de
+*Business Understanding* disparada por lo que aprendimos de los datos. Lo
+tomamos, y por eso todo lo que sigue habla de grupos y nunca de estudiantes.
+
+En lo operativo, el proyecto está armado como un **pipeline por etapas con
+contrato explícito**: cada etapa declara qué archivos necesita y cuáles
+produce, y un runner lo hace cumplir. Nada corre sin sus insumos y nada queda
+escrito fuera de lo declarado. Encima corren **55 verificaciones automáticas**
+sobre los datos, y dos corridas seguidas del pipeline dan **18 de 18 salidas
+idénticas byte a byte**: la reproducibilidad la medimos, no la prometemos.
 """)
 
     # Chequeo de dependencias ANTES de bajar nada. Las dos que verifica son
