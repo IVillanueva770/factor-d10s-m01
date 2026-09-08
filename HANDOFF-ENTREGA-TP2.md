@@ -18,7 +18,7 @@ primera ya está hecha; las dos que quedan son de Ignacio y ninguna es de códig
    `ignavillanueva96@gmail.com`, con acceso "cualquiera con el enlace puede
    comentar", y se corrió entero ahí mismo:
 
-   **https://colab.research.google.com/drive/11hX554RMcFFvFp_47krwLrA9qGLjcP-I**
+   **https://colab.research.google.com/drive/1hIP4YF5PBybssX5iGhePv1x9Hd_T0YI4**
 
    Ojo con una cosa: eso es una **copia** en Drive. Si se regenera el notebook
    desde el pipeline, la copia de Colab queda vieja y hay que volver a subirla
