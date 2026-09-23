@@ -10,7 +10,7 @@ Todo lo que dice MEDIDO sale de un artefacto abierto: nuestro pipeline del TP2 (
 
 ## 1. El hallazgo que cambia el TP3
 
-La mentora pidió el 09/09 bajar el repo de Agustín porque "hay info a nivel individuo, ver si logramos que coincidan". **Lo abrí y la parte del "nivel individuo" no es así, pero la noticia es mejor que eso.**
+En la reunión del 09/09 se planteó mirar el repositorio de referencia para ver si sus datos podían cruzarse con los nuestros. **Abriéndolo, la granularidad no es a nivel individuo, y el resultado es incluso mejor para lo que necesitamos.**
 
 MEDIDO, leyendo las cabeceras de sus tres datasets consolidados: sus datos son del **Relevamiento Anual** y están agregados exactamente por `anio, provincia, departamento, sector, ambito`. O sea, **la misma llave que nuestro dataset de Aprender**, año por medio. No hay que bajar de granularidad ni inventar un cruce: se hace un join directo por esas cuatro columnas más el año.
 
@@ -78,4 +78,4 @@ Además tienen `Matricula_Secciones_Final.csv` (matrícula y secciones por año 
 2. ¿El target es la tasa de salidas sin pase de 5to y 6to? ¿Regresión, clasificación o las dos?
 3. ¿Predecimos 2024 con variables de 2023, que es lo que evita el leakage y convierte el trabajo en una alerta temprana?
 4. ¿La clusterización entra como pieza de narrativa, además del modelo?
-5. ¿Quién baja y valida el cruce con el repo de Agustín, quién arma el baseline y quién escribe el informe al revés (impacto primero)?
+5. ¿Quién baja el Relevamiento Anual y valida el cruce, quién arma el baseline y quién escribe el informe al revés (impacto primero)?

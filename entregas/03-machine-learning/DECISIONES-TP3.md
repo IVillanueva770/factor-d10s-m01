@@ -2,7 +2,7 @@
 
 Registro de las decisiones que cambian el dataset y el objetivo del proyecto, escrito para que dentro de tres meses nadie tenga que re-derivarlas ni dude de por qué se tomaron. **Una decisión por bloque, con lo que la sostiene, lo que se descartó y qué pasa si se revierte.**
 
-Estado al **2026-09-23**. Cada bloque dice explícitamente quién la tomó y qué falta para cerrarla. Las que están marcadas **DECIDIDA POR IGNACIO** todavía tienen que pasar por el grupo y por la mentora: se llevan a la reunión, no se dan por acordadas.
+Estado al **2026-09-23**. Cada bloque dice explícitamente quién la tomó y qué falta para cerrarla. Las que están marcadas **PROPUESTA AL GRUPO** todavía tienen que pasar por el grupo y por la mentora: se llevan a la reunión, no se dan por acordadas.
 
 Documentos relacionados: la consigna leída (`TP3-CONSIGNA-LEIDA.md`), el razonamiento completo (`TP3-PROPUESTA-DEFINICION.md`) y las decisiones de curación del TP2 (`08_decisiones_curacion.md`), que esta pasada **no invalida**.
 
@@ -24,7 +24,7 @@ Esta tabla existe porque la confusión ya pasó dos veces en la misma semana, en
 
 ## D1. El proyecto se queda en 2024 y la EPH sale del dataset
 
-**Estado: DECIDIDA POR IGNACIO el 2026-09-23.** Se lleva al grupo y a la mentora para confirmar, pero la dirección está tomada.
+**Estado: PROPUESTA AL GRUPO el 2026-09-23.** Se lleva al grupo y a la mentora para confirmar, pero la dirección está tomada.
 
 **La decisión.** Todas las fuentes del TP3 son de 2024: Aprender 2024 más Relevamiento Anual 2024. Los indicadores `eph_*` **dejan de usarse como predictores**.
 
@@ -53,7 +53,7 @@ Esta tabla existe porque la confusión ya pasó dos veces en la misma semana, en
 
 ## D2. El target es la tasa de salidas sin pase de los últimos años del secundario
 
-**Estado: DECIDIDA POR IGNACIO el 2026-09-23**, pendiente de confirmar con la mentora (es la pregunta principal que se le lleva).
+**Estado: PROPUESTA AL GRUPO el 2026-09-23**, pendiente de confirmar con la mentora (es la pregunta principal que se le lleva).
 
 **La decisión.** El proyecto pasa a explicar abandono **medido**, no un proxy:
 
@@ -73,13 +73,13 @@ Esta tabla existe porque la confusión ya pasó dos veces en la misma semana, en
 
 **La llave es la misma que la nuestra.** Sus archivos están partidos por `anio, provincia, departamento, sector, ambito`; los nuestros por `jurisdiccion, departamento, sector, ambito`. **Es la misma partición del país**, así que el cruce no cambia la granularidad de nada.
 
-⚠️ **Corrección de una nota del grupo, para que no se propague.** La nota de la reunión del 09/09 dice que ese repo tiene "info a nivel individuo". **No la tiene**: sus datos son agregados, igual que los nuestros. La confusión no cambia la conclusión, pero si alguien planifica creyendo que va a poder trabajar a nivel estudiante, diseña sobre algo que no existe.
+⚠️ **Precisión sobre la granularidad, verificada en los archivos.** En la reunión del 09/09 se planteó revisar si ese repositorio permitía trabajar a nivel individuo. Abriendo sus datasets se confirma que **sus datos son agregados**, igual que los nuestros, con la misma llave territorial. Eso no le quita valor al cruce, al contrario: lo vuelve directo. Pero conviene dejarlo escrito, porque un diseño que asuma nivel estudiante se apoyaría en algo que las bases publicadas no tienen.
 
 **Qué se descartó y por qué no.**
 
 - *Seguir con el proxy de la EPH.* Correlaciona 0,16. No mide abandono.
 - *Reemplazar el abandono por desempeño en matemática.* Fue la propuesta de la mañana del 23/09, escrita antes de abrir el Relevamiento Anual. Era la mejor decisión con los datos de entonces y dejó de serlo con una fuente más. El desempeño pasa de target a **predictor legítimo**, porque mide algo distinto del abandono.
-- *Usar Aprender 2022 para predecir el abandono de 2023 o 2024.* Se evaluó y **se descartó el 23/09 por decisión de Ignacio**: esquivaba un detalle metodológico fino a cambio de mucho trabajo extra. El problema que esquivaba se resuelve declarándolo (ver abajo).
+- *Usar Aprender 2022 para predecir el abandono de 2023 o 2024.* Se evaluó y **se descartó el 23/09**: esquivaba un problema metodológico a cambio de bastante trabajo adicional, y además no lo resolvía del todo, porque el sesgo es de la prueba y no del año. Se opta por declararlo como limitación (ver abajo).
 
 **Lo que hay que resolver midiendo, antes de escribir el target** (no se asume ninguna):
 
@@ -93,7 +93,7 @@ Esta tabla existe porque la confusión ya pasó dos veces en la misma semana, en
 
 ## D3. Toda integración por nombre de departamento se reporta con su denominador
 
-**Estado: DECIDIDA POR IGNACIO el 2026-09-23.** Es una regla de control, no una tarea.
+**Estado: PROPUESTA AL GRUPO el 2026-09-23.** Es una regla de control, no una tarea.
 
 **La decisión.** Cada vez que se peguen dos fuentes por nombre de departamento, el script imprime cuántas filas encontraron par. Vale para el cruce con el Relevamiento Anual y vale para los cruces que ya hicimos.
 
@@ -111,9 +111,9 @@ Esta tabla existe porque la confusión ya pasó dos veces en la misma semana, en
 
 ## D4. Las dos fuentes no son la misma, y eso es el diferencial del proyecto
 
-**Estado: DECIDIDA POR IGNACIO el 2026-09-23**, con pedido explícito suyo de que quede claro **en el proyecto y en el entregable**.
+**Estado: PROPUESTA AL GRUPO el 2026-09-23**, con pedido explícito suyo de que quede claro **en el proyecto y en el entregable**.
 
-**La pregunta que lo originó**, de Ignacio: con los mismos datos, cómo sabemos que no terminamos haciendo el mismo proyecto dos veces.
+**La pregunta que lo originó**: si dos proyectos usan datos educativos públicos del mismo país, qué hace que no sean el mismo trabajo dos veces.
 
 **La respuesta, MEDIDA el 23/09** comparando las columnas de los dos datasets, no por lectura de sus README:
 
@@ -130,7 +130,7 @@ Esta tabla existe porque la confusión ya pasó dos veces en la misma semana, en
 
 **De ahí sale el diferencial, y no depende de comparar nuestro trabajo con el de nadie**: el Relevamiento Anual tiene **el resultado** (cuántos se fueron) y el edificio; Aprender tiene **el contexto de los chicos** (casa, aprendizaje, trayectoria declarada). Le ponemos al resultado un contexto que la fuente administrativa no ve. Un proyecto hecho solo con el Relevamiento Anual no puede hacer esto, porque no tiene Aprender.
 
-**El riesgo, dicho de frente:** si el modelo final termina usando solo variables del Relevamiento Anual, el diferencial desaparece. **Aprender tiene que estar en el análisis**, y si midiendo resulta que no aporta, eso se reporta como hallazgo, no se disimula sacándolo.
+**La consecuencia práctica:** si el modelo final terminara usando solo variables del Relevamiento Anual, el aporte propio del trabajo se diluye. **Aprender tiene que estar en el análisis**, y si al medirlo resulta que no agrega información, eso se reporta como hallazgo.
 
 ### 📄 Texto para el entregable
 
@@ -149,6 +149,6 @@ Esto va en el notebook y en el informe, donde se presentan las fuentes. Que no q
 Para que quede claro qué sigue abierto y no parezca cerrado por omisión:
 
 - **Regresión, clasificación o clusterización.** Hay una recomendación en `TP3-PROPUESTA-DEFINICION.md` (regresión, más clusterización como pieza de narrativa), pero la elección es del grupo.
-- **Si se releva el pipeline de limpieza de Agustín antes de escribir el nuestro.** Ignacio lo propuso el 23/09 y tiene sentido: leer sus cuatro notebooks, anotar qué haríamos distinto y por qué, para que las diferencias sean deliberadas y no accidentales. Falta decidir quién y cuándo.
+- **Si se relevan los notebooks de limpieza del repositorio de referencia antes de escribir el nuestro.** Propuesto el 23/09: leer sus cuatro etapas y anotar qué haríamos distinto y por qué, para que las diferencias sean deliberadas y no accidentales. Falta decidir quién y cuándo.
 - **Quién hace qué**, y la fecha de la videollamada de organización que propuso una compañera el 17/09.
 - **Nada de esto está construido.** Al 23/09 no se bajó un solo archivo del Relevamiento Anual ni se corrió el cruce: lo medido son las cabeceras de los datasets, la lista de años y las columnas de nuestro propio dataset.
