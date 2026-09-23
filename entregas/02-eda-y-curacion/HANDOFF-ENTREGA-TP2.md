@@ -35,8 +35,8 @@ Los tres archivos a entregar:
 
 | Producto que pide la consigna | Archivo |
 |---|---|
-| Notebook de EDA | `notebooks/TP2_EDA_y_curacion_El_Factor_D10S.ipynb` |
-| Resumen de hallazgos en PDF | `entrega/TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf` |
+| Notebook de EDA | `entregas/02-eda-y-curacion/TP2_EDA_y_curacion_El_Factor_D10S.ipynb` |
+| Resumen de hallazgos en PDF | `entregas/02-eda-y-curacion/TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf` |
 | Dataset curado | lo genera el propio notebook al correr |
 
 ---

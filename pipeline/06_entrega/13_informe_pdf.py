@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Genera el PDF del Entregable 2: "Resumen de hallazgos" del grupo M01.
 
-Salida: entrega/TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf (A4).
+Salida: entregas/02-eda-y-curacion/TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf (A4).
 
 POR QUE ASI (decisiones de diseno, no de implementacion)
 --------------------------------------------------------
@@ -94,7 +94,7 @@ FONDO = colors.HexColor("#fcfcfb")
 
 RAIZ = Path(__file__).resolve().parents[2]
 FIGURAS = RAIZ / "figuras"
-SALIDA = RAIZ / "entrega" / "TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf"
+SALIDA = RAIZ / "entregas" / "02-eda-y-curacion" / "TP2_Resumen_de_hallazgos_El_Factor_D10S.pdf"
 
 MARGEN_X = 16 * mm
 MARGEN_SUP = 13 * mm

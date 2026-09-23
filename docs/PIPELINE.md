@@ -99,7 +99,7 @@ Sirve para lo que más cuesta cuando un proyecto crece: tocar una etapa de arrib
 | `data/raw/` | Los crudos. No se modifican nunca. |
 | `data/interim/` | Resultados intermedios. Se regeneran corriendo el pipeline. |
 | `data/processed/` | El dataset maestro, el diccionario y la armonización. |
-| `notebooks/` | Los entregables de la mentoría. |
+| `entregas/NN-nombre/` | Los entregables de la mentoría, una carpeta por TP. |
 | `docs/` | Este archivo y lo que documente decisiones. |
 
 ## Cómo agregar una etapa

@@ -35,7 +35,7 @@ from contenido_tp2 import secciones_2_a_7  # noqa: E402
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 PROC = BASE_DIR / "data" / "processed"
-NOTEBOOKS = BASE_DIR / "notebooks"
+NOTEBOOKS = BASE_DIR / "entregas" / "02-eda-y-curacion"
 DESTINO = NOTEBOOKS / "TP2_EDA_y_curacion_El_Factor_D10S.ipynb"
 
 MAESTRO = "data/processed/dataset_maestro_inicial.csv"
@@ -365,7 +365,7 @@ def main():
     print(f"  celdas : {len(celdas)} "
           f"({sum(1 for c in celdas if c['cell_type'] == 'markdown')} markdown, "
           f"{sum(1 for c in celdas if c['cell_type'] == 'code')} codigo)")
-    print(f"  GUARDADO: notebooks/{DESTINO.name} "
+    print(f"  GUARDADO: entregas/02-eda-y-curacion/{DESTINO.name} "
           f"({DESTINO.stat().st_size / 1024:,.0f} KB)")
 
 
