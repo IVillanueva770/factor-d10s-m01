@@ -103,7 +103,7 @@ MODELOS = [
     ("sector_ambito", "Regla: sector y ámbito", NARANJA),
     ("provincia", "Regla: la provincia", NARANJA),
     ("logistica", "Modelo: regresión logística", AZUL),
-    ("boosting", "Modelo: boosting", AZUL),
+    ("boosting", "Modelo: árboles combinados", AZUL),
 ]
 SEPARACIONES = [
     ("estratificada", "Con todas las provincias en el entrenamiento",
@@ -153,7 +153,7 @@ def figura_a_modelo_vs_reglas(r):
         ax.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(
             lambda v, _: coma(v, 1)))
         ax.set_ylim(-0.6, len(MODELOS) - 0.25)
-        ax.set_xlabel("ROC-AUC (0,5 = azar, 1 = ordena perfecto)")
+        ax.set_xlabel("qué tan bien ordena el riesgo (0,5 = sorteo, 1 = perfecto)")
         ax.grid(axis="x", zorder=0)
         ax.set_axisbelow(True)
         titulo(ax, encabezado, bajada)
@@ -333,7 +333,7 @@ def figura_c_perfiles(p):
         f"{pct(resto['tasa_real_ponderada'].max(), 1)}",
         x=0.01, ha="left", y=1.03, fontsize=13.5, color=TINTA)
     fig.text(0.01, 0.98,
-             "cuatro perfiles (k-means) de los grupos que el modelo no marca "
+             "cuatro perfiles (grupos con rasgos parecidos) de los grupos que el modelo no marca "
              "como abandono alto · cada celda es la proporción del rasgo "
              "en el perfil, de 0 a 1",
              ha="left", fontsize=9.5, color=TINTA_SUAVE)

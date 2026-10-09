@@ -104,6 +104,14 @@ def cifras():
         "perf_k": len(perf),
         "perf_no_vistos": int(perf["altos_no_vistos"].sum()),
     }
+    # El perfil que concentra mas altos no vistos: se nombra por sus rasgos y
+    # se chequea que sea el que el texto dice (estatal urbano), no se supone.
+    top = perf.loc[perf["altos_no_vistos"].idxmax()]
+    if not (top["estatal"] > 0.5 and top["rural"] < 0.5):
+        raise SystemExit("El perfil con mas altos no vistos ya no es el estatal urbano: "
+                         "revisar el texto de la seccion 8")
+    c["perf_top_nv"] = int(top["altos_no_vistos"])
+    c["perf_top_est"] = top["estudiantes"] / perf["estudiantes"].sum()
     por_prov = d.groupby("jurisdiccion")[["ssp_ultimos2", "inicial_ultimos2"]].sum()
     tasa_prov = por_prov["ssp_ultimos2"] / por_prov["inicial_ultimos2"]
     c["prov_min"], c["prov_min_n"] = tasa_prov.min(), tasa_prov.idxmin()
@@ -288,8 +296,8 @@ Un modelo solo vale si le gana a una regla que cualquiera podría aplicar sin mo
 
 ## 5. Los modelos, y cómo los comparamos
 
-Probamos dos modelos: una **regresión logística**, porque es simple y se puede leer, y un
-**boosting de árboles**, por si el patrón no es lineal. Todos, reglas y modelos, se evalúan
+Probamos dos modelos: una **regresión logística**, porque es simple y se puede leer, y uno de
+**árboles combinados** (boosting), por si el patrón no es lineal. Todos, reglas y modelos, se evalúan
 igual: cinco particiones, cada grupo predicho por un modelo que no lo vio, con semilla fija.
 
 Medimos con el **área bajo la curva ROC** (qué tan bien ordena: 0,5 es azar, 1 es perfecto)
@@ -305,7 +313,7 @@ import pandas as pd
 r = pd.read_csv("data/processed/resultados_experimentos.csv")
 nombres = {"prevalencia": "Nadie sabe nada", "sector_ambito": "Regla: sector y ámbito",
            "provincia": "Regla: la provincia", "logistica": "Regresión logística",
-           "boosting": "Boosting de árboles"}
+           "boosting": "Árboles combinados"}
 t = r[r.experimento == "principal"].assign(modelo=lambda x: x.modelo.map(nombres))
 t.pivot(index="modelo", columns="separacion", values="roc_auc").round(3)
 """)
@@ -320,7 +328,7 @@ Image("figuras/tp3_a_modelo_vs_reglas.png")
 - Con todas las provincias en el entrenamiento, la regresión logística llega a
   **{num(c['auc_log'])}**, la regla de la provincia a **{num(c['auc_prov'])}** y la de
   sector y ámbito a **{num(c['auc_sa'])}**. El modelo le gana a la provincia por muy poco.
-  El boosting ({num(c['auc_boost'])}) no mejora a la regresión: el patrón es casi lineal.
+  El de árboles ({num(c['auc_boost'])}) no mejora a la regresión: el patrón es casi lineal.
 - Probando en provincias que el modelo nunca vio, la regla de la provincia no tiene nada que
   decir y cae al azar, y el modelo llega a **{num(c['auc_log_pp'])}** contra
   **{num(c['auc_sa_pp'])}** de sector y ámbito. **Lo que sabemos de los chicos sirve aun sin
@@ -329,7 +337,7 @@ Image("figuras/tp3_a_modelo_vs_reglas.png")
 **Las combinaciones que probamos además** (todas en la tabla de abajo):
 
 - **Sumar el edificio** lleva la regresión a {num(c['auc_edif'])}: casi nada.
-- **Sumar la EPH** la deja en {num(c['auc_eph'])} (el boosting llega a {num(c['auc_eph_b'])}).
+- **Sumar la EPH** la deja en {num(c['auc_eph'])} (el de árboles llega a {num(c['auc_eph_b'])}).
   Como pidió la mentora, la probamos acotada, y no aporta: lo que dice de la provincia ya lo
   dice Aprender.
 - **Con la secundaria entera** como target, la regla de la provincia sube a
@@ -414,9 +422,10 @@ Image("figuras/tp3_c_perfiles.png")
     md(f"""
 Lo que el modelo no marca no es todo igual. El **privado urbano** casi no tiene abandono. Los
 otros tres (**estatal urbano**, **rural estatal** y **rural más vulnerable**) tienen tasas
-parecidas entre sí y entre ellos quedan **{c['perf_no_vistos']} grupos con abandono alto que el
-modelo no vio**, la mayoría en el estatal urbano, que es además donde están la mayoría de los
-estudiantes. Para un uso real, ahí es donde conviene una segunda mirada.
+parecidas entre sí. Entre todos los grupos que el modelo no marca quedan **{c['perf_no_vistos']}
+con abandono alto que no vio**; el perfil que más concentra es el **estatal urbano**
+({c['perf_top_nv']} de {c['perf_no_vistos']}), que además reúne al {pct(c['perf_top_est'], 0)} de
+los estudiantes de estos grupos. Para un uso real, ahí es donde conviene una segunda mirada.
 """)
 
     md("""
