@@ -1,0 +1,34 @@
+valor,grupos,altos_reales,detectados,falsas_alarmas,tasa_real_media,recall,corte
+Q1 chicos,235,66,31,54,0.0162362,0.469697,tamanio
+Q2,235,70,33,34,0.0149467,0.471429,tamanio
+Q3,234,67,34,29,0.0139949,0.507463,tamanio
+Q4,235,56,28,27,0.0121722,0.5,tamanio
+Q5 grandes,235,35,12,12,0.0088499,0.342857,tamanio
+Estatal Rural,426,146,78,93,0.0174088,0.534247,sector_ambito
+Estatal Urbano,444,131,59,61,0.0154476,0.450382,sector_ambito
+Privado Rural,36,8,1,0,0.0138286,0.125,sector_ambito
+Privado Urbano,268,9,0,2,0.0028741,0,sector_ambito
+Buenos Aires,320,22,1,17,0.00423726,0.0454545,provincia
+Catamarca,28,8,4,6,0.0161591,0.5,provincia
+Chaco,56,28,18,13,0.0288,0.642857,provincia
+Chubut,24,2,1,3,0.00977413,0.5,provincia
+Ciudad Autónoma de Buenos Aires,30,1,0,0,0.00367294,0,provincia
+Corrientes,58,20,12,19,0.0149776,0.6,provincia
+Córdoba,72,13,4,10,0.0101765,0.307692,provincia
+Entre Ríos,50,22,11,7,0.0179697,0.5,provincia
+Formosa,23,14,12,3,0.0455826,0.857143,provincia
+Jujuy,31,6,3,5,0.0135532,0.5,provincia
+La Pampa,35,5,0,7,0.0077109,0,provincia
+La Rioja,27,12,3,3,0.0164713,0.25,provincia
+Mendoza,48,3,0,2,0.00463644,0,provincia
+Misiones,52,30,18,5,0.036266,0.6,provincia
+Neuquén,25,7,4,7,0.0111477,0.571429,provincia
+Río Negro,24,4,1,2,0.00971746,0.25,provincia
+Salta,42,20,14,9,0.0209879,0.7,provincia
+San Juan,37,17,14,6,0.0194782,0.823529,provincia
+San Luis,20,1,1,8,0.0042132,1,provincia
+Santa Cruz,14,5,0,0,0.0200208,0,provincia
+Santa Fe,62,34,7,2,0.0224805,0.205882,provincia
+Santiago del Estero,45,13,8,11,0.0149019,0.615385,provincia
+"Tierra del Fuego, Antártida e Islas del Atlántico Sur",6,2,0,0,0.0208469,0,provincia
+Tucumán,45,5,2,11,0.00705521,0.4,provincia

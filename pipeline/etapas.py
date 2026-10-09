@@ -175,6 +175,121 @@ Etapa(
             "figuras/tp2_d_inasistencias.png",
         ),
     ),
+    Etapa(
+        numero=12,
+        nombre="bajar_relevamiento",
+        archivo="05_modelado/12_bajar_relevamiento.py",
+        que_hace=(
+            "Baja el Relevamiento Anual consolidado por el repo de referencia, "
+            "fijado a un commit y verificando el SHA-256 de cada archivo."
+        ),
+        entradas=(),
+        salidas=(
+            f"{RAW}/relevamiento/Trayectoria_Sexo_Final.csv",
+            f"{RAW}/relevamiento/Establecimiento_Caracteristicas_Final.csv",
+        ),
+    ),
+    Etapa(
+        numero=13,
+        nombre="relevamiento",
+        archivo="05_modelado/13_relevamiento.py",
+        que_hace=(
+            "Calcula por grupo la tasa de salidas sin pase (dos ultimos anios y "
+            "secundaria entera), su estabilidad contra el anio anterior y las "
+            "variables del edificio."
+        ),
+        entradas=(
+            f"{RAW}/relevamiento/Trayectoria_Sexo_Final.csv",
+            f"{RAW}/relevamiento/Establecimiento_Caracteristicas_Final.csv",
+        ),
+        salidas=(
+            f"{INTERIM}/relevamiento_target.csv",
+            f"{INTERIM}/relevamiento_estabilidad.csv",
+        ),
+    ),
+    Etapa(
+        numero=14,
+        nombre="dataset_modelado",
+        archivo="05_modelado/14_dataset_modelado.py",
+        que_hace=(
+            "Une el dataset curado con el target del Relevamiento (imprime el "
+            "denominador del cruce) y arma los targets de 'abandono alto'."
+        ),
+        entradas=(
+            f"{PROC}/dataset_maestro_curado.csv",
+            f"{INTERIM}/relevamiento_target.csv",
+        ),
+        salidas=(f"{PROC}/dataset_modelado.csv",),
+    ),
+    Etapa(
+        numero=15,
+        nombre="experimentos",
+        archivo="05_modelado/15_experimentos.py",
+        que_hace=(
+            "Corre cada combinacion de pipeline/modelado.py (baselines y "
+            "modelos, misma particion, metricas por parte)."
+        ),
+        entradas=(f"{PROC}/dataset_modelado.csv",),
+        salidas=(
+            f"{PROC}/resultados_experimentos.csv",
+            f"{PROC}/predicciones_principal.csv",
+        ),
+    ),
+    Etapa(
+        numero=16,
+        nombre="errores",
+        archivo="05_modelado/16_errores.py",
+        que_hace=(
+            "Errores del modelo principal por tamanio, sector y provincia; "
+            "aporte de cada bloque de variables y su sentido."
+        ),
+        entradas=(
+            f"{PROC}/dataset_modelado.csv",
+            f"{PROC}/predicciones_principal.csv",
+        ),
+        salidas=(
+            f"{PROC}/errores_principal.csv",
+            f"{PROC}/aporte_bloques.csv",
+            f"{PROC}/sentido_variables.csv",
+        ),
+    ),
+    Etapa(
+        numero=17,
+        nombre="perfiles",
+        archivo="05_modelado/17_perfiles.py",
+        que_hace=(
+            "Perfiles (k-means) de los grupos que el modelo no marca como "
+            "alto: la etapa no supervisada que propuso la mentora."
+        ),
+        entradas=(
+            f"{PROC}/dataset_modelado.csv",
+            f"{PROC}/predicciones_principal.csv",
+        ),
+        salidas=(
+            f"{PROC}/perfiles_no_alto.csv",
+            f"{PROC}/perfiles_silueta.csv",
+        ),
+    ),
+    Etapa(
+        numero=18,
+        nombre="figuras_tp3",
+        archivo="05_modelado/18_figuras.py",
+        que_hace=(
+            "Las tres figuras del TP3: modelo contra reglas simples en las dos "
+            "separaciones, tasa de salidas sin pase por provincia y los "
+            "perfiles del no supervisado. Misma paleta y criterios del TP2."
+        ),
+        entradas=(
+            f"{PROC}/resultados_experimentos.csv",
+            f"{PROC}/dataset_modelado.csv",
+            f"{PROC}/perfiles_no_alto.csv",
+        ),
+        salidas=(
+            "figuras/tp3_a_modelo_vs_reglas.png",
+            "figuras/tp3_b_tasa_por_provincia.png",
+            "figuras/tp3_c_perfiles.png",
+        ),
+    ),
 ]
 
 

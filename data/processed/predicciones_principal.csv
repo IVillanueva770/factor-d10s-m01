@@ -1,0 +1,1175 @@
+k_prov,k_depto,k_sector,k_ambito,jurisdiccion,departamento,sector,ambito,estudiantes,tasa_ultimos2,alto_ultimos2_nacional,p_prevalencia,p_sector_ambito,p_provincia,p_logistica,p_boosting
+buenos aires,25 de mayo,estatal,rural,Buenos Aires,25 DE MAYO,Estatal,Rural,86.2104,0.0160428,0,0.250266,0.340176,0.0736434,0.300484,0.485389
+buenos aires,25 de mayo,estatal,urbano,Buenos Aires,25 DE MAYO,Estatal,Urbano,279.614,0.00161031,0,0.250266,0.297753,0.0748031,0.30223,0.0709066
+buenos aires,25 de mayo,privado,urbano,Buenos Aires,25 DE MAYO,Privado,Urbano,75.6172,0,0,0.250266,0.0330189,0.060241,0.00492857,0.0510897
+buenos aires,9 de julio,estatal,rural,Buenos Aires,9 DE JULIO,Estatal,Rural,104.202,0.0306122,1,0.251064,0.345029,0.0646388,0.0775681,0.102513
+buenos aires,9 de julio,estatal,urbano,Buenos Aires,9 DE JULIO,Estatal,Urbano,409.14,0.0226293,1,0.250266,0.295129,0.0736434,0.125783,0.118641
+buenos aires,9 de julio,privado,urbano,Buenos Aires,9 DE JULIO,Privado,Urbano,133.999,0,0,0.250266,0.0234742,0.0748031,0.0248777,0.00498682
+buenos aires,adolfo alsina,estatal,rural,Buenos Aires,ADOLFO ALSINA,Estatal,Rural,33.3446,0,0,0.251064,0.345029,0.0646388,0.00709141,0.0231325
+buenos aires,adolfo alsina,estatal,urbano,Buenos Aires,ADOLFO ALSINA,Estatal,Urbano,142.091,0.0127796,0,0.250266,0.29972,0.060241,0.201757,0.0955841
+buenos aires,adolfo gonzales chaves,estatal,rural,Buenos Aires,ADOLFO GONZALES CHAVES,Estatal,Rural,23.9665,0,0,0.250266,0.347059,0.0748031,0.0310818,0.0379626
+buenos aires,adolfo gonzales chaves,estatal,urbano,Buenos Aires,ADOLFO GONZALES CHAVES,Estatal,Urbano,37.2862,0.09375,1,0.250266,0.295129,0.0736434,0.113043,0.0995033
+buenos aires,alberti,estatal,rural,Buenos Aires,ALBERTI,Estatal,Rural,17.7143,0.0227273,1,0.251064,0.345029,0.0646388,0.359898,0.0513888
+buenos aires,alberti,estatal,urbano,Buenos Aires,ALBERTI,Estatal,Urbano,65.5027,0.00561798,0,0.250266,0.292958,0.0703125,0.146259,0.126108
+buenos aires,almirante brown,estatal,urbano,Buenos Aires,ALMIRANTE BROWN,Estatal,Urbano,5056.73,0.00298077,0,0.250266,0.29972,0.060241,0.0873012,0.0660082
+buenos aires,almirante brown,privado,urbano,Buenos Aires,ALMIRANTE BROWN,Privado,Urbano,2755.62,0.000173491,0,0.250266,0.0366972,0.0703125,0.0268497,0.00993311
+buenos aires,arrecifes,estatal,rural,Buenos Aires,ARRECIFES,Estatal,Rural,29.1765,0,0,0.251064,0.345029,0.0646388,0.192337,0.183552
+buenos aires,arrecifes,estatal,urbano,Buenos Aires,ARRECIFES,Estatal,Urbano,227.748,0.026455,1,0.251064,0.289694,0.0646388,0.144526,0.16781
+buenos aires,avellaneda,estatal,urbano,Buenos Aires,AVELLANEDA,Estatal,Urbano,3026.68,0.00239617,0,0.250266,0.295129,0.0736434,0.0637883,0.0279418
+buenos aires,avellaneda,privado,urbano,Buenos Aires,AVELLANEDA,Privado,Urbano,1914.93,0.000524384,0,0.251064,0.0333333,0.0646388,0.0205408,0.00469974
+buenos aires,ayacucho,estatal,rural,Buenos Aires,AYACUCHO,Estatal,Rural,30.2186,0,0,0.250266,0.343195,0.0703125,0.188047,0.0826068
+buenos aires,ayacucho,estatal,urbano,Buenos Aires,AYACUCHO,Estatal,Urbano,169.514,0,0,0.251064,0.289694,0.0646388,0.286808,0.270437
+buenos aires,azul,estatal,rural,Buenos Aires,AZUL,Estatal,Rural,19.7984,0.0238095,1,0.250266,0.343195,0.0703125,0.0972798,0.0403791
+buenos aires,azul,estatal,urbano,Buenos Aires,AZUL,Estatal,Urbano,684.539,0.00858653,0,0.250266,0.295129,0.0736434,0.0638367,0.0942874
+buenos aires,azul,privado,urbano,Buenos Aires,AZUL,Privado,Urbano,307.588,0,0,0.250266,0.0330189,0.060241,0.0161505,0.00449125
+buenos aires,bahia blanca,estatal,urbano,Buenos Aires,BAHIA BLANCA,Estatal,Urbano,2202.46,0.00563739,0,0.250266,0.29972,0.060241,0.160349,0.0704716
+buenos aires,bahia blanca,privado,urbano,Buenos Aires,BAHIA BLANCA,Privado,Urbano,1044.74,0.000434216,0,0.250266,0.0234742,0.0748031,0.0215391,0.00911195
+buenos aires,balcarce,estatal,rural,Buenos Aires,BALCARCE,Estatal,Rural,56.2691,0,0,0.251064,0.345029,0.0646388,0.24458,0.0458509
+buenos aires,balcarce,estatal,urbano,Buenos Aires,BALCARCE,Estatal,Urbano,510.058,0.000928505,0,0.250266,0.29972,0.060241,0.0988843,0.188088
+buenos aires,balcarce,privado,rural,Buenos Aires,BALCARCE,Privado,Rural,89.6137,0,0,0.250266,0.233333,0.0736434,0.0766041,0.0161119
+buenos aires,balcarce,privado,urbano,Buenos Aires,BALCARCE,Privado,Urbano,36.5451,0,0,0.251064,0.0333333,0.0646388,0.0256489,0.0155721
+buenos aires,baradero,estatal,rural,Buenos Aires,BARADERO,Estatal,Rural,48.9749,0,0,0.250266,0.340176,0.0736434,0.17684,0.363192
+buenos aires,baradero,estatal,urbano,Buenos Aires,BARADERO,Estatal,Urbano,287.204,0.00437318,0,0.250266,0.29972,0.060241,0.0473777,0.0805949
+buenos aires,baradero,privado,urbano,Buenos Aires,BARADERO,Privado,Urbano,118.772,0,0,0.250266,0.0410959,0.0736434,0.0215356,0.00613126
+buenos aires,benito juarez,estatal,rural,Buenos Aires,BENITO JUAREZ,Estatal,Rural,13.5463,0,0,0.250266,0.338192,0.060241,0.269295,0.0703172
+buenos aires,benito juarez,estatal,urbano,Buenos Aires,BENITO JUAREZ,Estatal,Urbano,178.369,0,0,0.250266,0.29972,0.060241,0.0715198,0.0467168
+buenos aires,berazategui,estatal,urbano,Buenos Aires,BERAZATEGUI,Estatal,Urbano,3298.02,0.00487484,0,0.250266,0.297753,0.0748031,0.0923773,0.0276553
+buenos aires,berazategui,privado,urbano,Buenos Aires,BERAZATEGUI,Privado,Urbano,1865.06,0.00105291,0,0.250266,0.0366972,0.0703125,0.022565,0.00984615
+buenos aires,berisso,estatal,urbano,Buenos Aires,BERISSO,Estatal,Urbano,851.806,0.000963391,0,0.250266,0.297753,0.0748031,0.0927146,0.0513204
+buenos aires,berisso,privado,urbano,Buenos Aires,BERISSO,Privado,Urbano,315.709,0,0,0.250266,0.0234742,0.0748031,0.024946,0.0104805
+buenos aires,bolivar,estatal,rural,Buenos Aires,BOLIVAR,Estatal,Rural,45.8489,0,0,0.250266,0.343195,0.0703125,0.162435,0.0627861
+buenos aires,bolivar,estatal,urbano,Buenos Aires,BOLIVAR,Estatal,Urbano,261.496,0,0,0.250266,0.295129,0.0736434,0.12442,0.0878952
+buenos aires,bolivar,privado,urbano,Buenos Aires,BOLIVAR,Privado,Urbano,85.272,0,0,0.250266,0.0234742,0.0748031,0.0245364,0.00264777
+buenos aires,bragado,estatal,rural,Buenos Aires,BRAGADO,Estatal,Rural,26.0505,0.0105263,0,0.250266,0.343195,0.0703125,0.281138,0.246993
+buenos aires,bragado,estatal,urbano,Buenos Aires,BRAGADO,Estatal,Urbano,422.073,0.00132802,0,0.250266,0.297753,0.0748031,0.152584,0.315487
+buenos aires,bragado,privado,urbano,Buenos Aires,BRAGADO,Privado,Urbano,89.3325,0,0,0.250266,0.0330189,0.060241,0.0232836,0.00840326
+buenos aires,brandsen,estatal,rural,Buenos Aires,BRANDSEN,Estatal,Rural,92.7397,0,0,0.251064,0.345029,0.0646388,0.478861,0.412857
+buenos aires,brandsen,estatal,urbano,Buenos Aires,BRANDSEN,Estatal,Urbano,335.307,0,0,0.250266,0.297753,0.0748031,0.0820829,0.129286
+buenos aires,brandsen,privado,urbano,Buenos Aires,BRANDSEN,Privado,Urbano,102.529,0,0,0.250266,0.0366972,0.0703125,0.00981772,0.00463922
+buenos aires,campana,estatal,rural,Buenos Aires,CAMPANA,Estatal,Rural,78.1291,0.0116279,0,0.250266,0.347059,0.0748031,0.063892,0.123186
+buenos aires,campana,estatal,urbano,Buenos Aires,CAMPANA,Estatal,Urbano,1155.76,0.00771605,0,0.250266,0.295129,0.0736434,0.106302,0.0655403
+buenos aires,campana,privado,urbano,Buenos Aires,CAMPANA,Privado,Urbano,444.632,0,0,0.250266,0.0330189,0.060241,0.0416021,0.00336568
+buenos aires,capitan sarmiento,estatal,rural,Buenos Aires,CAPITAN SARMIENTO,Estatal,Rural,8.33616,0,0,0.250266,0.347059,0.0748031,0.200913,0.0700188
+buenos aires,capitan sarmiento,estatal,urbano,Buenos Aires,CAPITAN SARMIENTO,Estatal,Urbano,186.431,0.0504386,1,0.250266,0.292958,0.0703125,0.097955,0.206488
+buenos aires,carlos casares,estatal,rural,Buenos Aires,CARLOS CASARES,Estatal,Rural,38.5547,0.0106383,0,0.250266,0.338192,0.060241,0.0625969,0.186391
+buenos aires,carlos casares,estatal,urbano,Buenos Aires,CARLOS CASARES,Estatal,Urbano,190.462,0.00470588,0,0.250266,0.292958,0.0703125,0.110002,0.157012
+buenos aires,carlos tejedor,estatal,rural,Buenos Aires,CARLOS TEJEDOR,Estatal,Rural,31.2606,0.016129,0,0.251064,0.345029,0.0646388,0.0294617,0.0220676
+buenos aires,carlos tejedor,estatal,urbano,Buenos Aires,CARLOS TEJEDOR,Estatal,Urbano,77.5956,0.00609756,0,0.250266,0.292958,0.0703125,0.104494,0.159853
+buenos aires,carmen de areco,estatal,rural,Buenos Aires,CARMEN DE ARECO,Estatal,Rural,15.6303,0,0,0.250266,0.340176,0.0736434,0.0203758,0.085225
+buenos aires,carmen de areco,estatal,urbano,Buenos Aires,CARMEN DE ARECO,Estatal,Urbano,218.678,0,0,0.250266,0.29972,0.060241,0.029803,0.0457744
+buenos aires,castelli,estatal,urbano,Buenos Aires,CASTELLI,Estatal,Urbano,74.5292,0,0,0.251064,0.289694,0.0646388,0.651539,0.477657
+buenos aires,canuelas,estatal,rural,Buenos Aires,CAÑUELAS,Estatal,Rural,55.227,0.0245902,1,0.250266,0.338192,0.060241,0.138215,0.250218
+buenos aires,canuelas,estatal,urbano,Buenos Aires,CAÑUELAS,Estatal,Urbano,750.964,0,0,0.250266,0.29972,0.060241,0.128077,0.0709025
+buenos aires,canuelas,privado,urbano,Buenos Aires,CAÑUELAS,Privado,Urbano,227.392,0.00223214,0,0.250266,0.0330189,0.060241,0.0114643,0.00397375
+buenos aires,chacabuco,estatal,rural,Buenos Aires,CHACABUCO,Estatal,Rural,32.3026,0,0,0.250266,0.338192,0.060241,0.0281802,0.0533207
+buenos aires,chacabuco,estatal,urbano,Buenos Aires,CHACABUCO,Estatal,Urbano,675.407,0,0,0.250266,0.295129,0.0736434,0.100657,0.226625
+buenos aires,chacabuco,privado,urbano,Buenos Aires,CHACABUCO,Privado,Urbano,79.1811,0,0,0.251064,0.0333333,0.0646388,0.021915,0.0144261
+buenos aires,chascomus,estatal,rural,Buenos Aires,CHASCOMUS,Estatal,Rural,10.4202,0,0,0.250266,0.343195,0.0703125,0.113346,0.0710945
+buenos aires,chascomus,estatal,urbano,Buenos Aires,CHASCOMUS,Estatal,Urbano,436.574,0.0011236,0,0.250266,0.295129,0.0736434,0.0401373,0.0364938
+buenos aires,chascomus,privado,urbano,Buenos Aires,CHASCOMUS,Privado,Urbano,182.726,0.00269542,0,0.250266,0.0234742,0.0748031,0.0155244,0.0142244
+buenos aires,chivilcoy,estatal,rural,Buenos Aires,CHIVILCOY,Estatal,Rural,12.5042,0,0,0.250266,0.347059,0.0748031,0.0712138,0.136306
+buenos aires,chivilcoy,estatal,urbano,Buenos Aires,CHIVILCOY,Estatal,Urbano,649.989,0.00275862,0,0.251064,0.289694,0.0646388,0.141709,0.287859
+buenos aires,chivilcoy,privado,urbano,Buenos Aires,CHIVILCOY,Privado,Urbano,197.953,0,0,0.250266,0.0330189,0.060241,0.0117701,0.00322743
+buenos aires,colon,estatal,rural,Buenos Aires,COLON,Estatal,Rural,9.37818,0,0,0.250266,0.338192,0.060241,0.316832,0.205183
+buenos aires,colon,estatal,urbano,Buenos Aires,COLON,Estatal,Urbano,212.879,0,0,0.250266,0.295129,0.0736434,0.123755,0.124387
+buenos aires,colon,privado,urbano,Buenos Aires,COLON,Privado,Urbano,108.62,0,0,0.250266,0.0330189,0.060241,0.0156999,0.0108553
+buenos aires,coronel de marina l rosales,estatal,rural,Buenos Aires,CORONEL DE MARINA L ROSALES,Estatal,Rural,35.1514,0,0,0.250266,0.343195,0.0703125,0.486897,0.0612943
+buenos aires,coronel de marina l rosales,estatal,urbano,Buenos Aires,CORONEL DE MARINA L ROSALES,Estatal,Urbano,695.193,0,0,0.251064,0.289694,0.0646388,0.106215,0.0875152
+buenos aires,coronel de marina l rosales,privado,urbano,Buenos Aires,CORONEL DE MARINA L ROSALES,Privado,Urbano,167.498,0,0,0.250266,0.0410959,0.0736434,0.0667842,0.00509481
+buenos aires,coronel dorrego,estatal,rural,Buenos Aires,CORONEL DORREGO,Estatal,Rural,22.9244,0,0,0.250266,0.347059,0.0748031,0.554417,0.380516
+buenos aires,coronel dorrego,estatal,urbano,Buenos Aires,CORONEL DORREGO,Estatal,Urbano,126.639,0,0,0.251064,0.289694,0.0646388,0.0746804,0.0450404
+buenos aires,coronel dorrego,privado,urbano,Buenos Aires,CORONEL DORREGO,Privado,Urbano,44.6663,0,0,0.250266,0.0366972,0.0703125,0.0261739,0.0177512
+buenos aires,coronel pringles,estatal,rural,Buenos Aires,CORONEL PRINGLES,Estatal,Rural,14.5883,0.0344828,1,0.251064,0.345029,0.0646388,0.438341,0.195478
+buenos aires,coronel pringles,estatal,urbano,Buenos Aires,CORONEL PRINGLES,Estatal,Urbano,190.462,0.0167064,0,0.250266,0.295129,0.0736434,0.302918,0.358651
+buenos aires,coronel suarez,estatal,rural,Buenos Aires,CORONEL SUAREZ,Estatal,Rural,39.5967,0.015873,0,0.250266,0.343195,0.0703125,0.117896,0.149906
+buenos aires,coronel suarez,estatal,urbano,Buenos Aires,CORONEL SUAREZ,Estatal,Urbano,302.176,0.0189573,1,0.250266,0.29972,0.060241,0.10285,0.120022
+buenos aires,coronel suarez,privado,urbano,Buenos Aires,CORONEL SUAREZ,Privado,Urbano,73.3168,0,0,0.250266,0.0366972,0.0703125,0.00881432,0.00851738
+buenos aires,daireaux,estatal,rural,Buenos Aires,DAIREAUX,Estatal,Rural,43.7648,0,0,0.250266,0.340176,0.0736434,0.390087,0.164749
+buenos aires,daireaux,estatal,urbano,Buenos Aires,DAIREAUX,Estatal,Urbano,147.129,0,0,0.250266,0.29972,0.060241,0.112608,0.109934
+buenos aires,dolores,estatal,rural,Buenos Aires,DOLORES,Estatal,Rural,10.93,0,0,0.250266,0.343195,0.0703125,0.748109,0.0494773
+buenos aires,dolores,estatal,urbano,Buenos Aires,DOLORES,Estatal,Urbano,332.756,0.0183824,1,0.250266,0.292958,0.0703125,0.0728863,0.0741621
+buenos aires,ensenada,estatal,urbano,Buenos Aires,ENSENADA,Estatal,Urbano,593.493,0.00166806,0,0.250266,0.292958,0.0703125,0.0842675,0.0651971
+buenos aires,ensenada,privado,urbano,Buenos Aires,ENSENADA,Privado,Urbano,184.734,0,0,0.250266,0.0330189,0.060241,0.0346159,0.00311807
+buenos aires,escobar,estatal,urbano,Buenos Aires,ESCOBAR,Estatal,Urbano,2631.52,0.000661485,0,0.250266,0.29972,0.060241,0.11979,0.058471
+buenos aires,escobar,privado,urbano,Buenos Aires,ESCOBAR,Privado,Urbano,1757.19,0.000591191,0,0.250266,0.0234742,0.0748031,0.0173165,0.00490571
+buenos aires,esteban echeverria,estatal,urbano,Buenos Aires,ESTEBAN ECHEVERRIA,Estatal,Urbano,3131.19,0.00223776,0,0.250266,0.292958,0.0703125,0.116405,0.0309183
+buenos aires,esteban echeverria,privado,urbano,Buenos Aires,ESTEBAN ECHEVERRIA,Privado,Urbano,1304.26,0,0,0.250266,0.0410959,0.0736434,0.0221877,0.00667634
+buenos aires,exaltacion de la cruz,estatal,rural,Buenos Aires,EXALTACION DE LA CRUZ,Estatal,Rural,95.8658,0,0,0.250266,0.347059,0.0748031,0.0712828,0.139693
+buenos aires,exaltacion de la cruz,estatal,urbano,Buenos Aires,EXALTACION DE LA CRUZ,Estatal,Urbano,199.242,0,0,0.250266,0.297753,0.0748031,0.0902166,0.0617877
+buenos aires,exaltacion de la cruz,privado,urbano,Buenos Aires,EXALTACION DE LA CRUZ,Privado,Urbano,156.062,0,0,0.250266,0.0410959,0.0736434,0.0154269,0.00244753
+buenos aires,ezeiza,estatal,urbano,Buenos Aires,EZEIZA,Estatal,Urbano,2098.26,0.00218818,0,0.250266,0.295129,0.0736434,0.0919315,0.0703282
+buenos aires,ezeiza,privado,urbano,Buenos Aires,EZEIZA,Privado,Urbano,751.718,0,0,0.250266,0.0330189,0.060241,0.0207039,0.0082333
+buenos aires,enmascarado,estatal,rural,Buenos Aires,Enmascarado,Estatal,Rural,31.4163,0.00806452,0,0.250266,0.340176,0.0736434,0.398807,0.189846
+buenos aires,enmascarado,estatal,urbano,Buenos Aires,Enmascarado,Estatal,Urbano,60.4641,0,0,0.251064,0.289694,0.0646388,0.0897915,0.140103
+buenos aires,enmascarado,privado,rural,Buenos Aires,Enmascarado,Privado,Rural,674.312,0.0042343,0,0.250266,0.233333,0.0736434,0.0211846,0.00999068
+buenos aires,enmascarado,privado,urbano,Buenos Aires,Enmascarado,Privado,Urbano,1445.04,0.000931388,0,0.250266,0.0366972,0.0703125,0.0201683,0.00727271
+buenos aires,florencio varela,estatal,rural,Buenos Aires,FLORENCIO VARELA,Estatal,Rural,131.36,0,0,0.250266,0.347059,0.0748031,0.150417,0.125141
+buenos aires,florencio varela,estatal,urbano,Buenos Aires,FLORENCIO VARELA,Estatal,Urbano,4328.79,0.0105527,0,0.250266,0.29972,0.060241,0.129007,0.1456
+buenos aires,florencio varela,privado,urbano,Buenos Aires,FLORENCIO VARELA,Privado,Urbano,1675.54,0.00328677,0,0.251064,0.0333333,0.0646388,0.0159492,0.00952294
+buenos aires,florentino ameghino,estatal,rural,Buenos Aires,FLORENTINO AMEGHINO,Estatal,Rural,37.5127,0.0116279,0,0.250266,0.347059,0.0748031,0.0507632,0.195876
+buenos aires,florentino ameghino,estatal,urbano,Buenos Aires,FLORENTINO AMEGHINO,Estatal,Urbano,71.5492,0,0,0.250266,0.297753,0.0748031,0.0309375,0.0870543
+buenos aires,general alvarado,estatal,rural,Buenos Aires,GENERAL ALVARADO,Estatal,Rural,41.6585,0,0,0.251064,0.345029,0.0646388,0.620653,0.271238
+buenos aires,general alvarado,estatal,urbano,Buenos Aires,GENERAL ALVARADO,Estatal,Urbano,257.98,0.00848896,0,0.250266,0.29972,0.060241,0.133971,0.0392621
+buenos aires,general alvarado,privado,urbano,Buenos Aires,GENERAL ALVARADO,Privado,Urbano,267.998,0,0,0.250266,0.0234742,0.0748031,0.00747305,0.00531946
+buenos aires,general alvear,estatal,rural,Buenos Aires,GENERAL ALVEAR,Estatal,Rural,26.0505,0,0,0.250266,0.338192,0.060241,0.100634,0.154171
+buenos aires,general alvear,estatal,urbano,Buenos Aires,GENERAL ALVEAR,Estatal,Urbano,71.5491,0.0194805,1,0.250266,0.29972,0.060241,0.154777,0.157925
+buenos aires,general arenales,estatal,urbano,Buenos Aires,GENERAL ARENALES,Estatal,Urbano,83.642,0,0,0.250266,0.295129,0.0736434,0.119146,0.238542
+buenos aires,general arenales,privado,urbano,Buenos Aires,GENERAL ARENALES,Privado,Urbano,77.1508,0,0,0.250266,0.0234742,0.0748031,0.0225598,0.00979
+buenos aires,general belgrano,estatal,rural,Buenos Aires,GENERAL BELGRANO,Estatal,Rural,19.7984,0,0,0.250266,0.338192,0.060241,0.177092,0.118594
+buenos aires,general belgrano,estatal,urbano,Buenos Aires,GENERAL BELGRANO,Estatal,Urbano,139.807,0,0,0.250266,0.292958,0.0703125,0.10408,0.0536551
+buenos aires,general guido,estatal,rural,Buenos Aires,GENERAL GUIDO,Estatal,Rural,53.143,0,0,0.250266,0.340176,0.0736434,0.140091,0.0353873
+buenos aires,general juan madariaga,estatal,rural,Buenos Aires,GENERAL JUAN MADARIAGA,Estatal,Rural,3.12606,0,0,0.250266,0.340176,0.0736434,0.659883,0.0268552
+buenos aires,general juan madariaga,estatal,urbano,Buenos Aires,GENERAL JUAN MADARIAGA,Estatal,Urbano,236.818,0.00169205,0,0.250266,0.292958,0.0703125,0.0858875,0.0689359
+buenos aires,general juan madariaga,privado,urbano,Buenos Aires,GENERAL JUAN MADARIAGA,Privado,Urbano,78.166,0,0,0.250266,0.0330189,0.060241,0.00559803,0.00730238
+buenos aires,general la madrid,estatal,rural,Buenos Aires,GENERAL LA MADRID,Estatal,Rural,31.2606,0,0,0.250266,0.338192,0.060241,0.154734,0.209183
+buenos aires,general la madrid,estatal,urbano,Buenos Aires,GENERAL LA MADRID,Estatal,Urbano,98.758,0.00393701,0,0.250266,0.292958,0.0703125,0.128101,0.0281125
+buenos aires,general las heras,estatal,rural,Buenos Aires,GENERAL LAS HERAS,Estatal,Rural,30.2186,0,0,0.250266,0.343195,0.0703125,0.105475,0.0787126
+buenos aires,general las heras,estatal,urbano,Buenos Aires,GENERAL LAS HERAS,Estatal,Urbano,115.889,0,0,0.250266,0.292958,0.0703125,0.104283,0.0794425
+buenos aires,general lavalle,estatal,rural,Buenos Aires,GENERAL LAVALLE,Estatal,Rural,83.3392,0,0,0.250266,0.347059,0.0748031,0.0582196,0.0912935
+buenos aires,general paz,estatal,rural,Buenos Aires,GENERAL PAZ,Estatal,Rural,31.2606,0,0,0.250266,0.340176,0.0736434,0.104742,0.113982
+buenos aires,general paz,estatal,urbano,Buenos Aires,GENERAL PAZ,Estatal,Urbano,60.1959,0,0,0.250266,0.297753,0.0748031,0.135519,0.0788891
+buenos aires,general pinto,estatal,rural,Buenos Aires,GENERAL PINTO,Estatal,Rural,55.227,0,0,0.250266,0.347059,0.0748031,0.227394,0.157361
+buenos aires,general pinto,estatal,urbano,Buenos Aires,GENERAL PINTO,Estatal,Urbano,85.6574,0,0,0.250266,0.297753,0.0748031,0.118528,0.120931
+buenos aires,general pueyrredon,estatal,rural,Buenos Aires,GENERAL PUEYRREDON,Estatal,Rural,157.6,0,0,0.250266,0.347059,0.0748031,0.105391,0.0675258
+buenos aires,general pueyrredon,estatal,urbano,Buenos Aires,GENERAL PUEYRREDON,Estatal,Urbano,4136.28,0.00356918,0,0.251064,0.289694,0.0646388,0.103063,0.119958
+buenos aires,general pueyrredon,privado,urbano,Buenos Aires,GENERAL PUEYRREDON,Privado,Urbano,3405.8,0.000419698,0,0.250266,0.0234742,0.0748031,0.0206137,0.00277651
+buenos aires,general rodriguez,estatal,rural,Buenos Aires,GENERAL RODRIGUEZ,Estatal,Rural,41.6808,0,0,0.250266,0.338192,0.060241,0.0632828,0.592744
+buenos aires,general rodriguez,estatal,urbano,Buenos Aires,GENERAL RODRIGUEZ,Estatal,Urbano,1310.91,0.00527859,0,0.250266,0.295129,0.0736434,0.0865039,0.1473
+buenos aires,general rodriguez,privado,urbano,Buenos Aires,GENERAL RODRIGUEZ,Privado,Urbano,443.617,0,0,0.250266,0.0330189,0.060241,0.00729167,0.00361258
+buenos aires,general san martin,estatal,urbano,Buenos Aires,GENERAL SAN MARTIN,Estatal,Urbano,2487.52,0.00453248,0,0.250266,0.292958,0.0703125,0.104414,0.021856
+buenos aires,general san martin,privado,urbano,Buenos Aires,GENERAL SAN MARTIN,Privado,Urbano,2135.77,0.000213721,0,0.250266,0.0330189,0.060241,0.015251,0.00383122
+buenos aires,general viamonte,estatal,rural,Buenos Aires,GENERAL VIAMONTE,Estatal,Rural,15.6303,0,0,0.251064,0.345029,0.0646388,0.0187875,0.336539
+buenos aires,general viamonte,estatal,urbano,Buenos Aires,GENERAL VIAMONTE,Estatal,Urbano,109.843,0,0,0.250266,0.292958,0.0703125,0.0775002,0.0621542
+buenos aires,general villegas,estatal,rural,Buenos Aires,GENERAL VILLEGAS,Estatal,Rural,84.4036,0,0,0.250266,0.347059,0.0748031,0.264033,0.240787
+buenos aires,general villegas,estatal,urbano,Buenos Aires,GENERAL VILLEGAS,Estatal,Urbano,220.158,0,0,0.250266,0.29972,0.060241,0.0259447,0.110425
+buenos aires,guamini,estatal,rural,Buenos Aires,GUAMINI,Estatal,Rural,45.8489,0,0,0.250266,0.338192,0.060241,0.0301773,0.0373855
+buenos aires,guamini,estatal,urbano,Buenos Aires,GUAMINI,Estatal,Urbano,74.3042,0,0,0.251064,0.289694,0.0646388,0.0857375,0.182211
+buenos aires,hipolito yrigoyen,estatal,rural,Buenos Aires,HIPOLITO YRIGOYEN,Estatal,Rural,7.29414,0,0,0.250266,0.347059,0.0748031,0.582236,0.121182
+buenos aires,hipolito yrigoyen,estatal,urbano,Buenos Aires,HIPOLITO YRIGOYEN,Estatal,Urbano,61.4718,0.0333333,1,0.250266,0.29972,0.060241,0.0611325,0.0690965
+buenos aires,hurlingham,estatal,urbano,Buenos Aires,HURLINGHAM,Estatal,Urbano,1312.73,0.00350631,0,0.251064,0.289694,0.0646388,0.0737858,0.0253925
+buenos aires,hurlingham,privado,urbano,Buenos Aires,HURLINGHAM,Privado,Urbano,676.351,0.00116754,0,0.251064,0.0333333,0.0646388,0.0365128,0.00376403
+buenos aires,ituzaingo,estatal,urbano,Buenos Aires,ITUZAINGO,Estatal,Urbano,1287.24,0.00327511,0,0.250266,0.29972,0.060241,0.0701415,0.0287448
+buenos aires,ituzaingo,privado,urbano,Buenos Aires,ITUZAINGO,Privado,Urbano,1089.79,0,0,0.250266,0.0410959,0.0736434,0.0135657,0.00302652
+buenos aires,jose c. paz,estatal,urbano,Buenos Aires,JOSE C. PAZ,Estatal,Urbano,2911.99,0.0056243,0,0.250266,0.295129,0.0736434,0.0859013,0.102606
+buenos aires,jose c. paz,privado,urbano,Buenos Aires,JOSE C. PAZ,Privado,Urbano,1148.53,0,0,0.250266,0.0234742,0.0748031,0.0278954,0.0472826
+buenos aires,junin,estatal,rural,Buenos Aires,JUNIN,Estatal,Rural,35.4287,0,0,0.251064,0.345029,0.0646388,0.0477137,0.0186448
+buenos aires,junin,estatal,urbano,Buenos Aires,JUNIN,Estatal,Urbano,830.726,0.0120813,0,0.250266,0.29972,0.060241,0.104333,0.0656264
+buenos aires,junin,privado,urbano,Buenos Aires,JUNIN,Privado,Urbano,271.158,0,0,0.250266,0.0234742,0.0748031,0.0129104,0.0173115
+buenos aires,la costa,estatal,urbano,Buenos Aires,LA COSTA,Estatal,Urbano,882.586,0,0,0.250266,0.29972,0.060241,0.0792162,0.126371
+buenos aires,la costa,privado,urbano,Buenos Aires,LA COSTA,Privado,Urbano,244.649,0.00128866,0,0.250266,0.0234742,0.0748031,0.0468459,0.0104516
+buenos aires,la matanza,estatal,urbano,Buenos Aires,LA MATANZA,Estatal,Urbano,13757.6,0.00467026,0,0.250266,0.292958,0.0703125,0.10123,0.0175302
+buenos aires,la matanza,privado,urbano,Buenos Aires,LA MATANZA,Privado,Urbano,6298.51,0.000298174,0,0.250266,0.0366972,0.0703125,0.0199614,0.0526157
+buenos aires,la plata,estatal,rural,Buenos Aires,LA PLATA,Estatal,Rural,201.365,0,0,0.250266,0.338192,0.060241,0.0303332,0.142254
+buenos aires,la plata,estatal,urbano,Buenos Aires,LA PLATA,Estatal,Urbano,5204.39,0.00103207,0,0.250266,0.29972,0.060241,0.0723118,0.0172137
+buenos aires,la plata,privado,urbano,Buenos Aires,LA PLATA,Privado,Urbano,4042.09,0.00025091,0,0.251064,0.0333333,0.0646388,0.0271561,0.00402723
+buenos aires,lanus,estatal,urbano,Buenos Aires,LANUS,Estatal,Urbano,3619.29,0.00414827,0,0.250266,0.292958,0.0703125,0.111658,0.0467157
+buenos aires,lanus,privado,urbano,Buenos Aires,LANUS,Privado,Urbano,2208.14,0.00345796,0,0.251064,0.0333333,0.0646388,0.0215879,0.00457114
+buenos aires,laprida,estatal,rural,Buenos Aires,LAPRIDA,Estatal,Rural,6.25212,0,0,0.251064,0.345029,0.0646388,0.0535703,0.0617534
+buenos aires,laprida,estatal,urbano,Buenos Aires,LAPRIDA,Estatal,Urbano,184.08,0.00651466,0,0.250266,0.292958,0.0703125,0.083426,0.0744858
+buenos aires,las flores,estatal,rural,Buenos Aires,LAS FLORES,Estatal,Rural,6.25212,0,0,0.251064,0.345029,0.0646388,0.142237,0.11723
+buenos aires,las flores,estatal,urbano,Buenos Aires,LAS FLORES,Estatal,Urbano,180.384,0,0,0.250266,0.29972,0.060241,0.105284,0.183672
+buenos aires,las flores,privado,urbano,Buenos Aires,LAS FLORES,Privado,Urbano,86.2871,0,0,0.250266,0.0234742,0.0748031,0.0159388,0.0030689
+buenos aires,leandro n. alem,estatal,rural,Buenos Aires,LEANDRO N. ALEM,Estatal,Rural,10.4202,0,0,0.250266,0.347059,0.0748031,0.186901,0.453922
+buenos aires,leandro n. alem,estatal,urbano,Buenos Aires,LEANDRO N. ALEM,Estatal,Urbano,159.222,0.00606061,0,0.251064,0.289694,0.0646388,0.0292154,0.172883
+buenos aires,lezama,estatal,rural,Buenos Aires,LEZAMA,Estatal,Rural,4.16808,0,0,0.250266,0.340176,0.0736434,0.180972,0.166848
+buenos aires,lincoln,estatal,rural,Buenos Aires,LINCOLN,Estatal,Rural,67.7313,0.00724638,0,0.250266,0.338192,0.060241,0.0312629,0.0932653
+buenos aires,lincoln,estatal,urbano,Buenos Aires,LINCOLN,Estatal,Urbano,222.956,0.0101868,0,0.250266,0.295129,0.0736434,0.197318,0.0425398
+buenos aires,lincoln,privado,urbano,Buenos Aires,LINCOLN,Privado,Urbano,200.998,0,0,0.250266,0.0410959,0.0736434,0.026599,0.0114232
+buenos aires,loberia,estatal,rural,Buenos Aires,LOBERIA,Estatal,Rural,75.0254,0,0,0.250266,0.340176,0.0736434,0.10252,0.0535851
+buenos aires,loberia,estatal,urbano,Buenos Aires,LOBERIA,Estatal,Urbano,117.905,0,0,0.250266,0.297753,0.0748031,0.0446524,0.165382
+buenos aires,lobos,estatal,rural,Buenos Aires,LOBOS,Estatal,Rural,73.9834,0.0129032,0,0.250266,0.347059,0.0748031,0.0676671,0.183419
+buenos aires,lobos,estatal,urbano,Buenos Aires,LOBOS,Estatal,Urbano,342.126,0.00584795,0,0.250266,0.297753,0.0748031,0.120534,0.30082
+buenos aires,lobos,privado,urbano,Buenos Aires,LOBOS,Privado,Urbano,154.302,0,0,0.250266,0.0410959,0.0736434,0.031877,0.0139114
+buenos aires,lomas de zamora,estatal,urbano,Buenos Aires,LOMAS DE ZAMORA,Estatal,Urbano,5913.49,0.00549494,0,0.250266,0.295129,0.0736434,0.068224,0.0189794
+buenos aires,lomas de zamora,privado,urbano,Buenos Aires,LOMAS DE ZAMORA,Privado,Urbano,4073.98,0.000120773,0,0.250266,0.0330189,0.060241,0.0125944,0.00346093
+buenos aires,lujan,estatal,rural,Buenos Aires,LUJAN,Estatal,Rural,147.967,0,0,0.251064,0.345029,0.0646388,0.145596,0.0313134
+buenos aires,lujan,estatal,urbano,Buenos Aires,LUJAN,Estatal,Urbano,863.114,0,0,0.250266,0.295129,0.0736434,0.0467957,0.0322384
+buenos aires,lujan,privado,urbano,Buenos Aires,LUJAN,Privado,Urbano,544.024,0,0,0.251064,0.0333333,0.0646388,0.0186554,0.0025759
+buenos aires,magdalena,estatal,rural,Buenos Aires,MAGDALENA,Estatal,Rural,37.5127,0.0275229,1,0.250266,0.340176,0.0736434,0.220668,0.0965578
+buenos aires,magdalena,estatal,urbano,Buenos Aires,MAGDALENA,Estatal,Urbano,226.74,0,0,0.250266,0.295129,0.0736434,0.0785815,0.0860505
+buenos aires,maipu,estatal,rural,Buenos Aires,MAIPU,Estatal,Rural,14.5883,0,0,0.250266,0.340176,0.0736434,0.276042,0.308584
+buenos aires,maipu,estatal,urbano,Buenos Aires,MAIPU,Estatal,Urbano,94.727,0,0,0.251064,0.289694,0.0646388,0.114711,0.0257961
+buenos aires,malvinas argentinas,estatal,urbano,Buenos Aires,MALVINAS ARGENTINAS,Estatal,Urbano,2513.07,0.00121107,0,0.250266,0.295129,0.0736434,0.0795786,0.0275013
+buenos aires,malvinas argentinas,privado,urbano,Buenos Aires,MALVINAS ARGENTINAS,Privado,Urbano,1953.85,0.000271961,0,0.250266,0.0410959,0.0736434,0.0201485,0.0487389
+buenos aires,mar chiquita,estatal,rural,Buenos Aires,MAR CHIQUITA,Estatal,Rural,96.9078,0,0,0.250266,0.343195,0.0703125,0.113234,0.227882
+buenos aires,mar chiquita,estatal,urbano,Buenos Aires,MAR CHIQUITA,Estatal,Urbano,217.671,0,0,0.250266,0.292958,0.0703125,0.0572364,0.0456153
+buenos aires,marcos paz,estatal,urbano,Buenos Aires,MARCOS PAZ,Estatal,Urbano,633.53,0.00723026,0,0.250266,0.29972,0.060241,0.14369,0.0961656
+buenos aires,marcos paz,privado,urbano,Buenos Aires,MARCOS PAZ,Privado,Urbano,164.701,0,0,0.251064,0.0333333,0.0646388,0.0116573,0.00445853
+buenos aires,mercedes,estatal,rural,Buenos Aires,MERCEDES,Estatal,Rural,46.8909,0,0,0.250266,0.343195,0.0703125,0.0242932,0.0265381
+buenos aires,mercedes,estatal,urbano,Buenos Aires,MERCEDES,Estatal,Urbano,402.086,0,0,0.250266,0.29972,0.060241,0.11309,0.10313
+buenos aires,mercedes,privado,urbano,Buenos Aires,MERCEDES,Privado,Urbano,252.207,0.0013369,0,0.250266,0.0366972,0.0703125,0.0174952,0.0201704
+buenos aires,merlo,estatal,urbano,Buenos Aires,MERLO,Estatal,Urbano,5364.24,0.00374471,0,0.250266,0.295129,0.0736434,0.112119,0.0363243
+buenos aires,merlo,privado,urbano,Buenos Aires,MERLO,Privado,Urbano,1867.87,0,0,0.250266,0.0366972,0.0703125,0.0290906,0.0266332
+buenos aires,monte,estatal,rural,Buenos Aires,MONTE,Estatal,Rural,13.5463,0,0,0.250266,0.343195,0.0703125,0.0788932,0.0329003
+buenos aires,monte,estatal,urbano,Buenos Aires,MONTE,Estatal,Urbano,191.218,0.00232019,0,0.251064,0.289694,0.0646388,0.0914611,0.0614585
+buenos aires,monte,privado,urbano,Buenos Aires,MONTE,Privado,Urbano,95.8983,0,0,0.250266,0.0234742,0.0748031,0.0385118,0.0894925
+buenos aires,monte hermoso,estatal,urbano,Buenos Aires,MONTE HERMOSO,Estatal,Urbano,78.8282,0.00403226,0,0.250266,0.292958,0.0703125,0.100794,0.12874
+buenos aires,moreno,estatal,urbano,Buenos Aires,MORENO,Estatal,Urbano,5300.45,0.00374369,0,0.250266,0.295129,0.0736434,0.0752868,0.0502567
+buenos aires,moreno,privado,urbano,Buenos Aires,MORENO,Privado,Urbano,2144.18,0.00376471,0,0.250266,0.0410959,0.0736434,0.0205779,0.0136486
+buenos aires,moron,estatal,urbano,Buenos Aires,MORON,Estatal,Urbano,2550.96,0.00640088,0,0.250266,0.297753,0.0748031,0.102243,0.0621037
+buenos aires,moron,privado,urbano,Buenos Aires,MORON,Privado,Urbano,2345.37,0.000412712,0,0.251064,0.0333333,0.0646388,0.0211872,0.00423598
+buenos aires,navarro,estatal,rural,Buenos Aires,NAVARRO,Estatal,Rural,30.2186,0,0,0.250266,0.343195,0.0703125,0.123622,0.339843
+buenos aires,navarro,estatal,urbano,Buenos Aires,NAVARRO,Estatal,Urbano,140.579,0,0,0.250266,0.292958,0.0703125,0.0520738,0.120571
+buenos aires,navarro,privado,urbano,Buenos Aires,NAVARRO,Privado,Urbano,81.2114,0,0,0.250266,0.0366972,0.0703125,0.0086874,0.027269
+buenos aires,necochea,estatal,rural,Buenos Aires,NECOCHEA,Estatal,Rural,34.3866,0,0,0.251064,0.345029,0.0646388,0.218789,0.141593
+buenos aires,necochea,estatal,urbano,Buenos Aires,NECOCHEA,Estatal,Urbano,752.016,0.00110803,0,0.250266,0.292958,0.0703125,0.107648,0.217777
+buenos aires,necochea,privado,urbano,Buenos Aires,NECOCHEA,Privado,Urbano,386.769,0,0,0.251064,0.0333333,0.0646388,0.0195209,0.00355269
+buenos aires,olavarria,estatal,rural,Buenos Aires,OLAVARRIA,Estatal,Rural,66.1682,0.0512821,1,0.250266,0.338192,0.060241,0.127366,0.145601
+buenos aires,olavarria,estatal,urbano,Buenos Aires,OLAVARRIA,Estatal,Urbano,939.477,0.00194363,0,0.250266,0.297753,0.0748031,0.131357,0.0549227
+buenos aires,olavarria,privado,urbano,Buenos Aires,OLAVARRIA,Privado,Urbano,465.95,0,0,0.250266,0.0234742,0.0748031,0.0350472,0.00689755
+buenos aires,patagones,estatal,rural,Buenos Aires,PATAGONES,Estatal,Rural,42.7228,0.0641026,1,0.250266,0.338192,0.060241,0.0318988,0.15589
+buenos aires,patagones,estatal,urbano,Buenos Aires,PATAGONES,Estatal,Urbano,336.07,0.0044843,0,0.250266,0.297753,0.0748031,0.223444,0.227984
+buenos aires,patagones,privado,urbano,Buenos Aires,PATAGONES,Privado,Urbano,95.4234,0,0,0.251064,0.0333333,0.0646388,0.0810596,0.0128571
+buenos aires,pehuajo,estatal,rural,Buenos Aires,PEHUAJO,Estatal,Rural,72.9414,0,0,0.251064,0.345029,0.0646388,0.102303,0.0648352
+buenos aires,pehuajo,estatal,urbano,Buenos Aires,PEHUAJO,Estatal,Urbano,414.179,0.00121655,0,0.250266,0.295129,0.0736434,0.0915439,0.0691093
+buenos aires,pehuajo,privado,urbano,Buenos Aires,PEHUAJO,Privado,Urbano,80.1962,0,0,0.250266,0.0234742,0.0748031,0.0117495,0.00384627
+buenos aires,pellegrini,estatal,rural,Buenos Aires,PELLEGRINI,Estatal,Rural,7.29414,0,0,0.250266,0.338192,0.060241,0.0252511,0.0721096
+buenos aires,pergamino,estatal,rural,Buenos Aires,PERGAMINO,Estatal,Rural,62.5212,0.00763359,0,0.250266,0.338192,0.060241,0.0656243,0.052617
+buenos aires,pergamino,estatal,urbano,Buenos Aires,PERGAMINO,Estatal,Urbano,657.514,0.00231348,0,0.250266,0.29972,0.060241,0.13075,0.0439982
+buenos aires,pergamino,privado,rural,Buenos Aires,PERGAMINO,Privado,Rural,90.6557,0,0,0.250266,0.185185,0.060241,0.0162674,0.100604
+buenos aires,pergamino,privado,urbano,Buenos Aires,PERGAMINO,Privado,Urbano,334.127,0,0,0.250266,0.0330189,0.060241,0.0203052,0.00430843
+buenos aires,pila,estatal,urbano,Buenos Aires,PILA,Estatal,Urbano,37.2862,0,0,0.250266,0.297753,0.0748031,0.0525853,0.0325658
+buenos aires,pilar,estatal,urbano,Buenos Aires,PILAR,Estatal,Urbano,3309.97,0.000132013,0,0.250266,0.292958,0.0703125,0.0664555,0.0568792
+buenos aires,pilar,privado,urbano,Buenos Aires,PILAR,Privado,Urbano,2349.19,0,0,0.250266,0.0330189,0.060241,0.0134895,0.00503552
+buenos aires,pinamar,estatal,urbano,Buenos Aires,PINAMAR,Estatal,Urbano,449.943,0.0147524,0,0.250266,0.297753,0.0748031,0.0429982,0.0736153
+buenos aires,pinamar,privado,urbano,Buenos Aires,PINAMAR,Privado,Urbano,76.1357,0,0,0.250266,0.0366972,0.0703125,0.0417927,0.0172067
+buenos aires,presidente peron,estatal,urbano,Buenos Aires,PRESIDENTE PERON,Estatal,Urbano,1081.8,0.00132979,0,0.251064,0.289694,0.0646388,0.11861,0.0727679
+buenos aires,presidente peron,privado,urbano,Buenos Aires,PRESIDENTE PERON,Privado,Urbano,330.936,0,0,0.251064,0.0333333,0.0646388,0.0202649,0.01183
+buenos aires,puan,estatal,rural,Buenos Aires,PUAN,Estatal,Rural,35.4287,0,0,0.251064,0.345029,0.0646388,0.0265646,0.122011
+buenos aires,puan,estatal,urbano,Buenos Aires,PUAN,Estatal,Urbano,52.4022,0,0,0.250266,0.29972,0.060241,0.173031,0.100282
+buenos aires,puan,privado,urbano,Buenos Aires,PUAN,Privado,Urbano,89.3325,0,0,0.250266,0.0410959,0.0736434,0.0262838,0.0493598
+buenos aires,punta indio,estatal,rural,Buenos Aires,PUNTA INDIO,Estatal,Rural,43.7648,0.00892857,0,0.250266,0.338192,0.060241,0.0649595,0.405368
+buenos aires,punta indio,estatal,urbano,Buenos Aires,PUNTA INDIO,Estatal,Urbano,82.6342,0,0,0.250266,0.295129,0.0736434,0.0308812,0.0623972
+buenos aires,quilmes,estatal,urbano,Buenos Aires,QUILMES,Estatal,Urbano,5167.13,0.00181677,0,0.250266,0.292958,0.0703125,0.132689,0.0215464
+buenos aires,quilmes,privado,urbano,Buenos Aires,QUILMES,Privado,Urbano,3014.78,0.00063012,0,0.250266,0.0410959,0.0736434,0.0249839,0.00762304
+buenos aires,ramallo,estatal,rural,Buenos Aires,RAMALLO,Estatal,Rural,56.2691,0,0,0.250266,0.338192,0.060241,0.0382477,0.0748952
+buenos aires,ramallo,estatal,urbano,Buenos Aires,RAMALLO,Estatal,Urbano,467.589,0,0,0.250266,0.29972,0.060241,0.195994,0.228377
+buenos aires,rauch,estatal,rural,Buenos Aires,RAUCH,Estatal,Rural,42.7228,0,0,0.250266,0.340176,0.0736434,0.415111,0.257003
+buenos aires,rauch,estatal,urbano,Buenos Aires,RAUCH,Estatal,Urbano,57.4409,0.00847458,0,0.250266,0.292958,0.0703125,0.211426,0.138645
+buenos aires,rivadavia,estatal,rural,Buenos Aires,RIVADAVIA,Estatal,Rural,53.143,0.015873,0,0.251064,0.345029,0.0646388,0.236372,0.220348
+buenos aires,rivadavia,estatal,urbano,Buenos Aires,RIVADAVIA,Estatal,Urbano,120.928,0.0224215,1,0.250266,0.297753,0.0748031,0.157702,0.0726733
+buenos aires,rivadavia,privado,urbano,Buenos Aires,RIVADAVIA,Privado,Urbano,113.696,0,0,0.250266,0.0366972,0.0703125,0.161993,0.0339056
+buenos aires,rojas,estatal,rural,Buenos Aires,ROJAS,Estatal,Rural,53.143,0,0,0.250266,0.340176,0.0736434,0.221185,0.189113
+buenos aires,rojas,estatal,urbano,Buenos Aires,ROJAS,Estatal,Urbano,252.941,0.005386,0,0.251064,0.289694,0.0646388,0.0784762,0.096283
+buenos aires,roque perez,estatal,rural,Buenos Aires,ROQUE PEREZ,Estatal,Rural,22.9244,0,0,0.250266,0.343195,0.0703125,0.200078,0.238854
+buenos aires,roque perez,estatal,urbano,Buenos Aires,ROQUE PEREZ,Estatal,Urbano,160.23,0.00597015,0,0.250266,0.295129,0.0736434,0.114384,0.073165
+buenos aires,saavedra,estatal,rural,Buenos Aires,SAAVEDRA,Estatal,Rural,33.3446,0.0153846,0,0.250266,0.338192,0.060241,0.100244,0.134869
+buenos aires,saavedra,estatal,urbano,Buenos Aires,SAAVEDRA,Estatal,Urbano,103.797,0.026178,1,0.250266,0.29972,0.060241,0.0804424,0.0251204
+buenos aires,saavedra,privado,urbano,Buenos Aires,SAAVEDRA,Privado,Urbano,115.726,0,0,0.251064,0.0333333,0.0646388,0.0277121,0.0108072
+buenos aires,saladillo,estatal,rural,Buenos Aires,SALADILLO,Estatal,Rural,64.073,0.0202703,1,0.250266,0.343195,0.0703125,0.0934385,0.172881
+buenos aires,saladillo,estatal,urbano,Buenos Aires,SALADILLO,Estatal,Urbano,302.32,0.0015674,0,0.250266,0.292958,0.0703125,0.0699681,0.0541626
+buenos aires,saladillo,privado,urbano,Buenos Aires,SALADILLO,Privado,Urbano,110.651,0,0,0.250266,0.0366972,0.0703125,0.00505385,0.0136269
+buenos aires,salliquelo,estatal,urbano,Buenos Aires,SALLIQUELO,Estatal,Urbano,110.851,0,0,0.250266,0.297753,0.0748031,0.12208,0.147927
+buenos aires,salto,estatal,rural,Buenos Aires,SALTO,Estatal,Rural,65.6472,0.0215827,1,0.250266,0.347059,0.0748031,0.142765,0.134563
+buenos aires,salto,estatal,urbano,Buenos Aires,SALTO,Estatal,Urbano,285.189,0.00158983,0,0.250266,0.297753,0.0748031,0.156347,0.126752
+buenos aires,salto,privado,urbano,Buenos Aires,SALTO,Privado,Urbano,94.4082,0,0,0.250266,0.0366972,0.0703125,0.012941,0.0101995
+buenos aires,san andres de giles,estatal,rural,Buenos Aires,SAN ANDRES DE GILES,Estatal,Rural,72.9414,0,0,0.250266,0.343195,0.0703125,0.0186044,0.0872411
+buenos aires,san andres de giles,estatal,urbano,Buenos Aires,SAN ANDRES DE GILES,Estatal,Urbano,200.539,0,0,0.250266,0.295129,0.0736434,0.118736,0.045075
+buenos aires,san andres de giles,privado,urbano,Buenos Aires,SAN ANDRES DE GILES,Privado,Urbano,105.575,0,0,0.250266,0.0410959,0.0736434,0.0223221,0.0309951
+buenos aires,san antonio de areco,estatal,rural,Buenos Aires,SAN ANTONIO DE ARECO,Estatal,Rural,15.6303,0,0,0.250266,0.340176,0.0736434,0.00577378,0.0392843
+buenos aires,san antonio de areco,estatal,urbano,Buenos Aires,SAN ANTONIO DE ARECO,Estatal,Urbano,233.794,0.00426439,0,0.250266,0.292958,0.0703125,0.091257,0.0459851
+buenos aires,san antonio de areco,privado,urbano,Buenos Aires,SAN ANTONIO DE ARECO,Privado,Urbano,113.696,0,0,0.250266,0.0234742,0.0748031,0.00482745,0.00383474
+buenos aires,san cayetano,estatal,rural,Buenos Aires,SAN CAYETANO,Estatal,Rural,8.33616,0,0,0.250266,0.338192,0.060241,0.429962,0.484886
+buenos aires,san cayetano,estatal,urbano,Buenos Aires,SAN CAYETANO,Estatal,Urbano,56.4331,0,0,0.251064,0.289694,0.0646388,0.0772494,0.0919128
+buenos aires,san fernando,estatal,rural,Buenos Aires,SAN FERNANDO,Estatal,Rural,69.4181,0,0,0.250266,0.340176,0.0736434,0.0777473,0.231329
+buenos aires,san fernando,estatal,urbano,Buenos Aires,SAN FERNANDO,Estatal,Urbano,1130.01,0.00342335,0,0.250266,0.297753,0.0748031,0.118993,0.0410043
+buenos aires,san fernando,privado,urbano,Buenos Aires,SAN FERNANDO,Privado,Urbano,938.483,0.000493097,0,0.250266,0.0234742,0.0748031,0.0191794,0.00324302
+buenos aires,san isidro,estatal,urbano,Buenos Aires,SAN ISIDRO,Estatal,Urbano,1491.67,0.0115841,0,0.251064,0.289694,0.0646388,0.0888521,0.0177533
+buenos aires,san isidro,privado,urbano,Buenos Aires,SAN ISIDRO,Privado,Urbano,2668.01,0.000358038,0,0.250266,0.0410959,0.0736434,0.0151237,0.00386086
+buenos aires,san miguel,estatal,urbano,Buenos Aires,SAN MIGUEL,Estatal,Urbano,2766.99,0.0105073,0,0.250266,0.297753,0.0748031,0.087329,0.0584692
+buenos aires,san miguel,privado,urbano,Buenos Aires,SAN MIGUEL,Privado,Urbano,2585.5,0.00142974,0,0.250266,0.0410959,0.0736434,0.0162226,0.00394734
+buenos aires,san nicolas,estatal,urbano,Buenos Aires,SAN NICOLAS,Estatal,Urbano,1159.92,0.00234192,0,0.250266,0.292958,0.0703125,0.125711,0.0940994
+buenos aires,san nicolas,privado,urbano,Buenos Aires,SAN NICOLAS,Privado,Urbano,757.771,0,0,0.250266,0.0330189,0.060241,0.0266709,0.00443266
+buenos aires,san pedro,estatal,rural,Buenos Aires,SAN PEDRO,Estatal,Rural,51.059,0.00813008,0,0.250266,0.343195,0.0703125,0.493739,0.236513
+buenos aires,san pedro,estatal,urbano,Buenos Aires,SAN PEDRO,Estatal,Urbano,701.327,0.00784827,0,0.251064,0.289694,0.0646388,0.130162,0.115623
+buenos aires,san pedro,privado,urbano,Buenos Aires,SAN PEDRO,Privado,Urbano,149.226,0.00645161,0,0.250266,0.0330189,0.060241,0.00409761,0.00299067
+buenos aires,san vicente,estatal,rural,Buenos Aires,SAN VICENTE,Estatal,Rural,37.7676,0,0,0.250266,0.343195,0.0703125,0.154434,0.265943
+buenos aires,san vicente,estatal,urbano,Buenos Aires,SAN VICENTE,Estatal,Urbano,1011.43,0,0,0.250266,0.292958,0.0703125,0.0682649,0.0529777
+buenos aires,san vicente,privado,urbano,Buenos Aires,SAN VICENTE,Privado,Urbano,146.181,0,0,0.250266,0.0366972,0.0703125,0.0553176,0.00627322
+buenos aires,suipacha,estatal,rural,Buenos Aires,SUIPACHA,Estatal,Rural,5.2101,0,0,0.250266,0.347059,0.0748031,0.772896,0.0996423
+buenos aires,suipacha,estatal,urbano,Buenos Aires,SUIPACHA,Estatal,Urbano,68.9974,0,0,0.250266,0.295129,0.0736434,0.0378838,0.10443
+buenos aires,suipacha,privado,urbano,Buenos Aires,SUIPACHA,Privado,Urbano,52.7874,0.00729927,0,0.251064,0.0333333,0.0646388,0.125185,0.0392435
+buenos aires,tandil,estatal,rural,Buenos Aires,TANDIL,Estatal,Rural,120.874,0,0,0.251064,0.345029,0.0646388,0.111346,0.0567738
+buenos aires,tandil,estatal,urbano,Buenos Aires,TANDIL,Estatal,Urbano,1082.31,0.00209556,0,0.250266,0.295129,0.0736434,0.09181,0.140586
+buenos aires,tandil,privado,urbano,Buenos Aires,TANDIL,Privado,Urbano,534.98,0,0,0.250266,0.0366972,0.0703125,0.0137451,0.00430575
+buenos aires,tapalque,estatal,rural,Buenos Aires,TAPALQUE,Estatal,Rural,4.16808,0,0,0.251064,0.345029,0.0646388,0.108722,0.155531
+buenos aires,tapalque,estatal,urbano,Buenos Aires,TAPALQUE,Estatal,Urbano,114.882,0,0,0.251064,0.289694,0.0646388,0.0613705,0.0423009
+buenos aires,tigre,estatal,rural,Buenos Aires,TIGRE,Estatal,Rural,36.311,0.0106383,0,0.250266,0.347059,0.0748031,0.0329539,0.0584993
+buenos aires,tigre,estatal,urbano,Buenos Aires,TIGRE,Estatal,Urbano,3141.8,0.00540233,0,0.250266,0.297753,0.0748031,0.105127,0.0426915
+buenos aires,tigre,privado,urbano,Buenos Aires,TIGRE,Privado,Urbano,2426.59,0.000594766,0,0.250266,0.0410959,0.0736434,0.0228526,0.00433989
+buenos aires,tordillo,estatal,rural,Buenos Aires,TORDILLO,Estatal,Rural,23.9664,0,0,0.250266,0.347059,0.0748031,0.16228,0.0864344
+buenos aires,tornquist,estatal,rural,Buenos Aires,TORNQUIST,Estatal,Rural,33.3446,0,0,0.251064,0.345029,0.0646388,0.553035,0.204178
+buenos aires,tornquist,estatal,urbano,Buenos Aires,TORNQUIST,Estatal,Urbano,80.6188,0.0147059,0,0.250266,0.292958,0.0703125,0.0879318,0.122009
+buenos aires,trenque lauquen,estatal,rural,Buenos Aires,TRENQUE LAUQUEN,Estatal,Rural,9.37818,0,0,0.250266,0.340176,0.0736434,0.474657,0.107382
+buenos aires,trenque lauquen,estatal,urbano,Buenos Aires,TRENQUE LAUQUEN,Estatal,Urbano,381.149,0.00442478,0,0.250266,0.29972,0.060241,0.193371,0.0404983
+buenos aires,trenque lauquen,privado,urbano,Buenos Aires,TRENQUE LAUQUEN,Privado,Urbano,158.362,0,0,0.250266,0.0366972,0.0703125,0.0310705,0.00830966
+buenos aires,tres arroyos,estatal,rural,Buenos Aires,TRES ARROYOS,Estatal,Rural,28.1345,0.0422535,1,0.251064,0.345029,0.0646388,0.0481525,0.0889601
+buenos aires,tres arroyos,estatal,urbano,Buenos Aires,TRES ARROYOS,Estatal,Urbano,442.642,0.00507099,0,0.250266,0.297753,0.0748031,0.120143,0.201699
+buenos aires,tres arroyos,privado,urbano,Buenos Aires,TRES ARROYOS,Privado,Urbano,152.271,0,0,0.250266,0.0330189,0.060241,0.0137586,0.00571937
+buenos aires,tres de febrero,estatal,urbano,Buenos Aires,TRES DE FEBRERO,Estatal,Urbano,1943.2,0.00606796,0,0.250266,0.297753,0.0748031,0.0840451,0.0330651
+buenos aires,tres de febrero,privado,urbano,Buenos Aires,TRES DE FEBRERO,Privado,Urbano,1801.7,0.000804721,0,0.250266,0.0234742,0.0748031,0.0276228,0.00647469
+buenos aires,tres lomas,estatal,rural,Buenos Aires,TRES LOMAS,Estatal,Rural,13.5463,0,0,0.250266,0.347059,0.0748031,0.0971436,0.168214
+buenos aires,tres lomas,estatal,urbano,Buenos Aires,TRES LOMAS,Estatal,Urbano,77.8313,0.00892857,0,0.250266,0.297753,0.0748031,0.0176228,0.128157
+buenos aires,vicente lopez,estatal,urbano,Buenos Aires,VICENTE LOPEZ,Estatal,Urbano,1114.4,0.0221794,1,0.250266,0.297753,0.0748031,0.141617,0.0796706
+buenos aires,vicente lopez,privado,urbano,Buenos Aires,VICENTE LOPEZ,Privado,Urbano,2150.45,0.00021575,0,0.251064,0.0333333,0.0646388,0.0289442,0.0110045
+buenos aires,villa gesell,estatal,urbano,Buenos Aires,VILLA GESELL,Estatal,Urbano,327.514,0,0,0.250266,0.29972,0.060241,0.122235,0.165611
+buenos aires,villa gesell,privado,urbano,Buenos Aires,VILLA GESELL,Privado,Urbano,213.18,0,0,0.250266,0.0234742,0.0748031,0.00797797,0.0246515
+buenos aires,villarino,estatal,rural,Buenos Aires,VILLARINO,Estatal,Rural,46.8909,0.00917431,0,0.250266,0.343195,0.0703125,0.415958,0.274995
+buenos aires,villarino,estatal,urbano,Buenos Aires,VILLARINO,Estatal,Urbano,299.549,0.0165913,0,0.250266,0.29972,0.060241,0.0957766,0.314948
+buenos aires,zarate,estatal,rural,Buenos Aires,ZARATE,Estatal,Rural,118.79,0,0,0.250266,0.340176,0.0736434,0.117391,0.291819
+buenos aires,zarate,estatal,urbano,Buenos Aires,ZARATE,Estatal,Urbano,1361.26,0.00614334,0,0.250266,0.29972,0.060241,0.188067,0.258425
+buenos aires,zarate,privado,urbano,Buenos Aires,ZARATE,Privado,Urbano,450.046,0,0,0.250266,0.0330189,0.060241,0.0153588,0.00162199
+catamarca,ambato,estatal,rural,Catamarca,AMBATO,Estatal,Rural,48.1475,0,0,0.250266,0.343195,0.318182,0.274043,0.240391
+catamarca,ancasti,estatal,rural,Catamarca,ANCASTI,Estatal,Rural,36.879,0.0294118,1,0.250266,0.338192,0.259259,0.32233,0.629811
+catamarca,andalgala,estatal,rural,Catamarca,ANDALGALA,Estatal,Rural,65.5626,0.00662252,0,0.250266,0.347059,0.380952,0.271859,0.351895
+catamarca,andalgala,estatal,urbano,Catamarca,ANDALGALA,Estatal,Urbano,162.574,0,0,0.250266,0.297753,0.380952,0.213493,0.216372
+catamarca,antofagasta de la sierra,estatal,rural,Catamarca,ANTOFAGASTA DE LA SIERRA,Estatal,Rural,16.3906,0,0,0.250266,0.340176,0.181818,0.607725,0.230197
+catamarca,belen,estatal,rural,Catamarca,BELEN,Estatal,Rural,188.904,0.0162162,0,0.251064,0.345029,0.3,0.278214,0.181324
+catamarca,belen,estatal,urbano,Catamarca,BELEN,Estatal,Urbano,232.248,0.0173745,0,0.251064,0.289694,0.3,0.457328,0.327694
+catamarca,capayan,estatal,rural,Catamarca,CAPAYAN,Estatal,Rural,117.808,0.00490196,0,0.251064,0.345029,0.3,0.47446,0.356073
+catamarca,capayan,estatal,urbano,Catamarca,CAPAYAN,Estatal,Urbano,68.6647,0,0,0.250266,0.297753,0.380952,0.307294,0.265399
+catamarca,capital,estatal,urbano,Catamarca,CAPITAL,Estatal,Urbano,1387.97,0.00558659,0,0.250266,0.292958,0.318182,0.358717,0.302087
+catamarca,capital,privado,urbano,Catamarca,CAPITAL,Privado,Urbano,782.58,0.00963597,0,0.250266,0.0410959,0.181818,0.0411353,0.0181927
+catamarca,el alto,estatal,rural,Catamarca,EL ALTO,Estatal,Rural,86.0509,0.0231214,1,0.250266,0.340176,0.181818,0.426325,0.455875
+catamarca,enmascarado,privado,urbano,Catamarca,Enmascarado,Privado,Urbano,507.421,0.00122699,0,0.250266,0.0234742,0.380952,0.0373344,0.045091
+catamarca,fray mamerto esquiu,estatal,rural,Catamarca,FRAY MAMERTO ESQUIU,Estatal,Rural,47.1231,0.0128205,0,0.250266,0.347059,0.380952,0.259383,0.125534
+catamarca,fray mamerto esquiu,estatal,urbano,Catamarca,FRAY MAMERTO ESQUIU,Estatal,Urbano,90.8798,0,0,0.250266,0.297753,0.380952,0.0961642,0.19314
+catamarca,la paz,estatal,rural,Catamarca,LA PAZ,Estatal,Rural,136.247,0.112403,1,0.250266,0.340176,0.181818,0.495754,0.241225
+catamarca,la paz,estatal,urbano,Catamarca,LA PAZ,Estatal,Urbano,139.972,0.018617,1,0.250266,0.295129,0.181818,0.490812,0.334859
+catamarca,paclin,estatal,rural,Catamarca,PACLIN,Estatal,Rural,63.5138,0.00952381,0,0.251064,0.345029,0.3,0.0946866,0.126603
+catamarca,poman,estatal,rural,Catamarca,POMAN,Estatal,Rural,79.9044,0.016129,0,0.250266,0.343195,0.318182,0.184832,0.399869
+catamarca,poman,estatal,urbano,Catamarca,POMAN,Estatal,Urbano,77.7527,0.0479042,1,0.251064,0.289694,0.3,0.176813,0.238539
+catamarca,santa maria,estatal,rural,Catamarca,SANTA MARIA,Estatal,Rural,43.0254,0,0,0.251064,0.345029,0.3,0.750076,0.758841
+catamarca,santa maria,estatal,urbano,Catamarca,SANTA MARIA,Estatal,Urbano,266.59,0.00892857,0,0.250266,0.292958,0.318182,0.263467,0.341208
+catamarca,santa rosa,estatal,rural,Catamarca,SANTA ROSA,Estatal,Rural,80.9288,0.00444444,0,0.251064,0.345029,0.3,0.29631,0.222223
+catamarca,santa rosa,estatal,urbano,Catamarca,SANTA ROSA,Estatal,Urbano,89.87,0.0439024,1,0.250266,0.295129,0.181818,0.257898,0.23794
+catamarca,tinogasta,estatal,rural,Catamarca,TINOGASTA,Estatal,Rural,97.3195,0,0,0.250266,0.343195,0.318182,0.383379,0.607607
+catamarca,tinogasta,estatal,urbano,Catamarca,TINOGASTA,Estatal,Urbano,244.588,0.0386847,1,0.250266,0.292958,0.318182,0.382428,0.332813
+catamarca,valle viejo,estatal,rural,Catamarca,VALLE VIEJO,Estatal,Rural,8.19532,0,0,0.250266,0.347059,0.380952,0.431166,0.27126
+catamarca,valle viejo,estatal,urbano,Catamarca,VALLE VIEJO,Estatal,Urbano,298.894,0.025,1,0.251064,0.289694,0.3,0.110002,0.193271
+chaco,12 de octubre,estatal,rural,Chaco,12 DE OCTUBRE,Estatal,Rural,23.2195,0.0350877,1,0.250266,0.347059,0.444444,0.891094,0.36071
+chaco,12 de octubre,estatal,urbano,Chaco,12 DE OCTUBRE,Estatal,Urbano,228.969,0.00641026,0,0.251064,0.289694,0.568182,0.815459,0.650753
+chaco,12 de octubre,privado,urbano,Chaco,12 DE OCTUBRE,Privado,Urbano,77.4667,0,0,0.251064,0.0333333,0.568182,0.162006,0.0908424
+chaco,1§ de mayo,estatal,rural,Chaco,1§ DE MAYO,Estatal,Rural,78.0712,0.0143885,0,0.250266,0.347059,0.444444,0.11895,0.396292
+chaco,1§ de mayo,estatal,urbano,Chaco,1§ DE MAYO,Estatal,Urbano,119.983,0.0169492,0,0.251064,0.289694,0.568182,0.490403,0.166289
+chaco,2 de abril,estatal,rural,Chaco,2 DE ABRIL,Estatal,Rural,4.03817,0.111111,1,0.250266,0.338192,0.477273,0.999933,0.27644
+chaco,2 de abril,estatal,urbano,Chaco,2 DE ABRIL,Estatal,Urbano,50.993,0,0,0.250266,0.29972,0.477273,0.113119,0.257432
+chaco,25 de mayo,estatal,rural,Chaco,25 DE MAYO,Estatal,Rural,47.4485,0.0396825,1,0.251064,0.345029,0.568182,0.308846,0.268224
+chaco,25 de mayo,estatal,urbano,Chaco,25 DE MAYO,Estatal,Urbano,239.409,0.0333333,1,0.250266,0.297753,0.444444,0.431926,0.431552
+chaco,9 de julio,estatal,urbano,Chaco,9 DE JULIO,Estatal,Urbano,216.288,0.0161551,0,0.250266,0.292958,0.489362,0.432586,0.54997
+chaco,almirante brown,estatal,rural,Chaco,ALMIRANTE BROWN,Estatal,Rural,18.1718,0.0277778,1,0.250266,0.338192,0.477273,0.42425,0.370554
+chaco,almirante brown,estatal,urbano,Chaco,ALMIRANTE BROWN,Estatal,Urbano,316.589,0.00972222,0,0.250266,0.292958,0.489362,0.536228,0.616931
+chaco,almirante brown,privado,urbano,Chaco,ALMIRANTE BROWN,Privado,Urbano,183.854,0.0202899,1,0.250266,0.0234742,0.444444,0.0400934,0.213223
+chaco,bermejo,estatal,rural,Chaco,BERMEJO,Estatal,Rural,91.8683,0.0309735,1,0.250266,0.347059,0.444444,0.273346,0.453279
+chaco,bermejo,estatal,urbano,Chaco,BERMEJO,Estatal,Urbano,199.973,0.0167015,0,0.250266,0.29972,0.477273,0.531882,0.33634
+chaco,bermejo,privado,rural,Chaco,BERMEJO,Privado,Rural,9.08588,0.12,1,0.250266,0.185185,0.477273,0.473537,0.347735
+chaco,chacabuco,estatal,rural,Chaco,CHACABUCO,Estatal,Rural,8.07633,0,0,0.250266,0.340176,0.522727,0.397843,0.2423
+chaco,chacabuco,estatal,urbano,Chaco,CHACABUCO,Estatal,Urbano,306.591,0.0288582,1,0.250266,0.295129,0.522727,0.660787,0.662203
+chaco,comandante fernandez,estatal,urbano,Chaco,COMANDANTE FERNANDEZ,Estatal,Urbano,835.903,0.00886802,0,0.250266,0.29972,0.477273,0.641369,0.739552
+chaco,comandante fernandez,privado,urbano,Chaco,COMANDANTE FERNANDEZ,Privado,Urbano,510.248,0.00283554,0,0.250266,0.0410959,0.522727,0.136746,0.0650334
+chaco,enmascarado,privado,rural,Chaco,Enmascarado,Privado,Rural,45.4294,0.0373832,1,0.250266,0.233333,0.522727,0.281339,0.53309
+chaco,enmascarado,privado,urbano,Chaco,Enmascarado,Privado,Urbano,276.561,0.00865801,0,0.251064,0.0333333,0.568182,0.106681,0.103524
+chaco,fray justo santa maria de oro,estatal,rural,Chaco,FRAY JUSTO SANTA MARIA DE ORO,Estatal,Rural,32.3053,0.0434783,1,0.250266,0.343195,0.489362,0.276932,0.31824
+chaco,fray justo santa maria de oro,estatal,urbano,Chaco,FRAY JUSTO SANTA MARIA DE ORO,Estatal,Urbano,50.4327,0.0774648,1,0.251064,0.289694,0.568182,0.468238,0.292742
+chaco,fray justo santa maria de oro,privado,urbano,Chaco,FRAY JUSTO SANTA MARIA DE ORO,Privado,Urbano,63.0063,0,0,0.251064,0.0333333,0.568182,0.0895025,0.222145
+chaco,general belgrano,estatal,urbano,Chaco,GENERAL BELGRANO,Estatal,Urbano,124.983,0.0385757,1,0.250266,0.297753,0.444444,0.576599,0.607805
+chaco,general donovan,estatal,urbano,Chaco,GENERAL DONOVAN,Estatal,Urbano,136.297,0.0172414,0,0.250266,0.295129,0.522727,0.345341,0.205808
+chaco,general guemes,estatal,rural,Chaco,GENERAL GUEMES,Estatal,Rural,350.709,0.0462351,1,0.251064,0.345029,0.568182,0.547387,0.536551
+chaco,general guemes,estatal,urbano,Chaco,GENERAL GUEMES,Estatal,Urbano,411.825,0.0356789,1,0.250266,0.295129,0.522727,0.650261,0.755954
+chaco,general guemes,privado,rural,Chaco,GENERAL GUEMES,Privado,Rural,15.6479,0.015625,0,0.250266,0.185185,0.477273,0.0485713,0.514236
+chaco,general guemes,privado,urbano,Chaco,GENERAL GUEMES,Privado,Urbano,169.394,0.00254453,0,0.250266,0.0366972,0.489362,0.207838,0.475942
+chaco,independencia,estatal,rural,Chaco,INDEPENDENCIA,Estatal,Rural,23.2195,0.0652174,1,0.250266,0.347059,0.444444,0.606832,0.253484
+chaco,independencia,estatal,urbano,Chaco,INDEPENDENCIA,Estatal,Urbano,203.849,0.0152964,0,0.251064,0.289694,0.568182,0.48033,0.393206
+chaco,libertad,estatal,rural,Chaco,LIBERTAD,Estatal,Rural,20.1908,0.0714286,1,0.250266,0.343195,0.489362,0.980224,0.369925
+chaco,libertad,estatal,urbano,Chaco,LIBERTAD,Estatal,Urbano,138.981,0.0228013,1,0.250266,0.297753,0.444444,0.188709,0.283794
+chaco,libertador general san martin,estatal,rural,Chaco,LIBERTADOR GENERAL SAN MARTIN,Estatal,Rural,81.7729,0.0336134,1,0.250266,0.343195,0.489362,0.551928,0.320404
+chaco,libertador general san martin,estatal,urbano,Chaco,LIBERTADOR GENERAL SAN MARTIN,Estatal,Urbano,535.408,0.0376384,1,0.250266,0.295129,0.522727,0.577593,0.747635
+chaco,libertador general san martin,privado,urbano,Chaco,LIBERTADOR GENERAL SAN MARTIN,Privado,Urbano,92.9601,0.0147783,0,0.250266,0.0410959,0.522727,0.44646,0.202839
+chaco,maipu,estatal,rural,Chaco,MAIPU,Estatal,Rural,4.03817,0.0588235,1,0.250266,0.338192,0.477273,0.936643,0.231918
+chaco,maipu,estatal,urbano,Chaco,MAIPU,Estatal,Urbano,157.981,0.0311005,1,0.250266,0.29972,0.477273,0.77964,0.601588
+chaco,mayor luis j fontana,estatal,rural,Chaco,MAYOR LUIS J FONTANA,Estatal,Rural,12.1145,0.140625,1,0.250266,0.343195,0.489362,0.759113,0.144369
+chaco,mayor luis j fontana,estatal,urbano,Chaco,MAYOR LUIS J FONTANA,Estatal,Urbano,398.148,0.0103627,0,0.250266,0.297753,0.444444,0.502779,0.75062
+chaco,mayor luis j fontana,privado,urbano,Chaco,MAYOR LUIS J FONTANA,Privado,Urbano,256.157,0.00766284,0,0.251064,0.0333333,0.568182,0.224031,0.291697
+chaco,o higgins,estatal,urbano,Chaco,O HIGGINS,Estatal,Urbano,219.974,0.00747664,0,0.250266,0.295129,0.522727,0.598374,0.304934
+chaco,o higgins,privado,urbano,Chaco,O HIGGINS,Privado,Urbano,25.8222,0,0,0.250266,0.0330189,0.477273,1.15489e-07,0.180455
+chaco,presidencia de la plaza,estatal,urbano,Chaco,PRESIDENCIA DE LA PLAZA,Estatal,Urbano,108.987,0.101562,1,0.250266,0.292958,0.489362,0.360361,0.314992
+chaco,quitilipi,estatal,rural,Chaco,QUITILIPI,Estatal,Rural,50.4771,0.00833333,0,0.250266,0.347059,0.444444,0.475495,0.542218
+chaco,quitilipi,estatal,urbano,Chaco,QUITILIPI,Estatal,Urbano,257.651,0.0185676,1,0.250266,0.295129,0.522727,0.737374,0.575573
+chaco,san fernando,estatal,rural,Chaco,SAN FERNANDO,Estatal,Rural,53.5057,0,0,0.250266,0.340176,0.522727,0.357598,0.448388
+chaco,san fernando,estatal,urbano,Chaco,SAN FERNANDO,Estatal,Urbano,4015,0.0414816,1,0.250266,0.297753,0.444444,0.341039,0.343102
+chaco,san fernando,privado,urbano,Chaco,SAN FERNANDO,Privado,Urbano,1264.53,0.0385685,1,0.250266,0.0330189,0.477273,0.0504678,0.0141585
+chaco,san lorenzo,estatal,rural,Chaco,SAN LORENZO,Estatal,Rural,17.1622,0,0,0.251064,0.345029,0.568182,0.582267,0.467482
+chaco,san lorenzo,estatal,urbano,Chaco,SAN LORENZO,Estatal,Urbano,94.3032,0.0228758,1,0.250266,0.29972,0.477273,0.182147,0.300897
+chaco,sargento cabral,estatal,rural,Chaco,SARGENTO CABRAL,Estatal,Rural,18.1718,0,0,0.250266,0.340176,0.522727,0.218467,0.260164
+chaco,sargento cabral,estatal,urbano,Chaco,SARGENTO CABRAL,Estatal,Urbano,164.477,0.00255754,0,0.250266,0.292958,0.489362,0.35685,0.404783
+chaco,tapenaga,estatal,rural,Chaco,TAPENAGA,Estatal,Rural,29.2767,0,0,0.251064,0.345029,0.568182,0.361475,0.148928
+chubut,biedma,estatal,urbano,Chubut,BIEDMA,Estatal,Urbano,1068.9,0.00508011,0,0.250266,0.297753,0.1,0.213829,0.215842
+chubut,biedma,privado,urbano,Chubut,BIEDMA,Privado,Urbano,187.617,0,0,0.250266,0.0330189,0.0952381,0.07054,0.0132406
+chubut,cushamen,estatal,rural,Chubut,CUSHAMEN,Estatal,Rural,285.565,0.00515464,0,0.251064,0.345029,0.111111,0.184971,0.406121
+chubut,escalante,estatal,urbano,Chubut,ESCALANTE,Estatal,Urbano,2391.02,0.0127206,0,0.250266,0.29972,0.0952381,0.220458,0.127225
+chubut,escalante,privado,urbano,Chubut,ESCALANTE,Privado,Urbano,606.226,0,0,0.250266,0.0366972,0.0555556,0.0448547,0.00552197
+chubut,enmascarado,estatal,rural,Chubut,Enmascarado,Estatal,Rural,35.4424,0.0833333,1,0.250266,0.343195,0.0555556,0.902089,0.605922
+chubut,enmascarado,estatal,urbano,Chubut,Enmascarado,Estatal,Urbano,109.529,0.0110497,0,0.250266,0.295129,0.0526316,0.411679,0.318589
+chubut,enmascarado,privado,rural,Chubut,Enmascarado,Privado,Rural,21.2655,0,0,0.250266,0.233333,0.0526316,0.138086,0.360831
+chubut,enmascarado,privado,urbano,Chubut,Enmascarado,Privado,Urbano,39.3391,0,0,0.250266,0.0410959,0.0526316,0.0149615,0.136292
+chubut,futaleufu,estatal,rural,Chubut,FUTALEUFU,Estatal,Rural,85.0618,0.0135135,0,0.251064,0.345029,0.111111,0.22436,0.156331
+chubut,futaleufu,estatal,urbano,Chubut,FUTALEUFU,Estatal,Urbano,516.222,0.00257732,0,0.251064,0.289694,0.111111,0.151604,0.112577
+chubut,futaleufu,privado,urbano,Chubut,FUTALEUFU,Privado,Urbano,92.8,0,0,0.250266,0.0410959,0.0526316,0.0414038,0.00631333
+chubut,gaiman,estatal,rural,Chubut,GAIMAN,Estatal,Rural,95.1882,0.0115607,0,0.250266,0.343195,0.0555556,0.334608,0.399099
+chubut,gaiman,estatal,urbano,Chubut,GAIMAN,Estatal,Urbano,53.229,0.00826446,0,0.251064,0.289694,0.111111,0.585032,0.344087
+chubut,gaiman,privado,urbano,Chubut,GAIMAN,Privado,Urbano,103.896,0,0,0.250266,0.0330189,0.0952381,0.0811354,0.0525444
+chubut,gastre,estatal,rural,Chubut,GASTRE,Estatal,Rural,16.2022,0,0,0.251064,0.345029,0.111111,0.21193,0.23564
+chubut,languineo,estatal,rural,Chubut,LANGUIÑEO,Estatal,Rural,29.3666,0.0128205,0,0.250266,0.343195,0.0555556,0.677959,0.581793
+chubut,paso de indios,estatal,rural,Chubut,PASO DE INDIOS,Estatal,Rural,18.2275,0.0487805,1,0.250266,0.340176,0.0526316,0.0286948,0.0912495
+chubut,rawson,estatal,urbano,Chubut,RAWSON,Estatal,Urbano,1469.1,0.0109924,0,0.250266,0.297753,0.1,0.320226,0.359663
+chubut,rawson,privado,urbano,Chubut,RAWSON,Privado,Urbano,246.122,0.00183486,0,0.250266,0.0234742,0.1,0.0196744,0.00904084
+chubut,rio senguer,estatal,rural,Chubut,RIO SENGUER,Estatal,Rural,32.4045,0,0,0.250266,0.343195,0.0555556,0.264221,0.164864
+chubut,sarmiento,estatal,urbano,Chubut,SARMIENTO,Estatal,Urbano,130.002,0.00689655,0,0.250266,0.292958,0.0555556,0.286857,0.242456
+chubut,tehuelches,estatal,rural,Chubut,TEHUELCHES,Estatal,Rural,74.9354,0,0,0.250266,0.347059,0.1,0.227715,0.450453
+chubut,telsen,estatal,rural,Chubut,TELSEN,Estatal,Rural,27.3413,0,0,0.251064,0.345029,0.111111,0.212743,0.254027
+ciudad autonoma de buenos aires,comuna 1,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 1,Estatal,Urbano,1760.98,0.00759109,0,0.251064,0.289694,0.04,0.20229,0.0825705
+ciudad autonoma de buenos aires,comuna 1,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 1,Privado,Urbano,1229.53,0.00299177,0,0.251064,0.0333333,0.04,0.035744,0.0321452
+ciudad autonoma de buenos aires,comuna 10,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 10,Estatal,Urbano,938.048,0.00179292,0,0.250266,0.292958,0.047619,0.125707,0.105838
+ciudad autonoma de buenos aires,comuna 10,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 10,Privado,Urbano,1223.12,0.000426257,0,0.250266,0.0234742,0.0384615,0.0182171,0.00539198
+ciudad autonoma de buenos aires,comuna 11,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 11,Estatal,Urbano,738.354,0.00185529,0,0.251064,0.289694,0.04,0.104167,0.0623369
+ciudad autonoma de buenos aires,comuna 11,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 11,Privado,Urbano,1395.56,0.000734484,0,0.250266,0.0410959,0,0.045324,0.00544803
+ciudad autonoma de buenos aires,comuna 12,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 12,Estatal,Urbano,687.803,0.00623441,0,0.250266,0.292958,0.047619,0.0863737,0.0195615
+ciudad autonoma de buenos aires,comuna 12,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 12,Privado,Urbano,1457.98,0.000345423,0,0.250266,0.0410959,0,0.0341722,0.00412645
+ciudad autonoma de buenos aires,comuna 13,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 13,Estatal,Urbano,1027.51,0.00262812,0,0.250266,0.292958,0.047619,0.109767,0.0771338
+ciudad autonoma de buenos aires,comuna 13,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 13,Privado,Urbano,2208.24,0.000714541,0,0.250266,0.0366972,0.047619,0.0563003,0.0152544
+ciudad autonoma de buenos aires,comuna 14,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 14,Estatal,Urbano,769.337,0.00260688,0,0.251064,0.289694,0.04,0.182989,0.175023
+ciudad autonoma de buenos aires,comuna 14,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 14,Privado,Urbano,1101.02,0.00123355,0,0.250266,0.0366972,0.047619,0.0873551,0.0099205
+ciudad autonoma de buenos aires,comuna 15,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 15,Estatal,Urbano,596.813,0.00236967,0,0.250266,0.29972,0.0384615,0.085593,0.0929733
+ciudad autonoma de buenos aires,comuna 15,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 15,Privado,Urbano,747.946,0.00130548,0,0.250266,0.0366972,0.047619,0.0453293,0.00862762
+ciudad autonoma de buenos aires,comuna 2,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 2,Estatal,Urbano,934.499,0.0290873,1,0.250266,0.295129,0,0.157417,0.0526514
+ciudad autonoma de buenos aires,comuna 2,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 2,Privado,Urbano,882.502,0,0,0.250266,0.0366972,0.047619,0.0671203,0.0182256
+ciudad autonoma de buenos aires,comuna 3,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 3,Estatal,Urbano,1326.57,0.00177809,0,0.250266,0.295129,0,0.08837,0.0636292
+ciudad autonoma de buenos aires,comuna 3,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 3,Privado,Urbano,1072.86,0.00166113,0,0.250266,0.0330189,0.0384615,0.0153669,0.00588234
+ciudad autonoma de buenos aires,comuna 4,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 4,Estatal,Urbano,1400.99,0.00878569,0,0.250266,0.295129,0,0.0621825,0.0764297
+ciudad autonoma de buenos aires,comuna 4,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 4,Privado,Urbano,894.92,0,0,0.250266,0.0366972,0.047619,0.0170119,0.0423751
+ciudad autonoma de buenos aires,comuna 5,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 5,Estatal,Urbano,803.732,0.013905,0,0.250266,0.297753,0.0384615,0.106268,0.169894
+ciudad autonoma de buenos aires,comuna 5,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 5,Privado,Urbano,1071.36,0.00298805,0,0.250266,0.0330189,0.0384615,0.0306608,0.00192679
+ciudad autonoma de buenos aires,comuna 6,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 6,Estatal,Urbano,1289.99,0.00147438,0,0.250266,0.297753,0.0384615,0.0600311,0.0548002
+ciudad autonoma de buenos aires,comuna 6,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 6,Privado,Urbano,1359.49,0.00122649,0,0.250266,0.0410959,0,0.0268231,0.00269646
+ciudad autonoma de buenos aires,comuna 7,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 7,Estatal,Urbano,921.547,0.00689655,0,0.250266,0.29972,0.0384615,0.0285757,0.0471476
+ciudad autonoma de buenos aires,comuna 7,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 7,Privado,Urbano,967.563,0.00147348,0,0.250266,0.0234742,0.0384615,0.0125612,0.00757725
+ciudad autonoma de buenos aires,comuna 8,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 8,Estatal,Urbano,1419.87,0.00220542,0,0.250266,0.295129,0,0.0365226,0.0821384
+ciudad autonoma de buenos aires,comuna 8,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 8,Privado,Urbano,1108.54,0.00355714,0,0.250266,0.0410959,0,0.0140737,0.0615243
+ciudad autonoma de buenos aires,comuna 9,estatal,urbano,Ciudad Autónoma de Buenos Aires,Comuna 9,Estatal,Urbano,990.967,0.0013089,0,0.250266,0.292958,0.047619,0.13856,0.133738
+ciudad autonoma de buenos aires,comuna 9,privado,urbano,Ciudad Autónoma de Buenos Aires,Comuna 9,Privado,Urbano,1384.36,0.00101078,0,0.251064,0.0333333,0.04,0.0243043,0.00587188
+corrientes,bella vista,estatal,rural,Corrientes,BELLA VISTA,Estatal,Rural,44.5922,0.0446429,1,0.250266,0.347059,0.309524,0.585498,0.683392
+corrientes,bella vista,estatal,urbano,Corrientes,BELLA VISTA,Estatal,Urbano,365.071,0.0266836,1,0.251064,0.289694,0.326087,0.406972,0.528776
+corrientes,bella vista,privado,urbano,Corrientes,BELLA VISTA,Privado,Urbano,81.8561,0.0126582,0,0.250266,0.0410959,0.382979,0.0934377,0.0903858
+corrientes,beron de astrada,estatal,rural,Corrientes,BERON DE ASTRADA,Estatal,Rural,32.1478,0.0166667,0,0.250266,0.338192,0.354167,0.724177,0.268272
+corrientes,capital,estatal,rural,Corrientes,CAPITAL,Estatal,Rural,79.8511,0,0,0.250266,0.347059,0.309524,0.070145,0.256734
+corrientes,capital,estatal,urbano,Corrientes,CAPITAL,Estatal,Urbano,3238.71,0.00563806,0,0.250266,0.292958,0.346939,0.282822,0.150289
+corrientes,capital,privado,urbano,Corrientes,CAPITAL,Privado,Urbano,1260.18,0.00267176,0,0.251064,0.0333333,0.326087,0.0668909,0.0369748
+corrientes,concepcion,estatal,rural,Corrientes,CONCEPCION,Estatal,Rural,98.5176,0.038961,1,0.251064,0.345029,0.326087,0.623274,0.663389
+corrientes,concepcion,estatal,urbano,Corrientes,CONCEPCION,Estatal,Urbano,129.444,0,0,0.250266,0.297753,0.309524,0.580855,0.620622
+corrientes,curuzu cuatia,estatal,rural,Corrientes,CURUZU CUATIA,Estatal,Rural,19.1444,0.025641,1,0.250266,0.343195,0.346939,0.370934,0.150002
+corrientes,curuzu cuatia,estatal,urbano,Corrientes,CURUZU CUATIA,Estatal,Urbano,266.388,0.0139665,0,0.250266,0.297753,0.309524,0.401922,0.44654
+corrientes,curuzu cuatia,privado,urbano,Corrientes,CURUZU CUATIA,Privado,Urbano,126.321,0.0202429,1,0.250266,0.0234742,0.309524,0.0691255,0.0273913
+corrientes,empedrado,estatal,rural,Corrientes,EMPEDRADO,Estatal,Rural,23.8516,0.0111111,0,0.250266,0.347059,0.309524,0.405864,0.525593
+corrientes,empedrado,estatal,urbano,Corrientes,EMPEDRADO,Estatal,Urbano,113.263,0,0,0.250266,0.297753,0.309524,0.520262,0.396539
+corrientes,esquina,estatal,rural,Corrientes,ESQUINA,Estatal,Rural,82.6826,0.00483092,0,0.250266,0.338192,0.354167,0.165668,0.284569
+corrientes,esquina,estatal,urbano,Corrientes,ESQUINA,Estatal,Urbano,267.478,0.0152905,0,0.250266,0.295129,0.382979,0.443773,0.544375
+corrientes,enmascarado,privado,rural,Corrientes,Enmascarado,Privado,Rural,192.328,0.0411311,1,0.250266,0.2,0.309524,0.145332,0.361119
+corrientes,enmascarado,privado,urbano,Corrientes,Enmascarado,Privado,Urbano,297.222,0.00455927,0,0.250266,0.0366972,0.346939,0.191434,0.170528
+corrientes,general alvear,estatal,rural,Corrientes,GENERAL ALVEAR,Estatal,Rural,47.7033,0.0210526,1,0.250266,0.343195,0.346939,0.51708,0.792987
+corrientes,general alvear,estatal,urbano,Corrientes,GENERAL ALVEAR,Estatal,Urbano,54.609,0.008,0,0.250266,0.292958,0.346939,0.142347,0.141884
+corrientes,general paz,estatal,rural,Corrientes,GENERAL PAZ,Estatal,Rural,53.9254,0.0280374,1,0.251064,0.345029,0.326087,0.747091,0.621685
+corrientes,general paz,estatal,urbano,Corrientes,GENERAL PAZ,Estatal,Urbano,127.421,0.010989,0,0.250266,0.29972,0.354167,0.825116,0.57656
+corrientes,goya,estatal,rural,Corrientes,GOYA,Estatal,Rural,149.729,0.0539773,1,0.250266,0.347059,0.309524,0.443094,0.444073
+corrientes,goya,estatal,urbano,Corrientes,GOYA,Estatal,Urbano,678.022,0.00734844,0,0.251064,0.289694,0.326087,0.49498,0.631645
+corrientes,goya,privado,urbano,Corrientes,GOYA,Privado,Urbano,202.114,0.00472813,0,0.251064,0.0333333,0.326087,0.0885777,0.0175256
+corrientes,itati,estatal,rural,Corrientes,ITATI,Estatal,Rural,27.9997,0,0,0.250266,0.347059,0.309524,0.768388,0.49072
+corrientes,itati,estatal,urbano,Corrientes,ITATI,Estatal,Urbano,74.8345,0.0462428,1,0.250266,0.297753,0.309524,0.199981,0.447205
+corrientes,ituzaingo,estatal,rural,Corrientes,ITUZAINGO,Estatal,Rural,45.6292,0.045045,1,0.250266,0.347059,0.309524,0.551175,0.408647
+corrientes,ituzaingo,estatal,urbano,Corrientes,ITUZAINGO,Estatal,Urbano,315.519,0.0222552,1,0.250266,0.29972,0.354167,0.365281,0.359796
+corrientes,lavalle,estatal,rural,Corrientes,LAVALLE,Estatal,Rural,113.036,0.0294118,1,0.251064,0.345029,0.326087,0.440638,0.559005
+corrientes,lavalle,estatal,urbano,Corrientes,LAVALLE,Estatal,Urbano,201.631,0.013245,0,0.250266,0.295129,0.382979,0.471558,0.609014
+corrientes,mburucuya,estatal,rural,Corrientes,MBURUCUYA,Estatal,Rural,22.8146,0,0,0.250266,0.343195,0.346939,0.876821,0.325797
+corrientes,mburucuya,estatal,urbano,Corrientes,MBURUCUYA,Estatal,Urbano,73.278,0,0,0.250266,0.295129,0.382979,0.888538,0.344254
+corrientes,mercedes,estatal,rural,Corrientes,MERCEDES,Estatal,Rural,42.5181,0,0,0.250266,0.338192,0.354167,0.240521,0.250537
+corrientes,mercedes,estatal,urbano,Corrientes,MERCEDES,Estatal,Urbano,236.639,0.00362976,0,0.250266,0.297753,0.309524,0.651232,0.713211
+corrientes,mercedes,privado,urbano,Corrientes,MERCEDES,Privado,Urbano,148.554,0.00323625,0,0.250266,0.0234742,0.309524,0.0307883,0.0381354
+corrientes,monte caseros,estatal,rural,Corrientes,MONTE CASEROS,Estatal,Rural,49.7773,0.0103093,0,0.250266,0.340176,0.382979,0.581061,0.298157
+corrientes,monte caseros,estatal,urbano,Corrientes,MONTE CASEROS,Estatal,Urbano,365.071,0.0396601,1,0.250266,0.295129,0.382979,0.249533,0.46734
+corrientes,paso de los libres,estatal,rural,Corrientes,PASO DE LOS LIBRES,Estatal,Rural,59.1106,0.0294118,1,0.250266,0.347059,0.309524,0.841986,0.551102
+corrientes,paso de los libres,estatal,urbano,Corrientes,PASO DE LOS LIBRES,Estatal,Urbano,438.27,0.00739372,0,0.250266,0.295129,0.382979,0.319684,0.483305
+corrientes,paso de los libres,privado,urbano,Corrientes,PASO DE LOS LIBRES,Privado,Urbano,94.9935,0.0248963,1,0.250266,0.0330189,0.354167,0.0141911,0.00747482
+corrientes,saladas,estatal,rural,Corrientes,SALADAS,Estatal,Rural,52.8884,0.0344828,1,0.250266,0.340176,0.382979,0.339196,0.217228
+corrientes,saladas,estatal,urbano,Corrientes,SALADAS,Estatal,Urbano,233.605,0.00631579,0,0.250266,0.29972,0.354167,0.16971,0.288522
+corrientes,san cosme,estatal,rural,Corrientes,SAN COSME,Estatal,Rural,69.4808,0.00840336,0,0.251064,0.345029,0.326087,0.150647,0.375898
+corrientes,san cosme,estatal,urbano,Corrientes,SAN COSME,Estatal,Urbano,119.445,0,0,0.250266,0.295129,0.382979,0.30559,0.266581
+corrientes,san luis del palmar,estatal,rural,Corrientes,SAN LUIS DEL PALMAR,Estatal,Rural,108.888,0.00775194,0,0.250266,0.347059,0.309524,0.759018,0.596614
+corrientes,san luis del palmar,estatal,urbano,Corrientes,SAN LUIS DEL PALMAR,Estatal,Urbano,131.466,0,0,0.250266,0.29972,0.354167,0.310537,0.314885
+corrientes,san martin,estatal,rural,Corrientes,SAN MARTIN,Estatal,Rural,77.777,0.0121212,0,0.250266,0.340176,0.382979,0.295208,0.651965
+corrientes,san martin,estatal,urbano,Corrientes,SAN MARTIN,Estatal,Urbano,84.1295,0,0,0.251064,0.289694,0.326087,0.617058,0.306392
+corrientes,san miguel,estatal,rural,Corrientes,SAN MIGUEL,Estatal,Rural,65.3327,0,0,0.251064,0.345029,0.326087,0.633329,0.729086
+corrientes,san miguel,estatal,urbano,Corrientes,SAN MIGUEL,Estatal,Urbano,64.8361,0.008,0,0.250266,0.292958,0.346939,0.411705,0.32958
+corrientes,san roque,estatal,rural,Corrientes,SAN ROQUE,Estatal,Rural,58.0735,0.0220588,1,0.250266,0.343195,0.346939,0.655672,0.30739
+corrientes,san roque,estatal,urbano,Corrientes,SAN ROQUE,Estatal,Urbano,132.205,0.00909091,0,0.250266,0.295129,0.382979,0.376285,0.507173
+corrientes,santo tome,estatal,rural,Corrientes,SANTO TOME,Estatal,Rural,32.1478,0.0416667,1,0.251064,0.345029,0.326087,0.615347,0.602849
+corrientes,santo tome,estatal,urbano,Corrientes,SANTO TOME,Estatal,Urbano,639.127,0.00655022,0,0.250266,0.292958,0.346939,0.311638,0.505699
+corrientes,santo tome,privado,urbano,Corrientes,SANTO TOME,Privado,Urbano,131.761,0,0,0.251064,0.0333333,0.326087,0.112856,0.0634305
+corrientes,sauce,estatal,rural,Corrientes,SAUCE,Estatal,Rural,9.0537,0,0,0.250266,0.338192,0.354167,0.98883,0.800884
+corrientes,sauce,estatal,urbano,Corrientes,SAUCE,Estatal,Urbano,48.5413,0.0186916,1,0.250266,0.29972,0.354167,0.887339,0.495482
+cordoba,calamuchita,estatal,rural,Córdoba,CALAMUCHITA,Estatal,Rural,103.841,0,0,0.250266,0.340176,0.169811,0.315132,0.084594
+cordoba,calamuchita,estatal,urbano,Córdoba,CALAMUCHITA,Estatal,Urbano,378.767,0.0357968,1,0.250266,0.292958,0.174603,0.289466,0.151568
+cordoba,calamuchita,privado,urbano,Córdoba,CALAMUCHITA,Privado,Urbano,324.663,0,0,0.250266,0.0366972,0.174603,0.0509531,0.00670017
+cordoba,capital,estatal,urbano,Córdoba,CAPITAL,Estatal,Urbano,7825.26,0.0156626,0,0.250266,0.29972,0.173077,0.236317,0.10226
+cordoba,capital,privado,urbano,Córdoba,CAPITAL,Privado,Urbano,8621.01,0.00223977,0,0.250266,0.0330189,0.173077,0.0677682,0.00351064
+cordoba,colon,estatal,rural,Córdoba,COLON,Estatal,Rural,308.751,0.0123839,0,0.250266,0.338192,0.173077,0.339937,0.364647
+cordoba,colon,estatal,urbano,Córdoba,COLON,Estatal,Urbano,1617.61,0.0130187,0,0.250266,0.29972,0.173077,0.266872,0.224918
+cordoba,colon,privado,urbano,Córdoba,COLON,Privado,Urbano,1354.29,0,0,0.250266,0.0234742,0.193548,0.0627278,0.00369731
+cordoba,cruz del eje,estatal,rural,Córdoba,CRUZ DEL EJE,Estatal,Rural,109.98,0.0164609,0,0.251064,0.345029,0.189655,0.296012,0.460437
+cordoba,cruz del eje,estatal,urbano,Córdoba,CRUZ DEL EJE,Estatal,Urbano,347.954,0.00487805,0,0.250266,0.297753,0.193548,0.186967,0.253327
+cordoba,cruz del eje,privado,urbano,Córdoba,CRUZ DEL EJE,Privado,Urbano,246.686,0.00804829,0,0.250266,0.0410959,0.169811,0.0686215,0.0342965
+cordoba,enmascarado,estatal,rural,Córdoba,Enmascarado,Estatal,Rural,9.08092,0,0,0.251064,0.345029,0.189655,0.105514,0.403419
+cordoba,enmascarado,estatal,urbano,Córdoba,Enmascarado,Estatal,Urbano,82.2731,0.0101523,0,0.250266,0.292958,0.174603,0.211743,0.445036
+cordoba,enmascarado,privado,rural,Córdoba,Enmascarado,Privado,Rural,247.203,0.0069808,0,0.250266,0.233333,0.169811,0.0664587,0.131419
+cordoba,enmascarado,privado,urbano,Córdoba,Enmascarado,Privado,Urbano,160.82,0,0,0.250266,0.0366972,0.174603,0.0425528,0.0748604
+cordoba,general roca,estatal,rural,Córdoba,GENERAL ROCA,Estatal,Rural,32.2877,0.030303,1,0.251064,0.345029,0.189655,0.226899,0.305251
+cordoba,general roca,estatal,urbano,Córdoba,GENERAL ROCA,Estatal,Urbano,264.086,0.0170648,0,0.250266,0.295129,0.169811,0.38423,0.295896
+cordoba,general san martin,estatal,rural,Córdoba,GENERAL SAN MARTIN,Estatal,Rural,70.6294,0.0320513,1,0.250266,0.338192,0.173077,0.560158,0.417165
+cordoba,general san martin,estatal,urbano,Córdoba,GENERAL SAN MARTIN,Estatal,Urbano,657.169,0.0262985,1,0.250266,0.29972,0.173077,0.51796,0.212376
+cordoba,general san martin,privado,rural,Córdoba,GENERAL SAN MARTIN,Privado,Rural,74.6653,0.0179641,1,0.251064,0.241379,0.189655,0.11433,0.306772
+cordoba,general san martin,privado,urbano,Córdoba,GENERAL SAN MARTIN,Privado,Urbano,994.879,0.000965251,0,0.250266,0.0330189,0.173077,0.078451,0.00676347
+cordoba,ischilin,estatal,rural,Córdoba,ISCHILIN,Estatal,Rural,42.3776,0.0210526,1,0.250266,0.340176,0.169811,0.245143,0.159802
+cordoba,ischilin,estatal,urbano,Córdoba,ISCHILIN,Estatal,Urbano,248.338,0.0112721,0,0.250266,0.292958,0.174603,0.222923,0.148417
+cordoba,juarez celman,estatal,rural,Córdoba,JUAREZ CELMAN,Estatal,Rural,47.4226,0.0215054,1,0.250266,0.338192,0.173077,0.304124,0.328622
+cordoba,juarez celman,estatal,urbano,Córdoba,JUAREZ CELMAN,Estatal,Urbano,370.737,0.0136307,0,0.250266,0.29972,0.173077,0.577208,0.46067
+cordoba,juarez celman,privado,rural,Córdoba,JUAREZ CELMAN,Privado,Rural,82.7372,0.00606061,0,0.250266,0.185185,0.173077,0.0906743,0.282516
+cordoba,juarez celman,privado,urbano,Córdoba,JUAREZ CELMAN,Privado,Urbano,351.656,0.0057554,0,0.250266,0.0234742,0.193548,0.0712291,0.0256594
+cordoba,marcos juarez,estatal,rural,Córdoba,MARCOS JUAREZ,Estatal,Rural,7.06294,0,0,0.250266,0.340176,0.169811,0.798225,0.642364
+cordoba,marcos juarez,estatal,urbano,Córdoba,MARCOS JUAREZ,Estatal,Urbano,547.471,0.0110263,0,0.250266,0.292958,0.174603,0.289725,0.313935
+cordoba,marcos juarez,privado,urbano,Córdoba,MARCOS JUAREZ,Privado,Urbano,483.457,0.00477555,0,0.250266,0.0234742,0.193548,0.0283611,0.00772424
+cordoba,minas,estatal,rural,Córdoba,MINAS,Estatal,Rural,61.2938,0.00917431,0,0.250266,0.338192,0.173077,0.44281,0.277374
+cordoba,pocho,estatal,rural,Córdoba,POCHO,Estatal,Rural,48.4316,0,0,0.250266,0.338192,0.173077,0.527123,0.536386
+cordoba,presidente roque saenz pena,estatal,rural,Córdoba,PRESIDENTE ROQUE SAENZ PEÑA,Estatal,Rural,59.3607,0.0252101,1,0.250266,0.340176,0.169811,0.412303,0.28271
+cordoba,presidente roque saenz pena,estatal,urbano,Córdoba,PRESIDENTE ROQUE SAENZ PEÑA,Estatal,Urbano,227.521,0,0,0.250266,0.295129,0.169811,0.114809,0.120169
+cordoba,presidente roque saenz pena,privado,urbano,Córdoba,PRESIDENTE ROQUE SAENZ PEÑA,Privado,Urbano,139.866,0.00743494,0,0.251064,0.0333333,0.189655,0.129096,0.0547659
+cordoba,punilla,estatal,rural,Córdoba,PUNILLA,Estatal,Rural,148.322,0.022792,1,0.250266,0.340176,0.169811,0.31143,0.151972
+cordoba,punilla,estatal,urbano,Córdoba,PUNILLA,Estatal,Urbano,1218.43,0.0101302,0,0.250266,0.29972,0.173077,0.252396,0.0812553
+cordoba,punilla,privado,urbano,Córdoba,PUNILLA,Privado,Urbano,1142.43,0.0029511,0,0.250266,0.0366972,0.174603,0.0470956,0.00211323
+cordoba,rio cuarto,estatal,rural,Córdoba,RIO CUARTO,Estatal,Rural,200.789,0.0133038,0,0.250266,0.340176,0.169811,0.348272,0.474855
+cordoba,rio cuarto,estatal,urbano,Córdoba,RIO CUARTO,Estatal,Urbano,1261.51,0.0140598,0,0.250266,0.295129,0.169811,0.328683,0.204187
+cordoba,rio cuarto,privado,urbano,Córdoba,RIO CUARTO,Privado,Urbano,1489.24,0.00228162,0,0.250266,0.0410959,0.169811,0.0920533,0.00900196
+cordoba,rio primero,estatal,rural,Córdoba,RIO PRIMERO,Estatal,Rural,105.944,0.0215827,1,0.250266,0.347059,0.193548,0.253455,0.372365
+cordoba,rio primero,estatal,urbano,Córdoba,RIO PRIMERO,Estatal,Urbano,334.171,0,0,0.250266,0.295129,0.169811,0.364417,0.198621
+cordoba,rio primero,privado,urbano,Córdoba,RIO PRIMERO,Privado,Urbano,258.63,0,0,0.250266,0.0330189,0.173077,0.137056,0.138922
+cordoba,rio seco,estatal,rural,Córdoba,RIO SECO,Estatal,Rural,55.4945,0,0,0.250266,0.340176,0.169811,0.36927,0.379688
+cordoba,rio seco,estatal,urbano,Córdoba,RIO SECO,Estatal,Urbano,128.227,0,0,0.251064,0.289694,0.189655,0.43474,0.338634
+cordoba,rio segundo,estatal,rural,Córdoba,RIO SEGUNDO,Estatal,Rural,119.985,0.0183824,1,0.250266,0.340176,0.169811,0.526087,0.350213
+cordoba,rio segundo,estatal,urbano,Córdoba,RIO SEGUNDO,Estatal,Urbano,597.146,0.0143505,0,0.250266,0.297753,0.193548,0.396101,0.345746
+cordoba,rio segundo,privado,urbano,Córdoba,RIO SEGUNDO,Privado,Urbano,564.349,0.00489396,0,0.251064,0.0333333,0.189655,0.0525676,0.00517568
+cordoba,san alberto,estatal,rural,Córdoba,SAN ALBERTO,Estatal,Rural,119.061,0.01875,1,0.250266,0.338192,0.173077,0.263473,0.198097
+cordoba,san alberto,estatal,urbano,Córdoba,SAN ALBERTO,Estatal,Urbano,143.966,0.00728155,0,0.250266,0.295129,0.169811,0.579399,0.206612
+cordoba,san alberto,privado,urbano,Córdoba,SAN ALBERTO,Privado,Urbano,131.842,0,0,0.251064,0.0333333,0.189655,0.0279893,0.0391539
+cordoba,san javier,estatal,rural,Córdoba,SAN JAVIER,Estatal,Rural,144.616,0.0111732,0,0.250266,0.338192,0.173077,0.264384,0.231767
+cordoba,san javier,estatal,urbano,Córdoba,SAN JAVIER,Estatal,Urbano,393.415,0.0140845,0,0.251064,0.289694,0.189655,0.318188,0.120577
+cordoba,san javier,privado,urbano,Córdoba,SAN JAVIER,Privado,Urbano,185.769,0.0102564,0,0.250266,0.0234742,0.193548,0.0133923,0.0011317
+cordoba,san justo,estatal,rural,Córdoba,SAN JUSTO,Estatal,Rural,228.701,0.010989,0,0.250266,0.338192,0.173077,0.310442,0.472456
+cordoba,san justo,estatal,urbano,Córdoba,SAN JUSTO,Estatal,Urbano,1366.47,0.0103806,0,0.251064,0.289694,0.189655,0.294644,0.376273
+cordoba,san justo,privado,rural,Córdoba,SAN JUSTO,Privado,Rural,113.007,0.0041841,0,0.250266,0.185185,0.173077,0.0991588,0.257723
+cordoba,san justo,privado,urbano,Córdoba,SAN JUSTO,Privado,Urbano,929.8,0.00101833,0,0.250266,0.0234742,0.193548,0.0532775,0.00528949
+cordoba,santa maria,estatal,rural,Córdoba,SANTA MARIA,Estatal,Rural,202.468,0.021322,1,0.250266,0.343195,0.174603,0.248014,0.379085
+cordoba,santa maria,estatal,urbano,Córdoba,SANTA MARIA,Estatal,Urbano,817.652,0.0125224,0,0.250266,0.295129,0.169811,0.363962,0.101845
+cordoba,santa maria,privado,urbano,Córdoba,SANTA MARIA,Privado,Urbano,484.99,0.00193237,0,0.251064,0.0333333,0.189655,0.0841,0.00258755
+cordoba,tercero arriba,estatal,rural,Córdoba,TERCERO ARRIBA,Estatal,Rural,58.5215,0.0078125,0,0.251064,0.345029,0.189655,0.400769,0.227198
+cordoba,tercero arriba,estatal,urbano,Córdoba,TERCERO ARRIBA,Estatal,Urbano,594.826,0.0128496,0,0.250266,0.29972,0.173077,0.336404,0.336432
+cordoba,tercero arriba,privado,urbano,Córdoba,TERCERO ARRIBA,Privado,Urbano,620.268,0.00383142,0,0.250266,0.0330189,0.173077,0.0478675,0.0148189
+cordoba,totoral,estatal,rural,Córdoba,TOTORAL,Estatal,Rural,72.6473,0.0119048,0,0.250266,0.340176,0.169811,0.230544,0.299347
+cordoba,totoral,estatal,urbano,Córdoba,TOTORAL,Estatal,Urbano,143.216,0.00696864,0,0.251064,0.289694,0.189655,0.244788,0.184331
+cordoba,tulumba,estatal,rural,Córdoba,TULUMBA,Estatal,Rural,69.6204,0.0136054,0,0.251064,0.345029,0.189655,0.218999,0.404523
+cordoba,union,estatal,rural,Córdoba,UNION,Estatal,Rural,117.043,0.0113636,0,0.250266,0.340176,0.169811,0.587429,0.594116
+cordoba,union,estatal,urbano,Córdoba,UNION,Estatal,Urbano,546.778,0.015025,0,0.250266,0.297753,0.193548,0.283799,0.147618
+cordoba,union,privado,rural,Córdoba,UNION,Privado,Rural,73.6563,0.00636943,0,0.250266,0.2,0.193548,0.0352759,0.0848964
+cordoba,union,privado,urbano,Córdoba,UNION,Privado,Urbano,522.352,0.00718778,0,0.250266,0.0366972,0.174603,0.056041,0.061319
+entre rios,colon,estatal,rural,Entre Ríos,COLON,Estatal,Rural,41.8737,0.0202703,1,0.250266,0.343195,0.416667,0.161555,0.128152
+entre rios,colon,estatal,urbano,Entre Ríos,COLON,Estatal,Urbano,508.851,0.00911577,0,0.250266,0.29972,0.45,0.344997,0.342589
+entre rios,colon,privado,urbano,Entre Ríos,COLON,Privado,Urbano,66.75,0,0,0.250266,0.0330189,0.45,0.0189219,0.017408
+entre rios,concordia,estatal,rural,Entre Ríos,CONCORDIA,Estatal,Rural,157.828,0.0373626,1,0.250266,0.338192,0.45,0.734114,0.642724
+entre rios,concordia,estatal,urbano,Entre Ríos,CONCORDIA,Estatal,Urbano,1310.35,0.02112,1,0.250266,0.292958,0.416667,0.344664,0.254255
+entre rios,concordia,privado,urbano,Entre Ríos,CONCORDIA,Privado,Urbano,414.947,0.00107411,0,0.250266,0.0366972,0.416667,0.0243819,0.0234426
+entre rios,diamante,estatal,rural,Entre Ríos,DIAMANTE,Estatal,Rural,77.7511,0.0628571,1,0.251064,0.345029,0.421053,0.270473,0.334966
+entre rios,diamante,estatal,urbano,Entre Ríos,DIAMANTE,Estatal,Urbano,245.637,0.0408526,1,0.250266,0.29972,0.45,0.569178,0.183893
+entre rios,diamante,privado,urbano,Entre Ríos,DIAMANTE,Privado,Urbano,213.6,0.00219298,0,0.251064,0.0333333,0.421053,0.0457249,0.0480071
+entre rios,enmascarado,privado,rural,Entre Ríos,Enmascarado,Privado,Rural,34.8948,0,0,0.250266,0.25,0.416667,0.0631888,0.0550668
+entre rios,enmascarado,privado,urbano,Entre Ríos,Enmascarado,Privado,Urbano,94.4769,0,0,0.250266,0.0410959,0.44186,0.0912874,0.135206
+entre rios,federacion,estatal,rural,Entre Ríos,FEDERACION,Estatal,Rural,88.8408,0.030303,1,0.250266,0.340176,0.44186,0.690473,0.577184
+entre rios,federacion,estatal,urbano,Entre Ríos,FEDERACION,Estatal,Urbano,315.747,0.0423077,1,0.251064,0.289694,0.421053,0.624879,0.300297
+entre rios,federacion,privado,urbano,Entre Ríos,FEDERACION,Privado,Urbano,193.062,0.00970874,0,0.251064,0.0333333,0.421053,0.092031,0.0605666
+entre rios,federal,estatal,rural,Entre Ríos,FEDERAL,Estatal,Rural,43.0369,0.0105263,0,0.250266,0.347059,0.465116,0.528475,0.638312
+entre rios,federal,estatal,urbano,Entre Ríos,FEDERAL,Estatal,Urbano,196.857,0.016129,0,0.250266,0.292958,0.416667,0.381707,0.677488
+entre rios,feliciano,estatal,rural,Entre Ríos,FELICIANO,Estatal,Rural,38.3843,0.0166667,0,0.251064,0.345029,0.421053,0.0603151,0.299571
+entre rios,feliciano,estatal,urbano,Entre Ríos,FELICIANO,Estatal,Urbano,40.8498,0.0776699,1,0.250266,0.292958,0.416667,0.693572,0.630956
+entre rios,gualeguay,estatal,rural,Entre Ríos,GUALEGUAY,Estatal,Rural,16.2842,0,0,0.250266,0.340176,0.44186,0.593974,0.436838
+entre rios,gualeguay,estatal,urbano,Entre Ríos,GUALEGUAY,Estatal,Urbano,353.528,0.0229508,1,0.250266,0.297753,0.465116,0.358005,0.282454
+entre rios,gualeguay,privado,urbano,Entre Ríos,GUALEGUAY,Privado,Urbano,113.988,0.00813008,0,0.250266,0.0234742,0.465116,0.0437173,0.0108641
+entre rios,gualeguaychu,estatal,rural,Entre Ríos,GUALEGUAYCHU,Estatal,Rural,83.3862,0.0047619,0,0.250266,0.343195,0.416667,0.148079,0.170388
+entre rios,gualeguaychu,estatal,urbano,Entre Ríos,GUALEGUAYCHU,Estatal,Urbano,587.088,0.0223729,1,0.250266,0.295129,0.44186,0.36064,0.261804
+entre rios,gualeguaychu,privado,urbano,Entre Ríos,GUALEGUAYCHU,Privado,Urbano,513.191,0.000763359,0,0.250266,0.0330189,0.45,0.0763068,0.0458266
+entre rios,islas del ibicuy,estatal,rural,Entre Ríos,ISLAS DEL IBICUY,Estatal,Rural,63.1502,0.037037,1,0.250266,0.338192,0.45,0.478815,0.271723
+entre rios,islas del ibicuy,estatal,urbano,Entre Ríos,ISLAS DEL IBICUY,Estatal,Urbano,24.4143,0,0,0.250266,0.297753,0.465116,0.786943,0.324426
+entre rios,la paz,estatal,rural,Entre Ríos,LA PAZ,Estatal,Rural,193.886,0.0192771,1,0.251064,0.345029,0.421053,0.277879,0.253769
+entre rios,la paz,estatal,urbano,Entre Ríos,LA PAZ,Estatal,Urbano,428.439,0.0311457,1,0.250266,0.292958,0.416667,0.287759,0.479867
+entre rios,la paz,privado,urbano,Entre Ríos,LA PAZ,Privado,Urbano,234.139,0.00828157,0,0.250266,0.0330189,0.45,0.10175,0.117318
+entre rios,nogoya,estatal,rural,Entre Ríos,NOGOYA,Estatal,Rural,106.288,0.0206612,1,0.250266,0.338192,0.45,0.560338,0.483632
+entre rios,nogoya,estatal,urbano,Entre Ríos,NOGOYA,Estatal,Urbano,159.237,0.0366197,1,0.250266,0.297753,0.465116,0.515467,0.488275
+entre rios,nogoya,privado,urbano,Entre Ríos,NOGOYA,Privado,Urbano,138.845,0.00296736,0,0.251064,0.0333333,0.421053,0.0491135,0.0226477
+entre rios,parana,estatal,rural,Entre Ríos,PARANA,Estatal,Rural,261.35,0.0354906,1,0.251064,0.345029,0.421053,0.369047,0.299074
+entre rios,parana,estatal,urbano,Entre Ríos,PARANA,Estatal,Urbano,1983.18,0.0122532,0,0.250266,0.29972,0.45,0.382474,0.52112
+entre rios,parana,privado,rural,Entre Ríos,PARANA,Privado,Rural,15.1211,0,0,0.250266,0.2,0.465116,0.106045,0.1246
+entre rios,parana,privado,urbano,Entre Ríos,PARANA,Privado,Urbano,1737.78,0.00141163,0,0.250266,0.0366972,0.416667,0.0560974,0.00355662
+entre rios,san salvador,estatal,rural,Entre Ríos,SAN SALVADOR,Estatal,Rural,37.2211,0.0166667,0,0.250266,0.343195,0.416667,0.340616,0.398833
+entre rios,san salvador,estatal,urbano,Entre Ríos,SAN SALVADOR,Estatal,Urbano,166.957,0.0348837,1,0.250266,0.292958,0.416667,0.267467,0.162932
+entre rios,tala,estatal,rural,Entre Ríos,TALA,Estatal,Rural,32.5685,0.0273973,1,0.250266,0.340176,0.44186,0.520969,0.256522
+entre rios,tala,estatal,urbano,Entre Ríos,TALA,Estatal,Urbano,187.024,0.04,1,0.251064,0.289694,0.421053,0.307897,0.219023
+entre rios,tala,privado,urbano,Entre Ríos,TALA,Privado,Urbano,75.9923,0,0,0.251064,0.0333333,0.421053,0.0265987,0.00324764
+entre rios,uruguay,estatal,rural,Entre Ríos,URUGUAY,Estatal,Rural,165.609,0.0211082,1,0.251064,0.345029,0.421053,0.45073,0.242503
+entre rios,uruguay,estatal,urbano,Entre Ríos,URUGUAY,Estatal,Urbano,666.738,0.0213499,1,0.250266,0.292958,0.416667,0.337226,0.530005
+entre rios,uruguay,privado,rural,Entre Ríos,URUGUAY,Privado,Rural,34.8948,0,0,0.250266,0.2,0.465116,0.0249849,0.213319
+entre rios,uruguay,privado,urbano,Entre Ríos,URUGUAY,Privado,Urbano,369.125,0.00135318,0,0.250266,0.0366972,0.416667,0.0399138,0.00558098
+entre rios,victoria,estatal,rural,Entre Ríos,VICTORIA,Estatal,Rural,50.0159,0.00840336,0,0.250266,0.338192,0.45,0.666585,0.427298
+entre rios,victoria,estatal,urbano,Entre Ríos,VICTORIA,Estatal,Urbano,208.066,0.0153846,0,0.250266,0.295129,0.44186,0.31044,0.253808
+entre rios,villaguay,estatal,rural,Entre Ríos,VILLAGUAY,Estatal,Rural,108.615,0.0392857,1,0.250266,0.343195,0.416667,0.687575,0.510547
+entre rios,villaguay,estatal,urbano,Entre Ríos,VILLAGUAY,Estatal,Urbano,299.032,0.0103704,0,0.250266,0.295129,0.44186,0.46812,0.394343
+entre rios,villaguay,privado,urbano,Entre Ríos,VILLAGUAY,Privado,Urbano,80.1,0,0,0.251064,0.0333333,0.421053,0.0915937,0.00672248
+formosa,bermejo,estatal,rural,Formosa,BERMEJO,Estatal,Rural,109.806,0.0929487,1,0.251064,0.345029,0.6875,0.95364,0.727651
+formosa,bermejo,estatal,urbano,Formosa,BERMEJO,Estatal,Urbano,45.4102,0,0,0.251064,0.289694,0.6875,0.704647,0.607176
+formosa,enmascarado,estatal,urbano,Formosa,Enmascarado,Estatal,Urbano,53.8123,0.255814,1,0.250266,0.295129,0.631579,0.996697,0.653696
+formosa,enmascarado,privado,rural,Formosa,Enmascarado,Privado,Rural,35.7091,0.057971,1,0.250266,0.185185,0.526316,0.207918,0.207464
+formosa,enmascarado,privado,urbano,Formosa,Enmascarado,Privado,Urbano,66,0.00662252,0,0.250266,0.0410959,0.631579,0.126209,0.288734
+formosa,formosa,estatal,rural,Formosa,FORMOSA,Estatal,Rural,104.066,0.0699588,1,0.250266,0.347059,0.571429,0.634028,0.501909
+formosa,formosa,estatal,urbano,Formosa,FORMOSA,Estatal,Urbano,2602.71,0.00946155,0,0.251064,0.289694,0.6875,0.338773,0.28335
+formosa,formosa,privado,urbano,Formosa,FORMOSA,Privado,Urbano,543,0,0,0.250266,0.0366972,0.647059,0.0781222,0.00409088
+formosa,laishi,estatal,rural,Formosa,LAISHI,Estatal,Rural,67.3371,0.00598802,0,0.251064,0.345029,0.6875,0.384201,0.474108
+formosa,laishi,estatal,urbano,Formosa,LAISHI,Estatal,Urbano,124.121,0.00775194,0,0.250266,0.292958,0.647059,0.644614,0.592324
+formosa,matacos,estatal,rural,Formosa,MATACOS,Estatal,Rural,29.4348,0.0566038,1,0.250266,0.340176,0.631579,0.697465,0.252653
+formosa,matacos,estatal,urbano,Formosa,MATACOS,Estatal,Urbano,170.54,0.0688836,1,0.250266,0.29972,0.526316,0.840436,0.736638
+formosa,patino,estatal,rural,Formosa,PATIÑO,Estatal,Rural,205.787,0.0787546,1,0.250266,0.338192,0.526316,0.606518,0.370026
+formosa,patino,estatal,urbano,Formosa,PATIÑO,Estatal,Urbano,498.379,0.0359477,1,0.251064,0.289694,0.6875,0.535899,0.536201
+formosa,pilagas,estatal,rural,Formosa,PILAGAS,Estatal,Rural,90.8031,0.0436893,1,0.250266,0.343195,0.647059,0.565593,0.72167
+formosa,pilagas,estatal,urbano,Formosa,PILAGAS,Estatal,Urbano,137.24,0.0150376,0,0.250266,0.295129,0.631579,0.309531,0.437669
+formosa,pilcomayo,estatal,rural,Formosa,PILCOMAYO,Estatal,Rural,92.8436,0.038961,1,0.250266,0.338192,0.526316,0.528879,0.23885
+formosa,pilcomayo,estatal,urbano,Formosa,PILCOMAYO,Estatal,Urbano,724.394,0.0246691,1,0.251064,0.289694,0.6875,0.449351,0.54759
+formosa,pilcomayo,privado,urbano,Formosa,PILCOMAYO,Privado,Urbano,232,0.00441501,0,0.251064,0.0333333,0.6875,0.0991385,0.156416
+formosa,pirane,estatal,rural,Formosa,PIRANE,Estatal,Rural,153.677,0.0162162,0,0.250266,0.343195,0.647059,0.340289,0.376213
+formosa,pirane,estatal,urbano,Formosa,PIRANE,Estatal,Urbano,566.391,0.0243902,1,0.250266,0.292958,0.647059,0.524713,0.570521
+formosa,pirane,privado,urbano,Formosa,PIRANE,Privado,Urbano,68,0.0182927,1,0.250266,0.0234742,0.571429,0.0308236,0.0418992
+formosa,ramon lista,estatal,rural,Formosa,RAMON LISTA,Estatal,Rural,146.535,0.116022,1,0.250266,0.343195,0.647059,0.974187,0.751722
+jujuy,cochinoca,estatal,rural,Jujuy,COCHINOCA,Estatal,Rural,37.8707,0,0,0.250266,0.340176,0.190476,0.0573402,0.214109
+jujuy,cochinoca,estatal,urbano,Jujuy,COCHINOCA,Estatal,Urbano,138.371,0.0103896,0,0.250266,0.295129,0.190476,0.115547,0.523899
+jujuy,doctor manuel belgrano,estatal,rural,Jujuy,DOCTOR MANUEL BELGRANO,Estatal,Rural,114.34,0.0151515,0,0.250266,0.340176,0.190476,0.512079,0.872438
+jujuy,doctor manuel belgrano,estatal,urbano,Jujuy,DOCTOR MANUEL BELGRANO,Estatal,Urbano,2836.27,0.0105837,0,0.251064,0.289694,0.24,0.299446,0.22327
+jujuy,doctor manuel belgrano,privado,urbano,Jujuy,DOCTOR MANUEL BELGRANO,Privado,Urbano,1284.33,0.00558214,0,0.250266,0.0234742,0.153846,0.0456035,0.0638867
+jujuy,el carmen,estatal,rural,Jujuy,EL CARMEN,Estatal,Rural,84.4286,0.010989,0,0.250266,0.343195,0.192308,0.534634,0.383778
+jujuy,el carmen,estatal,urbano,Jujuy,EL CARMEN,Estatal,Urbano,1130.93,0.00834327,0,0.250266,0.295129,0.190476,0.26689,0.324306
+jujuy,el carmen,privado,urbano,Jujuy,EL CARMEN,Privado,Urbano,194.271,0.00243902,0,0.251064,0.0333333,0.24,0.0215432,0.259576
+jujuy,enmascarado,privado,urbano,Jujuy,Enmascarado,Privado,Urbano,127.19,0,0,0.250266,0.0366972,0.192308,0.084567,0.00755605
+jujuy,humahuaca,estatal,rural,Jujuy,HUMAHUACA,Estatal,Rural,33.9456,0.0515464,1,0.250266,0.347059,0.153846,0.678391,0.628123
+jujuy,humahuaca,estatal,urbano,Jujuy,HUMAHUACA,Estatal,Urbano,195.195,0.0183486,1,0.250266,0.295129,0.190476,0.504221,0.695592
+jujuy,ledesma,estatal,rural,Jujuy,LEDESMA,Estatal,Rural,37,0.0945946,1,0.250266,0.347059,0.153846,0.856965,0.655996
+jujuy,ledesma,estatal,urbano,Jujuy,LEDESMA,Estatal,Urbano,911.583,0.00440744,0,0.250266,0.29972,0.192308,0.329276,0.198381
+jujuy,ledesma,privado,urbano,Jujuy,LEDESMA,Privado,Urbano,199.014,0,0,0.251064,0.0333333,0.24,0.0838554,0.00920255
+jujuy,palpala,estatal,rural,Jujuy,PALPALA,Estatal,Rural,28.8299,0.0138889,0,0.250266,0.338192,0.192308,0.0712998,0.14568
+jujuy,palpala,estatal,urbano,Jujuy,PALPALA,Estatal,Urbano,593.384,0.00939702,0,0.250266,0.292958,0.192308,0.368966,0.483002
+jujuy,rinconada,estatal,rural,Jujuy,RINCONADA,Estatal,Rural,21.9116,0,0,0.250266,0.338192,0.192308,0.367518,0.374171
+jujuy,san antonio,estatal,rural,Jujuy,SAN ANTONIO,Estatal,Rural,60.585,0.0363636,1,0.250266,0.343195,0.192308,0.314646,0.102724
+jujuy,san pedro,estatal,rural,Jujuy,SAN PEDRO,Estatal,Rural,87.4014,0.0198675,1,0.250266,0.338192,0.192308,0.158221,0.330293
+jujuy,san pedro,estatal,urbano,Jujuy,SAN PEDRO,Estatal,Urbano,910.936,0.00963391,0,0.250266,0.295129,0.190476,0.4156,0.238706
+jujuy,san pedro,privado,urbano,Jujuy,SAN PEDRO,Privado,Urbano,124.2,0.0121457,0,0.251064,0.0333333,0.24,0.0634217,0.0479127
+jujuy,santa barbara,estatal,rural,Jujuy,SANTA BARBARA,Estatal,Rural,23.8367,0,0,0.250266,0.347059,0.153846,0.000419441,0.201143
+jujuy,santa barbara,estatal,urbano,Jujuy,SANTA BARBARA,Estatal,Urbano,179.097,0.00485437,0,0.250266,0.297753,0.153846,0.407874,0.263813
+jujuy,santa catalina,estatal,rural,Jujuy,SANTA CATALINA,Estatal,Rural,39.9184,0.0116279,0,0.250266,0.338192,0.192308,0.212136,0.148031
+jujuy,susques,estatal,rural,Jujuy,SUSQUES,Estatal,Rural,71.619,0.00806452,0,0.250266,0.340176,0.190476,0.26977,0.232574
+jujuy,tilcara,estatal,rural,Jujuy,TILCARA,Estatal,Rural,29.7959,0.0126582,0,0.251064,0.345029,0.24,0.0816704,0.214593
+jujuy,tilcara,estatal,urbano,Jujuy,TILCARA,Estatal,Urbano,225.38,0.00386847,0,0.251064,0.289694,0.24,0.261033,0.24294
+jujuy,tumbaya,estatal,rural,Jujuy,TUMBAYA,Estatal,Rural,43.7279,0,0,0.250266,0.343195,0.192308,0.312026,0.504325
+jujuy,valle grande,estatal,rural,Jujuy,VALLE GRANDE,Estatal,Rural,38.9048,0.0337079,1,0.250266,0.340176,0.190476,0.263436,0.307277
+jujuy,yavi,estatal,rural,Jujuy,YAVI,Estatal,Rural,22.8844,0,0,0.250266,0.340176,0.190476,0.551777,0.315535
+jujuy,yavi,estatal,urbano,Jujuy,YAVI,Estatal,Urbano,302.855,0.0116959,0,0.250266,0.295129,0.190476,0.238333,0.527539
+la pampa,atreuco,estatal,rural,La Pampa,ATREUCO,Estatal,Rural,23.3096,0.0185185,1,0.251064,0.345029,0.0869565,0.0166325,0.0430962
+la pampa,atreuco,estatal,urbano,La Pampa,ATREUCO,Estatal,Urbano,62.9492,0.0266667,1,0.251064,0.289694,0.0869565,0.276964,0.4435
+la pampa,capital,estatal,rural,La Pampa,CAPITAL,Estatal,Rural,26.4881,0,0,0.250266,0.340176,0.16129,0.158172,0.21086
+la pampa,capital,estatal,urbano,La Pampa,CAPITAL,Estatal,Urbano,1068.19,0.00344696,0,0.251064,0.289694,0.0869565,0.166122,0.196111
+la pampa,capital,privado,urbano,La Pampa,CAPITAL,Privado,Urbano,342,0,0,0.250266,0.0234742,0.148148,0.0219088,0.0417139
+la pampa,catrilo,estatal,rural,La Pampa,CATRILO,Estatal,Rural,52.9763,0,0,0.250266,0.338192,0.172414,0.86574,0.552183
+la pampa,chapaleufu,estatal,rural,La Pampa,CHAPALEUFU,Estatal,Rural,23.3096,0,0,0.250266,0.338192,0.172414,0.164478,0.0780436
+la pampa,chapaleufu,estatal,urbano,La Pampa,CHAPALEUFU,Estatal,Urbano,48.8962,0.0151515,0,0.250266,0.295129,0.16129,0.60235,0.292953
+la pampa,chical co,estatal,rural,La Pampa,CHICAL CO,Estatal,Rural,21.1905,0,0,0.250266,0.338192,0.172414,0.102993,0.198445
+la pampa,conhelo,estatal,urbano,La Pampa,CONHELO,Estatal,Urbano,129.108,0.00619195,0,0.251064,0.289694,0.0869565,0.289656,0.179246
+la pampa,curaco,estatal,rural,La Pampa,CURACO,Estatal,Rural,15.8929,0,0,0.251064,0.345029,0.0869565,0.330005,0.208859
+la pampa,enmascarado,estatal,rural,La Pampa,Enmascarado,Estatal,Rural,24.3691,0,0,0.251064,0.345029,0.0869565,0.23965,0.0615094
+la pampa,enmascarado,estatal,urbano,La Pampa,Enmascarado,Estatal,Urbano,107.776,0,0,0.250266,0.295129,0.16129,0.133597,0.208808
+la pampa,enmascarado,privado,urbano,La Pampa,Enmascarado,Privado,Urbano,409,0.00551876,0,0.250266,0.0330189,0.172414,0.046612,0.0232016
+la pampa,guatrache,estatal,rural,La Pampa,GUATRACHE,Estatal,Rural,34.9643,0.0196078,1,0.251064,0.345029,0.0869565,0.150075,0.0309572
+la pampa,guatrache,estatal,urbano,La Pampa,GUATRACHE,Estatal,Urbano,18.9562,0,0,0.251064,0.289694,0.0869565,0.0665963,0.0406731
+la pampa,hucal,estatal,rural,La Pampa,HUCAL,Estatal,Rural,23.3096,0,0,0.250266,0.347059,0.148148,0.566353,0.249421
+la pampa,hucal,estatal,urbano,La Pampa,HUCAL,Estatal,Urbano,26.9807,0,0,0.251064,0.289694,0.0869565,0.0846791,0.119951
+la pampa,loventue,estatal,rural,La Pampa,LOVENTUE,Estatal,Rural,28.9756,0.0277778,1,0.250266,0.343195,0.133333,0.300663,0.379694
+la pampa,loventue,estatal,urbano,La Pampa,LOVENTUE,Estatal,Urbano,60.8592,0.0070922,0,0.250266,0.297753,0.148148,0.679069,0.434758
+la pampa,maraco,estatal,rural,La Pampa,MARACO,Estatal,Rural,21.1905,0.0638298,1,0.250266,0.347059,0.148148,0.164417,0.173354
+la pampa,maraco,estatal,urbano,La Pampa,MARACO,Estatal,Urbano,609.705,0.0173285,0,0.250266,0.29972,0.172414,0.317735,0.310197
+la pampa,maraco,privado,urbano,La Pampa,MARACO,Privado,Urbano,176,0,0,0.250266,0.0330189,0.172414,0.0362357,0.00658386
+la pampa,puelen,estatal,rural,La Pampa,PUELEN,Estatal,Rural,15.8929,0,0,0.250266,0.343195,0.133333,0.102466,0.32286
+la pampa,puelen,estatal,urbano,La Pampa,PUELEN,Estatal,Urbano,135.686,0.0166113,0,0.250266,0.295129,0.16129,0.158896,0.173197
+la pampa,quemu quemu,estatal,rural,La Pampa,QUEMU QUEMU,Estatal,Rural,23.3096,0,0,0.251064,0.345029,0.0869565,0.352695,0.370291
+la pampa,quemu quemu,estatal,urbano,La Pampa,QUEMU QUEMU,Estatal,Urbano,66.8454,0.00657895,0,0.251064,0.289694,0.0869565,0.329956,0.267478
+la pampa,rancul,estatal,rural,La Pampa,RANCUL,Estatal,Rural,16.9524,0,0,0.250266,0.343195,0.133333,0.807531,0.541541
+la pampa,rancul,estatal,urbano,La Pampa,RANCUL,Estatal,Urbano,103.811,0,0,0.250266,0.297753,0.148148,0.235901,0.258402
+la pampa,realico,estatal,rural,La Pampa,REALICO,Estatal,Rural,21.1905,0.0142857,0,0.250266,0.347059,0.148148,0.342452,0.538036
+la pampa,realico,estatal,urbano,La Pampa,REALICO,Estatal,Urbano,160.728,0.0163488,0,0.251064,0.289694,0.0869565,0.23235,0.336892
+la pampa,toay,estatal,urbano,La Pampa,TOAY,Estatal,Urbano,69.8385,0.00492611,0,0.250266,0.297753,0.148148,0.611995,0.249915
+la pampa,trenel,estatal,rural,La Pampa,TRENEL,Estatal,Rural,11.6548,0,0,0.250266,0.343195,0.133333,0.010286,0.0412709
+la pampa,utracan,estatal,rural,La Pampa,UTRACAN,Estatal,Rural,36.0239,0,0,0.250266,0.343195,0.133333,0.142038,0.15032
+la pampa,utracan,estatal,urbano,La Pampa,UTRACAN,Estatal,Urbano,148.67,0,0,0.250266,0.297753,0.148148,0.383907,0.313938
+la rioja,arauco,estatal,rural,La Rioja,ARAUCO,Estatal,Rural,19,0,0,0.250266,0.340176,0.454545,0.423454,0.578219
+la rioja,arauco,estatal,urbano,La Rioja,ARAUCO,Estatal,Urbano,118.313,0.0249221,1,0.250266,0.29972,0.47619,0.339965,0.267563
+la rioja,capital,estatal,rural,La Rioja,CAPITAL,Estatal,Rural,16,0.0192308,1,0.251064,0.345029,0.35,0.126959,0.186582
+la rioja,capital,estatal,urbano,La Rioja,CAPITAL,Estatal,Urbano,2413.75,0.00681199,0,0.250266,0.295129,0.454545,0.189938,0.271416
+la rioja,capital,privado,urbano,La Rioja,CAPITAL,Privado,Urbano,663.547,0,0,0.250266,0.0330189,0.47619,0.0360662,0.00623025
+la rioja,castro barros,estatal,rural,La Rioja,CASTRO BARROS,Estatal,Rural,30,0.115789,1,0.250266,0.343195,0.416667,0.367452,0.106727
+la rioja,chamical,estatal,urbano,La Rioja,CHAMICAL,Estatal,Urbano,151.426,0.0315534,1,0.250266,0.295129,0.454545,0.325513,0.601045
+la rioja,chilecito,estatal,rural,La Rioja,CHILECITO,Estatal,Rural,123,0.0190114,1,0.251064,0.345029,0.35,0.261368,0.302063
+la rioja,chilecito,estatal,urbano,La Rioja,CHILECITO,Estatal,Urbano,597.291,0.0210016,1,0.250266,0.292958,0.416667,0.270456,0.392259
+la rioja,coronel felipe varela,estatal,rural,La Rioja,CORONEL FELIPE VARELA,Estatal,Rural,10,0,0,0.251064,0.345029,0.35,0.426051,0.200389
+la rioja,coronel felipe varela,estatal,urbano,La Rioja,CORONEL FELIPE VARELA,Estatal,Urbano,118.333,0.0340909,1,0.251064,0.289694,0.35,0.172155,0.106805
+la rioja,enmascarado,estatal,rural,La Rioja,Enmascarado,Estatal,Rural,22,0.0185185,1,0.250266,0.338192,0.47619,0.867146,0.314127
+la rioja,enmascarado,estatal,urbano,La Rioja,Enmascarado,Estatal,Urbano,102.158,0.00462963,0,0.250266,0.297753,0.52381,0.0749343,0.179353
+la rioja,enmascarado,privado,rural,La Rioja,Enmascarado,Privado,Rural,35,0.0126582,0,0.250266,0.233333,0.454545,0.105892,0.370977
+la rioja,enmascarado,privado,urbano,La Rioja,Enmascarado,Privado,Urbano,231.453,0.0233546,1,0.251064,0.0333333,0.35,0.106811,0.133692
+la rioja,famatina,estatal,rural,La Rioja,FAMATINA,Estatal,Rural,70,0,0,0.250266,0.338192,0.47619,0.257975,0.10645
+la rioja,general angel v penaloza,estatal,rural,La Rioja,GENERAL ANGEL V PEÑALOZA,Estatal,Rural,37,0.0117647,0,0.250266,0.347059,0.52381,0.231076,0.492533
+la rioja,general belgrano,estatal,rural,La Rioja,GENERAL BELGRANO,Estatal,Rural,32,0.0491803,1,0.250266,0.347059,0.52381,0.657469,0.530586
+la rioja,general belgrano,estatal,urbano,La Rioja,GENERAL BELGRANO,Estatal,Urbano,67.1072,0,0,0.250266,0.297753,0.52381,0.344227,0.0647293
+la rioja,general juan f quiroga,estatal,rural,La Rioja,GENERAL JUAN F QUIROGA,Estatal,Rural,56,0,0,0.250266,0.343195,0.416667,0.312635,0.278502
+la rioja,general ocampo,estatal,rural,La Rioja,GENERAL OCAMPO,Estatal,Rural,43,0.0224719,1,0.250266,0.340176,0.454545,0.589809,0.114766
+la rioja,general san martin,estatal,rural,La Rioja,GENERAL SAN MARTIN,Estatal,Rural,10,0,0,0.250266,0.347059,0.52381,0.219154,0.172807
+la rioja,general san martin,estatal,urbano,La Rioja,GENERAL SAN MARTIN,Estatal,Urbano,52.1467,0.0173913,1,0.251064,0.289694,0.35,0.255654,0.0684338
+la rioja,independencia,estatal,rural,La Rioja,INDEPENDENCIA,Estatal,Rural,33,0,0,0.251064,0.345029,0.35,0.304875,0.405973
+la rioja,rosario vera penaloza,estatal,rural,La Rioja,ROSARIO VERA PEÑALOZA,Estatal,Rural,30,0,0,0.250266,0.347059,0.52381,0.387971,0.553092
+la rioja,rosario vera penaloza,estatal,urbano,La Rioja,ROSARIO VERA PEÑALOZA,Estatal,Urbano,191.48,0.0123457,0,0.250266,0.29972,0.47619,0.26277,0.237052
+la rioja,vinchina,estatal,rural,La Rioja,VINCHINA,Estatal,Rural,38,0,0,0.250266,0.338192,0.47619,0.315514,0.230613
+mendoza,capital,estatal,urbano,Mendoza,CAPITAL,Estatal,Urbano,2850.13,0.00247755,0,0.250266,0.29972,0.0731707,0.2263,0.133337
+mendoza,capital,privado,urbano,Mendoza,CAPITAL,Privado,Urbano,1357.73,0.000361795,0,0.251064,0.0333333,0.0526316,0.0578481,0.00406697
+mendoza,enmascarado,estatal,rural,Mendoza,Enmascarado,Estatal,Rural,25.8354,0,0,0.250266,0.347059,0.0833333,0.172455,0.167737
+mendoza,enmascarado,privado,rural,Mendoza,Enmascarado,Privado,Rural,160.18,0.0114943,0,0.250266,0.25,0.0540541,0.0361967,0.145729
+mendoza,enmascarado,privado,urbano,Mendoza,Enmascarado,Privado,Urbano,254.714,0,0,0.250266,0.0410959,0.05,0.0497159,0.0398628
+mendoza,general alvear,estatal,rural,Mendoza,GENERAL ALVEAR,Estatal,Rural,31.0025,0,0,0.250266,0.347059,0.0833333,0.0900114,0.440316
+mendoza,general alvear,estatal,urbano,Mendoza,GENERAL ALVEAR,Estatal,Urbano,395.772,0.00342466,0,0.250266,0.297753,0.0833333,0.36387,0.412072
+mendoza,general alvear,privado,urbano,Mendoza,GENERAL ALVEAR,Privado,Urbano,167.296,0,0,0.250266,0.0366972,0.0540541,0.0349053,0.0108363
+mendoza,godoy cruz,estatal,urbano,Mendoza,GODOY CRUZ,Estatal,Urbano,804.534,0.00715308,0,0.250266,0.292958,0.0540541,0.207829,0.156831
+mendoza,godoy cruz,privado,urbano,Mendoza,GODOY CRUZ,Privado,Urbano,1029.23,0.00100959,0,0.250266,0.0234742,0.0833333,0.075003,0.00722508
+mendoza,guaymallen,estatal,rural,Mendoza,GUAYMALLEN,Estatal,Rural,234.104,0,0,0.250266,0.347059,0.0833333,0.139948,0.182429
+mendoza,guaymallen,estatal,urbano,Mendoza,GUAYMALLEN,Estatal,Urbano,1477.35,0.0118519,0,0.250266,0.297753,0.0833333,0.257226,0.207848
+mendoza,guaymallen,privado,rural,Mendoza,GUAYMALLEN,Privado,Rural,114.709,0,0,0.250266,0.185185,0.0731707,0.0591483,0.00658315
+mendoza,guaymallen,privado,urbano,Mendoza,GUAYMALLEN,Privado,Urbano,889.167,0.002997,0,0.250266,0.0410959,0.05,0.0611598,0.00505169
+mendoza,junin,estatal,rural,Mendoza,JUNIN,Estatal,Rural,179.815,0,0,0.251064,0.345029,0.0526316,0.0686876,0.0443594
+mendoza,junin,estatal,urbano,Mendoza,JUNIN,Estatal,Urbano,415.913,0,0,0.251064,0.289694,0.0526316,0.156043,0.162392
+mendoza,la paz,estatal,urbano,Mendoza,LA PAZ,Estatal,Urbano,144.009,0.00392157,0,0.250266,0.295129,0.05,0.160862,0.0676466
+mendoza,las heras,estatal,urbano,Mendoza,LAS HERAS,Estatal,Urbano,1358.51,0.00314663,0,0.250266,0.297753,0.0833333,0.197226,0.0985482
+mendoza,las heras,privado,urbano,Mendoza,LAS HERAS,Privado,Urbano,152.358,0,0,0.250266,0.0366972,0.0540541,0.10286,0.0605276
+mendoza,lavalle,estatal,rural,Mendoza,LAVALLE,Estatal,Rural,264.555,0.00683995,0,0.250266,0.338192,0.0731707,0.210435,0.298901
+mendoza,lavalle,estatal,urbano,Mendoza,LAVALLE,Estatal,Urbano,241.693,0.0123894,0,0.250266,0.297753,0.0833333,0.111335,0.236383
+mendoza,lujan de cuyo,estatal,rural,Mendoza,LUJAN DE CUYO,Estatal,Rural,209.784,0.00419287,0,0.250266,0.343195,0.0540541,0.110329,0.255387
+mendoza,lujan de cuyo,estatal,urbano,Mendoza,LUJAN DE CUYO,Estatal,Urbano,909.117,0.00788566,0,0.250266,0.292958,0.0540541,0.297874,0.135961
+mendoza,lujan de cuyo,privado,urbano,Mendoza,LUJAN DE CUYO,Privado,Urbano,330.759,0.00121359,0,0.250266,0.0234742,0.0833333,0.0490483,0.0151261
+mendoza,maipu,estatal,rural,Mendoza,MAIPU,Estatal,Rural,221.151,0.00228833,0,0.250266,0.343195,0.0540541,0.355787,0.466947
+mendoza,maipu,estatal,urbano,Mendoza,MAIPU,Estatal,Urbano,1347.1,0.00315557,0,0.250266,0.292958,0.0540541,0.2769,0.187191
+mendoza,maipu,privado,urbano,Mendoza,MAIPU,Privado,Urbano,474.876,0,0,0.250266,0.0330189,0.0731707,0.0971977,0.00415811
+mendoza,malargue,estatal,rural,Mendoza,MALARGUE,Estatal,Rural,32.0359,0.0140845,0,0.250266,0.338192,0.0731707,0.26147,0.278483
+mendoza,malargue,estatal,urbano,Mendoza,MALARGUE,Estatal,Urbano,226.587,0,0,0.250266,0.292958,0.0540541,0.263979,0.394421
+mendoza,rivadavia,estatal,rural,Mendoza,RIVADAVIA,Estatal,Rural,289.012,0.00168067,0,0.251064,0.345029,0.0526316,0.227157,0.239881
+mendoza,rivadavia,estatal,urbano,Mendoza,RIVADAVIA,Estatal,Urbano,335.349,0.00128535,0,0.251064,0.289694,0.0526316,0.246392,0.332188
+mendoza,san carlos,estatal,rural,Mendoza,SAN CARLOS,Estatal,Rural,86.8071,0.0108696,0,0.250266,0.338192,0.0731707,0.211304,0.275889
+mendoza,san carlos,estatal,urbano,Mendoza,SAN CARLOS,Estatal,Urbano,210.474,0.0229226,1,0.251064,0.289694,0.0526316,0.149185,0.0613176
+mendoza,san carlos,privado,urbano,Mendoza,SAN CARLOS,Privado,Urbano,163.447,0,0,0.250266,0.0410959,0.05,0.123785,0.0268802
+mendoza,san martin,estatal,rural,Mendoza,SAN MARTIN,Estatal,Rural,370.997,0.00995025,0,0.251064,0.345029,0.0526316,0.120897,0.102238
+mendoza,san martin,estatal,urbano,Mendoza,SAN MARTIN,Estatal,Urbano,825.246,0.00603318,0,0.250266,0.295129,0.05,0.416899,0.128543
+mendoza,san martin,privado,urbano,Mendoza,SAN MARTIN,Privado,Urbano,214.099,0,0,0.251064,0.0333333,0.0526316,0.0838639,0.00524758
+mendoza,san rafael,estatal,rural,Mendoza,SAN RAFAEL,Estatal,Rural,267.655,0.00834492,0,0.250266,0.343195,0.0540541,0.206728,0.381065
+mendoza,san rafael,estatal,urbano,Mendoza,SAN RAFAEL,Estatal,Urbano,1619.34,0.00268657,0,0.250266,0.295129,0.05,0.379958,0.190714
+mendoza,san rafael,privado,urbano,Mendoza,SAN RAFAEL,Privado,Urbano,463.79,0,0,0.250266,0.0234742,0.0833333,0.0606093,0.010907
+mendoza,santa rosa,estatal,rural,Mendoza,SANTA ROSA,Estatal,Rural,94.041,0,0,0.250266,0.347059,0.0833333,0.269703,0.374785
+mendoza,santa rosa,estatal,urbano,Mendoza,SANTA ROSA,Estatal,Urbano,116.315,0,0,0.250266,0.29972,0.0731707,0.567464,0.512146
+mendoza,tunuyan,estatal,rural,Mendoza,TUNUYAN,Estatal,Rural,85.7737,0.0234742,1,0.250266,0.340176,0.05,0.144299,0.166806
+mendoza,tunuyan,estatal,urbano,Mendoza,TUNUYAN,Estatal,Urbano,522.66,0.0142721,0,0.251064,0.289694,0.0526316,0.307754,0.380307
+mendoza,tunuyan,privado,urbano,Mendoza,TUNUYAN,Privado,Urbano,82.652,0,0,0.251064,0.0333333,0.0526316,0.0942912,0.00368079
+mendoza,tupungato,estatal,rural,Mendoza,TUPUNGATO,Estatal,Rural,109.542,0,0,0.250266,0.340176,0.05,0.195951,0.167022
+mendoza,tupungato,estatal,urbano,Mendoza,TUPUNGATO,Estatal,Urbano,271.904,0.0211416,1,0.250266,0.292958,0.0540541,0.149396,0.106707
+mendoza,tupungato,privado,urbano,Mendoza,TUPUNGATO,Privado,Urbano,57.8784,0,0,0.250266,0.0234742,0.0833333,0.041953,0.0796032
+misiones,25 de mayo,estatal,rural,Misiones,25 DE MAYO,Estatal,Rural,142.758,0.0332481,1,0.250266,0.343195,0.52381,0.673394,0.440687
+misiones,25 de mayo,estatal,urbano,Misiones,25 DE MAYO,Estatal,Urbano,73.0376,0.0114286,0,0.251064,0.289694,0.609756,0.513453,0.441965
+misiones,apostoles,estatal,rural,Misiones,APOSTOLES,Estatal,Rural,49.6052,0.142857,1,0.250266,0.343195,0.52381,0.846337,0.608363
+misiones,apostoles,estatal,urbano,Misiones,APOSTOLES,Estatal,Urbano,231.119,0.161765,1,0.250266,0.292958,0.52381,0.421667,0.602629
+misiones,apostoles,privado,urbano,Misiones,APOSTOLES,Privado,Urbano,241.31,0.00770713,0,0.250266,0.0234742,0.583333,0.0573553,0.111712
+misiones,cainguas,estatal,rural,Misiones,CAINGUAS,Estatal,Rural,7.01488,0.0625,1,0.250266,0.343195,0.52381,0.0503732,0.0809204
+misiones,cainguas,estatal,urbano,Misiones,CAINGUAS,Estatal,Urbano,492.968,0.0269058,1,0.251064,0.289694,0.609756,0.538217,0.497522
+misiones,cainguas,privado,urbano,Misiones,CAINGUAS,Privado,Urbano,138.324,0.00338983,0,0.250266,0.0330189,0.568182,0.0806875,0.198865
+misiones,candelaria,estatal,rural,Misiones,CANDELARIA,Estatal,Rural,56.119,0.0580645,1,0.251064,0.345029,0.609756,0.769214,0.728522
+misiones,candelaria,estatal,urbano,Misiones,CANDELARIA,Estatal,Urbano,252.552,0.0178218,1,0.250266,0.292958,0.52381,0.228987,0.148582
+misiones,capital,estatal,rural,Misiones,CAPITAL,Estatal,Rural,107.227,0.0147059,0,0.250266,0.347059,0.583333,0.440844,0.416833
+misiones,capital,estatal,urbano,Misiones,CAPITAL,Estatal,Urbano,1887.3,0.11086,1,0.250266,0.29972,0.568182,0.233815,0.158082
+misiones,capital,privado,urbano,Misiones,CAPITAL,Privado,Urbano,1943.28,0.00633837,0,0.250266,0.0234742,0.583333,0.017044,0.0159027
+misiones,concepcion,estatal,rural,Misiones,CONCEPCION,Estatal,Rural,18.0383,0.0882353,1,0.251064,0.345029,0.609756,0.258887,0.209238
+misiones,concepcion,estatal,urbano,Misiones,CONCEPCION,Estatal,Urbano,74.3161,0.0227273,1,0.250266,0.297753,0.583333,0.144472,0.336074
+misiones,eldorado,estatal,rural,Misiones,ELDORADO,Estatal,Rural,81.4505,0.045977,1,0.250266,0.338192,0.568182,0.3478,0.220183
+misiones,eldorado,estatal,urbano,Misiones,ELDORADO,Estatal,Urbano,550.15,0.0333333,1,0.250266,0.292958,0.52381,0.352926,0.622719
+misiones,eldorado,privado,urbano,Misiones,ELDORADO,Privado,Urbano,255.446,0.00187617,0,0.251064,0.0333333,0.609756,0.0922441,0.101026
+misiones,enmascarado,privado,rural,Misiones,Enmascarado,Privado,Rural,299.636,0.00176367,0,0.251064,0.241379,0.609756,0.24507,0.554947
+misiones,enmascarado,privado,urbano,Misiones,Enmascarado,Privado,Urbano,54.522,0,0,0.250266,0.0410959,0.6,0.263352,0.0406533
+misiones,general manuel belgrano,estatal,rural,Misiones,GENERAL MANUEL BELGRANO,Estatal,Rural,81.1722,0.0135135,0,0.250266,0.338192,0.568182,0.480863,0.695291
+misiones,general manuel belgrano,estatal,urbano,Misiones,GENERAL MANUEL BELGRANO,Estatal,Urbano,254.381,0.0647059,1,0.250266,0.297753,0.583333,0.414209,0.364844
+misiones,general manuel belgrano,privado,urbano,Misiones,GENERAL MANUEL BELGRANO,Privado,Urbano,109.044,0.00469484,0,0.251064,0.0333333,0.609756,0.0851881,0.427376
+misiones,guarani,estatal,rural,Misiones,GUARANI,Estatal,Rural,86.1828,0.0926829,1,0.251064,0.345029,0.609756,0.500031,0.628773
+misiones,guarani,estatal,urbano,Misiones,GUARANI,Estatal,Urbano,602.833,0.0439297,1,0.250266,0.292958,0.52381,0.478489,0.532006
+misiones,guarani,privado,urbano,Misiones,GUARANI,Privado,Urbano,95.9184,0.0410256,1,0.251064,0.0333333,0.609756,0.174761,0.421307
+misiones,iguazu,estatal,rural,Misiones,IGUAZU,Estatal,Rural,2.00425,0.285714,1,0.250266,0.343195,0.52381,0.909306,0.0142422
+misiones,iguazu,estatal,urbano,Misiones,IGUAZU,Estatal,Urbano,556.287,0.0233786,1,0.250266,0.29972,0.568182,0.370157,0.518949
+misiones,iguazu,privado,urbano,Misiones,IGUAZU,Privado,Urbano,337.229,0.00426743,0,0.250266,0.0234742,0.583333,0.0219507,0.0783169
+misiones,leandro n. alem,estatal,rural,Misiones,LEANDRO N. ALEM,Estatal,Rural,113.24,0.017301,0,0.250266,0.347059,0.583333,0.509277,0.455599
+misiones,leandro n. alem,estatal,urbano,Misiones,LEANDRO N. ALEM,Estatal,Urbano,246.127,0.0277296,1,0.250266,0.295129,0.6,0.707859,0.407493
+misiones,leandro n. alem,privado,urbano,Misiones,LEANDRO N. ALEM,Privado,Urbano,159.527,0,0,0.250266,0.0410959,0.6,0.0484036,0.142886
+misiones,libertador grl san martin,estatal,rural,Misiones,LIBERTADOR GRL SAN MARTIN,Estatal,Rural,63.1339,0.0276243,1,0.250266,0.338192,0.568182,0.211722,0.321309
+misiones,libertador grl san martin,estatal,urbano,Misiones,LIBERTADOR GRL SAN MARTIN,Estatal,Urbano,267.138,0.0380673,1,0.250266,0.297753,0.583333,0.408481,0.471455
+misiones,libertador grl san martin,privado,rural,Misiones,LIBERTADOR GRL SAN MARTIN,Privado,Rural,75.1594,0,0,0.251064,0.241379,0.609756,0.21214,0.207236
+misiones,libertador grl san martin,privado,urbano,Misiones,LIBERTADOR GRL SAN MARTIN,Privado,Urbano,153.469,0.00358423,0,0.250266,0.0234742,0.583333,0.131328,0.116009
+misiones,montecarlo,estatal,rural,Misiones,MONTECARLO,Estatal,Rural,47.0999,0.00917431,0,0.251064,0.345029,0.609756,0.961905,0.604636
+misiones,montecarlo,estatal,urbano,Misiones,MONTECARLO,Estatal,Urbano,226.116,0.0462107,1,0.250266,0.295129,0.6,0.483564,0.821461
+misiones,montecarlo,privado,urbano,Misiones,MONTECARLO,Privado,Urbano,120.15,0.0123967,0,0.250266,0.0410959,0.6,0.0843844,0.191195
+misiones,obera,estatal,rural,Misiones,OBERA,Estatal,Rural,301.495,0.0255639,1,0.250266,0.347059,0.583333,0.27193,0.237067
+misiones,obera,estatal,urbano,Misiones,OBERA,Estatal,Urbano,612.593,0.018724,1,0.250266,0.29972,0.568182,0.307519,0.358337
+misiones,obera,privado,rural,Misiones,OBERA,Privado,Rural,101.215,0.0133333,0,0.250266,0.2,0.583333,0.0313721,0.127566
+misiones,obera,privado,urbano,Misiones,OBERA,Privado,Urbano,197.895,0.00234742,0,0.250266,0.0410959,0.6,0.0741938,0.0299293
+misiones,san ignacio,estatal,rural,Misiones,SAN IGNACIO,Estatal,Rural,65.0491,0.0588235,1,0.250266,0.347059,0.583333,0.685085,0.426212
+misiones,san ignacio,estatal,urbano,Misiones,SAN IGNACIO,Estatal,Urbano,494.922,0.0310442,1,0.250266,0.297753,0.583333,0.539631,0.45192
+misiones,san ignacio,privado,rural,Misiones,SAN IGNACIO,Privado,Rural,24.051,0,0,0.250266,0.25,0.52381,0.257906,0.470152
+misiones,san ignacio,privado,urbano,Misiones,SAN IGNACIO,Privado,Urbano,91.8797,0.00549451,0,0.250266,0.0330189,0.568182,0.0292784,0.0269685
+misiones,san javier,estatal,rural,Misiones,SAN JAVIER,Estatal,Rural,66.1403,0.0233918,1,0.250266,0.340176,0.6,0.471328,0.458595
+misiones,san javier,estatal,urbano,Misiones,SAN JAVIER,Estatal,Urbano,108.056,0.0237288,1,0.250266,0.297753,0.583333,0.749635,0.514587
+misiones,san pedro,estatal,rural,Misiones,SAN PEDRO,Estatal,Rural,64.136,0.0214286,1,0.250266,0.347059,0.583333,0.759806,0.71105
+misiones,san pedro,estatal,urbano,Misiones,SAN PEDRO,Estatal,Urbano,210.108,0.0422535,1,0.250266,0.297753,0.583333,0.620035,0.594668
+misiones,san pedro,privado,rural,Misiones,SAN PEDRO,Privado,Rural,34.0723,0.0121951,0,0.250266,0.25,0.52381,0.160451,0.141311
+neuquen,anelo,estatal,urbano,Neuquén,AÑELO,Estatal,Urbano,257.541,0.0194175,1,0.250266,0.295129,0.227273,0.476156,0.337686
+neuquen,catan lil,estatal,rural,Neuquén,CATAN LIL,Estatal,Rural,21.25,0,0,0.250266,0.347059,0.285714,0.0824184,0.251619
+neuquen,chos malal,estatal,rural,Neuquén,CHOS MALAL,Estatal,Rural,20,0.030303,1,0.250266,0.347059,0.285714,0.116212,0.233551
+neuquen,chos malal,estatal,urbano,Neuquén,CHOS MALAL,Estatal,Urbano,163.575,0.0171149,0,0.250266,0.292958,0.315789,0.174957,0.156988
+neuquen,confluencia,estatal,rural,Neuquén,CONFLUENCIA,Estatal,Rural,20,0.0598291,1,0.250266,0.340176,0.227273,0.581538,0.222894
+neuquen,confluencia,estatal,urbano,Neuquén,CONFLUENCIA,Estatal,Urbano,5134.3,0.00503423,0,0.250266,0.29972,0.25,0.448756,0.340707
+neuquen,confluencia,privado,urbano,Neuquén,CONFLUENCIA,Privado,Urbano,1253.41,0,0,0.250266,0.0366972,0.315789,0.0383757,0.00729068
+neuquen,enmascarado,estatal,rural,Neuquén,Enmascarado,Estatal,Rural,15,0,0,0.251064,0.345029,0.318182,0.698314,0.230254
+neuquen,enmascarado,estatal,urbano,Neuquén,Enmascarado,Estatal,Urbano,305.809,0,0,0.250266,0.29972,0.25,0.256328,0.656768
+neuquen,enmascarado,privado,rural,Neuquén,Enmascarado,Privado,Rural,47.5,0.0340909,1,0.250266,0.185185,0.25,0.0214843,0.108705
+neuquen,enmascarado,privado,urbano,Neuquén,Enmascarado,Privado,Urbano,26.3255,0,0,0.250266,0.0330189,0.25,0.0177175,0.0154635
+neuquen,huiliches,estatal,urbano,Neuquén,HUILICHES,Estatal,Urbano,62.5697,0.0226244,1,0.250266,0.292958,0.315789,0.581521,0.316226
+neuquen,huiliches,privado,urbano,Neuquén,HUILICHES,Privado,Urbano,78.0363,0,0,0.250266,0.0330189,0.25,0.0179829,0.0255635
+neuquen,lacar,estatal,urbano,Neuquén,LACAR,Estatal,Urbano,413.876,0.00239521,0,0.251064,0.289694,0.318182,0.192307,0.344421
+neuquen,lacar,privado,urbano,Neuquén,LACAR,Privado,Urbano,81.7971,0,0,0.250266,0.0234742,0.285714,0.00855351,0.0247721
+neuquen,los lagos,estatal,urbano,Neuquén,LOS LAGOS,Estatal,Urbano,125.05,0.0292208,1,0.250266,0.29972,0.25,0.0516976,0.1976
+neuquen,los lagos,privado,urbano,Neuquén,LOS LAGOS,Privado,Urbano,40.4285,0,0,0.250266,0.0366972,0.315789,0.956259,0.0388753
+neuquen,minas,estatal,rural,Neuquén,MINAS,Estatal,Rural,81.25,0,0,0.251064,0.345029,0.318182,0.692265,0.88554
+neuquen,pehuenches,estatal,rural,Neuquén,PEHUENCHES,Estatal,Rural,20,0.0294118,1,0.250266,0.338192,0.25,0.899785,0.455963
+neuquen,pehuenches,estatal,urbano,Neuquén,PEHUENCHES,Estatal,Urbano,291.916,0.00587544,0,0.250266,0.29972,0.25,0.303305,0.494449
+neuquen,picun leufu,estatal,rural,Neuquén,PICUN LEUFU,Estatal,Rural,18.75,0,0,0.250266,0.347059,0.285714,0.655496,0.418012
+neuquen,picun leufu,estatal,urbano,Neuquén,PICUN LEUFU,Estatal,Urbano,43.7988,0.01,0,0.250266,0.292958,0.315789,0.302747,0.261226
+neuquen,picunches,estatal,rural,Neuquén,PICUNCHES,Estatal,Rural,22.5,0,0,0.250266,0.343195,0.315789,0.245501,0.238463
+neuquen,zapala,estatal,urbano,Neuquén,ZAPALA,Estatal,Urbano,441.563,0.00781929,0,0.250266,0.29972,0.25,0.684879,0.235348
+neuquen,norquin,estatal,rural,Neuquén,ÑORQUIN,Estatal,Rural,38.75,0.00555556,0,0.250266,0.340176,0.227273,0.593475,0.701749
+rio negro,25 de mayo,estatal,rural,Río Negro,25 DE MAYO,Estatal,Rural,3.12516,0,0,0.250266,0.338192,0.166667,0.583757,0.155804
+rio negro,25 de mayo,estatal,urbano,Río Negro,25 DE MAYO,Estatal,Urbano,218.71,0,0,0.251064,0.289694,0.222222,0.396741,0.556494
+rio negro,9 de julio,estatal,rural,Río Negro,9 DE JULIO,Estatal,Rural,39.5854,0.0190476,1,0.250266,0.347059,0.0588235,0.231634,0.331215
+rio negro,adolfo alsina,estatal,rural,Río Negro,ADOLFO ALSINA,Estatal,Rural,88.5463,0.0245902,1,0.250266,0.338192,0.166667,0.213291,0.258019
+rio negro,adolfo alsina,estatal,urbano,Río Negro,ADOLFO ALSINA,Estatal,Urbano,497.718,0.012966,0,0.250266,0.295129,0.190476,0.226457,0.181305
+rio negro,adolfo alsina,privado,urbano,Río Negro,ADOLFO ALSINA,Privado,Urbano,288.89,0.00332779,0,0.250266,0.0366972,0.181818,0.0821452,0.0101459
+rio negro,avellaneda,estatal,rural,Río Negro,AVELLANEDA,Estatal,Rural,51.0444,0.0162602,0,0.251064,0.345029,0.222222,0.335086,0.29614
+rio negro,avellaneda,estatal,urbano,Río Negro,AVELLANEDA,Estatal,Urbano,466.546,0.00834879,0,0.251064,0.289694,0.222222,0.361231,0.480493
+rio negro,avellaneda,privado,urbano,Río Negro,AVELLANEDA,Privado,Urbano,83.5465,0,0,0.250266,0.0410959,0.190476,0.0502477,0.0487605
+rio negro,bariloche,estatal,rural,Río Negro,BARILOCHE,Estatal,Rural,29.1682,0,0,0.250266,0.347059,0.0588235,0.311021,0.259688
+rio negro,bariloche,estatal,urbano,Río Negro,BARILOCHE,Estatal,Urbano,1150.4,0.0112697,0,0.251064,0.289694,0.222222,0.238316,0.294682
+rio negro,bariloche,privado,urbano,Río Negro,BARILOCHE,Privado,Urbano,830.052,0.00402068,0,0.250266,0.0410959,0.190476,0.0386704,0.0042723
+rio negro,conesa,estatal,urbano,Río Negro,CONESA,Estatal,Urbano,98.1127,0.00540541,0,0.251064,0.289694,0.222222,0.278398,0.237828
+rio negro,el cuy,estatal,rural,Río Negro,EL CUY,Estatal,Rural,17.7093,0.0140845,0,0.250266,0.347059,0.0588235,0.0709935,0.276369
+rio negro,enmascarado,estatal,rural,Río Negro,Enmascarado,Estatal,Rural,13.5424,0,0,0.251064,0.345029,0.222222,0.102895,0.330289
+rio negro,enmascarado,estatal,urbano,Río Negro,Enmascarado,Estatal,Urbano,98.1127,0.0422535,1,0.250266,0.297753,0.0588235,0.562733,0.289952
+rio negro,enmascarado,privado,urbano,Río Negro,Enmascarado,Privado,Urbano,92.6058,0.00537634,0,0.250266,0.0330189,0.166667,0.0545482,0.00476201
+rio negro,general roca,estatal,rural,Río Negro,GENERAL ROCA,Estatal,Rural,216.939,0.00647948,0,0.250266,0.338192,0.166667,0.234325,0.36716
+rio negro,general roca,estatal,urbano,Río Negro,GENERAL ROCA,Estatal,Urbano,3739.08,0.00817407,0,0.250266,0.297753,0.0588235,0.288406,0.158085
+rio negro,general roca,privado,urbano,Río Negro,GENERAL ROCA,Privado,Urbano,991.905,0.00142993,0,0.250266,0.0330189,0.166667,0.0678635,0.00588866
+rio negro,pichi mahuida,estatal,urbano,Río Negro,PICHI MAHUIDA,Estatal,Urbano,120.597,0,0,0.250266,0.297753,0.0588235,0.146395,0.367061
+rio negro,pilcaniyeu,estatal,rural,Río Negro,PILCANIYEU,Estatal,Rural,115.631,0,0,0.250266,0.338192,0.166667,0.364335,0.32647
+rio negro,san antonio,estatal,urbano,Río Negro,SAN ANTONIO,Estatal,Urbano,478.725,0.00473037,0,0.250266,0.292958,0.181818,0.356622,0.360882
+rio negro,norquinco,estatal,rural,Río Negro,ÑORQUINCO,Estatal,Rural,17.7093,0.0454545,1,0.250266,0.347059,0.0588235,0.317526,0.516869
+salta,anta,estatal,rural,Salta,ANTA,Estatal,Rural,180.25,0.0261905,1,0.250266,0.347059,0.483871,0.41287,0.355927
+salta,anta,estatal,urbano,Salta,ANTA,Estatal,Urbano,599.113,0.0272873,1,0.250266,0.292958,0.5,0.502472,0.379983
+salta,cachi,estatal,rural,Salta,CACHI,Estatal,Rural,37.4677,0.0136986,0,0.250266,0.343195,0.5,0.567849,0.643528
+salta,cafayate,estatal,urbano,Salta,CAFAYATE,Estatal,Urbano,222.037,0.0519187,1,0.250266,0.29972,0.459459,0.526814,0.546969
+salta,capital,estatal,rural,Salta,CAPITAL,Estatal,Rural,24.3034,0.0175439,1,0.250266,0.343195,0.5,0.11738,0.0302676
+salta,capital,estatal,urbano,Salta,CAPITAL,Estatal,Urbano,4960.07,0.0406363,1,0.251064,0.289694,0.484848,0.310582,0.337764
+salta,capital,privado,urbano,Salta,CAPITAL,Privado,Urbano,2908.58,0.00151873,0,0.250266,0.0234742,0.483871,0.0545034,0.0206316
+salta,cerrillos,estatal,rural,Salta,CERRILLOS,Estatal,Rural,69.8723,0.0331126,1,0.250266,0.340176,0.459459,0.412563,0.797335
+salta,cerrillos,estatal,urbano,Salta,CERRILLOS,Estatal,Urbano,200.902,0.037422,1,0.250266,0.29972,0.459459,0.142524,0.156242
+salta,chicoana,estatal,rural,Salta,CHICOANA,Estatal,Rural,27.3413,0,0,0.250266,0.340176,0.459459,0.591741,0.592884
+salta,chicoana,estatal,urbano,Salta,CHICOANA,Estatal,Urbano,235.227,0.0123894,0,0.250266,0.297753,0.483871,0.275359,0.444939
+salta,enmascarado,estatal,urbano,Salta,Enmascarado,Estatal,Urbano,141.338,0.0117647,0,0.250266,0.297753,0.483871,0.420046,0.387662
+salta,enmascarado,privado,rural,Salta,Enmascarado,Privado,Rural,23.2908,0,0,0.250266,0.25,0.5,0.13338,0.195267
+salta,enmascarado,privado,urbano,Salta,Enmascarado,Privado,Urbano,473.002,0.00314465,0,0.250266,0.0410959,0.459459,0.094385,0.0186924
+salta,general guemes,estatal,rural,Salta,GENERAL GUEMES,Estatal,Rural,40.5057,0,0,0.251064,0.345029,0.484848,0.507955,0.522176
+salta,general guemes,estatal,urbano,Salta,GENERAL GUEMES,Estatal,Urbano,687.143,0.0151117,0,0.250266,0.292958,0.5,0.245605,0.368807
+salta,general jose de san martin,estatal,rural,Salta,GENERAL JOSE DE SAN MARTIN,Estatal,Rural,214.647,0.0798319,1,0.250266,0.338192,0.459459,0.837284,0.650897
+salta,general jose de san martin,estatal,urbano,Salta,GENERAL JOSE DE SAN MARTIN,Estatal,Urbano,1658.27,0.0392957,1,0.250266,0.295129,0.459459,0.444567,0.537597
+salta,general jose de san martin,privado,urbano,Salta,GENERAL JOSE DE SAN MARTIN,Privado,Urbano,407.595,0.0120879,0,0.250266,0.0234742,0.483871,0.0505722,0.0523978
+salta,guachipas,estatal,rural,Salta,GUACHIPAS,Estatal,Rural,15.1896,0,0,0.251064,0.345029,0.484848,0.920078,0.698019
+salta,iruya,estatal,rural,Salta,IRUYA,Estatal,Rural,132.656,0.0264317,1,0.250266,0.347059,0.483871,0.93199,0.482167
+salta,la caldera,estatal,urbano,Salta,LA CALDERA,Estatal,Urbano,89.8508,0.0497512,1,0.250266,0.297753,0.483871,0.590562,0.669539
+salta,la candelaria,estatal,rural,Salta,LA CANDELARIA,Estatal,Rural,49.6194,0.0102041,0,0.250266,0.338192,0.459459,0.289741,0.346335
+salta,la poma,estatal,rural,Salta,LA POMA,Estatal,Rural,22.2781,0,0,0.250266,0.343195,0.5,0.187231,0.171644
+salta,la vina,estatal,rural,Salta,LA VIÑA,Estatal,Rural,34.4298,0,0,0.250266,0.338192,0.459459,0.104901,0.149552
+salta,la vina,estatal,urbano,Salta,LA VIÑA,Estatal,Urbano,50.478,0.0212766,1,0.250266,0.297753,0.483871,0.225013,0.4192
+salta,los andes,estatal,rural,Salta,LOS ANDES,Estatal,Rural,11.1391,0,0,0.251064,0.345029,0.484848,0.0262606,0.293222
+salta,los andes,estatal,urbano,Salta,LOS ANDES,Estatal,Urbano,114.08,0.0121457,0,0.251064,0.289694,0.484848,0.1284,0.350337
+salta,metan,estatal,rural,Salta,METAN,Estatal,Rural,69.9767,0,0,0.250266,0.343195,0.5,0.254329,0.349375
+salta,metan,estatal,urbano,Salta,METAN,Estatal,Urbano,412.844,0.0376569,1,0.251064,0.289694,0.484848,0.230566,0.178626
+salta,molinos,estatal,rural,Salta,MOLINOS,Estatal,Rural,102.851,0.0183486,1,0.250266,0.347059,0.483871,0.851013,0.801462
+salta,oran,estatal,rural,Salta,ORAN,Estatal,Rural,41.4853,0,0,0.250266,0.347059,0.483871,0.704718,0.6717
+salta,oran,estatal,urbano,Salta,ORAN,Estatal,Urbano,1753.89,0.0502042,1,0.250266,0.295129,0.459459,0.428468,0.377424
+salta,oran,privado,urbano,Salta,ORAN,Privado,Urbano,225.825,0.00747664,0,0.251064,0.0333333,0.484848,0.11631,0.0349665
+salta,rivadavia,estatal,rural,Salta,RIVADAVIA,Estatal,Rural,191.335,0.07109,1,0.250266,0.343195,0.5,0.785056,0.558254
+salta,rivadavia,estatal,urbano,Salta,RIVADAVIA,Estatal,Urbano,146.386,0.028481,1,0.251064,0.289694,0.484848,0.412257,0.459136
+salta,rosario de la frontera,estatal,rural,Salta,ROSARIO DE LA FRONTERA,Estatal,Rural,49.6194,0.00970874,0,0.250266,0.347059,0.483871,0.640815,0.353284
+salta,rosario de la frontera,estatal,urbano,Salta,ROSARIO DE LA FRONTERA,Estatal,Urbano,261.476,0.0182421,1,0.250266,0.292958,0.5,0.574957,0.588033
+salta,rosario de lerma,estatal,rural,Salta,ROSARIO DE LERMA,Estatal,Rural,57.7206,0.05,1,0.251064,0.345029,0.484848,0.814445,0.865738
+salta,rosario de lerma,estatal,urbano,Salta,ROSARIO DE LERMA,Estatal,Urbano,304.887,0.0106222,0,0.250266,0.292958,0.5,0.527953,0.596502
+salta,san carlos,estatal,rural,Salta,SAN CARLOS,Estatal,Rural,43.5436,0.0309278,1,0.250266,0.343195,0.5,0.349532,0.74459
+salta,santa victoria,estatal,rural,Salta,SANTA VICTORIA,Estatal,Rural,158.478,0.00597015,0,0.250266,0.343195,0.5,0.441125,0.770215
+san juan,25 de mayo,estatal,rural,San Juan,25 DE MAYO,Estatal,Rural,111,0.0411985,1,0.250266,0.347059,0.482759,0.792817,0.600828
+san juan,25 de mayo,estatal,urbano,San Juan,25 DE MAYO,Estatal,Urbano,127.312,0.046332,1,0.250266,0.292958,0.482759,0.607974,0.648002
+san juan,9 de julio,estatal,rural,San Juan,9 DE JULIO,Estatal,Rural,35,0.00961538,0,0.250266,0.347059,0.482759,0.767228,0.494563
+san juan,albardon,estatal,rural,San Juan,ALBARDON,Estatal,Rural,68,0.0186335,1,0.250266,0.338192,0.444444,0.576012,0.517268
+san juan,albardon,estatal,urbano,San Juan,ALBARDON,Estatal,Urbano,247.588,0.00914077,0,0.250266,0.297753,0.482759,0.303864,0.248148
+san juan,angaco,estatal,rural,San Juan,ANGACO,Estatal,Rural,38,0.0571429,1,0.250266,0.340176,0.428571,0.475614,0.477642
+san juan,calingasta,estatal,rural,San Juan,CALINGASTA,Estatal,Rural,42,0,0,0.250266,0.347059,0.482759,0.574615,0.43836
+san juan,calingasta,estatal,urbano,San Juan,CALINGASTA,Estatal,Urbano,51.1255,0.037037,1,0.250266,0.295129,0.428571,0.807184,0.644126
+san juan,capital,estatal,urbano,San Juan,CAPITAL,Estatal,Urbano,2357.4,0.0142526,0,0.250266,0.297753,0.482759,0.59521,0.345838
+san juan,capital,privado,urbano,San Juan,CAPITAL,Privado,Urbano,1415.11,0.00351494,0,0.250266,0.0410959,0.428571,0.110319,0.0290588
+san juan,caucete,estatal,rural,San Juan,CAUCETE,Estatal,Rural,94,0.015,0,0.250266,0.343195,0.482759,0.697198,0.648403
+san juan,caucete,estatal,urbano,San Juan,CAUCETE,Estatal,Urbano,501.156,0.0321058,1,0.250266,0.29972,0.444444,0.503954,0.546022
+san juan,chimbas,estatal,urbano,San Juan,CHIMBAS,Estatal,Urbano,612.375,0.0290487,1,0.250266,0.295129,0.428571,0.555037,0.579239
+san juan,chimbas,privado,urbano,San Juan,CHIMBAS,Privado,Urbano,227.128,0,0,0.250266,0.0366972,0.482759,0.150816,0.142807
+san juan,enmascarado,estatal,rural,San Juan,Enmascarado,Estatal,Rural,92,0.0251256,1,0.250266,0.338192,0.444444,0.49299,0.25562
+san juan,enmascarado,estatal,urbano,San Juan,Enmascarado,Estatal,Urbano,88.2165,0.0124224,0,0.250266,0.29972,0.444444,0.27072,0.301679
+san juan,enmascarado,privado,rural,San Juan,Enmascarado,Privado,Rural,35,0,0,0.251064,0.241379,0.457143,0.0238134,0.0816075
+san juan,enmascarado,privado,urbano,San Juan,Enmascarado,Privado,Urbano,387.178,0.00128535,0,0.250266,0.0234742,0.482759,0.0800488,0.0240441
+san juan,iglesia,estatal,rural,San Juan,IGLESIA,Estatal,Rural,64,0.00862069,0,0.250266,0.340176,0.428571,0.36262,0.285998
+san juan,jachal,estatal,rural,San Juan,JACHAL,Estatal,Rural,117,0.00403226,0,0.250266,0.343195,0.482759,0.263829,0.35823
+san juan,jachal,estatal,urbano,San Juan,JACHAL,Estatal,Urbano,221.492,0.0176211,1,0.251064,0.289694,0.457143,0.34305,0.406896
+san juan,pocito,estatal,rural,San Juan,POCITO,Estatal,Rural,231,0.0221239,1,0.250266,0.343195,0.482759,0.55029,0.64617
+san juan,pocito,estatal,urbano,San Juan,POCITO,Estatal,Urbano,276.654,0.0121528,0,0.250266,0.29972,0.444444,0.438737,0.322919
+san juan,rawson,estatal,rural,San Juan,RAWSON,Estatal,Rural,163,0.0238806,1,0.250266,0.340176,0.428571,0.295719,0.41462
+san juan,rawson,estatal,urbano,San Juan,RAWSON,Estatal,Urbano,693.567,0.0193175,1,0.250266,0.297753,0.482759,0.443087,0.459691
+san juan,rawson,privado,urbano,San Juan,RAWSON,Privado,Urbano,370.74,0.00145138,0,0.250266,0.0410959,0.428571,0.124664,0.0687741
+san juan,rivadavia,estatal,rural,San Juan,RIVADAVIA,Estatal,Rural,54,0.0396825,1,0.250266,0.347059,0.482759,0.424628,0.354045
+san juan,rivadavia,estatal,urbano,San Juan,RIVADAVIA,Estatal,Urbano,472.09,0.0246801,1,0.250266,0.29972,0.444444,0.296481,0.188803
+san juan,rivadavia,privado,urbano,San Juan,RIVADAVIA,Privado,Urbano,233.514,0,0,0.250266,0.0330189,0.444444,0.0606573,0.00535112
+san juan,san martin,estatal,rural,San Juan,SAN MARTIN,Estatal,Rural,155,0.00946372,0,0.250266,0.343195,0.482759,0.603149,0.625674
+san juan,santa lucia,estatal,rural,San Juan,SANTA LUCIA,Estatal,Rural,78,0.0170455,0,0.250266,0.340176,0.428571,0.30106,0.353674
+san juan,santa lucia,estatal,urbano,San Juan,SANTA LUCIA,Estatal,Urbano,171.389,0.0156951,0,0.250266,0.292958,0.482759,0.368068,0.562246
+san juan,santa lucia,privado,urbano,San Juan,SANTA LUCIA,Privado,Urbano,58.3346,0,0,0.250266,0.0330189,0.444444,0.0577546,0.0869031
+san juan,sarmiento,estatal,rural,San Juan,SARMIENTO,Estatal,Rural,105,0.0349345,1,0.250266,0.338192,0.444444,0.50657,0.335578
+san juan,sarmiento,estatal,urbano,San Juan,SARMIENTO,Estatal,Urbano,181.421,0.026764,1,0.250266,0.292958,0.482759,0.552334,0.542529
+san juan,valle fertil,estatal,rural,San Juan,VALLE FERTIL,Estatal,Rural,21,0,0,0.250266,0.338192,0.444444,0.168215,0.382577
+san juan,valle fertil,estatal,urbano,San Juan,VALLE FERTIL,Estatal,Urbano,85.2091,0.0913706,1,0.250266,0.295129,0.428571,0.398413,0.662453
+san luis,ayacucho,estatal,rural,San Luis,AYACUCHO,Estatal,Rural,29.3748,0,0,0.250266,0.347059,0.0666667,0.79849,0.347008
+san luis,ayacucho,estatal,urbano,San Luis,AYACUCHO,Estatal,Urbano,214.565,0.00214592,0,0.250266,0.295129,0.0769231,0.195928,0.259863
+san luis,belgrano,estatal,rural,San Luis,BELGRANO,Estatal,Rural,81.4941,0,0,0.250266,0.340176,0.0769231,0.577545,0.493772
+san luis,belgrano,estatal,urbano,San Luis,BELGRANO,Estatal,Urbano,270.213,0,0,0.250266,0.295129,0.0769231,0.30835,0.121965
+san luis,chacabuco,estatal,rural,San Luis,CHACABUCO,Estatal,Rural,58.5209,0,0,0.250266,0.343195,0.0625,0.188899,0.193248
+san luis,chacabuco,estatal,urbano,San Luis,CHACABUCO,Estatal,Urbano,150.485,0.0188679,1,0.250266,0.29972,0,0.547835,0.246508
+san luis,coronel pringles,estatal,rural,San Luis,CORONEL PRINGLES,Estatal,Rural,91.3882,0.012987,0,0.250266,0.343195,0.0625,0.177577,0.684887
+san luis,enmascarado,estatal,urbano,San Luis,Enmascarado,Estatal,Urbano,184.027,0,0,0.250266,0.29972,0,0.16604,0.140531
+san luis,enmascarado,privado,urbano,San Luis,Enmascarado,Privado,Urbano,53.6857,0.0131579,0,0.250266,0.0330189,0,0.121335,0.0344471
+san luis,general juan martin de pueyrredon,estatal,rural,San Luis,GENERAL JUAN MARTIN DE PUEYRREDON,Estatal,Rural,118.106,0.00384615,0,0.250266,0.347059,0.0666667,0.719309,0.746561
+san luis,general juan martin de pueyrredon,estatal,urbano,San Luis,GENERAL JUAN MARTIN DE PUEYRREDON,Estatal,Urbano,2562.7,0.00137067,0,0.250266,0.295129,0.0769231,0.248591,0.0999853
+san luis,general juan martin de pueyrredon,privado,urbano,San Luis,GENERAL JUAN MARTIN DE PUEYRREDON,Privado,Urbano,586.585,0.000819672,0,0.250266,0.0234742,0.0666667,0.0470087,0.00475122
+san luis,general pedernera,estatal,rural,San Luis,GENERAL PEDERNERA,Estatal,Rural,272.596,0.00174216,0,0.250266,0.343195,0.0625,0.432715,0.347868
+san luis,general pedernera,estatal,urbano,San Luis,GENERAL PEDERNERA,Estatal,Urbano,1407.06,0.00178571,0,0.250266,0.29972,0,0.436377,0.339266
+san luis,general pedernera,privado,urbano,San Luis,GENERAL PEDERNERA,Privado,Urbano,298.011,0,0,0.250266,0.0410959,0.0769231,0.0791002,0.0106761
+san luis,gobernador dupuy,estatal,rural,San Luis,GOBERNADOR DUPUY,Estatal,Rural,90.3003,0.00520833,0,0.250266,0.343195,0.0625,0.297311,0.455541
+san luis,junin,estatal,rural,San Luis,JUNIN,Estatal,Rural,96.1184,0,0,0.250266,0.340176,0.0769231,0.765794,0.473292
+san luis,junin,estatal,urbano,San Luis,JUNIN,Estatal,Urbano,226.952,0.0148699,0,0.250266,0.297753,0.0666667,0.472368,0.244687
+san luis,junin,privado,urbano,San Luis,JUNIN,Privado,Urbano,145.718,0.00746269,0,0.250266,0.0410959,0.0769231,0.0429417,0.0711622
+san luis,libertador grl san martin,estatal,rural,San Luis,LIBERTADOR GRL SAN MARTIN,Estatal,Rural,63.1014,0,0,0.250266,0.347059,0.0666667,0.451117,0.727661
+santa cruz,corpen aike,estatal,urbano,Santa Cruz,CORPEN AIKE,Estatal,Urbano,203.525,0.0119332,0,0.250266,0.295129,0.363636,0.0529702,0.113537
+santa cruz,deseado,estatal,rural,Santa Cruz,DESEADO,Estatal,Rural,38,0.0107527,0,0.250266,0.343195,0.4,0.0695543,0.206626
+santa cruz,deseado,estatal,urbano,Santa Cruz,DESEADO,Estatal,Urbano,1831.52,0.0121951,0,0.250266,0.297753,0.333333,0.311483,0.339248
+santa cruz,deseado,privado,urbano,Santa Cruz,DESEADO,Privado,Urbano,331.019,0,0,0.250266,0.0330189,0.363636,0.0516253,0.00811812
+santa cruz,enmascarado,estatal,rural,Santa Cruz,Enmascarado,Estatal,Rural,36,0.0126582,0,0.250266,0.338192,0.363636,0.146612,0.175361
+santa cruz,enmascarado,privado,urbano,Santa Cruz,Enmascarado,Privado,Urbano,62.2376,0,0,0.250266,0.0366972,0.4,0.0227028,0.0335304
+santa cruz,guer aike,estatal,rural,Santa Cruz,GUER AIKE,Estatal,Rural,11,0.0454545,1,0.251064,0.345029,0.333333,0.353675,0.0693805
+santa cruz,guer aike,estatal,urbano,Santa Cruz,GUER AIKE,Estatal,Urbano,1844.95,0.00618273,0,0.250266,0.295129,0.363636,0.118132,0.107394
+santa cruz,guer aike,privado,urbano,Santa Cruz,GUER AIKE,Privado,Urbano,372.833,0,0,0.250266,0.0366972,0.4,0.0415381,0.00384943
+santa cruz,lago argentino,estatal,urbano,Santa Cruz,LAGO ARGENTINO,Estatal,Urbano,336.834,0.0345865,1,0.250266,0.292958,0.4,0.188888,0.137903
+santa cruz,lago argentino,privado,urbano,Santa Cruz,LAGO ARGENTINO,Privado,Urbano,88.9109,0,0,0.251064,0.0333333,0.333333,0.0271914,0.00967672
+santa cruz,lago buenos aires,estatal,urbano,Santa Cruz,LAGO BUENOS AIRES,Estatal,Urbano,162.82,0.043956,1,0.250266,0.295129,0.363636,0.167619,0.218781
+santa cruz,magallanes,estatal,urbano,Santa Cruz,MAGALLANES,Estatal,Urbano,180.12,0.0485175,1,0.250266,0.297753,0.333333,0.344275,0.29207
+santa cruz,rio chico,estatal,urbano,Santa Cruz,RIO CHICO,Estatal,Urbano,71.2339,0.0540541,1,0.250266,0.29972,0.363636,0.166157,0.316413
+santa fe,9 de julio,estatal,rural,Santa Fe,9 DE JULIO,Estatal,Rural,100.071,0.026087,1,0.250266,0.347059,0.518519,0.20001,0.451448
+santa fe,9 de julio,estatal,urbano,Santa Fe,9 DE JULIO,Estatal,Urbano,148.528,0.00738916,0,0.250266,0.29972,0.591837,0.203191,0.454915
+santa fe,belgrano,estatal,rural,Santa Fe,BELGRANO,Estatal,Rural,16.3381,0,0,0.250266,0.343195,0.545455,0.085001,0.27643
+santa fe,belgrano,estatal,urbano,Santa Fe,BELGRANO,Estatal,Urbano,348.939,0.00882724,0,0.250266,0.292958,0.545455,0.084648,0.082763
+santa fe,belgrano,privado,urbano,Santa Fe,BELGRANO,Privado,Urbano,101.418,0.00921659,0,0.251064,0.0333333,0.530612,0.024834,0.0134793
+santa fe,caseros,estatal,rural,Santa Fe,CASEROS,Estatal,Rural,30.6339,0.0117647,0,0.250266,0.338192,0.591837,0.221823,0.406338
+santa fe,caseros,estatal,urbano,Santa Fe,CASEROS,Estatal,Urbano,553.115,0.027897,1,0.251064,0.289694,0.530612,0.102571,0.110068
+santa fe,caseros,privado,urbano,Santa Fe,CASEROS,Privado,Urbano,228.943,0.00424628,0,0.250266,0.0410959,0.557692,0.047043,0.0116362
+santa fe,castellanos,estatal,rural,Santa Fe,CASTELLANOS,Estatal,Rural,252.219,0.0174216,1,0.250266,0.343195,0.545455,0.203805,0.380937
+santa fe,castellanos,estatal,urbano,Santa Fe,CASTELLANOS,Estatal,Urbano,1316.69,0.0334755,1,0.250266,0.29972,0.591837,0.389414,0.522409
+santa fe,castellanos,privado,rural,Santa Fe,CASTELLANOS,Privado,Rural,94.9651,0.00487805,0,0.251064,0.241379,0.530612,0.0679549,0.466464
+santa fe,castellanos,privado,urbano,Santa Fe,CASTELLANOS,Privado,Urbano,463.911,0.00641026,0,0.250266,0.0366972,0.545455,0.0583398,0.0213147
+santa fe,constitucion,estatal,rural,Santa Fe,CONSTITUCION,Estatal,Rural,72.5003,0.0166667,0,0.250266,0.338192,0.591837,0.485624,0.164565
+santa fe,constitucion,estatal,urbano,Santa Fe,CONSTITUCION,Estatal,Urbano,637.318,0.0229167,1,0.250266,0.292958,0.545455,0.254954,0.229662
+santa fe,constitucion,privado,urbano,Santa Fe,CONSTITUCION,Privado,Urbano,319.315,0.00163132,0,0.251064,0.0333333,0.530612,0.0331287,0.0178186
+santa fe,enmascarado,privado,rural,Santa Fe,Enmascarado,Privado,Rural,136.831,0.00917431,0,0.250266,0.25,0.545455,0.0914974,0.205834
+santa fe,enmascarado,privado,urbano,Santa Fe,Enmascarado,Privado,Urbano,114.472,0,0,0.250266,0.0366972,0.545455,0.0629115,0.123468
+santa fe,garay,estatal,rural,Santa Fe,GARAY,Estatal,Rural,30.6339,0.031746,1,0.250266,0.340176,0.557692,0.820076,0.356715
+santa fe,garay,estatal,urbano,Santa Fe,GARAY,Estatal,Urbano,125.13,0.0230263,1,0.250266,0.292958,0.545455,0.367982,0.53956
+santa fe,general lopez,estatal,rural,Santa Fe,GENERAL LOPEZ,Estatal,Rural,101.092,0.0472441,1,0.250266,0.338192,0.591837,0.317927,0.358201
+santa fe,general lopez,estatal,urbano,Santa Fe,GENERAL LOPEZ,Estatal,Urbano,1160.75,0.0425209,1,0.250266,0.297753,0.518519,0.184817,0.158621
+santa fe,general lopez,privado,rural,Santa Fe,GENERAL LOPEZ,Privado,Rural,56.1622,0.024,1,0.250266,0.25,0.545455,0.0423996,0.16224
+santa fe,general lopez,privado,urbano,Santa Fe,GENERAL LOPEZ,Privado,Urbano,645.66,0.00578035,0,0.250266,0.0330189,0.591837,0.0570122,0.00686328
+santa fe,general obligado,estatal,rural,Santa Fe,GENERAL OBLIGADO,Estatal,Rural,201.163,0.0492126,1,0.250266,0.343195,0.545455,0.547653,0.533543
+santa fe,general obligado,estatal,urbano,Santa Fe,GENERAL OBLIGADO,Estatal,Urbano,1232.8,0.0265993,1,0.250266,0.297753,0.518519,0.376478,0.329351
+santa fe,general obligado,privado,rural,Santa Fe,GENERAL OBLIGADO,Privado,Rural,123.557,0.00809717,0,0.251064,0.241379,0.530612,0.0792434,0.0206057
+santa fe,general obligado,privado,urbano,Santa Fe,GENERAL OBLIGADO,Privado,Urbano,546.472,0.0156538,0,0.250266,0.0410959,0.557692,0.109782,0.109294
+santa fe,iriondo,estatal,rural,Santa Fe,IRIONDO,Estatal,Rural,84.7538,0.0364583,1,0.251064,0.345029,0.530612,0.122653,0.185317
+santa fe,iriondo,estatal,urbano,Santa Fe,IRIONDO,Estatal,Urbano,480.511,0.020354,1,0.250266,0.292958,0.545455,0.219888,0.0486191
+santa fe,iriondo,privado,urbano,Santa Fe,IRIONDO,Privado,Urbano,175.724,0.0027027,0,0.250266,0.0234742,0.518519,0.0478922,0.0590133
+santa fe,la capital,estatal,rural,Santa Fe,LA CAPITAL,Estatal,Rural,49.0143,0.0188679,1,0.250266,0.338192,0.591837,0.13474,0.168797
+santa fe,la capital,estatal,urbano,Santa Fe,LA CAPITAL,Estatal,Urbano,3503.81,0.0448265,1,0.250266,0.297753,0.518519,0.314328,0.286147
+santa fe,la capital,privado,urbano,Santa Fe,LA CAPITAL,Privado,Urbano,2737.99,0.00353119,0,0.250266,0.0366972,0.545455,0.0425122,0.0513909
+santa fe,las colonias,estatal,rural,Santa Fe,LAS COLONIAS,Estatal,Rural,186.204,0.0141844,0,0.250266,0.340176,0.557692,0.142261,0.340459
+santa fe,las colonias,estatal,urbano,Santa Fe,LAS COLONIAS,Estatal,Urbano,606.828,0.038961,1,0.250266,0.29972,0.591837,0.357812,0.403839
+santa fe,las colonias,privado,rural,Santa Fe,LAS COLONIAS,Privado,Rural,79.6482,0.0342857,1,0.250266,0.2,0.518519,0.0199335,0.110469
+santa fe,las colonias,privado,urbano,Santa Fe,LAS COLONIAS,Privado,Urbano,358.477,0.00126904,0,0.250266,0.0234742,0.518519,0.0320664,0.0551542
+santa fe,rosario,estatal,rural,Santa Fe,ROSARIO,Estatal,Rural,45.0491,0.0496454,1,0.250266,0.338192,0.591837,0.0539621,0.171104
+santa fe,rosario,estatal,urbano,Santa Fe,ROSARIO,Estatal,Urbano,6602.08,0.0448019,1,0.250266,0.295129,0.557692,0.273393,0.33268
+santa fe,rosario,privado,urbano,Santa Fe,ROSARIO,Privado,Urbano,6392.65,0.00575009,0,0.250266,0.0366972,0.545455,0.0414321,0.00775538
+santa fe,san cristobal,estatal,rural,Santa Fe,SAN CRISTOBAL,Estatal,Rural,108.24,0.0299625,1,0.250266,0.343195,0.545455,0.348118,0.161675
+santa fe,san cristobal,estatal,urbano,Santa Fe,SAN CRISTOBAL,Estatal,Urbano,404.825,0.0647003,1,0.250266,0.292958,0.545455,0.3106,0.511095
+santa fe,san cristobal,privado,urbano,Santa Fe,SAN CRISTOBAL,Privado,Urbano,180.745,0.00533333,0,0.250266,0.0330189,0.591837,0.0660492,0.0309269
+santa fe,san javier,estatal,rural,Santa Fe,SAN JAVIER,Estatal,Rural,13.2747,0.0454545,1,0.250266,0.340176,0.557692,0.786681,0.307316
+santa fe,san javier,estatal,urbano,Santa Fe,SAN JAVIER,Estatal,Urbano,161.753,0.0574413,1,0.251064,0.289694,0.530612,0.463456,0.440266
+santa fe,san javier,privado,urbano,Santa Fe,SAN JAVIER,Privado,Urbano,101.418,0.0190476,1,0.250266,0.0234742,0.518519,0.0170509,0.0113143
+santa fe,san jeronimo,estatal,rural,Santa Fe,SAN JERONIMO,Estatal,Rural,130.705,0.0162866,0,0.250266,0.340176,0.557692,0.289661,0.337206
+santa fe,san jeronimo,estatal,urbano,Santa Fe,SAN JERONIMO,Estatal,Urbano,594.875,0.0315534,1,0.251064,0.289694,0.530612,0.255938,0.292211
+santa fe,san jeronimo,privado,urbano,Santa Fe,SAN JERONIMO,Privado,Urbano,142.587,0.0296736,1,0.250266,0.0366972,0.545455,0.0835481,0.1115
+santa fe,san justo,estatal,rural,Santa Fe,SAN JUSTO,Estatal,Rural,80.6693,0.026738,1,0.250266,0.340176,0.557692,0.279454,0.315363
+santa fe,san justo,estatal,urbano,Santa Fe,SAN JUSTO,Estatal,Urbano,274.675,0.014771,0,0.250266,0.29972,0.591837,0.427988,0.388146
+santa fe,san justo,privado,urbano,Santa Fe,SAN JUSTO,Privado,Urbano,77.3185,0.00561798,0,0.250266,0.0366972,0.545455,0.0407205,0.0288063
+santa fe,san lorenzo,estatal,rural,Santa Fe,SAN LORENZO,Estatal,Rural,43.9086,0.057971,1,0.250266,0.340176,0.557692,0.182217,0.114774
+santa fe,san lorenzo,estatal,urbano,Santa Fe,SAN LORENZO,Estatal,Urbano,1493.35,0.047619,1,0.251064,0.289694,0.530612,0.228982,0.259077
+santa fe,san lorenzo,privado,urbano,Santa Fe,SAN LORENZO,Privado,Urbano,627.251,0.00510576,0,0.250266,0.0330189,0.591837,0.0301828,0.00444238
+santa fe,san martin,estatal,rural,Santa Fe,SAN MARTIN,Estatal,Rural,79.6482,0.01875,1,0.250266,0.343195,0.545455,0.494742,0.348364
+santa fe,san martin,estatal,urbano,Santa Fe,SAN MARTIN,Estatal,Urbano,294.004,0.0328849,1,0.251064,0.289694,0.530612,0.184011,0.168912
+santa fe,san martin,privado,urbano,Santa Fe,SAN MARTIN,Privado,Urbano,251.034,0.0131332,0,0.250266,0.0330189,0.591837,0.0545241,0.020313
+santa fe,vera,estatal,rural,Santa Fe,VERA,Estatal,Rural,137.853,0.0331325,1,0.251064,0.345029,0.530612,0.330328,0.462864
+santa fe,vera,estatal,urbano,Santa Fe,VERA,Estatal,Urbano,236.017,0.0387858,1,0.251064,0.289694,0.530612,0.497593,0.551449
+santa fe,vera,privado,rural,Santa Fe,VERA,Privado,Rural,41.8664,0,0,0.251064,0.241379,0.530612,0.121438,0.29861
+santa fe,vera,privado,urbano,Santa Fe,VERA,Privado,Urbano,148.612,0.00230947,0,0.250266,0.0410959,0.557692,0.0607849,0.241666
+santiago del estero,aguirre,estatal,rural,Santiago del Estero,AGUIRRE,Estatal,Rural,14.6825,0.0784314,1,0.250266,0.347059,0.25,0.844649,0.529853
+santiago del estero,alberdi,estatal,rural,Santiago del Estero,ALBERDI,Estatal,Rural,40.088,0.015873,0,0.251064,0.345029,0.333333,0.96065,0.438316
+santiago del estero,alberdi,estatal,urbano,Santiago del Estero,ALBERDI,Estatal,Urbano,118.982,0.0297872,1,0.250266,0.295129,0.206897,0.713243,0.568964
+santiago del estero,atamisqui,estatal,rural,Santiago del Estero,ATAMISQUI,Estatal,Rural,76.5586,0.0246914,1,0.250266,0.340176,0.206897,0.275678,0.277366
+santiago del estero,avellaneda,estatal,rural,Santiago del Estero,AVELLANEDA,Estatal,Rural,177.238,0.00588235,0,0.250266,0.340176,0.206897,0.58286,0.614651
+santiago del estero,banda,estatal,rural,Santiago del Estero,BANDA,Estatal,Rural,211.847,0.00996016,0,0.250266,0.340176,0.206897,0.456337,0.38959
+santiago del estero,banda,estatal,urbano,Santiago del Estero,BANDA,Estatal,Urbano,966.824,0.00268577,0,0.251064,0.289694,0.333333,0.213263,0.397181
+santiago del estero,banda,privado,urbano,Santiago del Estero,BANDA,Privado,Urbano,385.615,0,0,0.251064,0.0333333,0.333333,0.0380152,0.0470699
+santiago del estero,capital,estatal,rural,Santiago del Estero,CAPITAL,Estatal,Rural,120.724,0.0179856,1,0.250266,0.340176,0.206897,0.314856,0.640379
+santiago del estero,capital,estatal,urbano,Santiago del Estero,CAPITAL,Estatal,Urbano,2000.07,0.00748188,0,0.250266,0.297753,0.25,0.219523,0.256911
+santiago del estero,capital,privado,urbano,Santiago del Estero,CAPITAL,Privado,Urbano,1541.14,0.00271248,0,0.251064,0.0333333,0.333333,0.0375315,0.0141248
+santiago del estero,choya,estatal,rural,Santiago del Estero,CHOYA,Estatal,Rural,98.5823,0.0468085,1,0.250266,0.338192,0.315789,0.263273,0.509642
+santiago del estero,choya,estatal,urbano,Santiago del Estero,CHOYA,Estatal,Urbano,247.951,0.00393701,0,0.251064,0.289694,0.333333,0.304731,0.391582
+santiago del estero,choya,privado,urbano,Santiago del Estero,CHOYA,Privado,Urbano,139.313,0,0,0.251064,0.0333333,0.333333,0.0333034,0.00669549
+santiago del estero,copo,estatal,rural,Santiago del Estero,COPO,Estatal,Rural,119.557,0.0342857,1,0.251064,0.345029,0.333333,0.578573,0.403805
+santiago del estero,copo,estatal,urbano,Santiago del Estero,COPO,Estatal,Urbano,156.969,0.057971,1,0.250266,0.297753,0.25,0.639736,0.520256
+santiago del estero,enmascarado,estatal,rural,Santiago del Estero,Enmascarado,Estatal,Rural,39.8524,0.0352941,1,0.250266,0.340176,0.206897,0.581879,0.570692
+santiago del estero,enmascarado,estatal,urbano,Santiago del Estero,Enmascarado,Estatal,Urbano,391.923,0.0155689,0,0.250266,0.292958,0.317073,0.292254,0.63895
+santiago del estero,enmascarado,privado,rural,Santiago del Estero,Enmascarado,Privado,Rural,173.043,0.0139535,0,0.250266,0.25,0.317073,0.139504,0.416283
+santiago del estero,enmascarado,privado,urbano,Santiago del Estero,Enmascarado,Privado,Urbano,635.425,0.0108932,0,0.251064,0.0333333,0.333333,0.104624,0.249213
+santiago del estero,figueroa,estatal,rural,Santiago del Estero,FIGUEROA,Estatal,Rural,204.04,0.014218,0,0.250266,0.340176,0.206897,0.476382,0.459069
+santiago del estero,general taboada,estatal,rural,Santiago del Estero,GENERAL TABOADA,Estatal,Rural,24.1212,0,0,0.250266,0.340176,0.206897,0.70153,0.473155
+santiago del estero,general taboada,estatal,urbano,Santiago del Estero,GENERAL TABOADA,Estatal,Urbano,239.514,0.0017094,0,0.250266,0.295129,0.206897,0.422559,0.496511
+santiago del estero,guasayan,estatal,rural,Santiago del Estero,GUASAYAN,Estatal,Rural,55.5836,0.00724638,0,0.250266,0.347059,0.25,0.340413,0.790419
+santiago del estero,jimenez,estatal,rural,Santiago del Estero,JIMENEZ,Estatal,Rural,132.378,0.015625,0,0.250266,0.340176,0.206897,0.413062,0.374862
+santiago del estero,juan f ibarra,estatal,rural,Santiago del Estero,JUAN F IBARRA,Estatal,Rural,104.875,0.0222222,1,0.250266,0.340176,0.206897,0.419151,0.263675
+santiago del estero,juan f ibarra,estatal,urbano,Santiago del Estero,JUAN F IBARRA,Estatal,Urbano,158.969,0,0,0.250266,0.297753,0.25,0.259983,0.337558
+santiago del estero,loreto,estatal,rural,Santiago del Estero,LORETO,Estatal,Rural,77.6073,0.00763359,0,0.250266,0.343195,0.317073,0.612485,0.607567
+santiago del estero,loreto,estatal,urbano,Santiago del Estero,LORETO,Estatal,Urbano,98.9805,0,0,0.250266,0.29972,0.315789,0.295783,0.261687
+santiago del estero,moreno,estatal,rural,Santiago del Estero,MORENO,Estatal,Rural,93.3385,0.0188679,1,0.250266,0.340176,0.206897,0.582414,0.370723
+santiago del estero,moreno,estatal,urbano,Santiago del Estero,MORENO,Estatal,Urbano,138.978,0.0628803,1,0.250266,0.295129,0.206897,0.0878163,0.215259
+santiago del estero,moreno,privado,urbano,Santiago del Estero,MORENO,Privado,Urbano,183.411,0,0,0.251064,0.0333333,0.333333,0.103182,0.111264
+santiago del estero,ojo de agua,estatal,urbano,Santiago del Estero,OJO DE AGUA,Estatal,Urbano,99.9905,0.00420168,0,0.250266,0.295129,0.206897,0.324757,0.414418
+santiago del estero,pellegrini,estatal,rural,Santiago del Estero,PELLEGRINI,Estatal,Rural,182.718,0.00502513,0,0.250266,0.338192,0.315789,0.457998,0.55113
+santiago del estero,quebrachos,estatal,rural,Santiago del Estero,QUEBRACHOS,Estatal,Rural,22.0237,0,0,0.250266,0.338192,0.315789,0.753819,0.32853
+santiago del estero,quebrachos,estatal,urbano,Santiago del Estero,QUEBRACHOS,Estatal,Urbano,75.9892,0.032967,1,0.250266,0.297753,0.25,0.420622,0.423855
+santiago del estero,rio hondo,estatal,rural,Santiago del Estero,RIO HONDO,Estatal,Rural,165.702,0.00641026,0,0.250266,0.347059,0.25,0.244412,0.441708
+santiago del estero,rio hondo,estatal,urbano,Santiago del Estero,RIO HONDO,Estatal,Urbano,353.939,0.00139665,0,0.250266,0.29972,0.315789,0.372938,0.320254
+santiago del estero,rio hondo,privado,urbano,Santiago del Estero,RIO HONDO,Privado,Urbano,121.272,0.0127119,0,0.250266,0.0330189,0.315789,0.037609,0.332492
+santiago del estero,robles,estatal,rural,Santiago del Estero,ROBLES,Estatal,Rural,128.996,0.00438596,0,0.250266,0.338192,0.315789,0.309154,0.235971
+santiago del estero,robles,estatal,urbano,Santiago del Estero,ROBLES,Estatal,Urbano,400.921,0,0,0.250266,0.292958,0.317073,0.530739,0.593995
+santiago del estero,robles,privado,urbano,Santiago del Estero,ROBLES,Privado,Urbano,70.8273,0,0,0.250266,0.0410959,0.206897,0.0361466,0.180012
+santiago del estero,salavina,estatal,rural,Santiago del Estero,SALAVINA,Estatal,Rural,114.207,0.0219298,1,0.250266,0.347059,0.25,0.242364,0.476464
+santiago del estero,san martin,estatal,rural,Santiago del Estero,SAN MARTIN,Estatal,Rural,113.265,0.0169492,0,0.250266,0.340176,0.206897,0.244935,0.266563
+santiago del estero,silipica,estatal,rural,Santiago del Estero,SILIPICA,Estatal,Rural,106.972,0,0,0.250266,0.347059,0.25,0.318394,0.532036
+tierra del fuego,enmascarado,estatal,rural,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",Enmascarado,Estatal,Rural,1,0,0,0.250266,0.343195,0.5,3.68485e-06,0.00707176
+tierra del fuego,rio grande,estatal,urbano,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",RIO GRANDE,Estatal,Urbano,1012.63,0.0105747,0,0.250266,0.29972,0.5,0.0955142,0.0578067
+tierra del fuego,rio grande,privado,urbano,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",RIO GRANDE,Privado,Urbano,384.513,0,0,0.250266,0.0366972,0.5,0.0262337,0.0109084
+tierra del fuego,tolhuin,estatal,urbano,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",TOLHUIN,Estatal,Urbano,85.9034,0.0924855,1,0.250266,0.295129,0,0.265985,0.227015
+tierra del fuego,ushuaia,estatal,urbano,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",USHUAIA,Estatal,Urbano,891.469,0.0220215,1,0.250266,0.295129,0,0.107905,0.108016
+tierra del fuego,ushuaia,privado,urbano,"Tierra del Fuego, Antártida e Islas del Atlántico Sur",USHUAIA,Privado,Urbano,289.487,0,0,0.250266,0.0330189,0.5,0.0251053,0.0028267
+tucuman,burruyacu,estatal,rural,Tucumán,BURRUYACU,Estatal,Rural,492.815,0.00290698,0,0.250266,0.338192,0.111111,0.44709,0.18937
+tucuman,capital,estatal,urbano,Tucumán,CAPITAL,Estatal,Urbano,4702.31,0.0090471,0,0.250266,0.29972,0.111111,0.432844,0.255676
+tucuman,capital,privado,urbano,Tucumán,CAPITAL,Privado,Urbano,3781.53,0.00483351,0,0.251064,0.0333333,0.0588235,0.0503677,0.027779
+tucuman,chicligasta,estatal,rural,Tucumán,CHICLIGASTA,Estatal,Rural,178.381,0.00268817,0,0.250266,0.338192,0.111111,0.295629,0.245233
+tucuman,chicligasta,estatal,urbano,Tucumán,CHICLIGASTA,Estatal,Urbano,642.81,0.00426743,0,0.250266,0.292958,0.138889,0.374963,0.361482
+tucuman,chicligasta,privado,urbano,Tucumán,CHICLIGASTA,Privado,Urbano,250.906,0.00798403,0,0.250266,0.0234742,0.131579,0.055499,0.0148291
+tucuman,cruz alta,estatal,rural,Tucumán,CRUZ ALTA,Estatal,Rural,190.474,0.00447427,0,0.250266,0.343195,0.138889,0.547527,0.517686
+tucuman,cruz alta,estatal,urbano,Tucumán,CRUZ ALTA,Estatal,Urbano,1225.16,0.010352,0,0.250266,0.292958,0.138889,0.436401,0.380789
+tucuman,cruz alta,privado,urbano,Tucumán,CRUZ ALTA,Privado,Urbano,809.752,0.00124146,0,0.250266,0.0410959,0.111111,0.0703647,0.0762927
+tucuman,enmascarado,estatal,urbano,Tucumán,Enmascarado,Estatal,Urbano,175.455,0,0,0.250266,0.295129,0.111111,0.310183,0.13491
+tucuman,enmascarado,privado,rural,Tucumán,Enmascarado,Privado,Rural,173.342,0,0,0.250266,0.185185,0.111111,0.0553546,0.0938593
+tucuman,enmascarado,privado,urbano,Tucumán,Enmascarado,Privado,Urbano,53.9797,0,0,0.251064,0.0333333,0.0588235,0.0795265,0.0690289
+tucuman,famailla,estatal,rural,Tucumán,FAMAILLA,Estatal,Rural,120.936,0.00440529,0,0.250266,0.340176,0.111111,0.293052,0.21606
+tucuman,famailla,estatal,urbano,Tucumán,FAMAILLA,Estatal,Urbano,287.178,0.00480769,0,0.251064,0.289694,0.0588235,0.332467,0.381783
+tucuman,famailla,privado,urbano,Tucumán,FAMAILLA,Privado,Urbano,67.9744,0,0,0.250266,0.0234742,0.131579,0.0775667,0.00491613
+tucuman,graneros,estatal,rural,Tucumán,GRANEROS,Estatal,Rural,80.6241,0.04,1,0.250266,0.340176,0.111111,0.135972,0.0493143
+tucuman,graneros,estatal,urbano,Tucumán,GRANEROS,Estatal,Urbano,68.5688,0,0,0.250266,0.29972,0.111111,0.429629,0.237755
+tucuman,juan b alberdi,estatal,rural,Tucumán,JUAN B ALBERDI,Estatal,Rural,117.913,0,0,0.250266,0.340176,0.111111,0.266633,0.282555
+tucuman,juan b alberdi,estatal,urbano,Tucumán,JUAN B ALBERDI,Estatal,Urbano,306.543,0.0356037,1,0.251064,0.289694,0.0588235,0.394123,0.419203
+tucuman,juan b alberdi,privado,urbano,Tucumán,JUAN B ALBERDI,Privado,Urbano,60.9771,0,0,0.250266,0.0330189,0.111111,0.122802,0.00814576
+tucuman,la cocha,estatal,rural,Tucumán,LA COCHA,Estatal,Rural,205.592,0.00740741,0,0.251064,0.345029,0.0588235,0.121074,0.109073
+tucuman,leales,estatal,rural,Tucumán,LEALES,Estatal,Rural,494.911,0.00408163,0,0.250266,0.343195,0.138889,0.382881,0.380324
+tucuman,leales,estatal,urbano,Tucumán,LEALES,Estatal,Urbano,182.514,0.00242718,0,0.250266,0.297753,0.131579,0.312089,0.563862
+tucuman,leales,privado,urbano,Tucumán,LEALES,Privado,Urbano,129.951,0,0,0.250266,0.0410959,0.111111,0.0419495,0.0483144
+tucuman,lules,estatal,rural,Tucumán,LULES,Estatal,Rural,98.7646,0.00543478,0,0.250266,0.347059,0.131579,0.394289,0.584551
+tucuman,lules,estatal,urbano,Tucumán,LULES,Estatal,Urbano,511.482,0.00823422,0,0.251064,0.289694,0.0588235,0.374198,0.279919
+tucuman,lules,privado,urbano,Tucumán,LULES,Privado,Urbano,320.879,0,0,0.251064,0.0333333,0.0588235,0.028104,0.0796478
+tucuman,monteros,estatal,rural,Tucumán,MONTEROS,Estatal,Rural,133.03,0.00421941,0,0.250266,0.343195,0.138889,0.29698,0.24674
+tucuman,monteros,estatal,urbano,Tucumán,MONTEROS,Estatal,Urbano,747.198,0.00126823,0,0.250266,0.295129,0.111111,0.402196,0.377492
+tucuman,monteros,privado,urbano,Tucumán,MONTEROS,Privado,Urbano,108.959,0,0,0.251064,0.0333333,0.0588235,0.0456101,0.12174
+tucuman,rio chico,estatal,rural,Tucumán,RIO CHICO,Estatal,Rural,50.3901,0,0,0.250266,0.343195,0.138889,0.436734,0.236526
+tucuman,rio chico,estatal,urbano,Tucumán,RIO CHICO,Estatal,Urbano,557.786,0.0501901,1,0.251064,0.289694,0.0588235,0.426667,0.31657
+tucuman,rio chico,privado,urbano,Tucumán,RIO CHICO,Privado,Urbano,98.9628,0.0052356,0,0.250266,0.0234742,0.131579,0.0863774,0.0665523
+tucuman,simoca,estatal,rural,Tucumán,SIMOCA,Estatal,Rural,233.81,0.00198807,0,0.250266,0.340176,0.111111,0.241328,0.320319
+tucuman,simoca,estatal,urbano,Tucumán,SIMOCA,Estatal,Urbano,158.313,0.00371747,0,0.250266,0.292958,0.138889,0.250875,0.200329
+tucuman,simoca,privado,urbano,Tucumán,SIMOCA,Privado,Urbano,56.9883,0,0,0.250266,0.0366972,0.138889,0.0243753,0.0441034
+tucuman,tafi del valle,estatal,rural,Tucumán,TAFI DEL VALLE,Estatal,Rural,195.914,0,0,0.250266,0.347059,0.131579,0.227974,0.262255
+tucuman,tafi viejo,estatal,rural,Tucumán,TAFI VIEJO,Estatal,Rural,308.387,0.0365854,1,0.250266,0.338192,0.111111,0.296368,0.331251
+tucuman,tafi viejo,estatal,urbano,Tucumán,TAFI VIEJO,Estatal,Urbano,795.875,0.0161968,0,0.250266,0.297753,0.131579,0.233975,0.137012
+tucuman,tafi viejo,privado,urbano,Tucumán,TAFI VIEJO,Privado,Urbano,289.891,0.0017301,0,0.250266,0.0330189,0.111111,0.0822748,0.110735
+tucuman,trancas,estatal,rural,Tucumán,TRANCAS,Estatal,Rural,98.7646,0.00930233,0,0.250266,0.340176,0.111111,0.257898,0.324788
+tucuman,trancas,estatal,urbano,Tucumán,TRANCAS,Estatal,Urbano,165.372,0,0,0.251064,0.289694,0.0588235,0.539951,0.638367
+tucuman,yerba buena,estatal,rural,Tucumán,YERBA BUENA,Estatal,Rural,122.952,0,0,0.250266,0.343195,0.138889,0.529564,0.217138
+tucuman,yerba buena,estatal,urbano,Tucumán,YERBA BUENA,Estatal,Urbano,365.429,0.0268542,1,0.251064,0.289694,0.0588235,0.270186,0.227264
+tucuman,yerba buena,privado,urbano,Tucumán,YERBA BUENA,Privado,Urbano,628.248,0,0,0.250266,0.0330189,0.111111,0.0215113,0.00528798

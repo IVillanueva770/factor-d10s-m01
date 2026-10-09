@@ -19,3 +19,6 @@ __pycache__/
 data/processed/dataset_maestro_base.csv
 data/processed/dataset_maestro_curado.csv
 
+
+# Relevamiento Anual (TP3): publico, lo baja la etapa 12 fijado a un commit.
+data/raw/relevamiento/

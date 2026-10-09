@@ -4,6 +4,20 @@ Registro de las decisiones que cambian el dataset y el objetivo del proyecto, es
 
 Estado al **2026-09-23**. Cada bloque dice explícitamente quién la tomó y qué falta para cerrarla. Las que están marcadas **PROPUESTA AL GRUPO** todavía tienen que pasar por el grupo y por la mentora: se llevan a la reunión, no se dan por acordadas.
 
+## Vigente al 2026-10-09 (manda sobre los bloques de abajo donde choquen)
+
+Fuentes: lo que respondió Noelia en la reunión del 23/09 (resumen de un compañero en el WhatsApp del grupo, 24/09 11:42) y lo que decidió Ignacio el 09/10 en la sesión de armado del TP3.
+
+| Tema | Decisión | Desde | Decide | Estado |
+|---|---|---|---|---|
+| Año | Todo en 2024, el único año con las fuentes juntas. El resumen del 24/09 dice "unificar al año 2025", que no es posible (Aprender de secundaria es 2022 y 2024; el Relevamiento publicado llega a 2024): se explica en el notebook. | 09/10 | Ignacio | vigente |
+| EPH | Fuera del modelo principal. Entra en una variante con 1 o 2 indicadores provinciales y se reporta si mejora o no ("acotar su uso al máximo", Noelia 23/09). Reemplaza a D1 en lo que toca a la EPH. | 09/10 | Ignacio | vigente |
+| Target | La tasa de salidas sin pase sobre matrícula inicial (Noelia 23/09: avanzar por ese lado). La forma (clases o número, corte) la define el equipo con los datos (Ignacio 09/10). | 09/10 | Ignacio | vigente |
+| Predictores | Nada que se conozca después del resultado: sin no promovidos, pases ni egresados del mismo ciclo. Un solo año. | 09/10 | Ignacio | vigente |
+| Desfase del Relevamiento | El archivo "2024" parece traer el ciclo 2023 (inferido de los datos, no documentado). Primero se usa igual y se mide cuán estable es la tasa de cada grupo entre años; después, si hay tiempo, se busca el Relevamiento 2025. | 09/10 | Ignacio | vigente |
+| Enfoque | Supervisado primero; después, como valor agregado, no supervisado sobre los grupos que el modelo da como "no abandona" (Noelia 23/09). | 09/10 | Ignacio | vigente |
+| Entrega | Notebook en Colab más un PDF corto que sirva de base al video, aplicando la devolución del TP2 (conclusiones primero, sin jerga en el cuerpo, historia: problema, qué observamos, qué encontramos, qué significa, qué podríamos hacer). La sube Ignacio. | 09/10 | Ignacio | vigente |
+
 Documentos relacionados: la consigna leída (`TP3-CONSIGNA-LEIDA.md`), el razonamiento completo (`TP3-PROPUESTA-DEFINICION.md`) y las decisiones de curación del TP2 (`08_decisiones_curacion.md`), que esta pasada **no invalida**.
 
 ---

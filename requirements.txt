@@ -22,3 +22,6 @@ reportlab
 
 # Solo para armar las tablas en markdown de los informes (etapa 10).
 tabulate
+
+# Modelado (TP3).
+scikit-learn

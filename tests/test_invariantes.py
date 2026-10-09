@@ -214,6 +214,50 @@ verificar("sacando los agregados provinciales, cada departamento es de una sola 
 verificar("la curacion conserva los 540.040 estudiantes",
           round(curado["estudiantes"].sum()) == 540040)
 
+# ------------------------------------------------------------------ TP3
+sys.path.insert(0, str(BASE_DIR / "pipeline"))
+import importlib.util  # noqa: E402
+
+import modelado  # noqa: E402
+
+modelo_df = pd.read_csv(PROCESADO / "dataset_modelado.csv", low_memory=False)
+_spec = importlib.util.spec_from_file_location(
+    "exp15", BASE_DIR / "pipeline" / "05_modelado" / "15_experimentos.py")
+exp15 = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(exp15)
+
+verificar("TP3: el cruce con el Relevamiento conserva las 1.174 filas y los 540.040 estudiantes",
+          len(modelo_df) == 1174 and round(modelo_df["estudiantes"].sum()) == 540040)
+verificar("TP3: todo grupo del dataset encontro su dato de matricula en el Relevamiento",
+          modelo_df["inicial_ultimos2"].notna().all())
+for _n in modelado.ANIOS_TARGET:
+    _t = modelo_df[f"tasa_{_n}"].dropna()
+    verificar(f"TP3: la tasa '{_n}' esta entre 0 y 1", _t.between(0, 1).all(),
+              f"min {_t.min()}, max {_t.max()}")
+verificar("TP3: los dos ultimos anios son 11 y 12 en todas las provincias",
+          modelado.ANIOS_TARGET["ultimos2"](True) == ["11", "12"]
+          and modelado.ANIOS_TARGET["ultimos2"](False) == ["11", "12"])
+verificar("TP3: hay 12 jurisdicciones 7 + 5 declaradas", len(modelado.PROVINCIAS_7_5) == 12)
+_claves_prov = set(modelo_df["k_prov"])
+verificar("TP3: cada jurisdiccion 7 + 5 declarada existe en los datos",
+          modelado.PROVINCIAS_7_5 <= _claves_prov,
+          f"no aparecen: {modelado.PROVINCIAS_7_5 - _claves_prov}")
+for _e in modelado.EXPERIMENTOS:
+    _cols = exp15.columnas_de(_e["bloques"], modelo_df)
+    verificar(f"TP3: '{_e['id']}' no usa ninguna variable del mismo cierre de ciclo ni el target",
+              not [c for c in _cols if any(p in c for p in modelado.PROHIBIDOS)])
+    verificar(f"TP3: '{_e['id']}' no usa la EPH salvo que la pida",
+              ("eph" in _e["bloques"]) == any(c.startswith("eph_") for c in _cols))
+from sklearn.model_selection import GroupKFold  # noqa: E402
+
+_partes = list(GroupKFold(n_splits=6).split(modelo_df, groups=modelo_df["k_prov"]))
+verificar("TP3: en la separacion por provincia ninguna provincia esta en entrenamiento y prueba a la vez",
+          all(not (set(modelo_df["k_prov"].iloc[tr]) & set(modelo_df["k_prov"].iloc[te]))
+              for tr, te in _partes))
+_res = pd.read_csv(PROCESADO / "resultados_experimentos.csv")
+verificar("TP3: la regla 'nadie sabe nada' da exactamente 0,5 de ROC-AUC en todos los experimentos",
+          (_res.loc[_res["modelo"] == "prevalencia", "roc_auc"] == 0.5).all())
+
 # ------------------------------------------------------------------ REPORTE
 print("=" * 74)
 print("VERIFICACION DE INVARIANTES DEL PIPELINE")
