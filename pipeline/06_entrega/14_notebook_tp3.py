@@ -165,7 +165,7 @@ commit `{commit[:7]}`.
 # Tarda alrededor de un minuto. Cada etapa imprime lo que mide.
 import os, subprocess, sys
 if not os.path.exists("factor-d10s-m01"):
-    subprocess.run(["git", "clone", "-q", "https://github.com/{slug}.git"], check=True)
+    subprocess.run(["git", "clone", "-q", "https://github.com/{slug}.git", "factor-d10s-m01"], check=True)
 os.chdir("factor-d10s-m01")
 subprocess.run(["git", "checkout", "-q", "{commit}"], check=True)
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", "requirements.txt"], check=True)
