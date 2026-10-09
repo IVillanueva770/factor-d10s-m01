@@ -10,3 +10,4 @@
 *.png binary
 *.ipynb -text
 *.parquet binary
+*.pdf binary
