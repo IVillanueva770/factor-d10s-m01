@@ -23,7 +23,9 @@ from sklearn.preprocessing import StandardScaler
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from modelado import CUANTIL_ALTO, SEMILLA  # noqa: E402
+from modelado import EXPERIMENTOS, SEMILLA, cuantil_de, target_de  # noqa: E402
+
+PRINCIPAL = next(e for e in EXPERIMENTOS if e["id"] == "principal")
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 PROC = BASE_DIR / "data" / "processed"
@@ -44,7 +46,7 @@ def main():
     pred = pd.read_csv(PROC / "predicciones_principal.csv")
     K = ["k_prov", "k_depto", "k_sector", "k_ambito"]
     tabla = datos.merge(pred[K + ["p_logistica"]], on=K, validate="one_to_one")
-    corte = tabla["p_logistica"].quantile(CUANTIL_ALTO)
+    corte = tabla["p_logistica"].quantile(cuantil_de(PRINCIPAL))
     no_alto = tabla[tabla["p_logistica"] < corte].reset_index(drop=True).copy()
 
     X = pd.DataFrame(index=no_alto.index)
@@ -77,7 +79,7 @@ def main():
         lambda d: d["ssp_ultimos2"].sum() / d["inicial_ultimos2"].sum(),
         include_groups=False)
     resumen["altos_no_vistos"] = no_alto.groupby("perfil")[
-        "alto_ultimos2_nacional"].sum().astype(int)
+        target_de(PRINCIPAL)].sum().astype(int)
     print(f"\n  elegido k={k} (mayor silueta)\n")
     print(resumen.round(3).to_string())
     resumen.to_csv(PROC / "perfiles_no_alto.csv", float_format="%.6g")

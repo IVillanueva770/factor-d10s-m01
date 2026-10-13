@@ -104,6 +104,7 @@ MODELOS = [
     ("provincia", "Regla: la provincia", NARANJA),
     ("logistica", "Modelo: regresión logística", AZUL),
     ("boosting", "Modelo: árboles combinados", AZUL),
+    ("juntos", "Modelo: provincia y perfil juntos", AZUL),
 ]
 SEPARACIONES = [
     ("estratificada", "Con todas las provincias en el entrenamiento",
@@ -116,8 +117,18 @@ SEPARACIONES = [
 
 
 def figura_a_modelo_vs_reglas(r):
-    """ROC-AUC de modelos y reglas, en las dos separaciones."""
-    r = r[r["experimento"] == "principal"].set_index(["separacion", "modelo"])
+    """ROC-AUC de modelos y reglas, en las dos separaciones.
+
+    La ultima barra es el experimento provincia_y_perfil (logistica con la
+    provincia como variable). Solo existe con la separacion estratificada: en
+    provincias que el modelo nunca vio, la provincia no tiene valor que aportar.
+    """
+    juntos = r[(r["experimento"] == "provincia_y_perfil")
+               & (r["modelo"] == "logistica")].copy()
+    juntos["modelo"] = "juntos"
+    r = pd.concat([r[r["experimento"] == "principal"], juntos]).set_index(
+        ["separacion", "modelo"])
+    est_juntos = r.loc[("estratificada", "juntos"), "roc_auc"]
 
     est_log = r.loc[("estratificada", "logistica"), "roc_auc"]
     est_prov = r.loc[("estratificada", "provincia"), "roc_auc"]
@@ -126,8 +137,10 @@ def figura_a_modelo_vs_reglas(r):
 
     fig, ejes = plt.subplots(1, 2, figsize=(14, 6.6), sharey=True)
     for ax, (sep, encabezado, bajada) in zip(ejes, SEPARACIONES):
-        valores = [r.loc[(sep, m), "roc_auc"] for m, _, _ in MODELOS]
-        desvios = [r.loc[(sep, m), "roc_auc_desvio"] for m, _, _ in MODELOS]
+        valores = [r.loc[(sep, m), "roc_auc"] if (sep, m) in r.index else 0
+                   for m, _, _ in MODELOS]
+        desvios = [r.loc[(sep, m), "roc_auc_desvio"] if (sep, m) in r.index else 0
+                   for m, _, _ in MODELOS]
         nombres = [n for _, n, _ in MODELOS]
         colores = [c for _, _, c in MODELOS]
         y = np.arange(len(MODELOS))
@@ -138,6 +151,11 @@ def figura_a_modelo_vs_reglas(r):
         ax.errorbar(valores, y, xerr=desvios, fmt="none", ecolor=TINTA,
                     elinewidth=1, capsize=3, capthick=1, zorder=4)
         for yi, (v, s) in enumerate(zip(valores, desvios)):
+            if v == 0:
+                ax.annotate("no aplica: no conoce esa provincia", xy=(0, yi),
+                            xytext=(7, 0), textcoords="offset points",
+                            va="center", fontsize=9.5, color=TINTA_SUAVE)
+                continue
             ax.annotate(coma(v), xy=(v + s, yi), xytext=(7, 0),
                         textcoords="offset points", va="center",
                         fontsize=10, color=TINTA)
@@ -159,9 +177,9 @@ def figura_a_modelo_vs_reglas(r):
         titulo(ax, encabezado, bajada)
 
     fig.suptitle(
-        f"El modelo apenas le gana a saber la provincia "
-        f"({coma(est_log)} contra {coma(est_prov)}), pero sin conocerla "
-        f"sigue encontrando señal ({coma(pp_log)} contra {coma(pp_sa)})",
+        f"El perfil y la provincia solos ordenan parecido ({coma(est_log)} y "
+        f"{coma(est_prov)}); juntos llegan a {coma(est_juntos)}. Sin conocer la "
+        f"provincia, el perfil sigue encontrando señal ({coma(pp_log)} contra {coma(pp_sa)})",
         x=0.01, ha="left", y=1.015, fontsize=13.5, color=TINTA)
     fig.text(0.01, 0.965,
              "experimento principal · la línea fina es el desvío entre "

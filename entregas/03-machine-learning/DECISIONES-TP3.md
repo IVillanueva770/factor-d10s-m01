@@ -14,9 +14,28 @@ Fuentes: lo que respondió Noelia en la reunión del 23/09 (resumen de un compa�
 | EPH | Fuera del modelo principal. Entra en una variante con 1 o 2 indicadores provinciales y se reporta si mejora o no ("acotar su uso al máximo", Noelia 23/09). Reemplaza a D1 en lo que toca a la EPH. | 09/10 | Ignacio | vigente |
 | Target | La tasa de salidas sin pase sobre matrícula inicial (Noelia 23/09: avanzar por ese lado). La forma (clases o número, corte) la define el equipo con los datos (Ignacio 09/10). | 09/10 | Ignacio | vigente |
 | Predictores | Nada que se conozca después del resultado: sin no promovidos, pases ni egresados del mismo ciclo. Un solo año. | 09/10 | Ignacio | vigente |
-| Desfase del Relevamiento | El archivo "2024" parece traer el ciclo 2023 (inferido de los datos, no documentado). Primero se usa igual y se mide cuán estable es la tasa de cada grupo entre años; después, si hay tiempo, se busca el Relevamiento 2025. | 09/10 | Ignacio | vigente |
+| Desfase del Relevamiento | El archivo "2024" trae el ciclo 2023 (inferido de los datos el 09/10, documentado el 13/10: el Relevamiento informa la trayectoria del ciclo lectivo anterior, `FUENTES-TP3.md` sección 6). Primero se usa igual y se mide cuán estable es la tasa de cada grupo entre años; después, si hay tiempo, se busca el Relevamiento 2025. | 09/10 | Ignacio | vigente |
 | Enfoque | Supervisado primero; después, como valor agregado, no supervisado sobre los grupos que el modelo da como "no abandona" (Noelia 23/09). | 09/10 | Ignacio | vigente |
 | Entrega | Notebook en Colab más un PDF corto que sirva de base al video, aplicando la devolución del TP2 (conclusiones primero, sin jerga en el cuerpo, historia: problema, qué observamos, qué encontramos, qué significa, qué podríamos hacer). La sube Ignacio. | 09/10 | Ignacio | vigente |
+
+### Lo que se midió para decidir (09/10), con su fuente
+
+Cada número sale de un script del repo; entre paréntesis, de dónde.
+
+- **Fuente del target**: repo de referencia `agus476/radar-trayectorias-educativas-argentinas`, commit `1bbaa58a3e5b0ed7efef9e4c752a1bf373825823`; archivos y SHA-256 en `pipeline/modelado.py` (`ARCHIVOS_RELEVAMIENTO`).
+- **Cruce**: 1.174 de 1.174 grupos y 540.040 de 540.040 estudiantes (etapa 14, `pipeline/05_modelado/14_dataset_modelado.py`).
+- **7 + 5 y 6 + 6**: el diccionario oficial (`Diccionario_BD_Anominizadas.xlsx`, hoja Trayectoria, A6:C18) numera "año corrido" del 1 al 12 sin decir dónde empieza la secundaria. Se infirió comparando promoción y salidas sin pase en los índices 6, 7 y 8 de 2024: 12 jurisdicciones 7 + 5 (lista en `modelado.PROVINCIAS_7_5`) y 12 jurisdicciones 6 + 6. Santa Fe se clasificó por salidas sin pase (0,07% / 0,11% / 3,40%) porque su promovidos del índice 7 está roto (243 sobre 53.505). INFERIDO de los datos, coincide con la estructura conocida de cada provincia; no está en el diccionario.
+- **Por qué no sumar ni promediar a ciegas**: los índices 11 y 12 son los dos últimos años en las 24 jurisdicciones, así que el target principal no depende de saber dónde empieza la secundaria. En la variante "secundaria entera", sumar 7 a 12 en todo el país metería el último año de primaria de las 7 + 5, que casi no tiene salidas, y bajaría la tasa artificialmente; promediar no lo corrige.
+- **Tasa**: 0,99% (11.732 sobre 1.189.142 en los 1.174 grupos que cruzan); 375 grupos en cero. "Abandono alto" = 1,74% o más, 294 de 1.174 (etapa 14).
+- **Estabilidad**: entre los archivos 2023 y 2024 del Relevamiento, Spearman 0,53 y 53% de los "alto" repite con los dos últimos años; 0,74 y 70% con la secundaria entera (`data/interim/relevamiento_estabilidad.csv`, etapa 13).
+- **Desfase**: la matrícula inicial del índice 12 en el archivo 2024 es 565.397; la matrícula del índice 12 en 2023 es 565.585 y en 2024 547.414. Se infirió el 09/10 que el archivo "2024" trae el ciclo 2023, y el 13/10 quedó DOCUMENTADO: el cuadernillo del Relevamiento informa la trayectoria del ciclo lectivo anterior (`FUENTES-TP3.md`, sección 6).
+
+### Abierto o frágil (al 13/10)
+
+- **"Lo esperable"**: la versión entregable del 09/10 presentaba como esperables las asociaciones con nivel socioeconómico, educación de la madre, repitencia, jardín y gestión estatal, sin fuente. Ignacio lo marcó el 09/10 ("hablás como si todo lo que descubrimos fuera esperado... ¿lo estamos dando por sentado?"). Resuelto el 13/10: `FUENTES-TP3.md` separa lo documentado (NSE, clima educativo, repitencia y sobreedad), lo parcial (jardín, gestión estatal) y lo que es hallazgo nuestro (la provincia, el registro).
+- **Modelos por provincia**: propuesto por Ignacio el 09/10. Descartado como modelos separados (unos 49 grupos y unos 12 positivos por provincia: no alcanza para entrenar ni evaluar); se prueba en su lugar un modelo único con la provincia y el perfil juntos (experimento `provincia_y_perfil`). Resultado del 13/10: 0,797, contra 0,746 de la provincia sola y 0,752 del perfil solo (`data/processed/resultados_experimentos.csv`). Cada uno aporta algo que el otro no tiene.
+- **El corte del cuarto superior** es una decisión del equipo: se probó con el tercio y el quinto superior el 13/10 (`corte_tercio`, `corte_quinto`). La conclusión aguanta: el perfil solo queda igual a la provincia sola (0,742 contra 0,749 con el tercio; 0,741 contra 0,751 con el quinto).
+- **El registro por provincia**: Buenos Aires da 0,32% y el modelo marca 17 grupos que el registro da como bajos; no se puede distinguir abandono real de forma de registrar con estos datos.
 
 Documentos relacionados: la consigna leída (`TP3-CONSIGNA-LEIDA.md`), el razonamiento completo (`TP3-PROPUESTA-DEFINICION.md`) y las decisiones de curación del TP2 (`08_decisiones_curacion.md`), que esta pasada **no invalida**.
 

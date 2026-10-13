@@ -19,7 +19,10 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from modelado import ANIOS_TARGET, CUANTIL_ALTO  # noqa: E402
+from modelado import (  # noqa: E402
+    ANIOS_TARGET, CUANTIL_ALTO, EXPERIMENTOS, PREFIJO_PROVINCIA, columna_target,
+    cuantil_de,
+)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 _rel = __import__("importlib").import_module  # noqa: E731
@@ -78,28 +81,36 @@ def main():
     print(f"  sector: {datos['k_sector'].value_counts().to_dict()}")
     print(f"  ambito: {datos['k_ambito'].value_counts().to_dict()}")
 
-    # Targets binarios: "abandono alto" = cuarto superior de la tasa
+    # La provincia como variable: una columna 0/1 por provincia.
+    for prov in sorted(datos["k_prov"].unique()):
+        datos[PREFIJO_PROVINCIA + prov.replace(" ", "_")] = (
+            datos["k_prov"] == prov).astype(int)
+
+    # Targets binarios: "abandono alto" = tasa por encima del cuantil del
+    # experimento. Se arma uno por cada combinacion que pide EXPERIMENTOS,
+    # mas los dos cortes base para cada definicion de anios.
     print()
     print("=" * 74)
-    print("2. TARGETS: 'abandono alto' = tasa en el cuarto superior")
+    print("2. TARGETS: 'abandono alto' = tasa por encima del corte")
     print("=" * 74)
-    for nombre in ANIOS_TARGET:
+    pedidos = {(n, t, CUANTIL_ALTO) for n in ANIOS_TARGET for t in ("nacional", "provincial")}
+    pedidos |= {(e["anios"], e["corte"], cuantil_de(e)) for e in EXPERIMENTOS}
+    for nombre, tipo, q in sorted(pedidos):
         tasa = datos[f"tasa_{nombre}"]
-        corte = tasa.quantile(CUANTIL_ALTO)
-        datos[f"alto_{nombre}_nacional"] = np.where(
-            tasa.notna(), (tasa >= corte).astype(float), np.nan)
-        cortes_prov = datos.groupby("k_prov")[f"tasa_{nombre}"].transform(
-            lambda s: s.quantile(CUANTIL_ALTO))
-        datos[f"alto_{nombre}_provincial"] = np.where(
-            tasa.notna() & (cortes_prov > 0),
-            (tasa >= cortes_prov).astype(float), np.nan)
-        for tipo in ("nacional", "provincial"):
-            y = datos[f"alto_{nombre}_{tipo}"]
-            print(f"  {nombre:<11} {tipo:<11} positivos {int(y.sum())} de "
-                  f"{int(y.notna().sum())} con target "
-                  f"(sin target: {int(y.isna().sum())})"
-                  + (f"  | corte nacional = tasa >= {100 * corte:.2f}%"
-                     if tipo == "nacional" else ""))
+        col = columna_target(nombre, tipo, q)
+        if tipo == "nacional":
+            corte = tasa.quantile(q)
+            datos[col] = np.where(tasa.notna(), (tasa >= corte).astype(float), np.nan)
+            extra = f"  | corte = tasa >= {100 * corte:.2f}%"
+        else:
+            cortes_prov = datos.groupby("k_prov")[f"tasa_{nombre}"].transform(
+                lambda s: s.quantile(q))
+            datos[col] = np.where(tasa.notna() & (cortes_prov > 0),
+                                  (tasa >= cortes_prov).astype(float), np.nan)
+            extra = ""
+        y = datos[col]
+        print(f"  {col:<32} positivos {int(y.sum())} de {int(y.notna().sum())} "
+              f"(sin target: {int(y.isna().sum())}){extra}")
 
     PROC.mkdir(parents=True, exist_ok=True)
     datos.to_csv(PROC / "dataset_modelado.csv", index=False,

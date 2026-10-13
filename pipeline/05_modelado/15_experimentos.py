@@ -45,8 +45,8 @@ from sklearn.preprocessing import StandardScaler
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from modelado import (  # noqa: E402
-    CONTEXTO, CUANTIL_ALTO, EDIFICIO, EPH, EXPERIMENTOS, FOLDS,
-    PREFIJOS_EXCLUIDOS_APRENDER, PROHIBIDOS, SEMILLA,
+    CONTEXTO, EDIFICIO, EPH, EXPERIMENTOS, FOLDS, PREFIJO_PROVINCIA,
+    PREFIJOS_EXCLUIDOS_APRENDER, PROHIBIDOS, SEMILLA, cuantil_de, target_de,
 )
 
 BASE_DIR = Path(__file__).resolve().parents[2]
@@ -66,6 +66,7 @@ def columnas_de(bloques, datos):
         "contexto": CONTEXTO,
         "edificio": list(EDIFICIO),
         "eph": EPH,
+        "provincia": [c for c in datos.columns if c.startswith(PREFIJO_PROVINCIA)],
     }
     cols = [c for b in bloques for c in mapa[b]]
     prohibidas = [c for c in cols if any(p in c for p in PROHIBIDOS)]
@@ -94,11 +95,11 @@ def regla(tabla_train, y_train, tabla_test, por):
     return clave_test.map(tasa).fillna(y_train.mean()).to_numpy()
 
 
-def metricas(y, p):
+def metricas(y, p, cuantil):
     if len(set(p)) == 1:  # regla constante: no ordena, marca a todos igual
         pred = np.zeros(len(p), dtype=int)
     else:
-        corte = np.quantile(p, CUANTIL_ALTO)
+        corte = np.quantile(p, cuantil)
         pred = (p >= corte).astype(int)
     vp = int(((pred == 1) & (y == 1)).sum())
     fp = int(((pred == 1) & (y == 0)).sum())
@@ -115,7 +116,7 @@ def metricas(y, p):
 
 
 def evaluar(datos, exp, separacion):
-    y_col = f"alto_{exp['anios']}_{exp['corte']}"
+    y_col = target_de(exp)
     tabla = datos[datos[y_col].notna()].reset_index(drop=True)
     y = tabla[y_col].astype(int)
     X = tabla[columnas_de(exp["bloques"], tabla)]
@@ -138,7 +139,7 @@ def evaluar(datos, exp, separacion):
             oof[nombre][test] = modelo.predict_proba(X.iloc[test])[:, 1]
         for nombre in nombres:
             por_parte[nombre].append(
-                metricas(y.iloc[test].to_numpy(), oof[nombre][test]))
+                metricas(y.iloc[test].to_numpy(), oof[nombre][test], cuantil_de(exp)))
 
     # Las metricas se calculan DENTRO de cada parte y se promedian. Juntar
     # las predicciones de todas las partes y medir una sola vez inventa un

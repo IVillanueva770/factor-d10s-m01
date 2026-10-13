@@ -101,6 +101,12 @@ PROHIBIDOS = ("ssp", "scp", "nopromo", "promovidos", "egresados", "ultimo_",
 # Los experimentos. Cada uno es una combinacion. El primero es el principal.
 # ---------------------------------------------------------------------------
 
+# La provincia como variable (una columna 0/1 por provincia, "provincia_<nombre>").
+# Responde a la pregunta de Ignacio del 09/10 sobre modelos por provincia: con
+# ~49 grupos y ~12 positivos por provincia no se puede entrenar uno por cada
+# una, pero un modelo unico que sabe la provincia Y el perfil si se puede.
+PREFIJO_PROVINCIA = "provincia_"
+
 EXPERIMENTOS = [
     {"id": "principal", "anios": "ultimos2", "corte": "nacional",
      "bloques": ["aprender", "contexto"]},
@@ -112,7 +118,29 @@ EXPERIMENTOS = [
      "bloques": ["aprender", "contexto"]},
     {"id": "corte_por_provincia", "anios": "ultimos2", "corte": "provincial",
      "bloques": ["aprender", "contexto"]},
+    # 13/10: lo que quedo abierto el 09/10
+    {"id": "provincia_y_perfil", "anios": "ultimos2", "corte": "nacional",
+     "bloques": ["aprender", "contexto", "provincia"]},
+    {"id": "corte_tercio", "anios": "ultimos2", "corte": "nacional",
+     "cuantil": 2 / 3, "bloques": ["aprender", "contexto"]},
+    {"id": "corte_quinto", "anios": "ultimos2", "corte": "nacional",
+     "cuantil": 0.80, "bloques": ["aprender", "contexto"]},
 ]
+
+
+def cuantil_de(exp):
+    """El corte de "abandono alto" de un experimento (por defecto, el cuarto)."""
+    return exp.get("cuantil", CUANTIL_ALTO)
+
+
+def columna_target(anios, corte, cuantil=CUANTIL_ALTO):
+    """Nombre de la columna del target. UNA regla para las etapas 14, 15 y 16."""
+    sufijo = "" if abs(cuantil - CUANTIL_ALTO) < 1e-9 else f"_q{round(cuantil * 100)}"
+    return f"alto_{anios}_{corte}{sufijo}"
+
+
+def target_de(exp):
+    return columna_target(exp["anios"], exp["corte"], cuantil_de(exp))
 
 SEMILLA = 2026
 FOLDS = 5

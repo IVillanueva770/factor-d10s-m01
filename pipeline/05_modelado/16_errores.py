@@ -25,7 +25,7 @@ from sklearn.model_selection import StratifiedKFold
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from modelado import CUANTIL_ALTO, EXPERIMENTOS, FOLDS, SEMILLA  # noqa: E402
+from modelado import EXPERIMENTOS, FOLDS, SEMILLA, cuantil_de, target_de  # noqa: E402
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 PROC = BASE_DIR / "data" / "processed"
@@ -56,10 +56,10 @@ def tabla_errores(pred, por, y_col):
 def main():
     e15 = _etapa15()
     exp = next(e for e in EXPERIMENTOS if e["id"] == "principal")
-    y_col = f"alto_{exp['anios']}_{exp['corte']}"
+    y_col = target_de(exp)
     pred = pd.read_csv(PROC / "predicciones_principal.csv")
     pred["tasa"] = pred[f"tasa_{exp['anios']}"]
-    corte = pred["p_logistica"].quantile(CUANTIL_ALTO)
+    corte = pred["p_logistica"].quantile(cuantil_de(exp))
     pred["marca"] = (pred["p_logistica"] >= corte).astype(int)
 
     salidas = []
