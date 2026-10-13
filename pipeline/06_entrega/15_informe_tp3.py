@@ -48,7 +48,7 @@ from reportlab.platypus import (
     Spacer,
 )
 
-LINK_COLAB = "PENDIENTE"
+LINK_COLAB = "https://colab.research.google.com/github/IVillanueva770/factor-d10s-m01/blob/master/entregas/03-machine-learning/TP3_Machine_Learning_El_Factor_D10S.ipynb"
 LINK_REPO = "https://github.com/IVillanueva770/factor-d10s-m01"
 
 AQUI = Path(__file__).resolve().parent
