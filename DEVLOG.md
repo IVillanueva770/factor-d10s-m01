@@ -6,7 +6,7 @@ Repo único para las tres entregas de la mentoría (abandono escolar, mentora No
 
 ## Tareas Activas
 
-- [ ] TP3: subir al aula (Ignacio) el notebook en Colab con permiso de comentarios, el PDF y el link al repo
+- [ ] TP3: subir al aula (Ignacio) el PDF y, en el texto, el link de Colab y el del repo (todo publicado el 13/10, commit `5c65aae`)
 - [ ] Correr `--verificar` completo y actualizar `pipeline/MANIFIESTO.json` (se cortó el 09/10 por falta de RAM)
 - [ ] Relevamiento 2025 (ciclo 2024) cuando se publique, para sacar el desfase de un año
 - [ ] Video final, vence el 07/11
@@ -18,6 +18,17 @@ Repo único para las tres entregas de la mentoría (abandono escolar, mentora No
 - TP3: cada variante de modelado es una entrada de `EXPERIMENTOS` en `pipeline/modelado.py`, evaluada con la misma partición y las mismas métricas; no hay un script por variante.
 
 ## Sesiones
+
+### [2026-10-13] - Sesión 2 (TP3, cierre y fuentes; se entrega tarde con OK de Ignacio)
+**Objetivo:** cerrar lo que el 09/10 quedó frágil y dejarlo trackeable.
+**Hecho:**
+- `FUENTES-TP3.md`: cada asociación con cita textual y link verificado; separa documentado, parcial y hallazgo propio. El desfase de un año del Relevamiento pasó de inferido a documentado (el cuadernillo pide la trayectoria del ciclo anterior).
+- Experimentos nuevos: `provincia_y_perfil` (0,797 contra 0,746 provincia sola y 0,752 perfil solo) y cortes en el tercio y el quinto (la conclusión aguanta). La regla del nombre del target pasó a un solo lugar (`modelado.target_de`).
+- Notebook y PDF reescritos con el relato nuevo por un delegado; figura 1 con el modelo combinado; 80 de 80 tests; publicado en GitHub (`5c65aae`) con el link de Colab en el PDF.
+**Decisiones:** la conclusión central cambia de "casi todo lo sabe la provincia" a "provincia y perfil aportan información distinta" (Ignacio, 13/10). El registro distinto por provincia queda como hipótesis propia: la fuente oficial sostiene la comparabilidad.
+**Problemas encontrados:** el texto del 09/10 daba asociaciones por "esperables" sin fuente (lo marcó Ignacio). El guardián de RAM pausó los tests 47 minutos. Git trataba los PDF como texto (arreglado con `*.pdf binary`; el PDF del TP2 en el repo puede estar alterado).
+**Fricción del flujo:** el delegado de texto rindió bien con el encargo cerrado (decisiones y fuentes en archivos); la auditoría página por página la hizo el orquestador.
+
 
 ### [2026-10-09] - Sesión 1 (TP3, día de la entrega)
 **Objetivo:** cerrar la parte de Ignacio del TP3 (nadie del grupo tenía tareas asignadas).
