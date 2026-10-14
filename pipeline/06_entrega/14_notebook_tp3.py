@@ -421,11 +421,23 @@ subprocess.run(["git", "checkout", "-q", "{commit}"], check=True)
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", "requirements.txt"], check=True)
 print("Proyecto en el commit", subprocess.run(["git", "rev-parse", "--short", "HEAD"],
       capture_output=True, text=True).stdout.strip())
+
+
+def etapa(ruta, mostrar=True):
+    """Corre una etapa del pipeline y CORTA si falla: el notebook nunca sigue con
+    archivos viejos del repo si una etapa se rompe."""
+    r = subprocess.run([sys.executable, ruta], capture_output=True, text=True)
+    if mostrar:
+        print(r.stdout)
+    if r.returncode != 0:
+        print(r.stderr)
+        raise RuntimeError(f"La etapa {ruta} falló; el notebook no sigue.")
 """)
 
     code("""
 # El dataset curado del TP2 se reconstruye desde el maestro del TP1, que está versionado.
-!python pipeline/03_curacion/08_curar.py > /dev/null && echo "dataset curado listo"
+etapa("pipeline/03_curacion/08_curar.py", mostrar=False)
+print("dataset curado listo")
 """)
 
     md(f"""
@@ -492,8 +504,8 @@ del modelo principal y, como pidió la mentora, la probamos aparte (sección 5).
   inscriptos, el **{pct(tasa_total)}**. Poco en el total y muy desparejo entre lugares.
 """)
     code("""
-!python pipeline/05_modelado/12_bajar_relevamiento.py
-!python pipeline/05_modelado/13_relevamiento.py
+etapa("pipeline/05_modelado/12_bajar_relevamiento.py")
+etapa("pipeline/05_modelado/13_relevamiento.py")
 """)
     md(f"""
 **Dos cosas que medimos y que limitan lo que se puede decir:**
@@ -520,7 +532,7 @@ Partimos del dataset curado del TP2 y le sumamos el Relevamiento por la misma cl
 imprime cuántos estudiantes encuentran su par, y la etapa se corta si se pierden demasiados.
 """)
     code("""
-!python pipeline/05_modelado/14_dataset_modelado.py
+etapa("pipeline/05_modelado/14_dataset_modelado.py")
 """)
     md(f"""
 **Qué entra al modelo, en bloques que se pueden prender y apagar:**
@@ -578,7 +590,7 @@ las dos dan lo mismo. No usamos solo el acierto: con un cuarto de grupos con aba
 decir “nadie tiene abandono alto” ya acierta el {pct(1 - c['prev'], 0)}.
 """)
     code("""
-!python pipeline/05_modelado/15_experimentos.py
+etapa("pipeline/05_modelado/15_experimentos.py")
 """)
     code("""
 import pandas as pd
@@ -616,7 +628,7 @@ pd.Series({"precisión": precision_score(y, marca),
 """)
     code("""
 from IPython.display import Image
-!python pipeline/05_modelado/18_figuras.py > /dev/null
+etapa("pipeline/05_modelado/18_figuras.py", mostrar=False)
 Image("figuras/tp3_a_modelo_vs_reglas.png")
 """)
     md(f"""
@@ -674,7 +686,7 @@ t.pivot(index="experimento", columns="modelo", values="roc_auc").round(2)
 Miramos los errores del modelo por tamaño del grupo, por sector y ámbito y por provincia.
 """)
     code("""
-!python pipeline/05_modelado/16_errores.py
+etapa("pipeline/05_modelado/16_errores.py")
 """)
     md(f"""
 - **Los errores no se reparten parejo entre provincias, y eso es lo más importante.** En
@@ -767,7 +779,7 @@ educación de la madre, repitencia, desempeño en matemática, sector y ámbito)
 abandono para armarlos, con un agrupamiento k-means, y aparecen {c['perf_k']} perfiles.
 """)
     code("""
-!python pipeline/05_modelado/17_perfiles.py
+etapa("pipeline/05_modelado/17_perfiles.py")
 Image("figuras/tp3_c_perfiles.png")
 """)
     md(f"""

@@ -29,6 +29,7 @@ version sin esas filas, la produce filtrando por las columnas que esta etapa
 agrega, y queda escrito en el modelo cual fue el filtro.
 """
 
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -36,6 +37,11 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parents[2]
 PROC = BASE_DIR / "data" / "processed"
 DOCS = BASE_DIR / "docs"
+
+# Para poder correr la etapa sola (como hace el notebook del TP3), no solo desde
+# correr.py: sin esto, `python pipeline/03_curacion/08_curar.py` no encuentra
+# decisiones.py y falla (medido el 14/10).
+sys.path.insert(0, str(BASE_DIR / "pipeline"))
 
 from decisiones import DECISIONES  # noqa: E402  (fuente unica, ver el modulo)
 
