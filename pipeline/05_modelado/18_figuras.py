@@ -255,12 +255,12 @@ def figura_b_tasa_por_provincia(d):
 
 # --------------------------------------------------------------- FIGURA C
 RASGOS = [
-    ("nse_bajo", "nivel socioec.\nbajo"),
-    ("madre_hasta_primaria", "madre hasta\nprimaria"),
-    ("repitio", "repitió"),
-    ("mate_debajo_basico", "matemática por debajo\ndel nivel básico"),
-    ("estatal", "estatal"),
-    ("rural", "rural"),
+    ("nse_bajo", "de nivel\nsocioec. bajo"),
+    ("madre_hasta_primaria", "con madre que\nllegó a primaria"),
+    ("repitio", "que\nrepitieron"),
+    ("mate_debajo_basico", "debajo del básico\nen matemática"),
+    ("estatal", "estatales"),
+    ("rural", "rurales"),
 ]
 
 
@@ -325,6 +325,16 @@ def figura_c_perfiles(p):
     ax1.set_yticks(np.arange(-0.5, len(p)), minor=True)
     ax1.grid(which="minor", color=FONDO, linewidth=3)
     ax1.tick_params(which="minor", length=0)
+    # Las columnas miden dos cosas distintas: las cuatro primeras, que parte
+    # de los ESTUDIANTES del perfil tiene el rasgo; las dos ultimas, que parte
+    # de los GRUPOS es estatal o rural. Separador y encabezado por bloque para
+    # que no se lean igual (pedido de Ignacio, 14/10).
+    ax1.axvline(3.5, color=TINTA, lw=2.2, zorder=5)
+    for x, texto in ((1.5, "% de los estudiantes del perfil"),
+                     (4.5, "% de los grupos del perfil")):
+        ax1.annotate(texto, xy=(x, 1.0), xycoords=("data", "axes fraction"),
+                     xytext=(0, 36), textcoords="offset points", ha="center",
+                     fontsize=10.5, color=TINTA, fontweight="bold")
 
     ax2.barh(range(len(p)), p["tasa_real_ponderada"], color=NARANJA,
              height=0.55, zorder=3)
@@ -355,8 +365,8 @@ def figura_c_perfiles(p):
         x=0.01, ha="left", y=1.03, fontsize=13.5, color=TINTA)
     fig.text(0.01, 0.98,
              "cuatro perfiles (grupos con rasgos parecidos) de los grupos que el modelo no marca "
-             "como abandono alto · cada celda es el porcentaje del perfil "
-             "que tiene ese rasgo",
+             "como abandono alto · el nombre de cada perfil sale de su mayoría: "
+             "por eso el rural estatal tiene grupos privados y el privado urbano, alguno rural",
              ha="left", fontsize=9.5, color=TINTA_SUAVE)
     fig.tight_layout(w_pad=2)
     return guardar(fig, "tp3_c_perfiles.png")

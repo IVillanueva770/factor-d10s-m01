@@ -409,9 +409,11 @@ def construir():
             f"urbano y {c['perf_rural_nv']} entre los dos rurales."),
         *fig(
             "tp3_c_perfiles.png", 178,
-            "Figura 3. Los cuatro perfiles de grupos que el modelo no marca. Cada "
-            "celda es el porcentaje del perfil que tiene ese rasgo; a la derecha, "
-            "cuánto abandono registran."),
+            "Figura 3. Los cuatro perfiles de grupos que el modelo no marca. Las "
+            "cuatro primeras columnas dicen qué parte de los estudiantes del perfil "
+            "tiene ese rasgo; las dos últimas, qué parte de sus grupos de escuelas "
+            "es estatal o rural (el nombre del perfil sale de la mayoría). A la "
+            "derecha, cuánto abandono registran."),
         p(
             "<b>Para quien decide:</b> el estatal urbano junta más casos por su tamaño "
             f"(reúne el {pct(c['perf_top_est'], 0)} de los estudiantes de estos "
@@ -502,9 +504,24 @@ def construir():
     F.append(KeepTogether(cierre))
 
     F += sec(12, "Fuentes")
-    for ref in FUENTES:
-        F.append(p(ref, "fuente"))
+    assert len(FUENTES_URL) == len(FUENTES), "cada fuente lleva su enlace"
+    for ref, url in zip(FUENTES, FUENTES_URL):
+        F.append(p(f"{ref} Disponible en: <a href='{url}' color='#2a78d6'>"
+                   f"{url.replace('&', '&amp;')}</a>", "fuente"))
     return F
+
+
+# Donde se consulta cada fuente, en el mismo orden que FUENTES. Verificadas
+# abriendolas el 13 y el 14/10 (FUENTES-TP3.md).
+FUENTES_URL = [
+    "https://ri.conicet.gov.ar/handle/11336/267725",
+    "https://www.argentina.gob.ar/sites/default/files/2018/04/documentos_metodologicos_3.10.zip",
+    "https://www.argentina.gob.ar/sites/default/files/documento_metodologico.pdf",
+    "https://cge.entrerios.gov.ar/wp-content/uploads/cei/2025-COMUN-TP.pdf",
+    "https://www.argentina.gob.ar/sites/default/files/informe_nacional_aprender_2024.pdf",
+    "https://www.argentina.gob.ar/sites/default/files/historias_con_datos_sobredad_final.pdf",
+    "https://www.unicef.org/argentina/media/18746/file/Serie%20MICS:%20Adolescencias%20y%20Educaci%C3%B3n.pdf",
+]
 
 
 def verificar():
