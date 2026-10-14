@@ -177,7 +177,7 @@ def figura_a_modelo_vs_reglas(r):
         titulo(ax, encabezado, bajada)
 
     fig.suptitle(
-        f"El perfil y la provincia solos ordenan parecido ({coma(est_log)} y "
+        f"El perfil y la provincia, cada uno solo, ordenan casi igual ({coma(est_log)} y "
         f"{coma(est_prov)}); juntos llegan a {coma(est_juntos)}. Sin conocer la "
         f"provincia, el perfil sigue encontrando señal ({coma(pp_log)} contra {coma(pp_sa)})",
         x=0.01, ha="left", y=1.015, fontsize=13.5, color=TINTA)

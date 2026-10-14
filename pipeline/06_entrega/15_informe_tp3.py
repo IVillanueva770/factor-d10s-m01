@@ -82,26 +82,17 @@ INTEGRANTES = "PENDIENTE"
 
 FUENTES = [
     "Adrogué, C. y Orlicki, M. E. (2025). Riesgo de abandono escolar en la secundaria. "
-    "Factores comunes y diferentes para varones y mujeres. Estudios Económicos 42(85), UNS.",
-    "Albornoz, F., Furman, M., Podestá, M. E., Razquin, P. y Warnes, P. (2016). Diferencias "
-    "educativas entre escuelas privadas y públicas en Argentina. Desarrollo Económico 56(218).",
-    "Argentinos por la Educación (2023). Trayectorias escolares: ¿cuántos estudiantes "
-    "abandonan la secundaria en Argentina?",
-    "Berlinski, S., Cruces, G., Galiani, S., Gertler, P. y Gonzalez, P. (2025). Long-run "
-    "Effects of Universal Pre-Primary Education Expansion: Evidence from Argentina. "
-    "NBER Working Paper 34552.",
-    "Boniolo, P. y Najmias, C. (2018). Abandono y rezago escolar en Argentina: una mirada "
-    "desde las clases sociales. Tempo Social 30(3).",
-    "DGCyE, Provincia de Buenos Aires (2022). Manual metodológico de indicadores educativos.",
+    "Factores comunes y diferentes para varones y mujeres. Estudios Económicos 42(85), "
+    "Universidad Nacional del Sur.",
     "DiNIECE, Ministerio de Educación. Definiciones básicas para la producción de "
-    "estadísticas educativas; y Sistema Nacional de Indicadores Educativos, manual "
-    "metodológico.",
+    "estadísticas educativas.",
     "DIEE, Ministerio de Educación. Documento metodológico de las bases usuarias del "
     "Relevamiento Anual; y cuadernillo del Relevamiento Anual 2025, educación común.",
-    "Ministerio de Educación (2025). Aprender 2024. Informe de resultados, educación secundaria.",
+    "Ministerio de Educación (2025). Aprender 2024. Informe de resultados, educación "
+    "secundaria.",
     "Subsecretaría de Información y Evaluación Educativa (2024). Caminos interrumpidos: "
     "abandono escolar y sobreedad.",
-    "UNICEF Argentina (2022). Serie MICS: Adolescencias y educación (encuesta MICS 2019-2020).",
+    "UNICEF Argentina (2022). Serie MICS: Adolescencias y educación.",
 ]
 MARCA_NOTA = "Nota para lectores técnicos"
 
@@ -118,7 +109,7 @@ S["fuente"] = ParagraphStyle(
     "fuente", fontName="Helvetica", fontSize=7.8, leading=10.2,
     textColor=tp2.TINTA, leftIndent=10, firstLineIndent=-10, spaceAfter=2.2,
 )
-S["seccion"].spaceAfter = 6
+S["seccion"].spaceAfter = 8
 S["enlace"] = ParagraphStyle(
     "enlace", parent=S["cuerpo"], spaceAfter=1.5,
 )
@@ -157,7 +148,7 @@ def decorado(canvas, doc):
 
 def sec(numero, texto):
     """Seccion con mas aire arriba que la del TP2 (pedido de Ignacio, 14/10)."""
-    return [Spacer(1, 6), tp2.regla(antes=8, despues=2), p(f"{numero}. {texto}", "seccion")]
+    return [Spacer(1, 16), tp2.regla(antes=6, despues=4), p(f"{numero}. {texto}", "seccion")]
 
 
 def construir():
@@ -171,7 +162,7 @@ def construir():
     F.append(p(
         f"Cruzamos lo que {miles(c['estudiantes'])} estudiantes contaron en las "
         "Pruebas Aprender con los chicos que sus escuelas registraron como abandono. "
-        "Entregable 3 del grupo M01, «El Factor D10S».", "subtitulo"))
+        "Entregable 3 del grupo M01, \u201cEl Factor D10S\u201d.", "subtitulo"))
     F.append(p(
         f"Integrantes: {INTEGRANTES}<br/>"
         "Mentora: Noelia Ferrero &nbsp;·&nbsp; Mentoría de la Diplomatura en Ciencia "
@@ -278,7 +269,7 @@ def construir():
             "Y el perfil sirve sin la provincia: si probamos el modelo en provincias "
             "que no usó para aprender, la regla de la provincia queda sin nada que "
             f"decir y el modelo conserva {num(c['auc_log_pp'])}. Elegir el cuarto de "
-            "grupos con más abandono como «alto» fue decisión nuestra, así que lo "
+            "grupos con más abandono como \u201calto\u201d fue decisión nuestra, así que lo "
             "movimos al tercio y al quinto: el perfil solo y la provincia sola siguen "
             f"parejos ({num(c['auc_t_log'])} contra {num(c['auc_t_prov'])}, y "
             f"{num(c['auc_q_log'])} contra {num(c['auc_q_prov'])})."),
@@ -298,30 +289,24 @@ def construir():
         "en las escuelas estatales. No lo dimos por sentado: buscamos qué dice la "
         "investigación previa."))
     F.append(v(
-        "<b>Nivel socioeconómico: documentado.</b> Un estudio de Adrogué y Orlicki "
-        "(2025), que siguió veinte años de la Encuesta Permanente de Hogares del "
-        "INDEC, encuentra que los estudiantes de los hogares más pobres tienen más "
-        "riesgo de abandonar. La encuesta de UNICEF Argentina sobre adolescencias "
-        "(MICS 2019-2020, publicada en 2022) muestra que solo el 37% de los jóvenes "
-        "del quinto más pobre terminó la secundaria."))
+        "<b>Nivel socioeconómico y escuela estatal: documentado.</b> Un estudio de "
+        "Adrogué y Orlicki (2025), que siguió veinte años de la Encuesta Permanente "
+        "de Hogares del INDEC, encuentra más riesgo de abandono en los hogares más "
+        "pobres y en las escuelas de gestión estatal."))
     F.append(v(
-        "<b>Educación de la madre: documentado</b>, como «clima educativo del "
-        "hogar» (UNICEF, 2022; Boniolo y Najmias, 2018, un trabajo sobre abandono y "
-        "clases sociales; y el observatorio Argentinos por la Educación, 2023). Ojo: "
-        "en Aprender 2024 el índice de nivel socioeconómico ya incluye la educación "
-        "de la madre, así que en nuestros datos no son dos señales independientes."))
+        "<b>Educación de la madre: documentado.</b> La encuesta de UNICEF Argentina "
+        "sobre adolescencias (2022) lo muestra como \u201cclima educativo del hogar\u201d. "
+        "Ojo: en Aprender 2024 el índice de nivel socioeconómico ya incluye la "
+        "educación de la madre, así que en nuestros datos no son dos señales "
+        "independientes."))
     F.append(v(
         "<b>Repitencia y sobreedad: documentado con dato oficial.</b> El área de "
         "estadística del Ministerio de Educación mostró en 2024 un abandono del 27% "
-        "entre quienes tienen sobreedad contra 4,5% entre quienes no; el informe "
-        "nacional de Aprender 2024 asocia la repitencia con más riesgo de abandono."))
+        "entre quienes tienen sobreedad contra 4,5% entre quienes no."))
     F.append(v(
-        "<b>Jardín desde sala de 3 y escuela estatal: documentado en parte.</b> Lo "
-        "del jardín está probado para los aprendizajes y para terminar la secundaria "
-        "(Aprender 2024; Berlinski y otros, 2025), no contra el abandono. La brecha "
-        "entre estatal y privada está documentada (Adrogué y Orlicki, 2025), pero que "
-        "se explique por quiénes asisten a cada una solo se mostró para los "
-        "aprendizajes (Albornoz y otros, 2016)."))
+        "<b>Jardín desde sala de 3: documentado en parte.</b> El informe nacional de "
+        "Aprender 2024 lo asocia a mejores aprendizajes, pero no encontramos una "
+        "fuente argentina que lo mida contra el abandono."))
     F.append(p(
         "Ningún tema por separado es imprescindible para el modelo: al sacar uno, los "
         "otros lo cubren, porque todos cuentan la misma desigualdad. Y que algo "
@@ -333,7 +318,7 @@ def construir():
             "Los errores del modelo no se reparten parejo entre provincias. En Buenos "
             f"Aires hay {c['ba_altos']} grupos con abandono alto y el modelo detecta "
             f"{c['ba_det']}, pero marca otros {c['ba_fa']} que el registro da como "
-            "bajos: por el perfil de sus estudiantes, esos grupos «deberían» tener más "
+            "bajos: por el perfil de sus estudiantes, esos grupos \u201cdeberían\u201d tener más "
             f"abandono del que figura. En Santa Fe pasa al revés: {c['sf_altos']} "
             f"grupos con abandono alto y el modelo detecta {c['sf_det']}. O cada "
             "provincia registra distinto, o hay algo propio de cada una que Aprender "
@@ -342,8 +327,8 @@ def construir():
             "<b>Que el registro cambie entre provincias es una hipótesis nuestra.</b> "
             "La Dirección de Información y Estadística Educativa del Ministerio, que "
             "administra el Relevamiento, sostiene lo contrario: que su sistema "
-            "«garantiza la homogeneidad y comparabilidad de los datos en todo el "
-            "ámbito nacional». No encontramos ningún documento oficial que advierta "
+            "\u201cgarantiza la homogeneidad y comparabilidad de los datos en todo el "
+            "ámbito nacional\u201d. No encontramos ningún documento oficial que advierta "
             "diferencias. Nos apoyamos en la distancia entre provincias y en la caída "
             f"de Buenos Aires, que con la secundaria entera pasa de "
             f"{pct(c['ba_tasa_ini'])} en {c['ba_anio_ini']} a {pct(c['ba_tasa_fin'])} "
@@ -380,8 +365,8 @@ def construir():
         "<b>Qué predecimos.</b> Si un grupo tiene abandono alto, con la regla de la "
         "sección 1. Para la definición de salida sin pase usamos la oficial de la "
         "Dirección Nacional de Información y Evaluación de la Calidad Educativa "
-        "(DiNIECE), que arma los indicadores del Ministerio: «el que se va de la "
-        "escuela a la que asistía, sin inscripción (o pase) en otra escuela». Tomamos "
+        "(DiNIECE), que arma los indicadores del Ministerio: \u201cel que se va de la "
+        "escuela a la que asistía, sin inscripción (o pase) en otra escuela\u201d. Tomamos "
         "los dos últimos años porque son los que evalúa Aprender."))
     F.append(p(
         "<b>Con qué modelos.</b> Una regresión logística, que estima la probabilidad "
@@ -404,14 +389,13 @@ def construir():
     cierre.append(v("<b>Grupos, no personas.</b> Nada de esto permite decir algo de un "
                     "estudiante concreto."))
     cierre.append(v("<b>El abandono registrado no es el abandono real.</b> Un cero no se "
-                    "distingue de «no se registró», y que la diferencia entre provincias "
+                    "distingue de \u201cno se registró\u201d, y que la diferencia entre provincias "
                     "sea por cómo registra cada una es una hipótesis nuestra (sección 7)."))
     cierre.append(v("<b>Lo que el registro no cuenta y lo que cuenta de más.</b> Quien se "
                     "va entre diciembre y marzo, después del último día de clase, no "
                     "figura como salida sin pase, según el formulario 2025 del "
                     "Relevamiento; y la categoría incluye a quienes siguen en otra escuela "
-                    "sin haber hecho el trámite del pase, según el manual de indicadores "
-                    "de la provincia de Buenos Aires (2022)."))
+                    "sin haber hecho el trámite del pase."))
     cierre.append(v("<b>Un año de diferencia.</b> El Relevamiento de cada año informa las "
                     "salidas del ciclo anterior: el de 2024 trae las de 2023, y Aprender "
                     "es de octubre de 2024."))
