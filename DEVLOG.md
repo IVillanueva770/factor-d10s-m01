@@ -6,7 +6,7 @@ Repo único para las tres entregas de la mentoría (abandono escolar, mentora No
 
 ## Tareas Activas
 
-- [ ] TP3: subir al aula (Ignacio) el PDF y, en el texto, el link de Colab y el del repo (todo publicado el 13/10, commit `5c65aae`)
+- [x] TP3: entregado en el aula el 14/10 (commit `f14c657`)
 - [ ] Correr `--verificar` completo y actualizar `pipeline/MANIFIESTO.json` (se cortó el 09/10 por falta de RAM)
 - [ ] Relevamiento 2025 (ciclo 2024) cuando se publique, para sacar el desfase de un año
 - [ ] Video final, vence el 07/11
