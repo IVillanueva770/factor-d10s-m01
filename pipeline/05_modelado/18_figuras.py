@@ -65,7 +65,7 @@ DPI = 200
 METADATA = {"Software": None}
 
 
-def coma(x, decimales=3):
+def coma(x, decimales=2):
     """Numero con coma decimal, como se escribe en el informe."""
     return f"{x:.{decimales}f}".replace(".", ",")
 
@@ -210,7 +210,7 @@ def figura_b_tasa_por_provincia(d):
     nombres = [NOMBRES_CORTOS.get(j, j) for j in g["jurisdiccion"]]
     colores = [NARANJA if t > nacional else AZUL for t in g["tasa"]]
 
-    fig, ax = plt.subplots(figsize=(13, 7.2))
+    fig, ax = plt.subplots(figsize=(10, 7.8))
     y = np.arange(len(g))
     ax.barh(y, g["tasa"], color=colores, height=0.68, zorder=3)
     for yi, t in enumerate(g["tasa"]):
@@ -218,22 +218,22 @@ def figura_b_tasa_por_provincia(d):
         # del numero en vez de tacharlo.
         ax.annotate(pct(t, 2), xy=(t, yi), xytext=(5, 0),
                     textcoords="offset points", va="center",
-                    fontsize=8.5, color=TINTA, zorder=6,
+                    fontsize=10.5, color=TINTA, zorder=6,
                     bbox=dict(boxstyle="square,pad=0.1", fc=FONDO, ec="none"))
     ax.axvline(nacional, color=TINTA_SUAVE, lw=1.2, ls="--", zorder=4)
     ax.annotate(f"media nacional {pct(nacional, 2)}",
                 xy=(nacional, len(g) + 0.15), xytext=(6, 0),
                 textcoords="offset points", ha="left", va="center",
-                fontsize=9, color=TINTA_SUAVE)
+                fontsize=10.5, color=TINTA_SUAVE)
 
     ax.set_yticks(y)
-    ax.set_yticklabels(nombres, fontsize=9)
+    ax.set_yticklabels(nombres, fontsize=11)
     ax.set_ylim(-0.7, len(g) + 0.6)
     ax.set_xlim(0, maximo["tasa"] * 1.13)
     ax.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(
         lambda v, _: pct(v, 1)))
-    ax.set_xlabel("salidas sin pase / matrícula inicial, dos últimos años "
-                  "de secundaria (ponderado por matrícula)")
+    ax.set_xlabel("estudiantes que dejaron la escuela sin pasar a otra, sobre los "
+                  "inscriptos (dos últimos años de la secundaria)", fontsize=10.5)
     ax.grid(axis="x", zorder=0)
     ax.set_axisbelow(True)
     titulo(ax,

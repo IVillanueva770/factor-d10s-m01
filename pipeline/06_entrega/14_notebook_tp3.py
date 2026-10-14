@@ -89,7 +89,7 @@ def pct(x, d=2):
     return f"{100 * x:.{d}f}%".replace(".", ",")
 
 
-def num(x, d=3):
+def num(x, d=2):
     return f"{x:.{d}f}".replace(".", ",")
 
 
