@@ -19,6 +19,12 @@ Repo único para las tres entregas de la mentoría (abandono escolar, mentora No
 
 ## Sesiones
 
+### [2026-10-14] - Sesión 3 (TP3, iteración del PDF con Ignacio)
+**Hecho:** tres tandas de correcciones de Ignacio al PDF (encabezado propio con integrantes, términos explicados al usarlos, 2 decimales, más aire, figuras legibles, una fuente por afirmación, sin nota técnica ni rutas). Dos agentes de contexto limpio: uno reabrió las 6 fuentes (corrigió autora Orlicki, E., la institución de Aprender 2024 y las fechas s/f) y otro leyó el PDF como la mentora y como alguien que decide (15 críticas). Notebook alineado con el PDF. Publicado `dfe76cb`.
+**Decisiones:** la recomendación pasa a "usar el perfil dentro de cada provincia y la provincia como dato a revisar", porque ordenar por provincia contradice la hipótesis del registro (13 y 14/10, Ignacio pidió vigilar estos choques). Integrantes: Pablo Micheli, Jorge Luis Mira e Ignacio Villanueva (Lautaro Clavero no). El PDF pasa de 4 a 5 páginas: el límite de 4 era propio, no de la consigna.
+**Problemas:** el lector crítico se equivocó en un número (dijo que los rurales eran "casi otro tanto"; son 76 contra 72): se usó el CSV, no su reporte.
+**Fricción del flujo:** iterar el PDF barato funcionó con un renderizador de páginas a baja resolución (mirar solo lo que cambió).
+
 ### [2026-10-13] - Sesión 2 (TP3, cierre y fuentes; se entrega tarde con OK de Ignacio)
 **Objetivo:** cerrar lo que el 09/10 quedó frágil y dejarlo trackeable.
 **Hecho:**
