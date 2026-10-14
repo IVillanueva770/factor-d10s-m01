@@ -175,8 +175,11 @@ def figura_a_modelo_vs_reglas(r):
         titulo(ax, encabezado, bajada, tamano=14.5)
 
     fig.suptitle(
-        f"El perfil y la provincia, cada uno solo, ordenan casi igual ({coma(est_log)} y "
-        f"{coma(est_prov)}); juntos llegan a {coma(est_juntos)}.\nSin conocer la "
+        (f"El perfil y la provincia, cada uno solo, ordenan igual ({coma(est_log)}); "
+         if coma(est_log) == coma(est_prov) else
+         f"El perfil y la provincia, cada uno solo, ordenan casi igual "
+         f"({coma(est_log)} y {coma(est_prov)}); ")
+        + f"juntos llegan a {coma(est_juntos)}.\nSin conocer la "
         f"provincia, el perfil dice poco más que la regla simple ({coma(pp_log)} contra {coma(pp_sa)})",
         x=0.01, ha="left", va="top", y=1.1, fontsize=15, color=TINTA)
     fig.text(0.01, 0.975,
