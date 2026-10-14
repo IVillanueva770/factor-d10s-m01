@@ -295,7 +295,7 @@ def construir():
         "<b>Dar una segunda mirada a los grupos que el modelo no marca:</b> entre "
         f"ellos quedan {c['no_det']} de los {c['altos_tot']} con abandono alto, "
         f"{c['perf_top_nv']} en escuelas estatales urbanas y {c['perf_rural_nv']} "
-        "en estatales rurales (sección 8)."))
+        "en los dos perfiles rurales (sección 8)."))
 
     # ------------------------------------------------------------ Detalle
     F.append(KeepTogether(sec(5, "El modelo contra las reglas simples") + [

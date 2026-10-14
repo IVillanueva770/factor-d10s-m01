@@ -397,7 +397,7 @@ registra el abandono cada una.
   empezando por las que más se apartan de lo que predice el modelo (Buenos Aires y Santa Fe).
 - **Dar una segunda mirada a los grupos que el modelo no marca:** entre ellos quedan
   {c['no_det']} de los {c['altos_tot']} con abandono alto, {c['perf_top_nv']} en escuelas
-  estatales urbanas y {c['perf_rural_nv']} en estatales rurales (sección 8).
+  estatales urbanas y {c['perf_rural_nv']} en los dos perfiles rurales (sección 8).
 
 ---
 
@@ -452,6 +452,9 @@ modelo:
   cuenta Aprender, el sector, el ámbito y el tamaño del grupo. **No usamos** nada que se
   conozca después del abandono (los que no pasaron de año, los pases ni los egresados del
   mismo año): salen del mismo cierre de ciclo, y usarlos sería mirar la respuesta.
+  Estrictamente, Aprender (octubre de 2024) se tomó después de las salidas que usamos (ciclo
+  2023, sección 2): lo que garantizamos es no usar nada del mismo cierre de ciclo, y por eso
+  hablamos de ordenar y no de anticipar.
 - **¿Qué podemos afirmar?** Cosas sobre grupos, nunca sobre una persona; asociaciones, nunca
   causas.
 
@@ -461,9 +464,8 @@ rendir. El Relevamiento lo completa la escuela: cuenta quién se fue, pero no sa
 hogares. Juntas permiten preguntar qué perfiles acompañan a las tasas de abandono que
 registra el sistema.
 
-**Un solo año, 2024.** La mentora nos pidió trabajar con una sola época. El resumen de esa
-reunión dice “2025”, pero no hay Aprender de secundaria 2025 (se toma en 2022 y 2024) ni
-Relevamiento publicado de 2025, así que todo sale de los archivos 2024 (el del Relevamiento
+**Un solo año, 2024.** La mentora nos pidió trabajar con una sola época. No hay Aprender de
+secundaria 2025 (se toma en 2022 y 2024) ni Relevamiento publicado de 2025, así que todo sale de los archivos 2024 (el del Relevamiento
 trae las salidas del ciclo 2023: sección 2). La EPH no sirve para medir el abandono acá: no
 se puede unir a los grupos, porque solo llega a provincia, y su dato es de 2025. Queda afuera
 del modelo principal y, como pidió la mentora, la probamos aparte (sección 5).
@@ -532,7 +534,14 @@ imprime cuántos estudiantes encuentran su par, y la etapa se corta si se pierde
 
 Los faltantes (por ejemplo, el clima escolar, que no tiene dato en {c['clima_na']} grupos) se
 completan con la mediana **dentro de cada partición de entrenamiento**, nunca mirando los datos
-con los que se evalúa.
+con los que se evalúa. El escalado de las variables se ajusta igual, solo con el entrenamiento.
+
+**Qué dejamos afuera y por qué.** Las columnas de cobertura (miden la calidad del dato, no a los
+estudiantes), los indicadores de la EPH (van solo en la prueba aparte), la versión armonizada de
+la educación de los padres (repite la original) y todo lo del mismo cierre de ciclo (un test del
+proyecto verifica que ninguna de esas columnas entre a ningún experimento). Los tipos ya vienen
+revisados del TP2: todas las variables del perfil son proporciones entre 0 y 1, y sector y
+ámbito pasan a variables de 0 o 1.
 """)
 
     md(f"""
@@ -553,7 +562,11 @@ peso de cada variable y se puede leer, y un modelo de **árboles combinados** (b
 capta relaciones no lineales. Cuando decimos **el modelo** hablamos de la regresión logística
 con el perfil solo. Todos, reglas y modelos, se evalúan igual: partimos los datos en cinco y
 cada parte se predijo con lo aprendido de las otras cuatro, así que cada grupo lo evaluó un
-modelo que no lo había visto (con semilla fija).
+modelo que no lo había visto (con semilla fija). Usamos cinco partes y no una sola división
+porque, con {c['altos_tot']} grupos con abandono alto, una sola prueba tendría unos
+{round(c['altos_tot'] / 5)} y el resultado dependería mucho de cuáles tocaron; y las
+estratificamos para que cada parte tenga la misma proporción de grupos con abandono alto.
+Además probamos separando por provincia, para ver qué pasa en provincias que el modelo no vio.
 
 Medimos con el **área bajo la curva ROC**, la escala de qué tan bien ordenan los grupos de más
 a menos riesgo (0,5 es un sorteo, 1 es ordenarlos perfecto). Y miramos qué pasa cuando el
@@ -575,6 +588,31 @@ nombres = {"prevalencia": "Regla: un sorteo", "sector_ambito": "Regla: sector y 
            "boosting": "Árboles combinados"}
 t = r[r.experimento == "principal"].assign(modelo=lambda x: x.modelo.map(nombres))
 t.pivot(index="modelo", columns="separacion", values="roc_auc").round(2)
+""")
+    md("""
+**La matriz de confusión del modelo.** Marcamos como de riesgo al cuarto de grupos que el modelo
+pone más arriba, con todas las predicciones fuera de muestra juntas y un solo corte: es la que
+usamos en el texto. (La tabla de experimentos calcula las métricas dentro de cada partición, con
+un corte por parte, y por eso puede diferir en unos pocos grupos.)
+""")
+    code("""
+import sys
+sys.path.insert(0, "pipeline")
+from modelado import EXPERIMENTOS, cuantil_de, target_de
+from sklearn.metrics import (average_precision_score, confusion_matrix, f1_score,
+                             precision_score, recall_score, roc_auc_score)
+principal = next(e for e in EXPERIMENTOS if e["id"] == "principal")
+p = pd.read_csv("data/processed/predicciones_principal.csv")
+y = p[target_de(principal)].astype(int)
+marca = (p["p_logistica"] >= p["p_logistica"].quantile(cuantil_de(principal))).astype(int)
+display(pd.DataFrame(confusion_matrix(y, marca),
+                     index=["real: sin abandono alto", "real: abandono alto"],
+                     columns=["no marcado", "marcado"]))
+pd.Series({"precisión": precision_score(y, marca),
+           "cobertura (recall)": recall_score(y, marca),
+           "F1": f1_score(y, marca),
+           "PR-AUC (azar = 0,25)": average_precision_score(y, p["p_logistica"]),
+           "ROC-AUC": roc_auc_score(y, p["p_logistica"])}).round(2)
 """)
     code("""
 from IPython.display import Image
