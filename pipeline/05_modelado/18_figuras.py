@@ -74,7 +74,7 @@ def pct(x, decimales=1):
     return coma(100 * x, decimales) + "%"
 
 
-def titulo(ax, texto, bajada=None):
+def titulo(ax, texto, bajada=None, tamano=12.5):
     """Titulo y bajada como anotaciones, igual que en 11_figuras.py.
 
     Van en el mismo sistema de coordenadas para que las alturas se controlen
@@ -83,7 +83,7 @@ def titulo(ax, texto, bajada=None):
     n_lineas_bajada = bajada.count("\n") + 1 if bajada else 0
     alto_bajada = 0.035 * n_lineas_bajada
     ax.annotate(texto, xy=(0, 1.035 + alto_bajada), xycoords="axes fraction",
-                fontsize=12.5, color=TINTA, va="bottom", ha="left")
+                fontsize=tamano, color=TINTA, va="bottom", ha="left")
     if bajada:
         ax.annotate(bajada, xy=(0, 1.02), xycoords="axes fraction",
                     fontsize=9.5, color=TINTA_SUAVE, va="bottom", ha="left")
@@ -99,20 +99,18 @@ def guardar(fig, nombre):
 # --------------------------------------------------------------- FIGURA A
 # Orden de abajo hacia arriba en el grafico: el azar abajo, los modelos arriba.
 MODELOS = [
-    ("prevalencia", "Nadie sabe nada (azar)", TINTA_SUAVE),
-    ("sector_ambito", "Regla: sector y ámbito", NARANJA),
+    ("prevalencia", "Sorteo (nadie sabe nada)", TINTA_SUAVE),
+    ("sector_ambito", "Regla: estatal/privado y urbano/rural", NARANJA),
     ("provincia", "Regla: la provincia", NARANJA),
-    ("logistica", "Modelo: regresión logística", AZUL),
-    ("boosting", "Modelo: árboles combinados", AZUL),
-    ("juntos", "Modelo: provincia y perfil juntos", AZUL),
+    ("logistica", "Modelo: solo el perfil", AZUL),
+    ("boosting", "Modelo: solo el perfil, otra técnica", AZUL),
+    ("juntos", "Modelo: provincia y perfil", AZUL),
 ]
 SEPARACIONES = [
-    ("estratificada", "Con todas las provincias en el entrenamiento",
-     "separación estratificada: cada provincia aparece en el\n"
-     "entrenamiento y en la prueba"),
-    ("por_provincia", "Probando en provincias que nunca vio",
-     "separación por provincia: la regla de la provincia\n"
-     "no tiene nada que decir y cae al azar"),
+    ("estratificada", "Aprende y se prueba con todas las provincias",
+     "cada provincia aparece al aprender y al probar"),
+    ("por_provincia", "Se prueba en provincias que no vio",
+     "la regla de la provincia no tiene nada que decir"),
 ]
 
 
@@ -161,12 +159,12 @@ def figura_a_modelo_vs_reglas(r):
                         fontsize=10, color=TINTA)
 
         ax.axvline(0.5, color=TINTA_SUAVE, lw=1, ls="--", zorder=5)
-        ax.annotate("azar", xy=(0.5, len(MODELOS) - 0.45), xytext=(4, 0),
+        ax.annotate("sorteo", xy=(0.5, len(MODELOS) - 0.45), xytext=(4, 0),
                     textcoords="offset points", ha="left", va="center",
                     fontsize=9, color=TINTA_SUAVE)
 
         ax.set_yticks(y)
-        ax.set_yticklabels(nombres, fontsize=10)
+        ax.set_yticklabels(nombres, fontsize=11.5)
         ax.set_xlim(0, 0.92)
         ax.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(
             lambda v, _: coma(v, 1)))
@@ -174,17 +172,17 @@ def figura_a_modelo_vs_reglas(r):
         ax.set_xlabel("qué tan bien ordena el riesgo (0,5 = sorteo, 1 = perfecto)")
         ax.grid(axis="x", zorder=0)
         ax.set_axisbelow(True)
-        titulo(ax, encabezado, bajada)
+        titulo(ax, encabezado, bajada, tamano=14.5)
 
     fig.suptitle(
         f"El perfil y la provincia, cada uno solo, ordenan casi igual ({coma(est_log)} y "
-        f"{coma(est_prov)}); juntos llegan a {coma(est_juntos)}. Sin conocer la "
-        f"provincia, el perfil sigue encontrando señal ({coma(pp_log)} contra {coma(pp_sa)})",
-        x=0.01, ha="left", y=1.015, fontsize=13.5, color=TINTA)
-    fig.text(0.01, 0.965,
-             "experimento principal · la línea fina es el desvío entre "
-             "particiones · naranja = regla simple, azul = modelo",
-             ha="left", fontsize=9.5, color=TINTA_SUAVE)
+        f"{coma(est_prov)}); juntos llegan a {coma(est_juntos)}.\nSin conocer la "
+        f"provincia, el perfil dice poco más que la regla simple ({coma(pp_log)} contra {coma(pp_sa)})",
+        x=0.01, ha="left", va="top", y=1.1, fontsize=15, color=TINTA)
+    fig.text(0.01, 0.975,
+             "azul = modelo, naranja = regla simple · la línea fina en la punta "
+             "de cada barra es cuánto varía el resultado de una prueba a otra",
+             ha="left", fontsize=11, color=TINTA_SUAVE)
     fig.tight_layout(w_pad=3)
     return guardar(fig, "tp3_a_modelo_vs_reglas.png")
 
@@ -205,7 +203,9 @@ def figura_b_tasa_por_provincia(d):
     g = g.reset_index().sort_values(["tasa", "jurisdiccion"])
     nacional = d["ssp_ultimos2"].sum() / d["inicial_ultimos2"].sum()
     minimo, maximo = g.iloc[0], g.iloc[-1]
-    veces = maximo["tasa"] / minimo["tasa"]
+    # Las veces con los porcentajes redondeados como se muestran, para que la
+    # cuenta cierre a la vista (igual que en el informe).
+    veces = round(100 * maximo["tasa"], 2) / round(100 * minimo["tasa"], 2)
 
     nombres = [NOMBRES_CORTOS.get(j, j) for j in g["jurisdiccion"]]
     colores = [NARANJA if t > nacional else AZUL for t in g["tasa"]]
@@ -237,9 +237,9 @@ def figura_b_tasa_por_provincia(d):
     ax.grid(axis="x", zorder=0)
     ax.set_axisbelow(True)
     titulo(ax,
-           f"De {pct(minimo['tasa'], 1)} en "
+           f"De {pct(minimo['tasa'], 2)} en "
            f"{NOMBRES_CORTOS.get(minimo['jurisdiccion'], minimo['jurisdiccion'])}"
-           f" a {pct(maximo['tasa'], 1)} en "
+           f" a {pct(maximo['tasa'], 2)} en "
            f"{NOMBRES_CORTOS.get(maximo['jurisdiccion'], maximo['jurisdiccion'])}"
            f": la tasa se multiplica por {veces:.0f} entre provincias",
            "parte de esa distancia puede ser cómo registra cada provincia las "
@@ -252,10 +252,10 @@ def figura_b_tasa_por_provincia(d):
 
 # --------------------------------------------------------------- FIGURA C
 RASGOS = [
-    ("nse_bajo", "NSE bajo"),
+    ("nse_bajo", "nivel socioec.\nbajo"),
     ("madre_hasta_primaria", "madre hasta\nprimaria"),
     ("repitio", "repitió"),
-    ("mate_debajo_basico", "matemática debajo\ndel básico"),
+    ("mate_debajo_basico", "matemática por debajo\ndel nivel básico"),
     ("estatal", "estatal"),
     ("rural", "rural"),
 ]
@@ -306,7 +306,7 @@ def figura_c_perfiles(p):
                origin="lower")
     for i in range(matriz.shape[0]):
         for j in range(matriz.shape[1]):
-            ax1.annotate(coma(matriz[i, j], 2), xy=(j, i), ha="center",
+            ax1.annotate(pct(matriz[i, j], 0), xy=(j, i), ha="center",
                          va="center", fontsize=10.5, color=TINTA)
     ax1.set_xticks(range(len(RASGOS)))
     ax1.set_xticklabels([n for _, n in RASGOS], fontsize=9.5)
@@ -333,12 +333,12 @@ def figura_c_perfiles(p):
     ax2.xaxis.set_major_locator(matplotlib.ticker.MultipleLocator(0.005))
     ax2.xaxis.set_major_formatter(matplotlib.ticker.FuncFormatter(
         lambda v, _: pct(v, 1)))
-    ax2.set_xlabel("tasa real de salidas sin pase (ponderada)")
+    ax2.set_xlabel("abandono registrado\n(promedio ponderado por estudiantes)")
     ax2.grid(axis="x", zorder=0)
     ax2.set_axisbelow(True)
     ax2.tick_params(axis="y", length=0)
     ax2.spines["left"].set_visible(False)
-    titulo(ax2, "y cuánto abandono tienen de verdad")
+    titulo(ax2, "y cuánto abandono registran")
 
     privado = p[p["estatal"] < 0.5]
     resto = p[p["estatal"] >= 0.5]
@@ -352,8 +352,8 @@ def figura_c_perfiles(p):
         x=0.01, ha="left", y=1.03, fontsize=13.5, color=TINTA)
     fig.text(0.01, 0.98,
              "cuatro perfiles (grupos con rasgos parecidos) de los grupos que el modelo no marca "
-             "como abandono alto · cada celda es la proporción del rasgo "
-             "en el perfil, de 0 a 1",
+             "como abandono alto · cada celda es el porcentaje del perfil "
+             "que tiene ese rasgo",
              ha="left", fontsize=9.5, color=TINTA_SUAVE)
     fig.tight_layout(w_pad=2)
     return guardar(fig, "tp3_c_perfiles.png")

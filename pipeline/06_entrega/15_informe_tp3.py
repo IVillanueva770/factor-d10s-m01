@@ -35,6 +35,7 @@ POR QUE ASI
 
 import importlib.util
 import re
+from fractions import Fraction
 from pathlib import Path
 
 from reportlab.lib.pagesizes import A4
@@ -78,21 +79,25 @@ PROHIBIDAS = ["pipeline", "CRISP-DM", "leakage", "cross-validation", EM, EN]
 MAX_PAGINAS = 7
 
 # Integrantes del grupo: los confirma Ignacio.
-INTEGRANTES = "PENDIENTE"
+INTEGRANTES = "Pablo Micheli, Jorge Luis Mira e Ignacio Villanueva"
 
 FUENTES = [
-    "Adrogué, C. y Orlicki, M. E. (2025). Riesgo de abandono escolar en la secundaria. "
+    "Adrogué, C. y Orlicki, E. (2025). Riesgo de abandono escolar en la secundaria. "
     "Factores comunes y diferentes para varones y mujeres. Estudios Económicos 42(85), "
-    "Universidad Nacional del Sur.",
-    "DiNIECE, Ministerio de Educación. Definiciones básicas para la producción de "
-    "estadísticas educativas.",
-    "DIEE, Ministerio de Educación. Documento metodológico de las bases usuarias del "
-    "Relevamiento Anual; y cuadernillo del Relevamiento Anual 2025, educación común.",
-    "Ministerio de Educación (2025). Aprender 2024. Informe de resultados, educación "
-    "secundaria.",
-    "Subsecretaría de Información y Evaluación Educativa (2024). Caminos interrumpidos: "
-    "abandono escolar y sobreedad.",
-    "UNICEF Argentina (2022). Serie MICS: Adolescencias y educación.",
+    "58-79. Universidad Nacional del Sur.",
+    "Dirección Nacional de Información y Evaluación de la Calidad Educativa (DiNIECE), "
+    "Ministerio de Educación, Ciencia y Tecnología (s/f). Definiciones básicas para la "
+    "producción de estadísticas educativas.",
+    "Dirección de Información y Estadística Educativa (DIEE) (s/f). Bases Usuarias "
+    "Relevamiento Anual. Documento metodológico.",
+    "Relevamiento Anual 2025. Educación Común. Matrícula y cargos (cuadernillo nacional, "
+    "2025).",
+    "Subsecretaría de Información y Evaluación Educativa, Ministerio de Capital Humano "
+    "(2025). Informe de resultados 2024. Educación Secundaria (Aprender 2024).",
+    "Subsecretaría de Información y Evaluación Educativa, Ministerio de Capital Humano "
+    "(2024). Caminos interrumpidos: abandono escolar y sobreedad. Historias con datos.",
+    "UNICEF Argentina (2022). Encuesta Nacional de Niñas, Niños y Adolescentes. MICS "
+    "2019-2020. Informe temático: Adolescencias y educación.",
 ]
 MARCA_NOTA = "Nota para lectores técnicos"
 
@@ -151,10 +156,25 @@ def sec(numero, texto):
     return [Spacer(1, 16), tp2.regla(antes=6, despues=4), p(f"{numero}. {texto}", "seccion")]
 
 
+def de_cada(x):
+    """Lectura de la escala en llano: 0,75 es "3 de cada 4" (fraccion mas
+    cercana con denominador chico, sacada del mismo numero que se muestra)."""
+    f = Fraction(round(x, 2)).limit_denominator(5)
+    return f"{f.numerator} de cada {f.denominator}"
+
+
 def construir():
     c = nb.cifras()
     tasa_total = c["ssp"] / c["ini"]
-    veces = c["prov_max"] / c["prov_min"]
+    # Robustez del corte: el texto dice "en los dos casos, X contra Y"; se
+    # chequea que el tercio y el quinto den lo mismo a dos decimales.
+    if (num(c["auc_t_log"]), num(c["auc_t_prov"])) != (num(c["auc_q_log"]),
+                                                       num(c["auc_q_prov"])):
+        raise SystemExit("El tercio y el quinto ya no dan lo mismo: revisar la "
+                         "seccion 5")
+    if num(c["auc_eph"]) != num(c["auc_log"]):
+        raise SystemExit("Sumar la EPH ya cambia la regresion logistica: revisar la "
+                         "seccion 9")
     F = []
 
     # ------------------------------------------------------------ Pagina 1
@@ -180,14 +200,20 @@ def construir():
         "Anual</b> es el formulario que cada escuela completa todos los años: cuenta "
         "cuántos chicos se inscribieron, cuántos pasaron de año y cuántos se fueron. "
         "Aprender no puede ver el abandono, porque el que ya dejó no va a rendir; el "
-        "Relevamiento sí, pero no sabe nada de los hogares."))
+        "Relevamiento sí, pero no sabe nada de los hogares. La <b>Encuesta "
+        "Permanente de Hogares</b> (EPH, la encuesta oficial del INDEC sobre empleo "
+        "e ingresos de los hogares) tampoco sirve para medir el abandono acá: no se "
+        "puede unir a estos grupos, porque solo llega a provincia, y su dato es de "
+        "2025."))
     F.append(p(
+        "La pregunta de partida era qué estudiante abandona, pero "
         "Aprender no se publica estudiante por estudiante sino por <b>grupo de "
         "escuelas</b>: un departamento de una provincia, separando escuelas estatales "
         f"y privadas, urbanas y rurales. Son {miles(c['n'])} grupos con "
         f"{miles(c['estudiantes'])} estudiantes, y todo lo que sigue habla de esos "
-        "grupos, nunca de un chico en particular. Al <b>perfil</b> de un grupo le "
-        "decimos a lo que cuentan sus estudiantes en Aprender. Como abandono usamos "
+        "grupos, nunca de un chico en particular. Llamamos <b>perfil</b> de un grupo "
+        "a lo que cuentan sus estudiantes en Aprender sobre su hogar, su trayectoria "
+        "y su escuela. Como abandono usamos "
         "las <b>salidas sin pase</b>: estudiantes que dejaron la escuela sin "
         "inscribirse en otra. En los dos últimos años de la secundaria fueron "
         f"{miles(c['ssp'])} sobre {miles(c['ini'])} inscriptos, el "
@@ -197,12 +223,22 @@ def construir():
 
     F += sec(2, "Lo que encontramos, en cinco líneas")
     F.append(p(
-        "Para medir los resultados usamos una escala de qué tan bien se ordenan los "
+        "Probamos dos modelos que miran solo el perfil (una regresión logística y "
+        "otro de árboles combinados) y un tercero que además conoce la provincia. "
+        "Cuando decimos <b>el modelo</b> hablamos de la regresión logística con el "
+        "perfil solo. Para medirlos usamos una escala de qué tan bien ordenan los "
         "grupos de más a menos riesgo: <b>0,5 es lo que lograría un sorteo y 1 es "
-        "ordenarlos perfecto</b>.", "cuerpo"))
+        f"ordenarlos perfecto</b>. {num(c['auc_log'])} quiere decir que si tomamos un "
+        "grupo con abandono alto y uno sin, el modelo pone primero al de abandono "
+        f"alto {de_cada(c['auc_log'])} veces (y {num(c['auc_pyp_log'])}, "
+        f"{de_cada(c['auc_pyp_log'])}). Además, el modelo <b>marca</b> como de riesgo "
+        f"al cuarto de grupos que pone más arriba: de los {c['altos_tot']} grupos con "
+        f"abandono alto encuentra {c['det_tot']} ({pct(c['recall_tot'], 0)}), y de "
+        f"sus {c['marcas_tot']} marcas aciertan {c['det_tot']} "
+        f"({pct(c['prec_tot'], 0)}).", "cuerpo"))
     F.append(p(
         "<b>1. Con el perfil de los estudiantes se puede ordenar qué grupos tienen "
-        f"más riesgo de abandono:</b> llegamos a <b>{num(c['auc_log'])}</b>.",
+        f"más riesgo de abandono:</b> el modelo llega a <b>{num(c['auc_log'])}</b>.",
         "cuerpo_ap"))
     F.append(p(
         "<b>2. La provincia y el perfil aportan información distinta.</b> Con solo "
@@ -211,83 +247,99 @@ def construir():
         f"<b>{num(c['auc_pyp_log'])}</b>: lo que sabe uno no lo sabe el otro.",
         "cuerpo_ap"))
     F.append(p(
-        "<b>3. Sin conocer la provincia, el perfil sigue diciendo algo.</b> Probado "
-        f"en provincias que nunca vio, el modelo llega a {num(c['auc_log_pp'])}, "
-        f"contra {num(c['auc_sa_pp'])} de mirar solo si la escuela es estatal o "
-        "privada, urbana o rural.", "cuerpo_ap"))
+        "<b>3. Sin conocer la provincia, el perfil dice poco más que la regla "
+        "simple.</b> Probado en provincias que nunca vio, el modelo llega a "
+        f"{num(c['auc_log_pp'])}, contra {num(c['auc_sa_pp'])} de mirar solo si la "
+        "escuela es estatal o privada, urbana o rural. La diferencia "
+        f"({num(c['auc_log_pp'] - c['auc_sa_pp'])}) es menor que lo que varía el "
+        f"resultado de una prueba a otra ({num(c['auc_log_pp_desv'])}).",
+        "cuerpo_ap"))
     F.append(p(
         "<b>4. El abandono registrado cambia mucho de una provincia a otra:</b> de "
-        f"{pct(c['prov_min'], 1)} en {c['prov_min_n']} a {pct(c['prov_max'], 1)} en "
-        f"{c['prov_max_n']}, unas {veces:.0f} veces más. Creemos que una parte es la "
-        "forma de completar el registro y no abandono real, pero es una hipótesis "
-        "nuestra: el Ministerio sostiene que el dato es comparable entre provincias.",
-        "cuerpo_ap"))
+        f"{pct(c['prov_min'])} en {c['prov_min_n']} a {pct(c['prov_max'])} en "
+        f"{c['prov_max_n']}, unas {c['prov_veces']:.0f} veces más. Creemos que una "
+        "parte es la forma de completar el registro y no abandono real, pero es una "
+        "hipótesis nuestra: el área de estadística del Ministerio de Educación "
+        "sostiene que el dato es comparable entre provincias.", "cuerpo_ap"))
     F.append(p(
-        "<b>5. Lo que más acompaña al abandono coincide con lo que ya documenta la "
-        "investigación en Argentina:</b> hogares de menor nivel socioeconómico, "
-        "madres con menos estudios, haber repetido y tener más edad de la que "
-        "corresponde al año (sección 6). Es una asociación entre grupos, no una causa.",
-        "cuerpo_ap"))
+        "<b>5. Lo que más acompaña al abandono coincide en buena parte con lo que ya "
+        "documenta la investigación en Argentina:</b> hogares de nivel "
+        "socioeconómico bajo, madres que no terminaron la primaria, haber repetido, "
+        "tener más edad de la que corresponde al año, haber empezado el jardín "
+        "recién en sala de 5 y la escuela estatal (sección 6). Es una asociación "
+        "entre grupos, no una causa.", "cuerpo_ap"))
 
     F += sec(3, "Qué significa para quien decide")
     F.append(p(
-        "Que lo que los estudiantes cuentan de sus hogares y la provincia donde "
-        "estudian, juntos, señalan dónde mirar mejor que cada uno por separado, aunque "
-        "no expliquen por qué pasa. Y que una parte del problema está en el dato: "
-        "antes de comparar provincias entre sí, conviene saber cómo registra el "
-        "abandono cada una."))
+        "Que lo que los estudiantes cuentan de sus hogares sirve para ordenar dónde "
+        "mirar, también dentro de una misma provincia, aunque no explique por qué "
+        "pasa. Sumarle la provincia ordena mejor, pero no sabemos cuánto de lo que "
+        "aporta la provincia es abandono y cuánto es la forma de registrarlo: antes "
+        "de usarla para comparar provincias entre sí, conviene saber cómo registra "
+        "el abandono cada una."))
 
     F += sec(4, "Qué haríamos con esto")
     F.append(v(
-        "<b>Usar la provincia y el perfil juntos para ordenar dónde mirar primero</b>, "
-        "porque juntos ordenan mejor que cada uno por separado."))
+        "<b>Mientras no se revise cómo registra cada provincia, usar el perfil para "
+        "ordenar dentro de cada provincia</b>, y tomar la provincia como un dato a "
+        "revisar. Es una señal modesta, pero es la única que no depende de cómo "
+        "registra cada provincia: si el abandono alto se define dentro de cada provincia (el cuarto "
+        "de sus grupos con la tasa más alta), el perfil ordena en "
+        f"{num(c['auc_cp_log'])}, contra {num(c['auc_cp_sa'])} de la regla "
+        "estatal/privado y urbano/rural."))
     F.append(v(
         "<b>Antes de comparar provincias, revisar con ellas cómo registran las "
         "salidas sin pase</b>, empezando por las que más se apartan de lo que predice "
         "el modelo (Buenos Aires y Santa Fe)."))
     F.append(v(
         "<b>Dar una segunda mirada a los grupos que el modelo no marca:</b> entre "
-        f"ellos quedan {c['perf_no_vistos']} con abandono alto, la mayor parte en "
-        "escuelas estatales urbanas."))
+        f"ellos quedan {c['no_det']} de los {c['altos_tot']} con abandono alto, "
+        f"{c['perf_top_nv']} en escuelas estatales urbanas y {c['perf_rural_nv']} "
+        "en estatales rurales (sección 8)."))
 
     # ------------------------------------------------------------ Detalle
     F.append(KeepTogether(sec(5, "El modelo contra las reglas simples") + [
         p(
             "Un modelo solo vale si le gana a una regla que cualquiera podría aplicar "
-            "sin él. Por eso comparamos dos modelos contra tres reglas: darle a todos "
+            "sin él. Por eso comparamos los modelos contra tres reglas: darle a todos "
             "el mismo riesgo (un sorteo), darle a cada grupo el riesgo promedio de los "
             "grupos de su mismo tipo (estatal o privado, urbano o rural), y darle el "
             "riesgo promedio de su provincia. Con todas las provincias a la vista, el "
-            f"mejor modelo llega a {num(c['auc_log'])} y la regla de la provincia a "
-            f"{num(c['auc_prov'])}: empatan. El segundo modelo, más complejo, no "
-            f"mejora ({num(c['auc_boost'])}), señal de que el patrón es simple. Pero "
-            "empatar no es saber lo mismo: un modelo que conoce la provincia y el "
+            f"modelo llega a {num(c['auc_log'])} y la regla de la provincia a "
+            f"{num(c['auc_prov'])}: empatan. El de árboles combinados, más complejo, "
+            f"no mejora ({num(c['auc_boost'])}), señal de que el patrón es simple. "
+            "Pero empatar no es saber lo mismo: el modelo que conoce la provincia y el "
             f"perfil a la vez llega a <b>{num(c['auc_pyp_log'])}</b> (la barra de "
             "arriba de la figura 1). Si la provincia solo resumiera el perfil de sus "
             "estudiantes, sumarla no agregaría nada."),
         p(
-            "Y el perfil sirve sin la provincia: si probamos el modelo en provincias "
-            "que no usó para aprender, la regla de la provincia queda sin nada que "
-            f"decir y el modelo conserva {num(c['auc_log_pp'])}. Elegir el cuarto de "
+            "Sin la provincia, el perfil dice poco: si probamos el modelo en "
+            "provincias que no usó para aprender, la regla de la provincia queda sin "
+            f"nada que decir y el modelo llega a {num(c['auc_log_pp'])}, apenas por "
+            "encima de la regla estatal/privado y urbano/rural "
+            f"({num(c['auc_sa_pp'])}). Elegir el cuarto de "
             "grupos con más abandono como \u201calto\u201d fue decisión nuestra, así que lo "
             "movimos al tercio y al quinto: el perfil solo y la provincia sola siguen "
-            f"parejos ({num(c['auc_t_log'])} contra {num(c['auc_t_prov'])}, y "
-            f"{num(c['auc_q_log'])} contra {num(c['auc_q_prov'])})."),
+            f"parejos (en los dos casos, {num(c['auc_t_log'])} contra "
+            f"{num(c['auc_t_prov'])})."),
         *fig(
             "tp3_a_modelo_vs_reglas.png", 178,
             "Figura 1. Qué tan bien ordena el riesgo cada modelo y cada regla (0,5 es "
             "un sorteo, 1 es perfecto). Azul, los modelos; naranja, las reglas "
-            "simples. Izquierda: todas las provincias a la vista. Derecha: probando "
-            "en provincias que el modelo no vio."),
+            "simples. Izquierda: el modelo aprende y se prueba con todas las "
+            "provincias. Derecha: se prueba en provincias que no vio. La línea fina en "
+            "la punta de cada barra muestra cuánto varía el resultado de una prueba a "
+            "otra."),
     ]))
 
     F += sec(6, "Qué acompaña al abandono, y qué ya se sabía")
     F.append(p(
         "En nuestros datos hay más abandono donde hay más hogares de nivel "
         "socioeconómico bajo, más madres que no terminaron la primaria, más "
-        "repitencia, más estudiantes que empezaron el jardín recién en sala de 5, y "
-        "en las escuelas estatales. No lo dimos por sentado: buscamos qué dice la "
-        "investigación previa."))
+        "estudiantes que repitieron o que tienen más edad de la que corresponde al "
+        "año, más que empezaron el jardín recién en sala de 5, y en las escuelas "
+        "estatales. No lo dimos por sentado: buscamos qué dice la investigación "
+        "previa."))
     F.append(v(
         "<b>Nivel socioeconómico y escuela estatal: documentado.</b> Un estudio de "
         "Adrogué y Orlicki (2025), que siguió veinte años de la Encuesta Permanente "
@@ -302,7 +354,9 @@ def construir():
     F.append(v(
         "<b>Repitencia y sobreedad: documentado con dato oficial.</b> El área de "
         "estadística del Ministerio de Educación mostró en 2024 un abandono del 27% "
-        "entre quienes tienen sobreedad contra 4,5% entre quienes no."))
+        "entre quienes tienen sobreedad contra 4,5% entre quienes no (con otra forma "
+        "de medir el abandono, que sigue a cada estudiante a lo largo de los años, "
+        "en 11 provincias)."))
     F.append(v(
         "<b>Jardín desde sala de 3: documentado en parte.</b> El informe nacional de "
         "Aprender 2024 lo asocia a mejores aprendizajes, pero no encontramos una "
@@ -325,8 +379,8 @@ def construir():
             "no ve; con estos datos no lo podemos distinguir."),
         p(
             "<b>Que el registro cambie entre provincias es una hipótesis nuestra.</b> "
-            "La Dirección de Información y Estadística Educativa del Ministerio, que "
-            "administra el Relevamiento, sostiene lo contrario: que su sistema "
+            "El área de estadística del Ministerio de Educación, que administra el "
+            "Relevamiento, sostiene lo contrario: que su sistema "
             "\u201cgarantiza la homogeneidad y comparabilidad de los datos en todo el "
             "ámbito nacional\u201d. No encontramos ningún documento oficial que advierta "
             "diferencias. Nos apoyamos en la distancia entre provincias y en la caída "
@@ -335,7 +389,7 @@ def construir():
             f"en {c['ba_anio_fin']}. Por eso proponemos revisarlo con las provincias "
             "antes de compararlas."),
         *fig(
-            "tp3_b_tasa_por_provincia.png", 160,
+            "tp3_b_tasa_por_provincia.png", 135,
             "Figura 2. Abandono registrado en los dos últimos años de la secundaria, "
             "por provincia. Naranja, por encima de la media nacional; azul, por "
             "debajo."),
@@ -349,23 +403,27 @@ def construir():
             "desempeño en matemática, sector y ámbito), sin usar el abandono para "
             f"armarlos, y aparecen {c['perf_k']} perfiles. El privado urbano casi no "
             "tiene abandono. Los otros tres (estatal urbano, rural estatal y rural más "
-            "vulnerable) tienen tasas parecidas entre sí, y entre todos los no "
-            f"marcados quedan {c['perf_no_vistos']} grupos con abandono alto que el "
-            f"modelo no vio, {c['perf_top_nv']} de ellos en el estatal urbano, que "
-            "además reúne a la mayor parte de los estudiantes."),
+            "vulnerable) tienen tasas parecidas entre sí. Entre todos los no marcados "
+            f"quedan {c['no_det']} de los {c['altos_tot']} grupos con abandono alto: "
+            f"{c['perf_top_nv']} ({pct(c['perf_top_nv_pct'], 0)}) en el estatal "
+            f"urbano y {c['perf_rural_nv']} entre los dos rurales."),
         *fig(
             "tp3_c_perfiles.png", 178,
             "Figura 3. Los cuatro perfiles de grupos que el modelo no marca. Cada "
-            "celda es la proporción del rasgo en el perfil (de 0 a 1); a la derecha, "
+            "celda es el porcentaje del perfil que tiene ese rasgo; a la derecha, "
             "cuánto abandono registran."),
+        p(
+            "<b>Para quien decide:</b> el estatal urbano junta más casos por su tamaño "
+            f"(reúne el {pct(c['perf_top_est'], 0)} de los estudiantes de estos "
+            "grupos); el rural más vulnerable tiene la tasa más alta."),
     ]))
 
     F += sec(9, "Cómo lo analizamos")
     F.append(p(
         "<b>Qué predecimos.</b> Si un grupo tiene abandono alto, con la regla de la "
-        "sección 1. Para la definición de salida sin pase usamos la oficial de la "
-        "Dirección Nacional de Información y Evaluación de la Calidad Educativa "
-        "(DiNIECE), que arma los indicadores del Ministerio: \u201cel que se va de la "
+        "sección 1. Para la definición de salida sin pase usamos la oficial del área "
+        "de estadística del Ministerio de Educación: "
+        "\u201cel que se va de la "
         "escuela a la que asistía, sin inscripción (o pase) en otra escuela\u201d. Tomamos "
         "los dos últimos años porque son los que evalúa Aprender."))
     F.append(p(
@@ -375,22 +433,34 @@ def construir():
         "La escala de 0,5 a 1 con la que los comparamos es el área bajo la curva ROC. "
         "Los perfiles de la sección 8 salen de un agrupamiento k-means."))
     F.append(p(
+        "<b>Qué acompaña al abandono.</b> La lista de las secciones 2 y 6 no sale de "
+        "los pesos de la regresión: miramos la correlación de cada respuesta con la "
+        "tasa de abandono, para ver hacia dónde empuja, y cuánto empeora el modelo al "
+        "sacar cada tema, para ver cuánto aporta."))
+    F.append(p(
         "<b>Sin mirar la respuesta.</b> Cada grupo lo evaluó un modelo que no lo había "
         "visto: partimos los datos en cinco y cada parte se predijo con lo aprendido "
         "de las otras cuatro. No usamos nada que se conozca después del abandono (los "
-        "que no pasaron de año, los pases ni los egresados del mismo año). "
-        "<b>Lo que no aportó:</b> sumar dos indicadores de la Encuesta Permanente de "
-        "Hogares por provincia, como pidió la mentora, deja el resultado en "
-        f"{num(c['auc_eph'])}: lo que la encuesta mide de cada provincia ya lo dice "
-        "Aprender."))
+        "que no pasaron de año, los pases ni los egresados del mismo año)."))
+    F.append(p(
+        "<b>La encuesta de hogares.</b> Como pidió la mentora, probamos sumar dos "
+        "indicadores de la EPH por provincia: el ingreso per cápita mediano del hogar "
+        "y la proporción de adultos sin secundaria completa. Con la regresión "
+        f"logística no cambia ({num(c['auc_eph'])}), pero con árboles combinados "
+        f"sube de {num(c['auc_boost'])} a {num(c['auc_eph_b'])}: dos datos por "
+        "provincia alcanzan para que el modelo reconozca la provincia, que es la "
+        "información que el perfil no tiene."))
 
     cierre = []
     cierre += sec(10, "Limitaciones")
     cierre.append(v("<b>Grupos, no personas.</b> Nada de esto permite decir algo de un "
                     "estudiante concreto."))
     cierre.append(v("<b>El abandono registrado no es el abandono real.</b> Un cero no se "
-                    "distingue de \u201cno se registró\u201d, y que la diferencia entre provincias "
-                    "sea por cómo registra cada una es una hipótesis nuestra (sección 7)."))
+                    "distingue de \u201cno se registró\u201d, y hay muchos: "
+                    f"{miles(c['ceros'])} de los {miles(c['n'])} grupos "
+                    f"({pct(c['ceros_pct'], 0)}) no tienen ninguna salida registrada. "
+                    "Que la diferencia entre provincias sea por cómo registra cada una "
+                    "es una hipótesis nuestra (sección 7)."))
     cierre.append(v("<b>Lo que el registro no cuenta y lo que cuenta de más.</b> Quien se "
                     "va entre diciembre y marzo, después del último día de clase, no "
                     "figura como salida sin pase, según el formulario 2025 del "
@@ -398,10 +468,18 @@ def construir():
                     "sin haber hecho el trámite del pase."))
     cierre.append(v("<b>Un año de diferencia.</b> El Relevamiento de cada año informa las "
                     "salidas del ciclo anterior: el de 2024 trae las de 2023, y Aprender "
-                    "es de octubre de 2024."))
+                    "es de octubre de 2024. Es decir, el perfil se midió después del "
+                    "abandono con el que lo comparamos: esto ordena, no anticipa. "
+                    "Anticipar es el próximo paso."))
     cierre.append(v("<b>Lo que medimos es inestable.</b> De los grupos con abandono alto "
                     f"en el Relevamiento 2024, solo el {pct(c['est_rep2'], 0)} lo tenía "
-                    "en el anterior: en grupos chicos, una sola salida mueve la tasa."))
+                    f"en el anterior (por azar sería el {pct(c['prev'], 0)}): en grupos "
+                    "chicos, una sola salida mueve la tasa."))
+    cierre.append(v("<b>El modelo detecta peor a los grupos más grandes.</b> En el quinto "
+                    "de grupos más grandes encuentra el "
+                    f"{pct(c['rec_grandes'], 0)} de los que tienen abandono alto, contra "
+                    f"el {pct(c['rec_chicos'], 0)} en el quinto más chico: ahí las tasas "
+                    "son más bajas y parejas, y lo poco que pasa queda diluido."))
     cierre.append(v("<b>Aprender solo ve a quien fue a rendir</b>, y eso subestima justo a "
                     "los grupos con más abandono."))
 

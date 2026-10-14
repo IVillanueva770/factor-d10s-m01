@@ -6,8 +6,8 @@ Relevado el 2026-10-13 a pedido de Ignacio ("anotá todo bien con fuentes para q
 
 ## 1. Nivel socioeconómico bajo y más abandono: documentado
 
-- Adrogué y Orlicki, "Riesgo de abandono escolar en la secundaria. Factores comunes y diferentes para varones y mujeres", Estudios Económicos 42(85), UNS, 2025 (EPH 2003 a 2023, regresión logística). https://ri.conicet.gov.ar/bitstream/handle/11336/267725/CONICET_Digital_Nro.edd2aab9-34e4-449f-a0c2-93e0f205899b_B.pdf?sequence=2 . Conclusiones: "los estudiantes de los quintiles más pobres tienen más probabilidad de entrar en ese grupo".
-- UNICEF Argentina, "Serie MICS: Adolescencias y Educación" (MICS 2019-2020), octubre de 2022. https://www.unicef.org/argentina/media/18746/file/Serie%20MICS:%20Adolescencias%20y%20Educaci%C3%B3n.pdf . "Solo el 37% de quienes residen en hogares del primer quintil [...] pudieron finalizar sus estudios secundarios".
+- Adrogué, C. y Orlicki, E., "Riesgo de abandono escolar en la secundaria. Factores comunes y diferentes para varones y mujeres", Estudios Económicos 42(85), pp. 58-79, UNS, 2025, DOI 10.52292/j.estudecon.2025.5069 (EPH 2003 a 2023, regresión logística; mide riesgo de abandono en jóvenes de 16 a 19 años). https://ri.conicet.gov.ar/bitstream/handle/11336/267725/CONICET_Digital_Nro.edd2aab9-34e4-449f-a0c2-93e0f205899b_B.pdf?sequence=2 . Conclusiones: "los estudiantes de los quintiles más pobres tienen más probabilidad de entrar en ese grupo".
+- UNICEF Argentina, "Encuesta Nacional de Niñas, Niños y Adolescentes. MICS 2019-2020. Informe temático: Adolescencias y educación" (serie MICS; análisis de Cora Steinberg y Ariel Tófalo), octubre de 2022. https://www.unicef.org/argentina/media/18746/file/Serie%20MICS:%20Adolescencias%20y%20Educaci%C3%B3n.pdf . "Solo el 37% de quienes residen en hogares del primer quintil [...] pudieron finalizar sus estudios secundarios".
 
 ## 2. Madre con bajo nivel educativo: documentado (como "clima educativo del hogar")
 
@@ -17,8 +17,8 @@ Relevado el 2026-10-13 a pedido de Ignacio ("anotá todo bien con fuentes para q
 
 ## 3. Repitencia y sobreedad: documentado, con dato oficial
 
-- Subsecretaría de Información y Evaluación Educativa, "Caminos interrumpidos: abandono escolar y sobreedad" (Historias con datos), diciembre de 2024, p. 5 (Base Nacional Homologada 2022-2023, 11 provincias): abandono de 27% con sobreedad contra 4,5% sin ella. https://www.argentina.gob.ar/sites/default/files/historias_con_datos_sobredad_final.pdf . "Los datos confirman que la sobreedad es un factor crítico asociado al abandono escolar."
-- Ministerio de Educación, "Aprender 2024. Informe de resultados. Educación Secundaria", 2025, p. 46. https://www.argentina.gob.ar/sites/default/files/informe_nacional_aprender_2024.pdf . "repetir no mejora el rendimiento [...] y, en muchos casos, se asocia con un mayor riesgo de abandono escolar."
+- Subsecretaría de Información y Evaluación Educativa, "Caminos interrumpidos: abandono escolar y sobreedad" (Historias con datos), diciembre de 2024, página impresa 4 (p. 5 del PDF; Base Nacional Homologada 2022-2023, 11 provincias; el 27% es una tasa de abandono interanual): abandono de 27% con sobreedad contra 4,5% sin ella. https://www.argentina.gob.ar/sites/default/files/historias_con_datos_sobredad_final.pdf . "Los datos confirman que la sobreedad es un factor crítico asociado al abandono escolar."
+- Subsecretaría de Información y Evaluación Educativa, Secretaría de Educación, Ministerio de Capital Humano, "Informe de resultados 2024. Educación Secundaria" (Aprender 2024), 2025, p. 46. https://www.argentina.gob.ar/sites/default/files/informe_nacional_aprender_2024.pdf . "repetir no mejora el rendimiento [...] y, en muchos casos, se asocia con un mayor riesgo de abandono escolar."
 
 ## 4. Jardín desde sala de 3 contra sala de 5: parcial
 
@@ -61,3 +61,8 @@ La brecha está documentada; que se explique por la composición social del alum
 - La hipótesis sobre el registro provincial (sección 6).
 
 Fechas aproximadas: el glosario (c. 2003) y el manual de indicadores (c. 2005) se fecharon por la gestión y los metadatos del PDF.
+
+
+## Verificación independiente (14/10)
+
+Un segundo agente, sin el contexto de la sesión, bajó los 7 documentos y confirmó las 6 referencias del PDF. Correcciones aplicadas: la segunda autora es Orlicki, E. (Eugenia), no M. E.; el informe de Aprender 2024 lo firma la Subsecretaría de Información y Evaluación Educativa del Ministerio de Capital Humano; el 27% de sobreedad está en la página impresa 4; el glosario de DiNIECE y el documento metodológico de la DIEE no tienen fecha impresa (se citan s/f). Copias locales de los documentos: scratchpad de la sesión, carpeta verif-refs (no versionadas).

@@ -173,10 +173,49 @@ def cifras():
                          "revisar el texto de la seccion 8")
     c["perf_top_nv"] = int(top["altos_no_vistos"])
     c["perf_top_est"] = top["estudiantes"] / perf["estudiantes"].sum()
+    # 14/10: los no detectados de los perfiles rurales estatales, sumados (el
+    # texto los compara con los del estatal urbano).
+    rural_est = perf[(perf["estatal"] > 0.5) & (perf["rural"] > 0.5)]
+    c["perf_rural_nv"] = int(rural_est["altos_no_vistos"].sum())
+    c["perf_top_nv_pct"] = c["perf_top_nv"] / c["perf_no_vistos"]
+    # El perfil con la tasa mas alta: el texto dice que es el rural mas
+    # vulnerable (rural y el de mas NSE bajo); se chequea, no se supone.
+    alta = perf.loc[perf["tasa_real_ponderada"].idxmax()]
+    if not (alta["rural"] > 0.5 and alta["nse_bajo"] == perf["nse_bajo"].max()):
+        raise SystemExit("El perfil con la tasa mas alta ya no es el rural mas "
+                         "vulnerable: revisar el cierre de la seccion 8")
+
+    # 14/10: que es "marcar". El modelo marca como de riesgo al cuarto de grupos
+    # que pone mas arriba; las cuentas salen de errores_principal (corte por
+    # tamanio, que reparte a todos los grupos), las mismas de los no detectados.
+    tam = err[err["corte"] == "tamanio"]
+    c["altos_tot"] = int(tam["altos_reales"].sum())
+    c["det_tot"] = int(tam["detectados"].sum())
+    c["fa_tot"] = int(tam["falsas_alarmas"].sum())
+    c["marcas_tot"] = c["det_tot"] + c["fa_tot"]
+    c["no_det"] = c["altos_tot"] - c["det_tot"]
+    c["recall_tot"] = c["det_tot"] / c["altos_tot"]
+    c["prec_tot"] = c["det_tot"] / c["marcas_tot"]
+    if c["no_det"] != c["perf_no_vistos"]:
+        raise SystemExit("Los no detectados de errores_principal y de los perfiles "
+                         "ya no coinciden: revisar las secciones 4 y 8")
+    chicos, grandes = tam.iloc[0], tam.iloc[-1]
+    c["rec_chicos"] = chicos["detectados"] / chicos["altos_reales"]
+    c["rec_grandes"] = grandes["detectados"] / grandes["altos_reales"]
+    # Por azar, la proporcion de grupos con abandono alto (referencia de la
+    # estabilidad entre anios).
+    c["prev"] = c["positivos"] / c["n"]
+    c["ceros_pct"] = c["ceros"] / c["n"]
+    c["auc_log_pp_desv"] = float(r[(r.experimento == "principal")
+                                   & (r.separacion == "por_provincia")
+                                   & (r.modelo == "logistica")]["roc_auc_desvio"].iloc[0])
     por_prov = d.groupby("jurisdiccion")[["ssp_ultimos2", "inicial_ultimos2"]].sum()
     tasa_prov = por_prov["ssp_ultimos2"] / por_prov["inicial_ultimos2"]
     c["prov_min"], c["prov_min_n"] = tasa_prov.min(), tasa_prov.idxmin()
     c["prov_max"], c["prov_max_n"] = tasa_prov.max(), tasa_prov.idxmax()
+    # Las veces, con los dos porcentajes redondeados como los muestra la
+    # figura 2 (dos decimales), para que la cuenta cierre a la vista.
+    c["prov_veces"] = round(100 * c["prov_max"], 2) / round(100 * c["prov_min"], 2)
     # Por que no un modelo por provincia: cuantos grupos y positivos tiene cada una.
     n_prov = d["jurisdiccion"].nunique()
     c["grupos_x_prov"] = len(d) / n_prov
