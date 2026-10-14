@@ -424,14 +424,14 @@ print("Proyecto en el commit", subprocess.run(["git", "rev-parse", "--short", "H
 
 
 def etapa(ruta, mostrar=True):
-    """Corre una etapa del pipeline y CORTA si falla: el notebook nunca sigue con
-    archivos viejos del repo si una etapa se rompe."""
+    # Corre una etapa del pipeline y CORTA si falla: el notebook nunca sigue
+    # con archivos viejos del repo si una etapa se rompe.
     r = subprocess.run([sys.executable, ruta], capture_output=True, text=True)
     if mostrar:
         print(r.stdout)
     if r.returncode != 0:
         print(r.stderr)
-        raise RuntimeError(f"La etapa {ruta} falló; el notebook no sigue.")
+        raise RuntimeError("La etapa " + ruta + " falló; el notebook no sigue.")
 """)
 
     code("""
